@@ -1,0 +1,9 @@
+.arrow-box::before {
+    content: "";
+    position: absolute;
+    top: -6px; /* cách trên 1 tí */
+    left: 10px; /* bên trái - điều chỉnh tùy thích */
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid white; /* màu cùng màu với background */
+  }
