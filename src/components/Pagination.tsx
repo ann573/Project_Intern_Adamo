@@ -3,7 +3,13 @@ import React from "react";
 // asset
 import leftArrow from "@assets/icons/arrow-left.svg";
 import rightArrow from "@assets/icons/arrow-right.svg";
-const Pagination = ({ page, setPage, total }) => {
+
+type TProps = {
+  page: number;
+  total: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+};
+const Pagination = ({ page, setPage, total }: TProps) => {
   const arr = Array.from({ length: Math.ceil(total / 9) }, (_, i) => i);
   return (
     <>

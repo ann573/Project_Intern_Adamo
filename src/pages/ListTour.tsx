@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "@/hooks/app";
 
 //asset
 import "@/style/homepage.css";
@@ -12,8 +12,8 @@ import { toast } from "sonner";
 
 import Card from "@/components/Card";
 import Filter from "@/components/Filter";
-import Pagination from "@/components/Pagination";
 import FormSearchBanner from "@/components/FormSearchBanner";
+import Pagination from "@/components/Pagination";
 
 // redux
 import CardSkeleton from "@/components/CardSkeleton";
@@ -30,12 +30,12 @@ const ListTour = () => {
   const [isSearch, setIsSearch] = useState(false);
   const [request, setRequest] = useState("");
   const { pathname } = useLocation();
-  const listRef = useRef(null);
+  const listRef = useRef<HTMLInputElement>(null);
 
-  const { tours, isLoading, total, type, range } = useSelector(
+  const { tours, isLoading, total, type, range } = useAppSelector(
     (state) => state.tours
   );
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const hasVisited = sessionStorage.getItem(`visited-${pathname}`);
@@ -64,9 +64,12 @@ const ListTour = () => {
       } catch (error) {
         return toast.error("Failed to fetch tours:", {
           duration: 3000,
-          description: error.message,
+          description: (error as Error).message,
           action: {
             label: "Undo",
+            onClick: () => {
+              return
+            },
           },
         });
       }
@@ -146,7 +149,7 @@ const ListTour = () => {
       <section className="max-w-[1200px] mx-auto xl:px-0 sm:px-5 px-7">
         {isLoading ? (
           <CardSkeleton />
-        ) : tours.length > 0 ? (
+        ) : tours?.length > 0 ? (
           <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
             {tours.map((item) => (
               <Card data={item} key={item.id} />
@@ -166,7 +169,7 @@ const ListTour = () => {
           </div>
         )}
 
-        {tours.length > 0 && (
+        {tours?.length > 0 && (
           <Pagination page={page} setPage={setPage} total={total} />
         )}
       </section>

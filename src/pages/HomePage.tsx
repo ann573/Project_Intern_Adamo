@@ -40,8 +40,7 @@ const HomePage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const onSubmitEmail = async ({ email }) => {
-    event.preventDefault();
+  const onSubmitEmail = async ({ email } : {email: string}) => {
     try {
       await instance.post("/emails", { email });
       toast.success("Đăng ký thành công", {
@@ -51,7 +50,7 @@ const HomePage = () => {
       reset();
     } catch (error) {
       toast.error("Có lỗi xảy ra", {
-        description: error.message,
+        description: (error as Error).message,
       });
     }
   };

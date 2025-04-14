@@ -1,52 +1,74 @@
-import { useRef } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "@/hooks/app";
+import { useRef, useState } from "react";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
-const CustomSlider = () => {
-  const { tour, isLoading } = useSelector((state) => state.tours);
-  const sliderRef = useRef(null);
-    console.log(tour);
-  // Cài đặt cho slider
+import "@/style/imageSlider.css";
+import { Skeleton } from "@/components/ui/skeleton";
+
+const ImageSlider = () => {
+  const { tour, isLoading } = useAppSelector((state) => state.tours);
+  const sliderRef = useRef<Slider | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const settings = {
     dots: true,
+    fade: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
-    customPaging: (i) => (
-      <div className="custom-dot">
-        <img
-          src={tour?.image[i].src}
-          alt={`thumbnail-${i}`}
-          onClick={() => sliderRef.current.slickGoTo(i)}
-          style={{
-            width: "50px",
-            height: "50px",
-            objectFit: "cover",
-            cursor: "pointer",
-            border: "2px solid transparent",
-          }}
-        />
-      </div>
-    ),
+    arrows: false,
+    beforeChange: (_: number, next: number) => setCurrentSlide(next),
+    customPaging: (i: number) => {
+      return (
+        <div className="custom-dot">
+          <img
+            src={tour?.image[i]}
+            alt={`thumbnail-${i}`}
+            onClick={() => sliderRef?.current?.slickGoTo(i)}
+            className={`transition-all duration-300 ${
+              currentSlide === i ? "" : "opacity-45"
+            }`}
+            style={{
+              width: "100%",
+              height: "100px",
+              objectFit: "cover",
+              cursor: "pointer",
+            }}
+          />
+        </div>
+      );
+    },
     dotsClass: "slick-dots custom-dots",
   };
 
   if (!tour?.image || tour?.image.length === 0) {
     return <div>No images available</div>;
   }
+
+  if (isLoading) {
+    return (
+      <>
+        <Skeleton className="w-full h-[400px]" />
+        <div className="flex justify-between gap-5 my-5">
+          <Skeleton className="w-1/3 h-[100px]" />
+          <Skeleton className="w-1/3 h-[100px]" />
+          <Skeleton className="w-1/3 h-[100px]" />
+        </div>
+      </>
+    );
+  }
+
   return (
-    <div style={{ width: "80%", margin: "0 auto", padding: "20px" }}>
+    <div className="mx-auto mb-30">
       <Slider ref={sliderRef} {...settings}>
-        {tour.image?.map((image) => (
-          <div key={image.id}>
+        {tour.image?.map((image, index) => (
+          <div key={index} className="mb-5">
             <img
-              src={image.src}
-              alt={`slide-${image.id}`}
+              src={image}
+              alt={`slide-${index}`}
               style={{
                 width: "100%",
                 height: "400px",
@@ -56,26 +78,8 @@ const CustomSlider = () => {
           </div>
         ))}
       </Slider>
-
-      {/* CSS tùy chỉnh */}
-      <style jsx>{`
-        .custom-dots {
-          display: flex !important;
-          justify-content: center;
-          gap: 10px;
-          padding: 10px 0;
-        }
-
-        .custom-dot img:hover {
-          border-color: #007bff;
-        }
-
-        .slick-active .custom-dot img {
-          border-color: #007bff;
-        }
-      `}</style>
     </div>
   );
 };
 
-export default CustomSlider;
+export default ImageSlider;

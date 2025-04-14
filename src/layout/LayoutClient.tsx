@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Outlet,useLocation } from "react-router-dom";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { useEffect, useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 
 const LayoutClient = () => {
   const [scrolling, setScrolling] = useState(false);

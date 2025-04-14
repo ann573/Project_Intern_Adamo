@@ -1,0 +1,21 @@
+.custom-dots {
+  display: flex !important;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  width: 100%;
+  height: fit-content;
+}
+li img:hover {
+  border-color: #007bff;
+}
+
+.slick-active .custom-dot img {
+  border-color: #007bff;
+}
+
+li {
+    flex: 1;
+    margin-inline: 0 !important;
+    height: fit-content;
+}

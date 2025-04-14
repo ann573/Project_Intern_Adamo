@@ -1,0 +1,1870 @@
+{
+  "tours": [
+    {
+      "id": 1,
+      "title": "Discover interesting things in the romantic coastal city of Vungtau",
+      "duration": 2,
+      "cost": 146,
+      "location": "Sapa, Laocai",
+      "featured": false,
+      "type": "Sun - Beach",
+      "thumb": "https://picsum.photos/601/500",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300",
+        "https://picsum.photos/450/300"
+      ],
+      "overview": {
+        "description": "Set sail for the idyllic Italian island of Capri on this full-day tour, including round-trip jetfoil transfers from Naples or Sorrento. Stop to browse the handicraft stores of Anacapri and soak up the atmosphere in buzzing La Piazzetta. Top it off with a visit to the Blue Grotto and a funicular ride to Marina Grande.",
+        "highlight": [
+          "Full-day tour of Capri island from Naples or Sorrento Admire views along the coast as you to the island by jetfoil",
+          "Visit the lively island towns of Anacapri and Capri Ride",
+          "The funicular from La Piazzetta to Marina Grande Marvel at natural wonders like the Blue Grotto Small-group tour ensures a personalized experience"
+        ]
+      },
+      "include": [
+        "Port pickup and drop-off",
+        "Local guide",
+        "Round-trip shared transfer",
+        "Transport by minibus",
+        "Blue Grotto admission tickets",
+        "Shared boat ride tour around the island ( if Blue grotto is closed)"
+      ],
+      "departure": {
+        "point": [
+          "Molo Beverello, 80133 Napoli NA, Italy",
+          "Hotel Il Faro, Via Marina Piccola, 5, 80067 Sorrento NA, Italy"
+        ],
+        "time": "8:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Molo Beverello",
+          "details": [
+            {
+              "location": "Molo Beverello",
+              "description": "We start our trip from the famouse place Jemaa Lefna in center of Marrakech, Crossed the highest Atlas Through pass (Tizi N Tichka)",
+              "duration": "5 minutes",
+              "other": "Admission Ticket Free"
+            },
+            {
+              "location": "Marina Piccola",
+              "description": "So we will visit the UNESCO World Heritage Site Ait Benhaddou / Official name Ksar of Ait-Ben-Haddou is located in south of Morocco, It is an ighrem (fortified village in English) (ksar in Arabic), along the former caravan route between the Sahara and Marrakech in present-day Morocco. Most citizens attracted by the tourist trade live in more modern dwellings in a village on the other side of the river, although there are four families still living in the ancient village. Inside the walls of the ksar are half a dozen (Kasbahs) or merchants houses and other individual dwellings",
+              "duration": "1 hour 30 minutes",
+              "other": "Admission Ticket Free"
+            },
+            {
+              "location": "Blue Grotto",
+              "description": "Pass trough the Ait Saouen Col in anti atlas"
+            },
+            {
+              "location": "Villa San Michele",
+              "description": "Crossed by the Draa valley, where there is more than 2 million palms along the draa river which stretches for a length to Senegal to the south."
+            }
+          ]
+        },
+        {
+          "title": "Marina Piccola",
+          "details": [
+            {
+              "location": "Villa Pong Kong",
+              "description": "Donec laoreet placerat metus ac dapibus. Aenean justo ligula, vehicula a sollicitudin ut, tempor eget lectus. Suspendisse potenti. Pellentesque id sapien ultrices dui rhoncus blandit in vel velit. Vestibulum bibendum odio ut ante placerat ultricies. Fusce accumsan felis vel magna sodales volutpat. Curabitur neque ante, vestibulum nec mauris venenatis, varius porta mauris. Ut cursus ac leo nec maximus"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with back problems",
+        "Not recommended for pregnant travelers Infant seats available",
+        "Not wheelchair accessible",
+        "Children must be accompanied by an adult",
+        "Vegetarian option is available, please advise at time of booking if required Minimum numbers apply.",
+        "There is a possibility of cancellation after confirmation if the meteorological conditions do not allow it",
+        "Stroller accessible",
+        "Service animals allowed",
+        "Near public transportation",
+        "Most travelers can participate",
+        "This tour/activity will have a maximum of 17 travelers"
+      ],
+      "faqs": [
+        {
+          "question": "What is the maximum group size during 2 Days 1 Night To Zagora Desert From Marrakech ?",
+          "answer": "This activity will have a maximum of 17 travelers."
+        },
+        {
+          "question": "When and where does the tour start?",
+          "answer": "Phasellus in nulla at purus varius dictum sit amet et nibh. Proin aliquet vehicula nibh. Nulla vehicula sem magna, at eleifend neque tristique non"
+        },
+        {
+          "question": "Do you arrange airport transfers?",
+          "answer": "Yes, we can arrange airport transfers for you. Please contact us for more details."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Nevermind",
+          "rate": 5,
+          "heading": "The best experience ever!",
+          "time": 1677118800,
+          "comments": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!",
+          "avatar": "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg"
+        },
+        {
+          "title": "Nevermind",
+          "rate": 2,
+          "heading": "The best experience ever!",
+          "time": 1677118800,
+          "comments": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!",
+          "avatar": "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg"
+        },
+        {
+          "title": "Nevermind",
+          "rate": 4,
+          "heading": "The best experience ever!",
+          "time": 1677118800,
+          "comments": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!",
+          "avatar": "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg"
+        },
+        {
+          "title": "Nevermind",
+          "rate": 5,
+          "heading": "The best experience ever!",
+          "time": 1677118800,
+          "comments": "It was excellent! The trip is long but the vans are comfortable and have wi-fi. The driver very friendly as well as Ahmed our guide to the dromedaries. The camp was beautiful, comfortable beds, clean bathroom and delicious food!",
+          "avatar": "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Explore the Wonders of the Ancient City of Hue",
+      "duration": 3,
+      "cost": 199,
+      "location": "Hue, Vietnam",
+      "featured": true,
+      "type": "Cultural - Historical",
+      "thumb": "https://picsum.photos/599/500",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Take a journey through the rich cultural history of Hue, exploring its famous landmarks, including the Imperial City, royal tombs, and temples.",
+        "highlight": [
+          "Visit the UNESCO World Heritage site of the Imperial City",
+          "Explore the famous tombs of the Nguyen emperors",
+          "Take a boat ride on the Perfume River"
+        ]
+      },
+      "include": [
+        "Local guide",
+        "Round-trip transportation",
+        "Lunch at a local restaurant",
+        "Boat ride along the Perfume River"
+      ],
+      "departure": {
+        "point": ["Hotel in Hue City Center"],
+        "time": "7:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Imperial City",
+          "details": [
+            {
+              "location": "Imperial City",
+              "description": "Explore the former seat of the Nguyen emperors with its historic temples, gates, and palaces.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: 10 USD"
+            }
+          ]
+        },
+        {
+          "title": "Tombs of Nguyen Emperors",
+          "details": [
+            {
+              "location": "Tomb of Khai Dinh",
+              "description": "Marvel at the architectural beauty and rich history of the tombs of the Nguyen emperors.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: 5 USD"
+            },
+            {
+              "location": "Tomb of Tu Duc",
+              "description": "A peaceful retreat with beautiful architecture and scenic surroundings.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: 5 USD"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not wheelchair accessible",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "What is the maximum group size during this tour?",
+          "answer": "The maximum group size is 15 travelers."
+        },
+        {
+          "question": "Is lunch included in the tour?",
+          "answer": "Yes, lunch is included at a local restaurant."
+        }
+      ],
+      "rating": [
+        {
+          "title": "John Doe",
+          "rate": 5,
+          "heading": "An unforgettable experience!",
+          "time": 1677118800,
+          "comments": "The Hue tour was amazing. Our guide was fantastic and the sights were truly breathtaking!",
+          "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Adventures in the Golden Triangle of Thailand",
+      "duration": 4,
+      "cost": 250,
+      "location": "Chiang Rai, Thailand",
+      "featured": false,
+      "type": "Adventure - Nature",
+      "thumb": "https://picsum.photos/598/500",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Discover the mysteries of the Golden Triangle, where the borders of Thailand, Laos, and Myanmar meet. Explore the ancient temples, the Mekong River, and the famous opium museum.",
+        "highlight": [
+          "Boat ride on the Mekong River",
+          "Visit the Golden Triangle Museum",
+          "Explore ancient temples and Buddhist shrines"
+        ]
+      },
+      "include": [
+        "Local guide",
+        "Transportation by minibus",
+        "Boat ride on the Mekong River",
+        "Entrance fees to museums and temples"
+      ],
+      "departure": {
+        "point": ["Hotel in Chiang Rai City"],
+        "time": "8:30 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Golden Triangle Viewpoint",
+          "details": [
+            {
+              "location": "Golden Triangle Viewpoint",
+              "description": "Enjoy a panoramic view of the meeting point of Thailand, Laos, and Myanmar.",
+              "duration": "45 minutes",
+              "other": "Admission Ticket: Free"
+            }
+          ]
+        },
+        {
+          "title": "Mekong River Boat Ride",
+          "details": [
+            {
+              "location": "Mekong River",
+              "description": "Take a relaxing boat ride along the famous Mekong River, visiting nearby villages.",
+              "duration": "1 hour",
+              "other": "Boat ride included"
+            }
+          ]
+        },
+        {
+          "title": "Golden Triangle Museum",
+          "details": [
+            {
+              "location": "Golden Triangle Museum",
+              "description": "Learn about the fascinating history of the Golden Triangle and its role in the opium trade.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: 10 USD"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with heart conditions",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "How long is the boat ride on the Mekong River?",
+          "answer": "The boat ride lasts approximately 1 hour."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Jane Smith",
+          "rate": 4,
+          "heading": "Great adventure!",
+          "time": 1677118800,
+          "comments": "A wonderful adventure in the Golden Triangle. Highly recommended for those who love nature and history!",
+          "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Sunset Tour in the Majestic Ba Na Hills",
+      "duration": 2,
+      "cost": 150,
+      "location": "Da Nang, Vietnam",
+      "featured": true,
+      "type": "Nature - Adventure",
+      "thumb": "https://picsum.photos/600/501",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Experience the beauty of Ba Na Hills with its famous Golden Bridge and panoramic views of Da Nang. This half-day tour takes you up to the mountains via cable car and shows you stunning scenery.",
+        "highlight": [
+          "Ride the world’s longest cable car",
+          "Walk along the Golden Bridge with giant hands",
+          "Visit Linh Ung Pagoda and enjoy the sunset"
+        ]
+      },
+      "include": [
+        "Round-trip cable car tickets",
+        "Local guide",
+        "Transport by minibus",
+        "Snacks and drinks"
+      ],
+      "departure": {
+        "point": ["Hotel in Da Nang City"],
+        "time": "2:00 PM"
+      },
+      "itinerary": [
+        {
+          "title": "Golden Bridge",
+          "details": [
+            {
+              "location": "Golden Bridge",
+              "description": "Stroll across the famous Golden Bridge supported by giant hands, offering breathtaking views.",
+              "duration": "30 minutes",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        },
+        {
+          "title": "Linh Ung Pagoda",
+          "details": [
+            {
+              "location": "Linh Ung Pagoda",
+              "description": "Admire the towering statue of the Lady Buddha and the beautiful mountain views.",
+              "duration": "45 minutes",
+              "other": "Admission Ticket: Free"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for pregnant travelers",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "What is the duration of the cable car ride?",
+          "answer": "The cable car ride lasts approximately 20 minutes."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Alice Johnson",
+          "rate": 5,
+          "heading": "Amazing experience!",
+          "time": 1677118800,
+          "comments": "The Golden Bridge was breathtaking, and the sunset view from the pagoda was stunning.",
+          "avatar": "https://randomuser.me/api/portraits/women/1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Trekking the Scenic Mountains of Sapa",
+      "duration": 3,
+      "cost": 180,
+      "location": "Sapa, Lao Cai, Vietnam",
+      "featured": true,
+      "type": "Trekking - Nature",
+      "thumb": "https://picsum.photos/602/500",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Join us for an exciting trekking adventure through the terraced rice fields and ethnic minority villages in Sapa. Explore the unique culture of the H'mong, Tay, and Dzay people.",
+        "highlight": [
+          "Trek through terraced rice fields",
+          "Visit local villages",
+          "Learn about the culture of the ethnic minorities in the region"
+        ]
+      },
+      "include": [
+        "Trekking guide",
+        "Round-trip transportation",
+        "Meals during the trek",
+        "Accommodation in a homestay"
+      ],
+      "departure": {
+        "point": ["Hotel in Sapa Town"],
+        "time": "8:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Cat Cat Village",
+          "details": [
+            {
+              "location": "Cat Cat Village",
+              "description": "Visit the traditional H'mong village and explore its local crafts and way of life.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: Free"
+            }
+          ]
+        },
+        {
+          "title": "Ta Phin Village",
+          "details": [
+            {
+              "location": "Ta Phin Village",
+              "description": "Explore this remote village and interact with the local Red Dao people.",
+              "duration": "2 hours",
+              "other": "Admission Ticket: Free"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not wheelchair accessible",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "Do I need to be physically fit for the trek?",
+          "answer": "Yes, the trek involves walking through hilly terrain, so a reasonable level of fitness is required."
+        }
+      ],
+      "rating": [
+        {
+          "title": "David Lee",
+          "rate": 5,
+          "heading": "Incredible trekking experience!",
+          "time": 1677118800,
+          "comments": "The trek was challenging but rewarding. The landscapes were stunning, and the people were so welcoming!",
+          "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Luxury Cruise Along Ha Long Bay",
+      "duration": 2,
+      "cost": 250,
+      "location": "Ha Long Bay, Vietnam",
+      "featured": false,
+      "type": "Cruise - Relaxation",
+      "thumb": "https://picsum.photos/597/500",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Experience the serene beauty of Ha Long Bay on a luxurious cruise, visiting caves, floating villages, and kayaking in the bay's emerald waters.",
+        "highlight": [
+          "Cruise through Ha Long Bay's famous limestone islands",
+          "Visit Sung Sot Cave and Ti Top Island",
+          "Kayak in the crystal-clear waters"
+        ]
+      },
+      "include": [
+        "Luxury cruise",
+        "Kayaking equipment",
+        "Round-trip transportation",
+        "Meals on board"
+      ],
+      "departure": {
+        "point": ["Hotel in Ha Long City"],
+        "time": "7:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Sung Sot Cave",
+          "details": [
+            {
+              "location": "Sung Sot Cave",
+              "description": "Explore the stunning Sung Sot Cave, one of the largest caves in Ha Long Bay.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: 10 USD"
+            }
+          ]
+        },
+        {
+          "title": "Ti Top Island",
+          "details": [
+            {
+              "location": "Ti Top Island",
+              "description": "Climb to the top for a panoramic view of Ha Long Bay.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: Free"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with back problems",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "Can I swim in Ha Long Bay?",
+          "answer": "Yes, swimming is available during the cruise, but please follow safety guidelines."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Lisa Nguyen",
+          "rate": 4,
+          "heading": "A peaceful retreat",
+          "time": 1677118800,
+          "comments": "The cruise was relaxing, and Ha Long Bay is as beautiful as ever. Highly recommend for anyone looking to escape the city!",
+          "avatar": "https://randomuser.me/api/portraits/women/3.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Cultural Exploration in Hanoi",
+      "duration": 3,
+      "cost": 180,
+      "location": "Hanoi, Vietnam",
+      "featured": true,
+      "type": "Cultural - Historical",
+      "thumb": "https://picsum.photos/596/500",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Take a deep dive into Hanoi’s rich history and culture with visits to museums, temples, and the famous Old Quarter.",
+        "highlight": [
+          "Explore the Temple of Literature",
+          "Visit the Ho Chi Minh Mausoleum",
+          "Walk around the Old Quarter"
+        ]
+      },
+      "include": [
+        "Local guide",
+        "Round-trip transportation",
+        "Entrance fees to museums and temples"
+      ],
+      "departure": {
+        "point": ["Hotel in Hanoi City"],
+        "time": "8:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Temple of Literature",
+          "details": [
+            {
+              "location": "Temple of Literature",
+              "description": "Visit this ancient university and a symbol of Hanoi's cultural heritage.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: 5 USD"
+            }
+          ]
+        },
+        {
+          "title": "Ho Chi Minh Mausoleum",
+          "details": [
+            {
+              "location": "Ho Chi Minh Mausoleum",
+              "description": "Pay your respects to the revered leader, Ho Chi Minh.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: Free"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for pregnant travelers",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "Can I take photos inside the mausoleum?",
+          "answer": "No, photography is not allowed inside the Ho Chi Minh Mausoleum."
+        }
+      ],
+      "rating": [
+        {
+          "title": "John Smith",
+          "rate": 5,
+          "heading": "A fascinating cultural experience",
+          "time": 1677118800,
+          "comments": "Hanoi’s history is rich and vibrant, and this tour was a great way to learn about it.",
+          "avatar": "https://randomuser.me/api/portraits/men/2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Explore the Mystical Temples of Angkor Wat",
+      "duration": 2,
+      "cost": 220,
+      "location": "Siem Reap, Cambodia",
+      "featured": false,
+      "type": "Cultural - Historical",
+      "thumb": "https://picsum.photos/600/510",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Experience the majestic ruins of Angkor Wat and other temples in the Angkor Archaeological Park, one of the world’s largest religious monuments.",
+        "highlight": [
+          "Visit Angkor Wat, the world’s largest religious monument",
+          "Explore the ancient temples of Bayon and Ta Prohm",
+          "Learn about Khmer architecture and history"
+        ]
+      },
+      "include": [
+        "Local guide",
+        "Transport by tuk tuk",
+        "Round-trip transportation",
+        "Entrance fees to temples"
+      ],
+      "departure": {
+        "point": ["Hotel in Siem Reap"],
+        "time": "7:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Angkor Wat",
+          "details": [
+            {
+              "location": "Angkor Wat",
+              "description": "Begin your journey at the world-famous Angkor Wat temple and learn about its historical significance.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: 37 USD"
+            }
+          ]
+        },
+        {
+          "title": "Bayon Temple",
+          "details": [
+            {
+              "location": "Bayon Temple",
+              "description": "Visit the Bayon Temple, known for its stunning stone faces and intricate carvings.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with back problems",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "Is there a dress code for visiting temples?",
+          "answer": "Yes, visitors should dress modestly and cover their shoulders and knees when visiting temples."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Sophia Clark",
+          "rate": 5,
+          "heading": "Incredible historical experience",
+          "time": 1677118800,
+          "comments": "Angkor Wat is truly breathtaking, and the guide provided insightful information about the temples.",
+          "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Cycling Through the Rice Paddies of Ubud",
+      "duration": 1,
+      "cost": 120,
+      "location": "Ubud, Bali, Indonesia",
+      "featured": true,
+      "type": "Nature - Adventure",
+      "thumb": "https://picsum.photos/605/500",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Cycle through the scenic rice paddies of Ubud, Bali, and enjoy the tranquil beauty of rural Bali, with a chance to experience local villages and culture.",
+        "highlight": [
+          "Bike through lush green rice paddies",
+          "Visit traditional Balinese villages",
+          "Learn about local farming techniques"
+        ]
+      },
+      "include": [
+        "Bike rental",
+        "Local guide",
+        "Round-trip transportation",
+        "Snacks and drinks"
+      ],
+      "departure": {
+        "point": ["Hotel in Ubud"],
+        "time": "8:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Tegallalang Rice Terraces",
+          "details": [
+            {
+              "location": "Tegallalang Rice Terraces",
+              "description": "Cycle through the famous Tegallalang rice terraces and marvel at the stunning landscape.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: Free"
+            }
+          ]
+        },
+        {
+          "title": "Local Village Visit",
+          "details": [
+            {
+              "location": "Local Balinese Village",
+              "description": "Stop by a traditional village to interact with locals and learn about their way of life.",
+              "duration": "45 minutes",
+              "other": "Admission Ticket: Free"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with back problems",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "Is the cycling tour suitable for beginners?",
+          "answer": "Yes, the tour is suitable for people of all cycling abilities, with an easy pace."
+        }
+      ],
+      "rating": [
+        {
+          "title": "James Brown",
+          "rate": 4,
+          "heading": "A peaceful escape into nature",
+          "time": 1677118800,
+          "comments": "Riding through the rice paddies was a unique experience. A great way to explore Bali’s countryside.",
+          "avatar": "https://randomuser.me/api/portraits/men/3.jpg"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Hot Air Balloon Ride Over Cappadocia",
+      "duration": 1,
+      "cost": 300,
+      "location": "Cappadocia, Turkey",
+      "featured": true,
+      "type": "Adventure - Nature",
+      "thumb": "https://picsum.photos/601/501",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Take a breathtaking hot air balloon ride over the surreal landscapes of Cappadocia, with its fairy chimneys and ancient rock formations.",
+        "highlight": [
+          "Experience the sunrise from the sky",
+          "Enjoy panoramic views of Cappadocia's unique landscapes",
+          "Take unforgettable photos"
+        ]
+      },
+      "include": [
+        "Hot air balloon ride",
+        "Champagne toast after the flight",
+        "Round-trip transportation",
+        "Pilot guide"
+      ],
+      "departure": {
+        "point": ["Hotel in Cappadocia"],
+        "time": "5:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Hot Air Balloon Ride",
+          "details": [
+            {
+              "location": "Cappadocia Sky",
+              "description": "Take a hot air balloon ride and witness the beautiful landscape of Cappadocia as the sun rises.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for pregnant travelers",
+        "Not suitable for children under 6"
+      ],
+      "faqs": [
+        {
+          "question": "What is the best time to take the hot air balloon ride?",
+          "answer": "The best time is during sunrise when the landscape is bathed in soft light."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Emma Wilson",
+          "rate": 5,
+          "heading": "Unbelievable views!",
+          "time": 1677118800,
+          "comments": "The balloon ride was absolutely magical. Watching the sunrise over Cappadocia is an experience I will never forget.",
+          "avatar": "https://randomuser.me/api/portraits/women/5.jpg"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Scenic Road Trip through the Scottish Highlands",
+      "duration": 3,
+      "cost": 350,
+      "location": "Scottish Highlands, Scotland",
+      "featured": false,
+      "type": "Adventure - Nature",
+      "thumb": "https://picsum.photos/599/499",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Take a road trip through the picturesque Scottish Highlands, explore rugged landscapes, castles, and hidden lochs.",
+        "highlight": [
+          "Visit iconic castles like Eilean Donan",
+          "See Loch Ness and search for the Loch Ness Monster",
+          "Enjoy stunning views of the Scottish countryside"
+        ]
+      },
+      "include": [
+        "Round-trip transportation",
+        "Local guide",
+        "Meals during the trip"
+      ],
+      "departure": {
+        "point": ["Edinburgh City Centre"],
+        "time": "9:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Eilean Donan Castle",
+          "details": [
+            {
+              "location": "Eilean Donan Castle",
+              "description": "Visit this famous castle, located at the junction of three lochs.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: 10 GBP"
+            }
+          ]
+        },
+        {
+          "title": "Loch Ness",
+          "details": [
+            {
+              "location": "Loch Ness",
+              "description": "Take a boat ride on Loch Ness and keep an eye out for Nessie!",
+              "duration": "1.5 hours",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with back problems",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "Can I take a boat ride on Loch Ness?",
+          "answer": "Yes, boat rides are included in the tour and provide a great way to explore the loch."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Lucas Taylor",
+          "rate": 5,
+          "heading": "Spectacular landscapes!",
+          "time": 1677118800,
+          "comments": "The road trip through the Scottish Highlands was one of the best experiences of my life. The scenery was beyond words.",
+          "avatar": "https://randomuser.me/api/portraits/men/4.jpg"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Trekking in the Himalayas of Nepal",
+      "duration": 7,
+      "cost": 750,
+      "location": "Kathmandu, Nepal",
+      "featured": true,
+      "type": "Adventure - Nature",
+      "thumb": "https://picsum.photos/610/501",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Embark on a thrilling trekking adventure through the Himalayan mountains, exploring Nepal's incredible landscapes, villages, and local culture.",
+        "highlight": [
+          "Trek through the heart of the Himalayas",
+          "Visit local Sherpa villages and monasteries",
+          "Enjoy stunning mountain views, including Mount Everest"
+        ]
+      },
+      "include": [
+        "Local guide",
+        "Trekking permits",
+        "Accommodation in local guesthouses",
+        "Meals during the trek"
+      ],
+      "departure": {
+        "point": ["Kathmandu City Centre"],
+        "time": "6:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Kathmandu to Lukla",
+          "details": [
+            {
+              "location": "Kathmandu",
+              "description": "Fly from Kathmandu to Lukla and begin your trek in the foothills of the Himalayas.",
+              "duration": "1 hour",
+              "other": "Flight included"
+            }
+          ]
+        },
+        {
+          "title": "Namche Bazaar",
+          "details": [
+            {
+              "location": "Namche Bazaar",
+              "description": "Trek to Namche Bazaar, the bustling gateway to the Everest region.",
+              "duration": "5 hours",
+              "other": "Admission Ticket: Free"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with heart problems",
+        "Must be in good physical condition"
+      ],
+      "faqs": [
+        {
+          "question": "Is it difficult to trek in the Himalayas?",
+          "answer": "The trek is moderate to challenging, with high altitudes and uneven terrain."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Jessica Wilson",
+          "rate": 5,
+          "heading": "Breathtaking views and adventure",
+          "time": 1677118800,
+          "comments": "The trek through the Himalayas was life-changing. The views of Everest were absolutely stunning!",
+          "avatar": "https://randomuser.me/api/portraits/women/6.jpg"
+        },
+        {
+          "title": "David Johnson",
+          "rate": 5,
+          "heading": "An unforgettable experience",
+          "time": 1677118800,
+          "comments": "Everything was well-organized, and the trek was more beautiful than I ever imagined.",
+          "avatar": "https://randomuser.me/api/portraits/men/7.jpg"
+        },
+        {
+          "title": "Sarah Brown",
+          "rate": 4,
+          "heading": "Great trek but challenging",
+          "time": 1677118800,
+          "comments": "I had an amazing time, but the altitude and terrain made it harder than I expected. Definitely worth it, though.",
+          "avatar": "https://randomuser.me/api/portraits/women/8.jpg"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Safari Adventure in Kruger National Park",
+      "duration": 4,
+      "cost": 500,
+      "location": "Kruger National Park, South Africa",
+      "featured": false,
+      "type": "Nature - Wildlife",
+      "thumb": "https://picsum.photos/605/501",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Explore Kruger National Park on a thrilling safari, where you’ll get up close with Africa’s Big Five: lion, leopard, elephant, buffalo, and rhino.",
+        "highlight": [
+          "Spot the Big Five in their natural habitat",
+          "Stay in luxurious safari lodges",
+          "Enjoy guided safari tours"
+        ]
+      },
+      "include": [
+        "Game drives in open safari vehicles",
+        "Accommodation in luxury safari lodges",
+        "Meals and drinks during the safari"
+      ],
+      "departure": {
+        "point": ["Kruger National Park Entrance"],
+        "time": "6:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Morning Game Drive",
+          "details": [
+            {
+              "location": "Kruger National Park",
+              "description": "Start the day with a thrilling morning game drive to spot animals during their most active time.",
+              "duration": "3 hours",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        },
+        {
+          "title": "Evening Safari",
+          "details": [
+            {
+              "location": "Kruger National Park",
+              "description": "Embark on an evening safari drive to witness the wildlife as they become more active during sunset.",
+              "duration": "3 hours",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for pregnant travelers",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "Do I need a malaria vaccination for this safari?",
+          "answer": "It is recommended, but not mandatory. Please consult your doctor before traveling."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Mark Davis",
+          "rate": 5,
+          "heading": "Incredible safari experience",
+          "time": 1677118800,
+          "comments": "Seeing the Big Five in person was truly amazing. The game drives were unforgettable.",
+          "avatar": "https://randomuser.me/api/portraits/men/8.jpg"
+        },
+        {
+          "title": "Lily Adams",
+          "rate": 5,
+          "heading": "Amazing trip",
+          "time": 1677118800,
+          "comments": "The safari was incredible, and the staff made us feel very welcome. Highly recommend it.",
+          "avatar": "https://randomuser.me/api/portraits/women/9.jpg"
+        },
+        {
+          "title": "James Miller",
+          "rate": 4,
+          "heading": "Great experience but could improve on accommodations",
+          "time": 1677118800,
+          "comments": "The safari was fantastic, but the accommodations were a bit basic for the price.",
+          "avatar": "https://randomuser.me/api/portraits/men/9.jpg"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Cultural Tour of Kyoto’s Temples and Gardens",
+      "duration": 1,
+      "cost": 180,
+      "location": "Kyoto, Japan",
+      "featured": true,
+      "type": "Cultural - Historical",
+      "thumb": "https://picsum.photos/604/501",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Explore the serene temples and meticulously designed gardens of Kyoto, Japan, a city known for its ancient cultural heritage.",
+        "highlight": [
+          "Visit Kinkaku-ji, the Golden Pavilion",
+          "Explore the tranquil Ryoan-ji Zen garden",
+          "Admire the beauty of Kyoto’s traditional Japanese gardens"
+        ]
+      },
+      "include": [
+        "Local guide",
+        "Transport between locations",
+        "Admission fees to temples and gardens"
+      ],
+      "departure": {
+        "point": ["Hotel in Kyoto"],
+        "time": "9:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Kinkaku-ji (Golden Pavilion)",
+          "details": [
+            {
+              "location": "Kinkaku-ji",
+              "description": "Start your tour at Kinkaku-ji, the famous Golden Pavilion, and learn about its history and cultural significance.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: 400 JPY"
+            }
+          ]
+        },
+        {
+          "title": "Ryoan-ji",
+          "details": [
+            {
+              "location": "Ryoan-ji",
+              "description": "Visit the Zen temple of Ryoan-ji, known for its peaceful rock garden and spiritual atmosphere.",
+              "duration": "45 minutes",
+              "other": "Admission Ticket: 500 JPY"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not wheelchair accessible",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "What is the best time to visit Kyoto’s temples?",
+          "answer": "The best times to visit are during the spring cherry blossom season or in autumn for the colorful foliage."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Anna Chen",
+          "rate": 5,
+          "heading": "A peaceful escape",
+          "time": 1677118800,
+          "comments": "Kyoto’s temples and gardens were beautiful and serene. A perfect day to unwind and appreciate nature and culture.",
+          "avatar": "https://randomuser.me/api/portraits/women/10.jpg"
+        },
+        {
+          "title": "John Liu",
+          "rate": 4,
+          "heading": "A serene experience",
+          "time": 1677118800,
+          "comments": "The tour was wonderful, though I wish we had a bit more time at each location. Still, very enjoyable.",
+          "avatar": "https://randomuser.me/api/portraits/men/10.jpg"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Explore the Mystical Temples of Angkor Wat",
+      "duration": 3,
+      "cost": 600,
+      "location": "Siem Reap, Cambodia",
+      "featured": false,
+      "type": "Cultural - Historical",
+      "thumb": "https://picsum.photos/603/500",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Embark on a journey to explore the ancient and mystical Angkor Wat temple complex, the largest religious monument in the world.",
+        "highlight": [
+          "Visit the iconic Angkor Wat temple",
+          "Explore the Bayon Temple with its smiling faces",
+          "Discover hidden temples and ruins throughout the complex"
+        ]
+      },
+      "include": [
+        "Local guide",
+        "Admission tickets to temples",
+        "Transport between temple sites"
+      ],
+      "departure": {
+        "point": ["Hotel in Siem Reap"],
+        "time": "8:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Angkor Wat Temple",
+          "details": [
+            {
+              "location": "Angkor Wat",
+              "description": "Visit the majestic Angkor Wat, a symbol of Cambodia, and learn about its history and significance.",
+              "duration": "2 hours",
+              "other": "Admission Ticket: 37 USD"
+            }
+          ]
+        },
+        {
+          "title": "Bayon Temple",
+          "details": [
+            {
+              "location": "Bayon Temple",
+              "description": "Explore the mysterious Bayon Temple, famous for its towering faces carved into the stone.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: 37 USD"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for pregnant travelers",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "How long should I spend at Angkor Wat?",
+          "answer": "It is recommended to spend at least 2 hours at Angkor Wat to fully appreciate its grandeur."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Sophia Tran",
+          "rate": 5,
+          "heading": "Incredible historical site",
+          "time": 1677118800,
+          "comments": "Angkor Wat is breathtaking. It was awe-inspiring to witness such an ancient and well-preserved temple.",
+          "avatar": "https://randomuser.me/api/portraits/women/11.jpg"
+        },
+        {
+          "title": "Michael White",
+          "rate": 5,
+          "heading": "A must-see destination",
+          "time": 1677118800,
+          "comments": "The tour was fantastic, and our guide made it even better with all the historical context. Highly recommend!",
+          "avatar": "https://randomuser.me/api/portraits/men/11.jpg"
+        },
+        {
+          "title": "Linda Green",
+          "rate": 4,
+          "heading": "Amazing but crowded",
+          "time": 1677118800,
+          "comments": "The temples are beautiful, but it can get crowded at peak times. Still, an experience worth having.",
+          "avatar": "https://randomuser.me/api/portraits/women/12.jpg"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Cruise Along the Mekong River",
+      "duration": 4,
+      "cost": 300,
+      "location": "Mekong Delta, Vietnam",
+      "featured": true,
+      "type": "Cruise - Nature",
+      "thumb": "https://picsum.photos/603/501",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Take a relaxing cruise along the Mekong River, exploring the rural life and floating markets in the heart of the Vietnamese Delta.",
+        "highlight": [
+          "Visit floating markets and traditional villages",
+          "Enjoy fresh fruit and local delicacies",
+          "Relax on a boat cruise through peaceful waters"
+        ]
+      },
+      "include": [
+        "Boat cruise along the Mekong River",
+        "Lunch on board with local specialties",
+        "Visit to floating markets"
+      ],
+      "departure": {
+        "point": ["Hotel in Ho Chi Minh City"],
+        "time": "7:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Mekong River Cruise",
+          "details": [
+            {
+              "location": "Mekong River",
+              "description": "Start the day with a scenic boat cruise along the Mekong River, exploring local life on the water.",
+              "duration": "3 hours",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        },
+        {
+          "title": "Floating Markets Visit",
+          "details": [
+            {
+              "location": "Floating Markets",
+              "description": "Visit the vibrant floating markets, where you can buy fresh produce and unique handmade goods.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with heart conditions",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "Are there vegetarian options on board?",
+          "answer": "Yes, we can accommodate vegetarian dietary requirements upon request."
+        }
+      ],
+      "rating": [
+        {
+          "title": "James Lee",
+          "rate": 5,
+          "heading": "A peaceful escape",
+          "time": 1677118800,
+          "comments": "The cruise was serene and beautiful. The floating markets were a unique experience. Highly recommended for those looking for a relaxing day.",
+          "avatar": "https://randomuser.me/api/portraits/men/12.jpg"
+        },
+        {
+          "title": "Grace Kelly",
+          "rate": 5,
+          "heading": "Wonderful experience",
+          "time": 1677118800,
+          "comments": "I had a fantastic time exploring the Mekong Delta. The staff were amazing and the food was delicious!",
+          "avatar": "https://randomuser.me/api/portraits/women/13.jpg"
+        },
+        {
+          "title": "Oliver Brown",
+          "rate": 4,
+          "heading": "Relaxing but could improve the lunch",
+          "time": 1677118800,
+          "comments": "The cruise was perfect for a relaxing day, but the lunch could have been more diverse. Still, a great experience overall.",
+          "avatar": "https://randomuser.me/api/portraits/men/13.jpg"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Historical Tour of Rome’s Ancient Sites",
+      "duration": 5,
+      "cost": 400,
+      "location": "Rome, Italy",
+      "featured": true,
+      "type": "Cultural - Historical",
+      "thumb": "https://picsum.photos/603/502",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Discover the historical gems of Rome, from the Roman Colosseum to the Roman Forum, and explore the city’s deep-rooted history and stunning architecture.",
+        "highlight": [
+          "Visit the Colosseum and Roman Forum",
+          "Explore the Pantheon and Piazza Navona",
+          "Learn about Ancient Rome’s history and architecture"
+        ]
+      },
+      "include": [
+        "Local guide",
+        "Admission tickets to key historical sites",
+        "Transport between sites"
+      ],
+      "departure": {
+        "point": ["Hotel in Rome"],
+        "time": "9:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Colosseum Visit",
+          "details": [
+            {
+              "location": "Colosseum",
+              "description": "Begin the tour with a visit to the iconic Colosseum, learning about its history and architectural grandeur.",
+              "duration": "2 hours",
+              "other": "Admission Ticket: 18 EUR"
+            }
+          ]
+        },
+        {
+          "title": "Roman Forum and Palatine Hill",
+          "details": [
+            {
+              "location": "Roman Forum",
+              "description": "Explore the ruins of the Roman Forum and Palatine Hill, key sites of ancient Roman civilization.",
+              "duration": "2 hours",
+              "other": "Admission Ticket: 16 EUR"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with walking difficulties",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "How long should I spend at the Colosseum?",
+          "answer": "It is recommended to spend at least 2 hours at the Colosseum to fully appreciate its history and architecture."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Lorenzo Rossi",
+          "rate": 5,
+          "heading": "Incredible history tour",
+          "time": 1677118800,
+          "comments": "The Colosseum was mesmerizing, and the guide did a fantastic job explaining everything. Highly recommend this tour!",
+          "avatar": "https://randomuser.me/api/portraits/men/14.jpg"
+        },
+        {
+          "title": "Emily Clark",
+          "rate": 4,
+          "heading": "Fascinating but crowded",
+          "time": 1677118800,
+          "comments": "The tour was amazing, but it was a bit crowded at times. Still, a must-do in Rome!",
+          "avatar": "https://randomuser.me/api/portraits/women/14.jpg"
+        },
+        {
+          "title": "John Smith",
+          "rate": 5,
+          "heading": "Excellent tour!",
+          "time": 1677118800,
+          "comments": "We had a great time exploring Rome’s ancient sites. The tour guide was very knowledgeable and passionate about history.",
+          "avatar": "https://randomuser.me/api/portraits/men/15.jpg"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Sunset Safari in Kruger National Park",
+      "duration": 2,
+      "cost": 350,
+      "location": "Kruger National Park, South Africa",
+      "featured": true,
+      "type": "Wildlife - Adventure",
+      "thumb": "https://picsum.photos/603/503",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Experience the thrill of a sunset safari in one of South Africa’s most renowned wildlife reserves, Kruger National Park.",
+        "highlight": [
+          "Explore Kruger National Park at sunset",
+          "Spot the Big Five in their natural habitat",
+          "Enjoy a guided tour with an experienced ranger"
+        ]
+      },
+      "include": [
+        "Safari vehicle",
+        "Local guide",
+        "Entrance fees to Kruger National Park",
+        "Refreshments during the safari"
+      ],
+      "departure": {
+        "point": ["Hotel in Hazyview, South Africa"],
+        "time": "4:00 PM"
+      },
+      "itinerary": [
+        {
+          "title": "Kruger National Park Safari",
+          "details": [
+            {
+              "location": "Kruger National Park",
+              "description": "Begin your safari adventure as the sun begins to set, with opportunities to spot wildlife such as lions, elephants, and rhinos.",
+              "duration": "2 hours",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with heart conditions",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "What animals can I expect to see?",
+          "answer": "You may see the Big Five (lion, leopard, rhinoceros, elephant, and buffalo), along with many other species of wildlife."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Sarah Jones",
+          "rate": 5,
+          "heading": "An unforgettable experience",
+          "time": 1677118800,
+          "comments": "This safari was incredible! We saw so many animals, and the sunset views were spectacular.",
+          "avatar": "https://randomuser.me/api/portraits/women/15.jpg"
+        },
+        {
+          "title": "David Martin",
+          "rate": 5,
+          "heading": "A must-do in South Africa",
+          "time": 1677118800,
+          "comments": "Our guide was fantastic and very knowledgeable. The safari was well-organized and the wildlife was amazing!",
+          "avatar": "https://randomuser.me/api/portraits/men/16.jpg"
+        },
+        {
+          "title": "Linda Walker",
+          "rate": 4,
+          "heading": "Great experience but a bit pricey",
+          "time": 1677118800,
+          "comments": "The safari itself was amazing, but I thought it was a bit on the expensive side. Still, it was well worth it.",
+          "avatar": "https://randomuser.me/api/portraits/women/16.jpg"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Hike to Mount Fuji Summit",
+      "duration": 3,
+      "cost": 500,
+      "location": "Mount Fuji, Japan",
+      "featured": true,
+      "type": "Adventure - Nature",
+      "thumb": "https://picsum.photos/592/502",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Join us for an unforgettable hike to the summit of Mount Fuji, one of Japan's most iconic landmarks.",
+        "highlight": [
+          "Summit Mount Fuji",
+          "Enjoy panoramic views of the surrounding area",
+          "Explore different hiking routes suitable for various levels"
+        ]
+      },
+      "include": [
+        "Guided hike to Mount Fuji",
+        "Transport to and from the trailhead",
+        "Lunch on the summit"
+      ],
+      "departure": {
+        "point": ["Tokyo, Japan"],
+        "time": "7:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Climb Mount Fuji",
+          "details": [
+            {
+              "location": "Mount Fuji",
+              "description": "Hike up to the summit of Mount Fuji and enjoy the stunning views along the way. Your guide will share the history and significance of this sacred mountain.",
+              "duration": "5 hours",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for pregnant travelers",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "Is it safe to hike Mount Fuji?",
+          "answer": "Yes, it is safe if you are physically prepared and follow the guide's instructions. Mount Fuji can be challenging, so please ensure you're in good health."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Kenji Takahashi",
+          "rate": 5,
+          "heading": "Incredible experience!",
+          "time": 1677118800,
+          "comments": "Climbing Mount Fuji was tough but absolutely worth it. The views from the top were breathtaking.",
+          "avatar": "https://randomuser.me/api/portraits/men/17.jpg"
+        },
+        {
+          "title": "Lily Adams",
+          "rate": 5,
+          "heading": "Amazing hike",
+          "time": 1677118800,
+          "comments": "The hike was challenging but so rewarding. The sunrise view from the summit was one of the best I’ve ever seen.",
+          "avatar": "https://randomuser.me/api/portraits/women/17.jpg"
+        },
+        {
+          "title": "Jacob Peterson",
+          "rate": 4,
+          "heading": "Great experience but exhausting",
+          "time": 1677118800,
+          "comments": "The hike was really tough, especially near the summit, but the sense of achievement made it all worth it.",
+          "avatar": "https://randomuser.me/api/portraits/men/18.jpg"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Trek through the Amazon Rainforest",
+      "duration": 7,
+      "cost": 900,
+      "location": "Amazon Rainforest, Brazil",
+      "featured": true,
+      "type": "Adventure - Nature",
+      "thumb": "https://picsum.photos/592/503",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Embark on a thrilling trek through the Amazon Rainforest, where you’ll immerse yourself in one of the most biodiverse ecosystems on Earth.",
+        "highlight": [
+          "Explore the heart of the Amazon Rainforest",
+          "Spot exotic wildlife including monkeys, jaguars, and colorful birds",
+          "Learn about the flora and fauna from an expert guide"
+        ]
+      },
+      "include": [
+        "Local guide",
+        "All meals during the trek",
+        "Camping equipment"
+      ],
+      "departure": {
+        "point": ["Manaus, Brazil"],
+        "time": "8:00 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Trek through the Amazon",
+          "details": [
+            {
+              "location": "Amazon Rainforest",
+              "description": "Begin your trek through the Amazon Rainforest with a knowledgeable guide who will share insights into the diverse ecosystem.",
+              "duration": "7 days",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with heart conditions",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "Is it safe to trek in the Amazon?",
+          "answer": "Yes, the trek is safe as long as you follow the guide's instructions and are physically fit for the challenging environment."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Julia Smith",
+          "rate": 5,
+          "heading": "Incredible adventure",
+          "time": 1677118800,
+          "comments": "The trek through the Amazon was one of the best experiences of my life. The wildlife was amazing and the guide was top-notch.",
+          "avatar": "https://randomuser.me/api/portraits/women/18.jpg"
+        },
+        {
+          "title": "Chris Martin",
+          "rate": 5,
+          "heading": "A once-in-a-lifetime trip",
+          "time": 1677118800,
+          "comments": "The Amazon was breathtaking. We saw so many amazing creatures and learned so much about the ecosystem. Highly recommend!",
+          "avatar": "https://randomuser.me/api/portraits/men/19.jpg"
+        },
+        {
+          "title": "Emily White",
+          "rate": 4,
+          "heading": "Challenging but rewarding",
+          "time": 1677118800,
+          "comments": "The trek was tough, but the experience was incredible. The rainforest is magical, and I loved every moment.",
+          "avatar": "https://randomuser.me/api/portraits/women/19.jpg"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Exploring the Ancient Temples of Angkor Wat",
+      "duration": 3,
+      "cost": 400,
+      "location": "Angkor Wat, Cambodia",
+      "featured": true,
+      "type": "Cultural - History",
+      "thumb": "https://picsum.photos/600/500",
+      "image": [
+        "https://picsum.photos/600/500",
+        "https://picsum.photos/500/500",
+        "https://picsum.photos/400/300"
+      ],
+      "overview": {
+        "description": "Discover the ancient wonders of Angkor Wat and other iconic temples in Cambodia, with a knowledgeable guide who will share the fascinating history and stories behind these sacred sites.",
+        "highlight": [
+          "Visit the breathtaking Angkor Wat temple complex",
+          "Explore the Bayon Temple with its famous smiling faces",
+          "Learn about the Khmer Empire and the ancient civilization"
+        ]
+      },
+      "include": [
+        "English-speaking guide",
+        "All temple entrance fees",
+        "Transport between temples",
+        "Lunch during the tour"
+      ],
+      "departure": {
+        "point": ["Siem Reap, Cambodia"],
+        "time": "7:30 AM"
+      },
+      "itinerary": [
+        {
+          "title": "Angkor Wat and Bayon Temple Tour",
+          "details": [
+            {
+              "location": "Angkor Wat",
+              "description": "Start your journey with a visit to Angkor Wat, the largest religious monument in the world, and learn about its historical significance and architectural wonders.",
+              "duration": "2 hours",
+              "other": "Admission Ticket: Included"
+            },
+            {
+              "location": "Bayon Temple",
+              "description": "Next, head to the Bayon Temple, famous for its stone faces of Avalokiteshvara, which are thought to represent the king himself.",
+              "duration": "1 hour",
+              "other": "Admission Ticket: Included"
+            }
+          ]
+        }
+      ],
+      "additional": [
+        "Confirmation will be received at time of booking",
+        "Not recommended for travelers with back problems",
+        "Children must be accompanied by an adult"
+      ],
+      "faqs": [
+        {
+          "question": "How long will we spend at each temple?",
+          "answer": "Each temple visit typically lasts between 1 to 2 hours, depending on the size of the group and the interest level of participants."
+        },
+        {
+          "question": "Is lunch included in the tour?",
+          "answer": "Yes, lunch is included at a local restaurant near the temples."
+        }
+      ],
+      "rating": [
+        {
+          "title": "Alexandra Lee",
+          "rate": 5,
+          "heading": "Amazing historical experience",
+          "time": 1677118800,
+          "comments": "Angkor Wat is simply magnificent! Our guide was very knowledgeable and made the tour very interesting. Highly recommend!",
+          "avatar": "https://randomuser.me/api/portraits/women/20.jpg"
+        },
+        {
+          "title": "John Carter",
+          "rate": 5,
+          "heading": "A must-do in Cambodia",
+          "time": 1677118800,
+          "comments": "Visiting Angkor Wat was a dream come true. The temples are beyond words, and the whole experience was well-organized.",
+          "avatar": "https://randomuser.me/api/portraits/men/20.jpg"
+        },
+        {
+          "title": "Maria Gonzalez",
+          "rate": 4,
+          "heading": "Great tour, but crowded",
+          "time": 1677118800,
+          "comments": "The temples were beautiful and the guide was great, but it was a bit crowded. Still, I enjoyed every moment.",
+          "avatar": "https://randomuser.me/api/portraits/women/21.jpg"
+        },
+        {
+          "title": "Sam Robinson",
+          "rate": 5,
+          "heading": "Incredible historical tour",
+          "time": 1677118800,
+          "comments": "Visiting Angkor Wat and Bayon was like stepping back in time. The history of these places is truly fascinating.",
+          "avatar": "https://randomuser.me/api/portraits/men/21.jpg"
+        }
+      ]
+    }
+  ],
+  "emails": [
+    {
+      "id": "fa2e",
+      "email": "tonggiamdoc@gmail.com"
+    },
+    {
+      "id": "f294",
+      "email": "aaa@gmail.com"
+    },
+    {
+      "id": "1783",
+      "email": "aaa@gmail.com"
+    },
+    {
+      "id": "0b97",
+      "email": "anssahocngu@gmail.com"
+    },
+    {
+      "id": "91a8",
+      "email": "aaa@gmail.com"
+    },
+    {
+      "id": "cc18",
+      "email": "tonggiamdoc@gmail.com"
+    },
+    {
+      "id": "1e93",
+      "email": "giamdoc@gmail.com"
+    },
+    {
+      "id": "8240",
+      "email": "aaa@gmail.com"
+    },
+    {
+      "id": "e7a6",
+      "email": "tonggiamdoc@gmail.com"
+    },
+    {
+      "id": "16dc",
+      "email": "tonggiamdoc@gmail.com"
+    }
+  ]
+}

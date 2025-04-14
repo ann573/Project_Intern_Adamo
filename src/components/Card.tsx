@@ -1,11 +1,21 @@
-
 import like from "@assets/images/like.png";
 import unLike from "@assets/images/no_like.png";
 
-import BlurImage from "@/components/BlurImage";
+import BlurImage from "@/components/ImageWithPlaceholder";
 import { Link } from "react-router-dom";
+import ITour from "../interfaces/ITour";
 
-const Card = ({ data, className }) => {
+const Card = ({
+  data,
+  className = "",
+}: {
+  data: ITour;
+  className?: string;
+}) => {
+  const totalRating =
+    data &&
+    data?.rating?.reduce((acc, cur) => acc + cur.rate, 0) /
+      data?.rating?.length;
   return (
     <>
       <div className={`relative  ${className || ""}`}>
@@ -44,7 +54,7 @@ const Card = ({ data, className }) => {
 
         <div className="bg-orange w-fit text-white px-4 center gap-1 py-[2px] absolute top-6/12">
           <i className="ri-star-fill text-sm"></i>
-          <span className="text-sm">{data.rate}</span>
+          <span className="text-sm">{totalRating}</span>
         </div>
 
         {data.featured ? (

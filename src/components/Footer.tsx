@@ -48,16 +48,16 @@ const Footer = () => {
         <div className="md:col-span-2 col-span-1 pt-10 md:order-3 order-2">
           <ul className="text-sm flex flex-col gap-5">
             <li>
-              <Link>Partner with us</Link>
+              <p>Partner with us</p>
             </li>
             <li>
-              <Link>Terms & Conditions</Link>
+              <p>Terms & Conditions</p>
             </li>
             <li>
-              <Link>Privacy Policy</Link>
+              <p>Privacy Policy</p>
             </li>
             <li>
-              <Link>Guest Policy</Link>
+              <p>Guest Policy</p>
             </li>
           </ul>
         </div>
