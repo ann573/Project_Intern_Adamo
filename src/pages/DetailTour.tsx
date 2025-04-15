@@ -13,11 +13,10 @@ import Card from "@/components/Card";
 const DetailTour = () => {
   const id = useParams().id;
 
-  const [choose, setChoose] = useState(3);
+  const [choose, setChoose] = useState(1);
   const { tour, tours, isLoading } = useAppSelector((state) => state.tours);
   const dispatch = useAppDispatch();
 
-  console.log(tours);
   const heading = ["Descriptions", "Additional Info", "Reviews"];
 
   const totalRating =

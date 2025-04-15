@@ -1,4 +1,3 @@
-import React from "react";
 
 // style
 import "@/style/about.css";
@@ -7,10 +6,10 @@ import "@/style/about.css";
 import Hero from "@/components/Hero";
 
 // assets
-import hero from "@assets/images/sapa.png";
 import com_img from "@assets/images/com_banner.png";
-import hero_3 from "@assets/images/hero_about_3.png";
 import danang from "@assets/images/danang.png";
+import hero_3 from "@assets/images/hero_about_3.png";
+import hero from "@assets/images/sapa.png";
 
 const AboutPage = () => {
   window.scrollTo({

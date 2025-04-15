@@ -6,27 +6,27 @@ import binhthuan from "@assets/images/binhthuan.png";
 const data = [
     {
         id: 1,
-        name: "Sapa, Laocai",
+        title: "Sapa, Laocai",
         experience: "24 experiences",
-        thumbnail: sapa,
+        thumb: sapa,
     },
     {
         id: 2,
-        name: "Hoian, Quangnam",
+        title: "Hoian, Quangnam",
         experience: "12 experiences",
-        thumbnail: hoian,
+        thumb: hoian,
     },
     {
         id: 3,
-        name: "Ba Na Hill, Danang",
+        title: "Ba Na Hill, Danang",
         experience: "28 experiences",
-        thumbnail: danang,
+        thumb: danang,
     },
     {
         id: 4,
-        name: "Muine, Binhthuan",
+        title: "Muine, Binhthuan",
         experience: "11 experiences",
-        thumbnail: binhthuan,
+        thumb: binhthuan,
     },
 ]
 export default data

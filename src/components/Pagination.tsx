@@ -7,17 +7,18 @@ import rightArrow from "@assets/icons/arrow-right.svg";
 type TProps = {
   page: number;
   total: number;
+  limit?: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
 };
-const Pagination = ({ page, setPage, total }: TProps) => {
-  const arr = Array.from({ length: Math.ceil(total / 9) }, (_, i) => i);
+const Pagination = ({ page, limit = 9, setPage, total }: TProps) => {
+  const arr = Array.from({ length: Math.ceil(total / limit) }, (_, i) => i);
   return (
     <>
       <div className="flex sm:flex-row flex-col justify-center items-center gap-10 sm:gap-0 sm:justify-end w-full col-span-3 mt-10 mb-20">
         <p className="text-[#8E8E93] font_apercu flex items-center sm:gap-5 gap-1">
           Showing{" "}
           <span>
-            {page} / {Math.ceil(total / 9)}
+            {page} / {Math.ceil(total / limit)}
           </span>
         </p>
         <div className="flex gap-4 lg:ml-70 sm:ml-30 ml-10 item-center">

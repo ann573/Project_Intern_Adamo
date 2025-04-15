@@ -1,14 +1,33 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
 import Card from "@/components/Card";
-import Recommended from "@components/Recommended"
+import ITour from "@/interfaces/ITour";
+// import TTour from "@/types/TSlider";
+import Recommended from "@components/Recommended";
+import { useRef } from "react";
+import Slider from "react-slick";
+type RecommendedData = {
+  id: number;
+  thumb: string;
+  title: string;
+  experience?: string;
+};
+type TProps =
+  | {
+      isCard: true;
+      data: ITour[];
+      show: number;
+    }
+  | {
+      isCard?: false;
+      data: RecommendedData[];
+      show: number;
+    };
 
-function SliderComponent({ data, show, isCard = true }) {
-  const sliderRef = useRef(null);
+function SliderComponent(props: TProps) {
+  const sliderRef = useRef<Slider>(null);
 
   const settings = {
     infinite: true,
-    slidesToShow: show,
+    slidesToShow: props.show,
     slidesToScroll: 1,
     arrows: false, // Tắt arrow mặc định
     responsive: [
@@ -30,12 +49,37 @@ function SliderComponent({ data, show, isCard = true }) {
 
       {/* === Slider content === */}
       <div className="w-full">
-        <Slider {...settings} ref={sliderRef}>
-          {data.map((item) => (
+        {/* <Slider {...settings} ref={sliderRef}>
+          {props.data.map((item) => (
             <div key={item.id} className="px-3 py-5 md:py-0">
-              {isCard ? <Card data={item} /> : <Recommended data={item} />}
+              {props.isCard ? (
+                <Card data={item} />
+              ) : (
+                <Recommended data={item} />
+              )}
             </div>
           ))}
+        </Slider> */}
+
+        <Slider {...settings} ref={sliderRef}>
+          {props.isCard
+            ? (props.data as ITour[]).map((item) => (
+                <div key={item.id} className="px-3 py-5 md:py-0">
+                  <Card data={item} />
+                </div>
+              ))
+            : (
+                props.data as {
+                  id: number;
+                  thumb: string;
+                  title: string;
+                  experience: string;
+                }[]
+              ).map((item) => (
+                <div key={item.id} className="px-3 py-5 md:py-0">
+                  <Recommended data={item} />
+                </div>
+              ))}
         </Slider>
       </div>
 

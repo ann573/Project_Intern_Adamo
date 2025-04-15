@@ -14,7 +14,6 @@ import videoTravel from "@assets/video/vietnam.mp4";
 const Description = () => {
   const { tour } = useAppSelector((state) => state.tours);
 
-  console.log(tour);
   return (
     <>
       <div>

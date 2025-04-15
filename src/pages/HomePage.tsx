@@ -155,7 +155,13 @@ const HomePage = () => {
         </div>
 
         <div className="max-w-[1200px] mx-auto sm:px-10 xl:px-0">
-          <Slider data={experienceCul} show={3} />
+          <Slider
+            data={experienceCul.map((item) => ({
+              ...item,
+              duration: parseFloat(item.duration),
+            }))}
+            show={3}
+          />
         </div>
       </section>
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-// eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from "framer-motion";
 
 // asset
@@ -10,9 +9,20 @@ import logo_black from "@assets/images/logo_black.png";
 import Cookies from "js-cookie";
 
 import "../style/header.css";
-const Header = ({ scrolling, isFixed }) => {
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
+
+type TProp = { scrolling: boolean; isFixed: boolean };
+const Header = ({ scrolling, isFixed }: TProp) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenMore, setIsOpenMore] = useState(false);
 
   const name = Cookies.get("name");
 
@@ -52,20 +62,27 @@ const Header = ({ scrolling, isFixed }) => {
               {name ? (
                 <>
                   <li
-                    className="bg-orange text-white px-4 py-2 rounded-full cursor-pointer relative select-none"
-                    onClick={() => setIsOpenMore(!isOpenMore)}
+                    className="bg-orange text-white px-4 py-2 rounded-full cursor-pointer relative select-none "
                   >
-                    Hello {name}
-                    {isOpenMore && (
-                      <div className="relative">
-                        <div
-                          className="bg-white absolute text-black top-5 left-0 w-full py-1 px-2 arrow-box rounded-lg hover:opacity-80"
-                          onClick={() => handleLogout()}
-                        >
-                          Đăng xuất
-                        </div>
-                      </div>
-                    )}
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <i className="ri-user-fill"></i>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="w-56 mt-5">
+                        <DropdownMenuLabel>
+                          Hello{" "}
+                          <span className="font-bold text-base">{name}</span>
+                        </DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuGroup>
+                          <DropdownMenuItem onClick={() => handleLogout()} className="cursor-pointer">
+                            <span>
+                              Đăng xuất
+                            </span>
+                          </DropdownMenuItem>
+                        </DropdownMenuGroup>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   </li>
                 </>
               ) : (

@@ -1,7 +1,7 @@
 import React from "react";
 import { emailSchema } from "@schema/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "@/utils/firebase";
@@ -19,8 +19,10 @@ const EmailForgotForm = () => {
   });
 
   const [isLoading, setIsLoading] = React.useState(false);
-
-  const onSubmit = async (data) => {
+  type FormData = {
+    email: string;
+  };
+  const onSubmit = async (data: FormData) => {
     try {
       setIsLoading(true);
       await sendPasswordResetEmail(auth, data.email);
@@ -32,7 +34,7 @@ const EmailForgotForm = () => {
     } catch (error) {
       setIsLoading(false);
       toast.error("Có lỗi xảy ra vui lòng thử lại sau");
-      console.log(error); 
+      console.log(error);
     }
   };
 
@@ -52,7 +54,7 @@ const EmailForgotForm = () => {
 
         <Input
           name="email"
-          register={register}
+          register={register as UseFormRegister<FieldValues>}
           required
           label="Email Address"
           type="email"

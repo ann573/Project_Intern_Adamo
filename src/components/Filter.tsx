@@ -5,6 +5,14 @@ import { Button } from "@components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
+type TProp = {
+  range: number[];
+  setRangeFilter: React.Dispatch<React.SetStateAction<number[]>>;
+  uniqueTypes: string[];
+  setRequest: React.Dispatch<React.SetStateAction<string>>;
+  setIsSearch: React.Dispatch<React.SetStateAction<boolean>>;
+  setPage: React.Dispatch<React.SetStateAction<number>>
+}
 const Filter = ({
   range,
   setRangeFilter,
@@ -12,22 +20,22 @@ const Filter = ({
   setRequest,
   setIsSearch,
   setPage
-}) => {
+} : TProp) => {
   const initialRange = [0, 2000];
   const [duration, setDuration] = useState("");
-  const [selectedTypes, setSelectedTypes] = useState([]);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e : React.FormEvent) => {
     e.preventDefault();
 
     const queryParams = new URLSearchParams();
 
-    queryParams.set("cost_gte", range[0]);
-    queryParams.set("cost_lte", range[1]);
+    queryParams.set("cost_gte", String(range[0]));
+    queryParams.set("cost_lte", String(range[1]));
 
     if (duration) {
-      if (duration === "other") queryParams.set("duration_gte", 7);
-      else queryParams.set("duration_gte", duration - 2);
+      if (duration === "other") queryParams.set("duration_gte", "7");
+      else queryParams.set("duration_gte", String(Number(duration) - 2));
       queryParams.set("duration_lte", duration);
     }
 
@@ -55,7 +63,6 @@ const Filter = ({
     
   };
 
-  console.log(range);
   return (
     <form
       onSubmit={handleSubmit}
@@ -152,7 +159,7 @@ const Filter = ({
         </ul>
       </div>
 
-      <Button type="submit" className="w-full mt-5 mb-3" disable={isDirty}>
+      <Button type="submit" className="w-full mt-5 mb-3" disabled={isDirty}>
         Apply Filter
       </Button>
     </form>

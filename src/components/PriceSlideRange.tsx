@@ -1,12 +1,19 @@
 import * as Slider from "@radix-ui/react-slider";
 
+type TProp = {
+  value: number[];
+  onValueChange: (value: number[]) => void;
+  min?: number;
+  max?: number;
+  step?: number;
+}
 export function PriceRangeSlider({
   value,
   onValueChange,
   min = 0,
   max = 1000,
   step = 10,
-}) {
+}: TProp) {
   return (
     <div className="w-full px-4">
       <Slider.Root
