@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "@/hooks/app";
 
 //asset
@@ -37,6 +37,8 @@ const ListTour = () => {
   );
   const dispatch = useAppDispatch();
 
+  const nav = useNavigate();
+  const { search } = useLocation();
   useEffect(() => {
     const hasVisited = sessionStorage.getItem(`visited-${pathname}`);
 
@@ -51,6 +53,9 @@ const ListTour = () => {
   }, [page, pathname, request]);
 
   useEffect(() => {
+    setRequest(search.slice(1, search.length));
+  }, [search, setRequest]);
+  useEffect(() => {
     const fetchTour = async () => {
       try {
         dispatch(getTours({ page, request }));
@@ -62,16 +67,17 @@ const ListTour = () => {
           setClick(false);
         }
       } catch (error) {
-        return toast.error("Failed to fetch tours:", {
+        toast.error("Failed to fetch tours:", {
           duration: 3000,
           description: (error as Error).message,
           action: {
             label: "Undo",
             onClick: () => {
-              return
+              return;
             },
           },
         });
+        return;
       }
     };
 
@@ -110,7 +116,7 @@ const ListTour = () => {
             Home
           </Link>
           <span className="text-[#C4C4C4] text-lg">•</span>
-          <Link to={"/"} className="hover:underline">
+          <Link to={"/tours"} className="hover:underline">
             tours
           </Link>
         </p>
@@ -124,7 +130,7 @@ const ListTour = () => {
           </h2>
           <Button
             variant={"ghost"}
-            className={`transition-all ${
+            className={`transition-all cursor-pointer ${
               click ? "w-25 justify-between text-black bg-white" : "w-fit"
             }`}
             onClick={() => setClick((prev) => !prev)}
@@ -162,7 +168,10 @@ const ListTour = () => {
             </p>
             <span
               className=" text-center text-sub-color-primary underline hover:text-[#3e3e3e] cursor-pointer mb-20"
-              onClick={() => setIsSearch(false)}
+              onClick={() => {
+                setIsSearch(false);
+                nav("/tours");
+              }}
             >
               Quay lại mặc định
             </span>

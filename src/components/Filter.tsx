@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { PriceRangeSlider } from "@components/PriceSlideRange";
 import { Checkbox } from "@components/ui/checkbox";
 import { Button } from "@components/ui/button";
@@ -11,21 +12,23 @@ type TProp = {
   uniqueTypes: string[];
   setRequest: React.Dispatch<React.SetStateAction<string>>;
   setIsSearch: React.Dispatch<React.SetStateAction<boolean>>;
-  setPage: React.Dispatch<React.SetStateAction<number>>
-}
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+};
 const Filter = ({
   range,
   setRangeFilter,
   uniqueTypes,
   setRequest,
   setIsSearch,
-  setPage
-} : TProp) => {
+  setPage,
+}: TProp) => {
+  const nav = useNavigate();
+  const { pathname, search } = useLocation();
   const initialRange = [0, 2000];
   const [duration, setDuration] = useState("");
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
-  const handleSubmit = async (e : React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const queryParams = new URLSearchParams();
@@ -44,12 +47,14 @@ const Filter = ({
         queryParams.append("type", type);
       });
     }
-
     setRequest(queryParams.toString());
     setIsSearch(true);
     setPage(1);
-  };
 
+    const newUrl = `${pathname}?${queryParams.toString()}`;
+    nav(newUrl, { replace: true });
+  };
+  // cost_gte=0&cost_lte=1150&duration_gte=7&duration_lte=other&type=Cruise+-+Nature
   const isDirty =
     duration !== "" ||
     selectedTypes.length > 0 ||
@@ -60,9 +65,58 @@ const Filter = ({
     setDuration("");
     setSelectedTypes([]);
     setRangeFilter(initialRange);
-    
   };
 
+  useEffect(() => {
+    if (search) {
+      setRequest(search.slice(1, search.length));
+      const filters = search.split("&");
+      const queryObject: Record<string, string | string[]> = {};
+
+      for (const item of filters) {
+        const [key, rawValue] = item.split("=");
+        const value = decodeURIComponent(rawValue);
+
+        if (queryObject[key]) {
+          // Nếu key đã tồn tại → chuyển thành mảng (nếu chưa)
+          if (Array.isArray(queryObject[key])) {
+            (queryObject[key] as string[]).push(value);
+          } else {
+            queryObject[key] = [queryObject[key] as string, value];
+          }
+        } else {
+          queryObject[key] = value;
+        }
+      }
+
+      setRangeFilter((prev) => {
+        prev[0] = Number(queryObject["?cost_gte"]);
+        prev[1] = Number(queryObject["cost_lte"]);
+
+        return prev;
+      });
+
+      setDuration(
+        Array.isArray(queryObject["duration_lte"])
+          ? queryObject["duration_lte"][0]
+          : queryObject["duration_lte"] || ""
+      );
+      const normalizeType = (type: string) =>
+        decodeURIComponent(type)
+          .replace(/\+-\+/g, " - ")
+          .replace(/\+-/g, " - ")
+          .replace(/-\+/g, " - ");
+
+      const rawTypes = queryObject["type"];
+
+      if (Array.isArray(rawTypes)) {
+        const parsedTypes = rawTypes.map((t) => normalizeType(t));
+        setSelectedTypes(parsedTypes);
+      } else if (typeof rawTypes === "string") {
+        setSelectedTypes([normalizeType(rawTypes)]);
+      }
+    }
+  }, [search, setRequest, setRangeFilter]);
   return (
     <form
       onSubmit={handleSubmit}
@@ -138,28 +192,35 @@ const Filter = ({
           Type
         </h3>
         <ul className="flex flex-col gap-5">
-          {uniqueTypes.map((item, index) => (
-            <li className="flex gap-3" key={index}>
-              <Checkbox
-                id={item}
-                name="type"
-                value={item}
-                checked={selectedTypes.includes(item)}
-                onCheckedChange={(checked) => {
-                  setSelectedTypes((prev) =>
-                    checked ? [...prev, item] : prev.filter((v) => v !== item)
-                  );
-                }}
-              />
-              <label htmlFor={item} className="font-medium cursor-pointer">
-                {item}
-              </label>
-            </li>
-          ))}
+          {uniqueTypes.map((item, index) => {
+            console.log(item);
+            return (
+              <li className="flex gap-3" key={index}>
+                <Checkbox
+                  id={item}
+                  name="type"
+                  value={item}
+                  checked={selectedTypes.includes(item)}
+                  onCheckedChange={(checked) => {
+                    setSelectedTypes((prev) =>
+                      checked ? [...prev, item] : prev.filter((v) => v !== item)
+                    );
+                  }}
+                />
+                <label htmlFor={item} className="font-medium cursor-pointer">
+                  {item}
+                </label>
+              </li>
+            );
+          })}
         </ul>
       </div>
 
-      <Button type="submit" className="w-full mt-5 mb-3 cursor-pointer" disabled={!isDirty}>
+      <Button
+        type="submit"
+        className="w-full mt-5 mb-3 cursor-pointer"
+        disabled={!isDirty}
+      >
         Apply Filter
       </Button>
     </form>

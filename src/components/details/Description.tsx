@@ -97,14 +97,16 @@ const Description = () => {
                           {detail.description}
                         </p>
 
-                        <div>
-                          <p className="font-bold mb-1">
-                            Duration:{" "}
-                            <span className="font-light">
-                              {detail.duration}
-                            </span>
-                          </p>
-                        </div>
+                        {detail.duration && (
+                          <div>
+                            <p className="font-bold mb-1">
+                              Duration:{" "}
+                              <span className="font-light">
+                                {detail.duration}
+                              </span>
+                            </p>
+                          </div>
+                        )}
 
                         <p>{detail.other}</p>
                       </div>
@@ -130,7 +132,7 @@ const Description = () => {
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
 
-      <h3 className="font-bold my-5 text-xl">
+      <h3 className="font-bold my-5 text-xl mt-10">
         360° Panoramic Images and Videos
       </h3>
 

@@ -21,7 +21,7 @@ const Pagination = ({ page, limit = 9, setPage, total }: TProps) => {
             {page} / {Math.ceil(total / limit)}
           </span>
         </p>
-        <div className="flex gap-4 lg:ml-70 sm:ml-30 ml-10 item-center">
+        <div className="flex gap-4 lg:ml-70 sm:ml-30 item-center">
           <div
             className="sm:size-9 size-7 bg-[#E8E9EA] p-2 center cursor-pointer"
             onClick={() =>

@@ -21,8 +21,10 @@ const DetailTour = () => {
 
   const totalRating =
     tour &&
-    (tour?.rating?.reduce((acc, cur) => acc + cur.rate, 0) /
-    tour?.rating?.length).toFixed(2);
+    (
+      tour?.rating?.reduce((acc, cur) => acc + cur.rate, 0) /
+      tour?.rating?.length
+    ).toFixed(2);
 
   useEffect(() => {
     if (!id) return;
@@ -33,12 +35,17 @@ const DetailTour = () => {
       );
   }, [dispatch, id, tour?.type]);
 
+  useEffect(() => {
+    window.scroll({ top: 0, behavior: "smooth" });
+  }, []);
+  
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
+
   return (
     <section className="max-w-[1200px] mx-auto xl:px-0 px-5 mb-20">
-      <div className="my-10 text-content xl:px-0 px-10">
+      <div className="my-10 text-content xl:px-0 md:px-10">
         <p className="flex justify-start gap-5">
           <Link to={"/"} className="hover:underline">
             Home
@@ -52,7 +59,9 @@ const DetailTour = () => {
         </p>
       </div>
 
-      <h1 className="text-4xl font-semibold w-2/3">{tour?.title}</h1>
+      <h1 className="md:text-4xl text-3xl font-semibold md:w-2/3">
+        {tour?.title}
+      </h1>
 
       {/* ====================================== */}
       <p className="flex gap-4 items-center text-sub-color-primary my-5">
@@ -67,12 +76,14 @@ const DetailTour = () => {
           {totalRating || 0}{" "}
         </p>
 
-        <p>{tour?.rating?.length || 0} reviews ({tour?.rating.length})</p>
+        <p>
+          {tour?.rating?.length || 0} reviews ({tour?.rating.length})
+        </p>
       </div>
 
       {/* ========================thumbnail========================= */}
-      <div className="grid grid-cols-3 gap-15">
-        <div className="col-span-2">
+      <div className="grid lg:grid-cols-3 grid-cols-2 xl:gap-15 gap-5">
+        <div className="col-span-2 order-2 lg:order-1">
           <ImageSlider />
 
           <section>
@@ -80,7 +91,7 @@ const DetailTour = () => {
               {heading.map((item, index) => (
                 <h2
                   key={index}
-                  className={`text-xl font-semibold py-5 cursor-pointer ${
+                  className={`md:text-xl font-semibold py-5 cursor-pointer ${
                     choose === index + 1 ? "text-orange" : "text-[#888888]"
                   }`}
                   onClick={() => setChoose(index + 1)}
@@ -96,15 +107,17 @@ const DetailTour = () => {
           </section>
 
           <section className="w-full">
-            <h3 className="font-bold my-5 text-2xl text-heading">Related tours</h3>
-            <div className="grid grid-cols-2 3xl:xl:grid-cols-3 gap-5">
+            <h3 className="font-bold my-5 text-2xl text-heading">
+              Related tours
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 3xl:xl:grid-cols-3 md:gap-5 gap-y-10 ">
               {tours &&
                 tours?.map((item) => <Card data={item} key={item.id} />)}
             </div>
           </section>
         </div>
 
-        <div>
+        <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
           <form className="bg-[#F4F4F4] sticky top-5">
             <h2 className="py-7 px-5 font-medium text-xl">
               <span className="text-sm font-light">from</span> $
