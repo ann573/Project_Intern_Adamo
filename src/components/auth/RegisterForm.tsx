@@ -27,7 +27,13 @@ const RegisterForm = () => {
     resolver: zodResolver(registerSchema),
   });
 
-  const onSubmit = async (data) => {
+  type FormData = {
+    email: string;
+    password: string;
+    f_name: string;
+    l_name: string;
+  }
+  const onSubmit = async (data : FormData) => {
     try {
       setIsLoading(true);
 
@@ -53,9 +59,9 @@ const RegisterForm = () => {
         duration: 3000,
         action: {
           label: "Undo",
+          onClick: () => {},
         },
       });
-      console.dir(error.code.split("/")[1].split("-").join(" "));
       console.error("Lỗi đăng ký:", error);
     }
   };
@@ -112,7 +118,7 @@ const RegisterForm = () => {
             className="w-full bg-orange text-white py-4 mt-4 font-semibold cursor-pointer transition-colors hover:bg-orange/80"
             disabled={isLoading}
           >
-            {isLoading ? <ClipLoader color="#ffffff" height={1} /> : "Sign Up"}
+            {isLoading ? <ClipLoader color="#ffffff" size={1} /> : "Sign Up"}
           </button>
           <button
             type="button"

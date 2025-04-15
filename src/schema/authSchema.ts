@@ -39,5 +39,8 @@ export const resetPasswordSchema = z
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Mật khẩu xác nhận không khớp",
-    path: ["confirmPassword"], 
+    path: ["confirmPassword"],
   });
+
+export type LoginFormValues = z.infer<typeof loginSchema>;
+export type ResetPasswordFormValues = z.infer<typeof resetPasswordSchema>;

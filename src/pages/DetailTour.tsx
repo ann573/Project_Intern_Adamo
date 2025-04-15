@@ -21,8 +21,8 @@ const DetailTour = () => {
 
   const totalRating =
     tour &&
-    tour?.rating?.reduce((acc, cur) => acc + cur.rate, 0) /
-      tour?.rating?.length;
+    (tour?.rating?.reduce((acc, cur) => acc + cur.rate, 0) /
+    tour?.rating?.length).toFixed(2);
 
   useEffect(() => {
     if (!id) return;
@@ -64,8 +64,7 @@ const DetailTour = () => {
       <div className="flex gap-5 text-sub-color-primary mb-10">
         <p className="bg-orange text-white w-fit center py-1 px-3 gap-3 text-sm">
           <i className="ri-star-fill"></i>
-          {totalRating?.toFixed(1) || 0}{" "}
-          {/* Nếu totalRating là null hoặc undefined, thì hiển thị 0 */}
+          {totalRating || 0}{" "}
         </p>
 
         <p>{tour?.rating?.length || 0} reviews ({tour?.rating.length})</p>

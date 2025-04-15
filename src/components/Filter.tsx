@@ -159,7 +159,7 @@ const Filter = ({
         </ul>
       </div>
 
-      <Button type="submit" className="w-full mt-5 mb-3" disabled={isDirty}>
+      <Button type="submit" className="w-full mt-5 mb-3 cursor-pointer" disabled={!isDirty}>
         Apply Filter
       </Button>
     </form>

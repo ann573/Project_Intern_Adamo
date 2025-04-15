@@ -1,17 +1,16 @@
+import { getFilterTour } from "@features/tour/tourAction";
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getFilterTour } from "@features/tour/tourAction";
 
-import { format } from "date-fns";
-import { Calendar as CalendarIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import { format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
 
 import {
   Select,
@@ -22,16 +21,25 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useAppDispatch, useAppSelector } from "@/hooks/app";
 import { Button } from "@components/ui/button";
 import { Controller, useForm } from "react-hook-form";
+import { SelectSingleEventHandler } from "react-day-picker";
 
-const FormSearchBanner = ({ date, setDate }) => {
+type Props = {
+  date: Date | undefined;
+  setDate: React.Dispatch<React.SetStateAction<Date | undefined>>;
+};
+
+const FormSearchBanner = ({ date, setDate }: Props) => {
   const isDefault = useLocation().pathname === "/";
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      location: "Sapa, Laocai", 
+      location: "Sapa, Laocai",
+      type: "",
+      tour: "",
     },
   });
 
@@ -39,15 +47,23 @@ const FormSearchBanner = ({ date, setDate }) => {
     dispatch(getFilterTour());
   }, [dispatch]);
 
-  const { type } = useSelector((state) => state.tours);
+  const { type } = useAppSelector((state) => state.tours);
 
   const button = ["Tours", "Hotels"];
 
   const [choose, setChoose] = React.useState("Tours");
 
-  function onsubmitForm(data) {
+  function onsubmitForm(data: {
+    location: string;
+    type: string;
+    tour: string;
+  }) {
     console.log(data);
   }
+
+  const handleSelect: SelectSingleEventHandler = (day) => {
+    if (day) setDate(day);
+  };
   return (
     <>
       <div className="max-w-[400px] lg:w-[400px] transition-all">
@@ -95,7 +111,7 @@ const FormSearchBanner = ({ date, setDate }) => {
                   type="text"
                   id="location"
                   className="bg-white focus:outline-none w-full px-10 py-4 text-sm"
-                  {...field} 
+                  {...field}
                 />
               </div>
             )}
@@ -123,7 +139,7 @@ const FormSearchBanner = ({ date, setDate }) => {
               <Calendar
                 mode="single"
                 selected={date}
-                onSelect={setDate}
+                onSelect={handleSelect}
                 disabled={{ before: new Date() }}
                 initialFocus
               />

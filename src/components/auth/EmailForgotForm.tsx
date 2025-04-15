@@ -1,7 +1,7 @@
 import React from "react";
 import { emailSchema } from "@schema/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "@/utils/firebase";
@@ -54,7 +54,7 @@ const EmailForgotForm = () => {
 
         <Input
           name="email"
-          register={register as UseFormRegister<FieldValues>}
+          register={register}
           required
           label="Email Address"
           type="email"

@@ -1,16 +1,14 @@
 import React from "react";
-import { UseFormRegister, FieldErrors, FieldValues, RegisterOptions } from "react-hook-form";
-
-type FormValues = {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-};
+import {
+  UseFormRegister,
+  FieldErrors,
+  FieldValues,
+  Path,
+} from "react-hook-form";
 
 type TInputProps<T extends FieldValues> = {
   label: string;
-  name: keyof T;
+  name: Path<T>;
   register: UseFormRegister<T>;
   errors: FieldErrors<T>;
   type?: string;
@@ -25,7 +23,7 @@ const Input = <T extends FieldValues>({
   required = false,
   errors,
   ...rest
-}: TInputProps<T>)=> {
+}: TInputProps<T>) => {
   const [isFocused, setIsFocused] = React.useState(false);
   const [hasValue, setHasValue] = React.useState(false);
   const [isShowPassword, setIsShowPassword] = React.useState(false);
@@ -73,7 +71,7 @@ const Input = <T extends FieldValues>({
           ></i>
         )}
       </div>
-      {errors[name] && (
+      {errors[name] && typeof errors[name]?.message === "string" && (
         <p className="text-red-500 md:text-sm text-xs mt-1">
           {errors[name]?.message}
         </p>

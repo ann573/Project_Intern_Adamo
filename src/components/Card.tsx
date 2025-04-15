@@ -14,8 +14,8 @@ const Card = ({
 }) => {
   const totalRating =
     data &&
-    data?.rating?.reduce((acc, cur) => acc + cur.rate, 0) /
-      data?.rating?.length;
+    (data?.rating?.reduce((acc, cur) => acc + cur.rate, 0) /
+    data?.rating?.length).toFixed(2);
   return (
     <>
       <div className={`relative  ${className || ""}`}>

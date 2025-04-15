@@ -20,7 +20,7 @@ import CardSkeleton from "@/components/CardSkeleton";
 import { getFilterTour, getTours } from "@/features/tour/tourAction";
 
 const ListTour = () => {
-  const [date, setDate] = useState();
+  const [date, setDate] = useState<Date | undefined>();
   const [page, setPage] = useState(1);
 
   // const [uniqueTypes, setUniqueTypes] = useState([]);

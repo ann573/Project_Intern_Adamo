@@ -26,7 +26,7 @@ import { instance } from "@/service";
 import { toast } from "sonner";
 
 const HomePage = () => {
-  const [date, setDate] = React.useState();
+  const [date, setDate] = React.useState<Date | undefined>(undefined);
   const {
     register,
     handleSubmit,
