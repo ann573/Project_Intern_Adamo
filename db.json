@@ -1,7 +1,7 @@
 {
   "tours": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Discover interesting things in the romantic coastal city of Vungtau",
       "duration": 2,
       "cost": 146,
@@ -138,7 +138,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Explore the Wonders of the Ancient City of Hue",
       "duration": 3,
       "cost": 199,
@@ -166,7 +166,9 @@
         "Boat ride along the Perfume River"
       ],
       "departure": {
-        "point": ["Hotel in Hue City Center"],
+        "point": [
+          "Hotel in Hue City Center"
+        ],
         "time": "7:00 AM"
       },
       "itinerary": [
@@ -226,7 +228,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Adventures in the Golden Triangle of Thailand",
       "duration": 4,
       "cost": 250,
@@ -254,7 +256,9 @@
         "Entrance fees to museums and temples"
       ],
       "departure": {
-        "point": ["Hotel in Chiang Rai City"],
+        "point": [
+          "Hotel in Chiang Rai City"
+        ],
         "time": "8:30 AM"
       },
       "itinerary": [
@@ -315,7 +319,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Sunset Tour in the Majestic Ba Na Hills",
       "duration": 2,
       "cost": 150,
@@ -343,7 +347,9 @@
         "Snacks and drinks"
       ],
       "departure": {
-        "point": ["Hotel in Da Nang City"],
+        "point": [
+          "Hotel in Da Nang City"
+        ],
         "time": "2:00 PM"
       },
       "itinerary": [
@@ -393,7 +399,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Trekking the Scenic Mountains of Sapa",
       "duration": 3,
       "cost": 180,
@@ -421,7 +427,9 @@
         "Accommodation in a homestay"
       ],
       "departure": {
-        "point": ["Hotel in Sapa Town"],
+        "point": [
+          "Hotel in Sapa Town"
+        ],
         "time": "8:00 AM"
       },
       "itinerary": [
@@ -471,7 +479,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Luxury Cruise Along Ha Long Bay",
       "duration": 2,
       "cost": 250,
@@ -499,7 +507,9 @@
         "Meals on board"
       ],
       "departure": {
-        "point": ["Hotel in Ha Long City"],
+        "point": [
+          "Hotel in Ha Long City"
+        ],
         "time": "7:00 AM"
       },
       "itinerary": [
@@ -539,6 +549,14 @@
       ],
       "rating": [
         {
+          "title": "Nguyễn An",
+          "rate": 5,
+          "heading": "The best experience ever!",
+          "time": 1744875658,
+          "avatar": "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg",
+          "comments": "This tour is amazing"
+        },
+        {
           "title": "Lisa Nguyen",
           "rate": 4,
           "heading": "A peaceful retreat",
@@ -549,7 +567,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Cultural Exploration in Hanoi",
       "duration": 3,
       "cost": 180,
@@ -576,7 +594,9 @@
         "Entrance fees to museums and temples"
       ],
       "departure": {
-        "point": ["Hotel in Hanoi City"],
+        "point": [
+          "Hotel in Hanoi City"
+        ],
         "time": "8:00 AM"
       },
       "itinerary": [
@@ -626,7 +646,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Explore the Mystical Temples of Angkor Wat",
       "duration": 2,
       "cost": 220,
@@ -654,7 +674,9 @@
         "Entrance fees to temples"
       ],
       "departure": {
-        "point": ["Hotel in Siem Reap"],
+        "point": [
+          "Hotel in Siem Reap"
+        ],
         "time": "7:00 AM"
       },
       "itinerary": [
@@ -704,7 +726,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Cycling Through the Rice Paddies of Ubud",
       "duration": 1,
       "cost": 120,
@@ -732,7 +754,9 @@
         "Snacks and drinks"
       ],
       "departure": {
-        "point": ["Hotel in Ubud"],
+        "point": [
+          "Hotel in Ubud"
+        ],
         "time": "8:00 AM"
       },
       "itinerary": [
@@ -782,7 +806,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Hot Air Balloon Ride Over Cappadocia",
       "duration": 1,
       "cost": 300,
@@ -810,7 +834,9 @@
         "Pilot guide"
       ],
       "departure": {
-        "point": ["Hotel in Cappadocia"],
+        "point": [
+          "Hotel in Cappadocia"
+        ],
         "time": "5:00 AM"
       },
       "itinerary": [
@@ -849,7 +875,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Scenic Road Trip through the Scottish Highlands",
       "duration": 3,
       "cost": 350,
@@ -876,7 +902,9 @@
         "Meals during the trip"
       ],
       "departure": {
-        "point": ["Edinburgh City Centre"],
+        "point": [
+          "Edinburgh City Centre"
+        ],
         "time": "9:00 AM"
       },
       "itinerary": [
@@ -926,7 +954,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Trekking in the Himalayas of Nepal",
       "duration": 7,
       "cost": 750,
@@ -954,7 +982,9 @@
         "Meals during the trek"
       ],
       "departure": {
-        "point": ["Kathmandu City Centre"],
+        "point": [
+          "Kathmandu City Centre"
+        ],
         "time": "6:00 AM"
       },
       "itinerary": [
@@ -1020,7 +1050,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "Safari Adventure in Kruger National Park",
       "duration": 4,
       "cost": 500,
@@ -1047,7 +1077,9 @@
         "Meals and drinks during the safari"
       ],
       "departure": {
-        "point": ["Kruger National Park Entrance"],
+        "point": [
+          "Kruger National Park Entrance"
+        ],
         "time": "6:00 AM"
       },
       "itinerary": [
@@ -1113,7 +1145,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "Cultural Tour of Kyoto’s Temples and Gardens",
       "duration": 1,
       "cost": 180,
@@ -1140,7 +1172,9 @@
         "Admission fees to temples and gardens"
       ],
       "departure": {
-        "point": ["Hotel in Kyoto"],
+        "point": [
+          "Hotel in Kyoto"
+        ],
         "time": "9:00 AM"
       },
       "itinerary": [
@@ -1198,7 +1232,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "Explore the Mystical Temples of Angkor Wat",
       "duration": 3,
       "cost": 600,
@@ -1225,7 +1259,9 @@
         "Transport between temple sites"
       ],
       "departure": {
-        "point": ["Hotel in Siem Reap"],
+        "point": [
+          "Hotel in Siem Reap"
+        ],
         "time": "8:00 AM"
       },
       "itinerary": [
@@ -1291,7 +1327,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "Cruise Along the Mekong River",
       "duration": 4,
       "cost": 300,
@@ -1318,7 +1354,9 @@
         "Visit to floating markets"
       ],
       "departure": {
-        "point": ["Hotel in Ho Chi Minh City"],
+        "point": [
+          "Hotel in Ho Chi Minh City"
+        ],
         "time": "7:00 AM"
       },
       "itinerary": [
@@ -1384,7 +1422,7 @@
       ]
     },
     {
-      "id": 17,
+      "id": "17",
       "title": "Historical Tour of Rome’s Ancient Sites",
       "duration": 5,
       "cost": 400,
@@ -1411,7 +1449,9 @@
         "Transport between sites"
       ],
       "departure": {
-        "point": ["Hotel in Rome"],
+        "point": [
+          "Hotel in Rome"
+        ],
         "time": "9:00 AM"
       },
       "itinerary": [
@@ -1477,7 +1517,7 @@
       ]
     },
     {
-      "id": 18,
+      "id": "18",
       "title": "Sunset Safari in Kruger National Park",
       "duration": 2,
       "cost": 350,
@@ -1505,7 +1545,9 @@
         "Refreshments during the safari"
       ],
       "departure": {
-        "point": ["Hotel in Hazyview, South Africa"],
+        "point": [
+          "Hotel in Hazyview, South Africa"
+        ],
         "time": "4:00 PM"
       },
       "itinerary": [
@@ -1560,7 +1602,7 @@
       ]
     },
     {
-      "id": 19,
+      "id": "19",
       "title": "Hike to Mount Fuji Summit",
       "duration": 3,
       "cost": 500,
@@ -1587,7 +1629,9 @@
         "Lunch on the summit"
       ],
       "departure": {
-        "point": ["Tokyo, Japan"],
+        "point": [
+          "Tokyo, Japan"
+        ],
         "time": "7:00 AM"
       },
       "itinerary": [
@@ -1642,7 +1686,7 @@
       ]
     },
     {
-      "id": 20,
+      "id": "20",
       "title": "Trek through the Amazon Rainforest",
       "duration": 7,
       "cost": 900,
@@ -1669,7 +1713,9 @@
         "Camping equipment"
       ],
       "departure": {
-        "point": ["Manaus, Brazil"],
+        "point": [
+          "Manaus, Brazil"
+        ],
         "time": "8:00 AM"
       },
       "itinerary": [
@@ -1724,7 +1770,7 @@
       ]
     },
     {
-      "id": 21,
+      "id": "21",
       "title": "Exploring the Ancient Temples of Angkor Wat",
       "duration": 3,
       "cost": 400,
@@ -1752,7 +1798,9 @@
         "Lunch during the tour"
       ],
       "departure": {
-        "point": ["Siem Reap, Cambodia"],
+        "point": [
+          "Siem Reap, Cambodia"
+        ],
         "time": "7:30 AM"
       },
       "itinerary": [
@@ -1865,6 +1913,1352 @@
     {
       "id": "16dc",
       "email": "tonggiamdoc@gmail.com"
+    }
+  ],
+  "hotels": [
+    {
+      "id": "1",
+      "title": "Chic Urban Living in The heart of Ho Chi Minh City",
+      "location": "Phu Nhuan, Ho Chi Minh",
+      "score": 9,
+      "price": 120,
+      "thumbnail": "https://res.cloudinary.com/dyjvnhq5s/image/upload/v1744274617/Hotels/r2m85wphhzqxhlqu8lvm.png",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-1.jpg",
+        "https://swiperjs.com/demos/images/nature-2.jpg",
+        "https://swiperjs.com/demos/images/nature-3.jpg",
+        "https://swiperjs.com/demos/images/nature-4.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "Opposite Durban’s famous beachfront, Blue Waters Hotel is within walking distance of the Suncoast Casino and the iconic Moses Mabhida Stadium. Both uShaka Marine World and Greyville Racecourse are within 2.5 mi from the property.@The spacious rooms and suites feature LCD TVs along with coffee-and-tea-making facilities. Each is equipped with air conditioning and a work desk. There is also plenty of luggage storage space. Most rooms come with furnished balconies and offer a view of the Indian Ocean.@Guests at Blue Waters can enjoy afternoon tea and cake in the Florida Lounge overlooking the ocean. The Versailles Restaurant provides buffet and á la carte service for lunch and dinner.@Leisure facilities at the Hotel Blue Waters include an indoor swimming pool, sauna and a squash court. There is also an outdoor rooftop swimming pool and guests can enjoy drinks with sunset views at the rooftop bar.@The Durban North Beach area is a good location for walking, running and cycling. Hotel Blue Waters is 5 minutes’ drive from the Durban ICC and 10 minutes’ drive from Durban’s city center. Durban Station is 1.2 mi away, while King Shaka International Airport is 19 mi from the property.@Couples in particular like the location – they rated it 9.1 for a two-person trip.@We speak your language!"
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee make",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or close"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit will not be collected at this hotel",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are not accepted at this hotel",
+            "No additional tax has to be paid at the hotel",
+            "On-site parking is available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Guests can check in using any Domestic or International ID proof with photograph"
+          ]
+        },
+        "maps": [
+          21.028511,
+          105.804817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/",
+        "video": "url('@/assets/videos/dog.mp4')"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Modern Retreat in the Heart of Hanoi",
+      "location": "Ba Dinh, Hanoi",
+      "score": 8.7,
+      "price": 95,
+      "thumbnail": "https://picsum.photos/seed/2/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-5.jpg",
+        "https://swiperjs.com/demos/images/nature-6.jpg",
+        "https://swiperjs.com/demos/images/nature-7.jpg",
+        "https://swiperjs.com/demos/images/nature-8.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "Located in the vibrant Ba Dinh district, this modern hotel offers easy access to Hoan Kiem Lake and the historic Old Quarter. Spacious rooms feature contemporary design, high-speed WiFi, and stunning city views. Guests can relax at the rooftop bar or enjoy authentic Vietnamese cuisine at the on-site restaurant. The hotel is just 3 miles from Noi Bai International Airport, making it ideal for both leisure and business travelers. Couples love the ambiance – they rated it 8.9 for a two-person trip."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "Security deposit is not required",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards are accepted",
+            "No additional tax at the hotel",
+            "On-site parking available",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples are allowed",
+            "Couples are welcome",
+            "Valid ID with photograph required"
+          ]
+        },
+        "maps": [
+          21.035511,
+          105.814817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hanoi_360/",
+        "video": "url('@/assets/videos/hanoi.mp4')"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Coastal Serenity in Da Nang",
+      "location": "My Khe Beach, Da Nang",
+      "score": 9.2,
+      "price": 150,
+      "thumbnail": "https://picsum.photos/seed/3/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-9.jpg",
+        "https://swiperjs.com/demos/images/nature-10.jpg",
+        "https://swiperjs.com/demos/images/nature-11.jpg",
+        "https://swiperjs.com/demos/images/nature-12.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "Nestled along the pristine My Khe Beach, this luxury hotel offers breathtaking ocean views and world-class amenities. Each room is equipped with a private balcony, premium bedding, and smart TVs. Guests can unwind at the infinity pool or indulge in spa treatments. The hotel is a short drive from Marble Mountains and Hoi An Ancient Town. Perfect for romantic getaways, couples rate the location 9.5."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Hardwood floor",
+          "Desk",
+          "Minibar",
+          "Telephone",
+          "Ironing facilities",
+          "Flat-screen TV",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "03:00 pm",
+          "checkOut": "11:00 am",
+          "information": [
+            "No smoking",
+            "No security deposit required",
+            "Check-out by 11:00 AM",
+            "Pets not allowed",
+            "Credit cards accepted",
+            "No extra taxes",
+            "Free駐車場 available",
+            "Check-in from 3:00 PM",
+            "Unmarried couples welcome",
+            "Couples are welcome",
+            "Photo ID required"
+          ]
+        },
+        "maps": [
+          16.067811,
+          108.224517
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/danang_360/",
+        "video": "url('@/assets/videos/danang.mp4')"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Cultural Haven in Hue",
+      "location": "Hue City Center, Hue",
+      "score": 8.5,
+      "price": 80,
+      "thumbnail": "https://picsum.photos/seed/4/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-13.jpg",
+        "https://swiperjs.com/demos/images/nature-14.jpg",
+        "https://swiperjs.com/demos/images/nature-15.jpg",
+        "https://swiperjs.com/demos/images/nature-16.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "Immerse yourself in the rich history of Hue at this charming hotel located near the Imperial City. The rooms blend traditional Vietnamese decor with modern comforts like free WiFi and air conditioning. Guests can enjoy river views from the rooftop terrace or explore nearby attractions like the Perfume River and Dong Ba Market. Rated 8.7 by solo travelers."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "No security deposit",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards accepted",
+            "No additional taxes",
+            "On-site parking",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples allowed",
+            "Couples welcome",
+            "ID with photo required"
+          ]
+        },
+        "maps": [
+          16.469511,
+          107.594817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hue_360/",
+        "video": "url('@/assets/videos/hue.mp4')"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Luxury Escape in Nha Trang",
+      "location": "Nha Trang Beach, Nha Trang",
+      "score": 9.4,
+      "price": 200,
+      "thumbnail": "https://picsum.photos/seed/5/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-17.jpg",
+        "https://swiperjs.com/demos/images/nature-18.jpg",
+        "https://swiperjs.com/demos/images/nature-19.jpg",
+        "https://swiperjs.com/demos/images/nature-20.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "Experience paradise at this beachfront resort in Nha Trang, featuring private villas and stunning ocean views. Guests can relax at the infinity pool, enjoy water sports, or dine at the seafood restaurant. The hotel is close to Vinpearl Land and Po Nagar Cham Towers. Couples rate it 9.6 for romantic stays."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Hardwood floor",
+          "Desk",
+          "Minibar",
+          "Telephone",
+          "Ironing facilities",
+          "Flat-screen TV",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "03:00 pm",
+          "checkOut": "11:00 am",
+          "information": [
+            "No smoking",
+            "No security deposit required",
+            "Check-out by 11:00 AM",
+            "Pets not allowed",
+            "Credit cards accepted",
+            "No extra taxes",
+            "Free parking available",
+            "Check-in from 3:00 PM",
+            "Unmarried couples welcome",
+            "Couples are welcome",
+            "Photo ID required"
+          ]
+        },
+        "maps": [
+          12.245511,
+          109.194817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/nha_trang_360/",
+        "video": "url('@/assets/videos/nha_trang.mp4')"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Urban Oasis in Can Tho",
+      "location": "Ninh Kieu, Can Tho",
+      "score": 8.8,
+      "price": 110,
+      "thumbnail": "https://picsum.photos/seed/6/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-21.jpg",
+        "https://swiperjs.com/demos/images/nature-22.jpg",
+        "https://swiperjs.com/demos/images/nature-23.jpg",
+        "https://swiperjs.com/demos/images/nature-24.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "Located along the vibrant Ninh Kieu Wharf, this hotel offers modern rooms with Mekong River views. Guests can explore the nearby Cai Rang Floating Market or relax at the rooftop lounge. The hotel features a fitness center and free bike rentals. Rated 8.9 for family stays."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "No security deposit",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards accepted",
+            "No additional taxes",
+            "On-site parking",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples allowed",
+            "Couples welcome",
+            "ID with photo required"
+          ]
+        },
+        "maps": [
+          10.035511,
+          105.784817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/can_tho_360/",
+        "video": "url('@/assets/videos/can_tho.mp4')"
+      }
+    },
+    {
+      "id": "7",
+      "title": "Mountain Retreat in Da Lat",
+      "location": "Da Lat City Center, Da Lat",
+      "score": 9,
+      "price": 130,
+      "thumbnail": "https://picsum.photos/seed/7/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-25.jpg",
+        "https://swiperjs.com/demos/images/nature-26.jpg",
+        "https://swiperjs.com/demos/images/nature-27.jpg",
+        "https://swiperjs.com/demos/images/nature-28.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "Nestled in the cool highlands of Da Lat, this hotel offers cozy rooms with views of pine forests and flower gardens. Guests can explore nearby attractions like the Valley of Love and Datanla Waterfall. The on-site restaurant serves local and international cuisine. Couples rate it 9.2 for romantic escapes."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Hardwood floor",
+          "Desk",
+          "Minibar",
+          "Telephone",
+          "Ironing facilities",
+          "Flat-screen TV",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "03:00 pm",
+          "checkOut": "11:00 am",
+          "information": [
+            "No smoking",
+            "No security deposit required",
+            "Check-out by 11:00 AM",
+            "Pets not allowed",
+            "Credit cards accepted",
+            "No extra taxes",
+            "Free parking available",
+            "Check-in from 3:00 PM",
+            "Unmarried couples welcome",
+            "Couples are welcome",
+            "Photo ID required"
+          ]
+        },
+        "maps": [
+          11.945511,
+          108.434817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/da_lat_360/",
+        "video": "url('@/assets/videos/da_lat.mp4')"
+      }
+    },
+    {
+      "id": "8",
+      "title": "Beachfront Bliss in Phu Quoc",
+      "location": "Long Beach, Phu Quoc",
+      "score": 9.3,
+      "price": 180,
+      "thumbnail": "https://picsum.photos/seed/8/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-29.jpg",
+        "https://swiperjs.com/demos/images/nature-30.jpg",
+        "https://swiperjs.com/demos/images/nature-31.jpg",
+        "https://swiperjs.com/demos/images/nature-32.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "This beachfront resort on Phu Quoc Island offers luxurious villas with private pools and direct access to Long Beach. Guests can enjoy water sports, spa treatments, or sunset cocktails at the beach bar. The resort is near Sao Beach and Phu Quoc Night Market. Rated 9.4 for luxury stays."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Hardwood floor",
+          "Desk",
+          "Minibar",
+          "Telephone",
+          "Ironing facilities",
+          "Flat-screen TV",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "03:00 pm",
+          "checkOut": "11:00 am",
+          "information": [
+            "No smoking",
+            "No security deposit required",
+            "Check-out by 11:00 AM",
+            "Pets not allowed",
+            "Credit cards accepted",
+            "No extra taxes",
+            "Free parking available",
+            "Check-in from 3:00 PM",
+            "Unmarried couples welcome",
+            "Couples are welcome",
+            "Photo ID required"
+          ]
+        },
+        "maps": [
+          10.215511,
+          103.964817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/phu_quoc_360/",
+        "video": "url('@/assets/videos/phu_quoc.mp4')"
+      }
+    },
+    {
+      "id": "9",
+      "title": "Historic Charm in Hoi An",
+      "location": "Hoi An Ancient Town, Hoi An",
+      "score": 8.9,
+      "price": 100,
+      "thumbnail": "https://picsum.photos/seed/9/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-33.jpg",
+        "https://swiperjs.com/demos/images/nature-34.jpg",
+        "https://swiperjs.com/demos/images/nature-35.jpg",
+        "https://swiperjs.com/demos/images/nature-36.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "Located in the heart of Hoi An’s UNESCO-listed Ancient Town, this boutique hotel blends colonial charm with modern amenities. Guests can explore the Japanese Covered Bridge or relax by the pool. The hotel offers free bicycles and a lantern-making workshop. Rated 9.0 by culture enthusiasts."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "No security deposit",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards accepted",
+            "No additional taxes",
+            "On-site parking",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples allowed",
+            "Couples welcome",
+            "ID with photo required"
+          ]
+        },
+        "maps": [
+          15.875511,
+          108.324817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hoi_an_360/",
+        "video": "url('@/assets/videos/hoi_an.mp4')"
+      }
+    },
+    {
+      "id": "10",
+      "title": "City Vibes in Ho Chi Minh",
+      "location": "District 1, Ho Chi Minh",
+      "score": 8.6,
+      "price": 90,
+      "thumbnail": "https://picsum.photos/seed/10/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-37.jpg",
+        "https://swiperjs.com/demos/images/nature-38.jpg",
+        "https://swiperjs.com/demos/images/nature-39.jpg",
+        "https://swiperjs.com/demos/images/nature-40.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "Situated in the bustling District 1, this hotel is steps away from Ben Thanh Market and Notre-Dame Basilica. Modern rooms feature city views and smart amenities. Guests can enjoy cocktails at the rooftop bar or explore nearby nightlife. Rated 8.8 for urban explorers."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "No security deposit",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards accepted",
+            "No additional taxes",
+            "On-site parking",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples allowed",
+            "Couples welcome",
+            "ID with photo required"
+          ]
+        },
+        "maps": [
+          10.775511,
+          106.694817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hcm_360/",
+        "video": "url('@/assets/videos/hcm.mp4')"
+      }
+    },
+    {
+      "id": "11",
+      "title": "Tropical Paradise in Vung Tau",
+      "location": "Back Beach, Vung Tau",
+      "score": 8.7,
+      "price": 120,
+      "thumbnail": "https://picsum.photos/seed/11/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-41.jpg",
+        "https://swiperjs.com/demos/images/nature-42.jpg",
+        "https://swiperjs.com/demos/images/nature-43.jpg",
+        "https://swiperjs.com/demos/images/nature-44.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "This beachfront hotel in Vung Tau offers spacious rooms with ocean views and easy access to Back Beach. Guests can enjoy the outdoor pool, seafood dining, or explore attractions like the Christ of Vung Tau statue. Rated 8.9 for beach lovers."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Hardwood floor",
+          "Desk",
+          "Minibar",
+          "Telephone",
+          "Ironing facilities",
+          "Flat-screen TV",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "03:00 pm",
+          "checkOut": "11:00 am",
+          "information": [
+            "No smoking",
+            "No security deposit required",
+            "Check-out by 11:00 AM",
+            "Pets not allowed",
+            "Credit cards accepted",
+            "No extra taxes",
+            "Free parking available",
+            "Check-in from 3:00 PM",
+            "Unmarried couples welcome",
+            "Couples are welcome",
+            "Photo ID required"
+          ]
+        },
+        "maps": [
+          10.345511,
+          107.084817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/vung_tau_360/",
+        "video": "url('@/assets/videos/vung_tau.mp4')"
+      }
+    },
+    {
+      "id": "12",
+      "title": "Riverside Retreat in Mekong Delta",
+      "location": "Cai Be, Tien Giang",
+      "score": 8.5,
+      "price": 85,
+      "thumbnail": "https://picsum.photos/seed/12/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-45.jpg",
+        "https://swiperjs.com/demos/images/nature-46.jpg",
+        "https://swiperjs.com/demos/images/nature-47.jpg",
+        "https://swiperjs.com/demos/images/nature-48.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "Experience the tranquil beauty of the Mekong Delta at this riverside lodge. Rooms feature traditional decor and river views. Guests can take boat tours to floating markets or enjoy local dishes at the restaurant. Rated 8.7 for nature lovers."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "No security deposit",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards accepted",
+            "No additional taxes",
+            "On-site parking",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples allowed",
+            "Couples welcome",
+            "ID with photo required"
+          ]
+        },
+        "maps": [
+          10.325511,
+          106.364817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/mekong_360/",
+        "video": "url('@/assets/videos/mekong.mp4')"
+      }
+    },
+    {
+      "id": "13",
+      "title": "Seaside Serenity in Quy Nhon",
+      "location": "Quy Nhon Beach, Quy Nhon",
+      "score": 8.8,
+      "price": 140,
+      "thumbnail": "https://picsum.photos/seed/13/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-49.jpg",
+        "https://swiperjs.com/demos/images/nature-50.jpg",
+        "https://swiperjs.com/demos/images/nature-51.jpg",
+        "https://swiperjs.com/demos/images/nature-52.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "This seaside resort in Quy Nhon offers luxurious rooms with balcony views of the South China Sea. Guests can relax at the infinity pool or explore nearby Eo Gio and Ky Co Beach. The resort features a spa and seafood restaurant. Rated 9.0 for relaxation."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Hardwood floor",
+          "Desk",
+          "Minibar",
+          "Telephone",
+          "Ironing facilities",
+          "Flat-screen TV",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "03:00 pm",
+          "checkOut": "11:00 am",
+          "information": [
+            "No smoking",
+            "No security deposit required",
+            "Check-out by 11:00 AM",
+            "Pets not allowed",
+            "Credit cards accepted",
+            "No extra taxes",
+            "Free parking available",
+            "Check-in from 3:00 PM",
+            "Unmarried couples welcome",
+            "Couples are welcome",
+            "Photo ID required"
+          ]
+        },
+        "maps": [
+          13.765511,
+          109.224817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/quy_nhon_360/",
+        "video": "url('@/assets/videos/quy_nhon.mp4')"
+      }
+    },
+    {
+      "id": "14",
+      "title": "Eco Retreat in Sapa",
+      "location": "Sapa Town, Lao Cai",
+      "score": 9.1,
+      "price": 160,
+      "thumbnail": "https://picsum.photos/seed/14/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-53.jpg",
+        "https://swiperjs.com/demos/images/nature-54.jpg",
+        "https://swiperjs.com/demos/images/nature-55.jpg",
+        "https://swiperjs.com/demos/images/nature-56.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "Surrounded by terraced rice fields and misty mountains, this eco-friendly resort in Sapa offers cozy cabins with panoramic views. Guests can join trekking tours to local villages or relax at the spa. The restaurant serves organic dishes. Rated 9.3 for nature enthusiasts."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Hardwood floor",
+          "Desk",
+          "Minibar",
+          "Telephone",
+          "Ironing facilities",
+          "Flat-screen TV",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "03:00 pm",
+          "checkOut": "11:00 am",
+          "information": [
+            "No smoking",
+            "No security deposit required",
+            "Check-out by 11:00 AM",
+            "Pets not allowed",
+            "Credit cards accepted",
+            "No extra taxes",
+            "Free parking available",
+            "Check-in from 3:00 PM",
+            "Unmarried couples welcome",
+            "Couples are welcome",
+            "Photo ID required"
+          ]
+        },
+        "maps": [
+          22.335511,
+          103.844817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/sapa_360/",
+        "video": "url('@/assets/videos/sapa.mp4')"
+      }
+    },
+    {
+      "id": "15",
+      "title": "Urban Elegance in Hai Phong",
+      "location": "Do Son, Hai Phong",
+      "score": 8.6,
+      "price": 105,
+      "thumbnail": "https://picsum.photos/seed/15/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-57.jpg",
+        "https://swiperjs.com/demos/images/nature-58.jpg",
+        "https://swiperjs.com/demos/images/nature-59.jpg",
+        "https://swiperjs.com/demos/images/nature-60.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "This stylish hotel in Hai Phong offers modern rooms with views of Do Son Beach. Guests can enjoy the rooftop pool, fitness center, or explore nearby Cat Ba Island. The on-site restaurant serves fresh seafood. Rated 8.8 for business travelers."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "No security deposit",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards accepted",
+            "No additional taxes",
+            "On-site parking",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples allowed",
+            "Couples welcome",
+            "ID with photo required"
+          ]
+        },
+        "maps": [
+          20.865511,
+          106.684817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/hai_phong_360/",
+        "video": "url('@/assets/videos/hai_phong.mp4')"
+      }
+    },
+    {
+      "id": "16",
+      "title": "Island Escape in Con Dao",
+      "location": "Con Dao Islands, Ba Ria-Vung Tau",
+      "score": 9.2,
+      "price": 190,
+      "thumbnail": "https://picsum.photos/seed/16/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-61.jpg",
+        "https://swiperjs.com/demos/images/nature-62.jpg",
+        "https://swiperjs.com/demos/images/nature-63.jpg",
+        "https://swiperjs.com/demos/images/nature-64.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "This luxury resort on Con Dao Islands offers private beach access and stunning ocean views. Guests can explore pristine beaches, dive in coral reefs, or visit historical sites like Con Dao Prison. The resort features a spa and gourmet dining. Rated 9.5 for island getaways."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Hardwood floor",
+          "Desk",
+          "Minibar",
+          "Telephone",
+          "Ironing facilities",
+          "Flat-screen TV",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "03:00 pm",
+          "checkOut": "11:00 am",
+          "information": [
+            "No smoking",
+            "No security deposit required",
+            "Check-out by 11:00 AM",
+            "Pets not allowed",
+            "Credit cards accepted",
+            "No extra taxes",
+            "Free parking available",
+            "Check-in from 3:00 PM",
+            "Unmarried couples welcome",
+            "Couples are welcome",
+            "Photo ID required"
+          ]
+        },
+        "maps": [
+          8.695511,
+          106.614817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/con_dao_360/",
+        "video": "url('@/assets/videos/con_dao.mp4')"
+      }
+    },
+    {
+      "id": "17",
+      "title": "Cultural Gem in Bac Ninh",
+      "location": "Bac Ninh City, Bac Ninh",
+      "score": 8.4,
+      "price": 75,
+      "thumbnail": "https://picsum.photos/seed/17/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-65.jpg",
+        "https://swiperjs.com/demos/images/nature-66.jpg",
+        "https://swiperjs.com/demos/images/nature-67.jpg",
+        "https://swiperjs.com/demos/images/nature-68.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "Located in the cultural hub of Bac Ninh, this hotel offers easy access to Do Temple and traditional Quan Ho folk singing villages. Rooms feature modern amenities and local decor. Guests can enjoy the on-site restaurant and free bike rentals. Rated 8.6 for cultural travelers."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "No security deposit",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards accepted",
+            "No additional taxes",
+            "On-site parking",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples allowed",
+            "Couples welcome",
+            "ID with photo required"
+          ]
+        },
+        "maps": [
+          21.185511,
+          106.074817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/bac_ninh_360/",
+        "video": "url('@/assets/videos/bac_ninh.mp4')"
+      }
+    },
+    {
+      "id": "18",
+      "title": "Coastal Charm in Phan Thiet",
+      "location": "Mui Ne, Phan Thiet",
+      "score": 8.9,
+      "price": 130,
+      "thumbnail": "https://picsum.photos/seed/18/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-69.jpg",
+        "https://swiperjs.com/demos/images/nature-70.jpg",
+        "https://swiperjs.com/demos/images/nature-71.jpg",
+        "https://swiperjs.com/demos/images/nature-72.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "This beachfront resort in Mui Ne offers spacious rooms with views of sand dunes and the ocean. Guests can enjoy kite surfing, explore the Fairy Stream, or relax at the spa. The resort features a seafood restaurant and poolside bar. Rated 9.0 for adventure seekers."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Hardwood floor",
+          "Desk",
+          "Minibar",
+          "Telephone",
+          "Ironing facilities",
+          "Flat-screen TV",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "03:00 pm",
+          "checkOut": "11:00 am",
+          "information": [
+            "No smoking",
+            "No security deposit required",
+            "Check-out by 11:00 AM",
+            "Pets not allowed",
+            "Credit cards accepted",
+            "No extra taxes",
+            "Free parking available",
+            "Check-in from 3:00 PM",
+            "Unmarried couples welcome",
+            "Couples are welcome",
+            "Photo ID required"
+          ]
+        },
+        "maps": [
+          10.935511,
+          108.104817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/phan_thiet_360/",
+        "video": "url('@/assets/videos/phan_thiet.mp4')"
+      }
+    },
+    {
+      "id": "19",
+      "title": "City Comfort in Vinh",
+      "location": "Vinh City, Nghe An",
+      "score": 8.3,
+      "price": 70,
+      "thumbnail": "https://picsum.photos/seed/19/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-73.jpg",
+        "https://swiperjs.com/demos/images/nature-74.jpg",
+        "https://swiperjs.com/demos/images/nature-75.jpg",
+        "https://swiperjs.com/demos/images/nature-76.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "This modern hotel in Vinh City offers comfortable rooms with city views and easy access to Ho Chi Minh Square. Guests can enjoy the fitness center, on-site restaurant, or explore nearby Cua Lo Beach. Rated 8.5 for business and leisure travelers."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "No security deposit",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards accepted",
+            "No additional taxes",
+            "On-site parking",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples allowed",
+            "Couples welcome",
+            "ID with photo required"
+          ]
+        },
+        "maps": [
+          18.675511,
+          105.674817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/vinh_360/",
+        "video": "url('@/assets/videos/vinh.mp4')"
+      }
+    },
+    {
+      "id": "20",
+      "title": "Beachside Bliss in Cam Ranh",
+      "location": "Cam Ranh Bay, Khanh Hoa",
+      "score": 9,
+      "price": 170,
+      "thumbnail": "https://picsum.photos/seed/20/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-77.jpg",
+        "https://swiperjs.com/demos/images/nature-78.jpg",
+        "https://swiperjs.com/demos/images/nature-79.jpg",
+        "https://swiperjs.com/demos/images/nature-80.jpg"
+      ],
+      "star": 5,
+      "description": {
+        "overview": {
+          "description": "This luxury resort in Cam Ranh Bay offers private beach access and stunning ocean views. Guests can enjoy the infinity pool, spa treatments, or dine at the gourmet restaurant. The resort is a short drive from Nha Trang and Cam Ranh Airport. Rated 9.2 for luxury travelers."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Hardwood floor",
+          "Desk",
+          "Minibar",
+          "Telephone",
+          "Ironing facilities",
+          "Flat-screen TV",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "03:00 pm",
+          "checkOut": "11:00 am",
+          "information": [
+            "No smoking",
+            "No security deposit required",
+            "Check-out by 11:00 AM",
+            "Pets not allowed",
+            "Credit cards accepted",
+            "No extra taxes",
+            "Free parking available",
+            "Check-in from 3:00 PM",
+            "Unmarried couples welcome",
+            "Couples are welcome",
+            "Photo ID required"
+          ]
+        },
+        "maps": [
+          11.905511,
+          109.204817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/cam_ranh_360/",
+        "video": "url('@/assets/videos/cam_ranh.mp4')"
+      }
+    },
+    {
+      "id": "21",
+      "title": "Historic Elegance in Quang Nam",
+      "location": "Tam Ky, Quang Nam",
+      "score": 8.7,
+      "price": 95,
+      "thumbnail": "https://picsum.photos/seed/21/600/500",
+      "images": [
+        "https://swiperjs.com/demos/images/nature-81.jpg",
+        "https://swiperjs.com/demos/images/nature-82.jpg",
+        "https://swiperjs.com/demos/images/nature-83.jpg",
+        "https://swiperjs.com/demos/images/nature-84.jpg"
+      ],
+      "star": 4,
+      "description": {
+        "overview": {
+          "description": "This elegant hotel in Tam Ky offers a blend of colonial charm and modern comforts. Guests can explore nearby My Son Sanctuary or relax at the outdoor pool. The restaurant serves local Cham cuisine. Rated 8.9 for history buffs."
+        },
+        "amenities": [
+          "Air conditioning",
+          "Private Bathroom",
+          "Free WiFi",
+          "Free toiletries",
+          "Shower",
+          "Safe",
+          "Toilet",
+          "Towels",
+          "Tile/Marble floor",
+          "Desk",
+          "Refrigerator",
+          "Telephone",
+          "Ironing facilities",
+          "Satellite channels",
+          "Tea/Coffee maker",
+          "Hairdryer",
+          "Electric kettle",
+          "Wake-up service",
+          "Wardrobe or closet"
+        ],
+        "rules": {
+          "checkIn": "02:00 pm",
+          "checkOut": "12:00 am",
+          "information": [
+            "Smoking is not allowed",
+            "No security deposit",
+            "Check-out time is 12:00 AM",
+            "Pets are not allowed",
+            "Credit cards accepted",
+            "No additional taxes",
+            "On-site parking",
+            "Check-in time is 2:00 PM",
+            "Unmarried couples allowed",
+            "Couples welcome",
+            "ID with photo required"
+          ]
+        },
+        "maps": [
+          15.565511,
+          108.474817
+        ],
+        "image360": "https://photo-sphere-viewer-data.netlify.app/assets/quang_nam_360/",
+        "video": "url('@/assets/videos/quang_nam.mp4')"
+      }
     }
   ]
 }

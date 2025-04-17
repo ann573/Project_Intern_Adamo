@@ -14,6 +14,15 @@ interface ErrorResponse {
 
 type RejectWithValue = (value: string) => void;
 
+type TComment = {
+  title: string;
+    rate: number;
+    heading: string;
+    time: number;
+    comments: string;
+    avatar: string;
+
+}
 const handleError = (
   error: ErrorResponse,
   rejectWithValue: RejectWithValue
@@ -65,3 +74,15 @@ export const getFilterTour = createAsyncThunk<
     return handleError(error as ErrorResponse, rejectWithValue);
   }
 });
+
+export const addCommentTour = createAsyncThunk<ITour, ITour, { rejectValue: string }>(
+  "tour/addCommentTour",
+  async (dataBody, { rejectWithValue }) => {
+    try {
+      const data: ITour = await instance.patch(`tours/${dataBody.id}`, dataBody);
+      return data;
+    } catch (error) {
+      return handleError(error as ErrorResponse, rejectWithValue);
+    }
+  }
+);

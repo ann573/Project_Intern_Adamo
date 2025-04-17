@@ -7,10 +7,15 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { useAppSelector } from "@/hooks/app";
 import { cn } from "@/lib/utils";
 import { User2 } from "lucide-react";
+import { toast } from "sonner";
 
 const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   const { tour } = useAppSelector((state) => state.tours);
@@ -21,7 +26,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   });
   const [price, setPrice] = useState(0);
   const [adults, setAdults] = useState(2);
-  const [children, setChildren] = useState(1);
+  const [children, setChildren] = useState(0);
 
   useEffect(() => {
     if (tour) {
@@ -29,30 +34,37 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
     }
   }, [adults, children, tour]);
 
-//   const handleSelect = (range: DateRange | undefined) => {
-//     console.log(range);
-//     if (range) {
-//       const { from, to } = range;
-
-//       if (from && to) {
-//         const selectedDays =
-//           (to.getTime() - from.getTime()) / (1000 * 3600 * 24) + 1; // Tính số ngày đã chọn
-
-//         if (tour && selectedDays <= tour?.duration) {
-//           setDate(range);
-//         }
-//       }
-//     }
-//   };
-
-  // Hàm để hủy lựa chọn ngày
   const handleClearDate = () => {
-    setDate(undefined); // Thiết lập lại thành undefined để hủy lựa chọn
+    setDate(undefined);
   };
 
+  const handleSubmitForm = (event: React.MouseEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      if (!date)
+        return toast.error("Pleas fill the date!!!", {
+          style: {
+            background: "red",
+            color: "white",
+          },
+        });
+      const { from, to } = date;
+  
+      if (from && to) {
+        const selectedDays =
+          (to.getTime() - from.getTime()) / (1000 * 3600 * 24) + 1; 
+        if (tour && selectedDays !== tour?.duration) {
+          toast.error(`The tour duration cannot be changed to ${selectedDays} days. Please select ${tour?.duration} days.`, {
+            style: {
+              background: "red",
+              color: "white",
+            },
+          });
+        }
+      }
+    };
   return (
     <>
-      <div className={cn("grid gap-2", className)}>
+      <form className={cn("grid gap-2", className)}>
         <Popover>
           <PopoverTrigger asChild>
             <Button
@@ -83,7 +95,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
               initialFocus
               mode="range"
               defaultMonth={date?.from}
-              selected={date || undefined}  
+              selected={date || undefined}
               showOutsideDays={true}
               onSelect={setDate}
               numberOfMonths={2}
@@ -99,7 +111,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
             </Button>
           </PopoverContent>
         </Popover>
-      </div>
+      </form>
 
       <Popover>
         <PopoverTrigger asChild>
@@ -145,7 +157,11 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
         <span className="font-bold">${price.toFixed(2)}</span>
       </div>
 
-      <Button variant={"default"} className="w-full py-7 mt-7">
+      <Button
+        variant={"default"}
+        className="w-full py-7 mt-7 cursor-pointer hover:opacity-80"
+        onClick={handleSubmitForm}
+      >
         Book now
       </Button>
     </>

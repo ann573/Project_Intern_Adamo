@@ -118,7 +118,7 @@ const RegisterForm = () => {
             className="w-full bg-orange text-white py-4 mt-4 font-semibold cursor-pointer transition-colors hover:bg-orange/80"
             disabled={isLoading}
           >
-            {isLoading ? <ClipLoader color="#ffffff" size={1} /> : "Sign Up"}
+            {isLoading ? <ClipLoader color="#ffffff" size={20} /> : "Sign Up"}
           </button>
           <button
             type="button"

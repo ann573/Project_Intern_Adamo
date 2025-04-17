@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "@/hooks/app";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 //asset
 import "@/style/homepage.css";
@@ -37,7 +37,6 @@ const ListTour = () => {
   );
   const dispatch = useAppDispatch();
 
-  const nav = useNavigate();
   const { search } = useLocation();
   useEffect(() => {
     const hasVisited = sessionStorage.getItem(`visited-${pathname}`);
@@ -87,7 +86,7 @@ const ListTour = () => {
   return (
     <>
       {/* Banner */}
-      <div className="text-center grid sm:grid-cols-12 grid-col-2 xl:gap-0 gap-5 banner_tour max-w-[2000px] mx-auto xl:px-0 px-10">
+      <section className="text-center grid sm:grid-cols-12 grid-col-2 xl:gap-0 gap-5 banner_tour max-w-[2000px] mx-auto xl:px-0 px-10">
         {/* ================= first col ================= */}
         <div className="lg:col-span-7 sm:col-span-5 flex flex-col justify-end ">
           <div className="my-auto xl:pl-40 sm:block hidden">
@@ -107,7 +106,7 @@ const ListTour = () => {
         <div className="sm:col-span-5 self-end justify-self-start w-full">
           <FormSearchBanner date={date} setDate={setDate} />
         </div>
-      </div>
+      </section>
 
       {/* navigation */}
       <div className="max-w-[1200px] mx-auto my-5 text-content xl:px-0 px-10">
@@ -117,7 +116,7 @@ const ListTour = () => {
           </Link>
           <span className="text-[#C4C4C4] text-lg">•</span>
           <Link to={"/tours"} className="hover:underline">
-            tours
+            Tours
           </Link>
         </p>
       </div>
@@ -166,15 +165,15 @@ const ListTour = () => {
             <p className="text-center mt-5 text-3xl font-bold text-red-500">
               Không có kết quả tương ứng
             </p>
-            <span
+            <Link
               className=" text-center text-sub-color-primary underline hover:text-[#3e3e3e] cursor-pointer mb-20"
               onClick={() => {
                 setIsSearch(false);
-                nav("/tours");
               }}
+              to={"/tours"}
             >
               Quay lại mặc định
-            </span>
+            </Link>
           </div>
         )}
 

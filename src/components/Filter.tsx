@@ -224,6 +224,8 @@ const Filter = ({
         Apply Filter
       </Button>
     </form>
+
+    
   );
 };
 

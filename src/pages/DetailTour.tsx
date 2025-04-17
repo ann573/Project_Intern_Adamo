@@ -13,7 +13,7 @@ import Card from "@/components/Card";
 const DetailTour = () => {
   const id = useParams().id;
 
-  const [choose, setChoose] = useState(1);
+  const [choose, setChoose] = useState(3);
   const { tour, tours, isLoading } = useAppSelector((state) => state.tours);
   const dispatch = useAppDispatch();
 

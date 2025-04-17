@@ -33,6 +33,12 @@ type Props = {
 
 const FormSearchBanner = ({ date, setDate }: Props) => {
   const isDefault = useLocation().pathname === "/";
+  const isHotel = useLocation().pathname.includes("hotel")
+  const { type } = useAppSelector((state) => state.tours);
+
+  const button = ["Tours", "Hotels"];
+
+  const [choose, setChoose] = React.useState("Tours");
   const dispatch = useAppDispatch();
 
   const { control, handleSubmit } = useForm({
@@ -47,11 +53,11 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
     dispatch(getFilterTour());
   }, [dispatch]);
 
-  const { type } = useAppSelector((state) => state.tours);
+  useEffect(()=>{
+    if (isHotel)
+      setChoose("Hotels")
+  },[isHotel])
 
-  const button = ["Tours", "Hotels"];
-
-  const [choose, setChoose] = React.useState("Tours");
 
   function onsubmitForm(data: {
     location: string;
@@ -206,7 +212,7 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
             )}
           ></Controller>
 
-          <Button className={"w-full mt-5 py-8"}>
+          <Button className={"w-full mt-5 py-8 rounded-none"}>
             <i className="ri-search-line text-xl"></i>
             Search
           </Button>

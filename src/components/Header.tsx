@@ -19,17 +19,21 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
+import { useAppDispatch, useAppSelector } from "@/hooks/app";
+import { removeAuth } from "@/features/auth/authSlice";
 
 type TProp = { scrolling: boolean; isFixed: boolean };
 const Header = ({ scrolling, isFixed }: TProp) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const name = Cookies.get("name");
-
+  const {name} = useAppSelector(state => state.auth)
+  const dispatch = useAppDispatch()
   const handleLogout = () => {
     Cookies.remove("access_token");
     Cookies.remove("refresh_token");
     Cookies.remove("name");
+
+    dispatch(removeAuth({}));
     window.location.reload();
   };
 

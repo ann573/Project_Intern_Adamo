@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, SerializedError } from "@reduxjs/toolkit";
-import { getDetailTour, getTours, getFilterTour } from "./tourAction";
+import { getDetailTour, getTours, getFilterTour, addCommentTour } from "./tourAction";
 import ITour from "@/interfaces/ITour";
 import { TResponse } from "@/types/TResponse";
 
@@ -47,6 +47,10 @@ const tourSlice = createSlice({
     setType: (state, action) => {
       state.type = action.payload;
     },
+    addComment: (state, action) => {
+      state.tour?.rating.push(action.payload)
+      console.log(state.tour?.rating)
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -86,10 +90,21 @@ const tourSlice = createSlice({
           state.isError = false;
         }
       )
-      .addCase(getFilterTour.rejected, setError);
+      .addCase(getFilterTour.rejected, setError)
+
+      .addCase(addCommentTour.fulfilled, (state: TInitialState, action: PayloadAction<ITour>)=>{
+        state.isLoading = false;
+
+        state.tour= action.payload
+
+        state.isError = false
+      })
+      .addCase(addCommentTour.rejected, setError)
+
+      
   },
 });
 
-export const { setType } = tourSlice.actions;
+export const { setType, addComment } = tourSlice.actions;
 
 export default tourSlice.reducer;

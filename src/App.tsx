@@ -26,10 +26,14 @@ import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ResultPage from "@/pages/ResultPage";
+import Cookies from "js-cookie";
+import { useAppDispatch } from "@/hooks/app";
+import { setAuth } from "@/features/auth/authSlice";
 
 function App() {
   const [isSplashFinished, setIsSplashFinished] = useState(false);
 
+  const dispatch = useAppDispatch()
   useEffect(() => {
     setTimeout(() => {
       setIsSplashFinished(true); 
@@ -39,7 +43,12 @@ function App() {
       duration: 900,
       once: true,
     });
-  }, []);
+
+    const storedName = Cookies.get('name');
+  if (storedName) {
+    dispatch(setAuth({ name: storedName }));
+  }
+  }, [dispatch]);
 
   if (!isSplashFinished) {
     return <SplashScreen />;

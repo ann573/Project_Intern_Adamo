@@ -16,6 +16,15 @@
   max-height: 900px;
 }
 
+.banner_hotel {
+  background-image: url("../assets/images/banner_hotel.png");
+  background-size: cover;
+  width: 100%;
+  height: 90vh;
+  background-position: center;
+  max-height: 900px;
+}
+
 @media screen and (max-width: 768px) {
   .banner {
     background-image: url("../assets/images/banner.png");

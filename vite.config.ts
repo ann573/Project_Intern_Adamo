@@ -18,4 +18,9 @@ export default defineConfig({
       "@schema": path.resolve(__dirname, "src/schema")
     },
   },
+  server: {
+    watch:{
+      ignored:  ["**/db.json"]
+    }
+  }
 })

@@ -3,6 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, confirmPasswordReset } from "firebase/auth";
 import { auth } from "@/utils/firebase";
+import { useAppDispatch } from "@/hooks/app";
 
 // assets
 import fbAuth from "@assets/icons/fb_auth.svg";
@@ -14,10 +15,11 @@ import Input from "@components/Input";
 import Cookies from "js-cookie";
 import { toast } from "sonner";
 import { ClipLoader } from "react-spinners";
+import { setAuth } from "@/features/auth/authSlice";
 
 const LoginForm = () => {
   const [isLoading, setIsLoading] = React.useState(false);
-
+  const dispatch = useAppDispatch();
   const nav = useNavigate();
   const { pathname, search } = useLocation();
   const isLogin = pathname.includes("login");
@@ -39,6 +41,7 @@ const LoginForm = () => {
 
       const idToken = await userCredential.user.getIdToken();
       Cookies.set("access_token", idToken);
+      dispatch(setAuth({ id: userCredential.user.uid, name: userCredential.user.displayName ?? " " }));
       Cookies.set("name", userCredential.user.displayName ?? "Anonymous");
       Cookies.set("refresh_token", userCredential.user.refreshToken);
 
@@ -51,10 +54,19 @@ const LoginForm = () => {
       setIsLoading(false);
       toast.error("Đăng nhập thất bại", {
         description: "Email hoặc mật khẩu không đúng",
-        duration: 3000,
+        actionButtonStyle: {
+          background: "red",
+          color: "white",
+        },
+        descriptionClassName: "text-red-500",
         action: {
           label: "Undo",
           onClick: () => {},
+        },
+        duration: 3000,
+        style: {
+          // background: "red",
+          color: "red",
         },
       });
       console.log(err);
