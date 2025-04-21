@@ -1,24 +1,38 @@
 export interface IHotel {
-    id: string;
-    title: string;
+    id: number;
+    name: string;
     location: string;
-    score: number;
-    price: number;
-    thumbnail: string;
-    images: string[];
-    star: number;
+    featured: boolean;
+    cost: number;
+    typeroom: number,
     description: {
-        overview: {
-            description: string;
-        };
+        overview: string;
         amenities: string[];
         rules: {
-            checkIn: string;
-            checkOut: string;
-            information: string[];
+            checkin: string;
+            checkout: string;
+            other: string[];
         };
+        reviews: {
+            avatar: string;
+            rating: number;
+            heading: string;
+            name: string;
+            time: number;
+            comments: string;
+        }[];
+        room: {
+            name: string;
+            acreage: string;
+            beds: string;
+            guest: number;
+            description: string;
+            price: number;
+            price_discount: number;
+            isAvailable: boolean;
+            facilities: string[];
+        }[];
+        thumbnail: string;
+        image: string[];
     };
-    maps: [number, number];
-    image360: string;
-    video: string;
 }

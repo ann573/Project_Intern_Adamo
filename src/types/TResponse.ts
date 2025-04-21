@@ -1,6 +1,5 @@
-import ITour from "@/interfaces/ITour";
+import { IHotel } from '@/interfaces/IHotel';
 
-export type TResponse = {
-  data: ITour[];
-  items: number;
-};
+export type DataHotelResponse = {
+  data: IHotel[]
+}

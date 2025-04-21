@@ -39,29 +39,32 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   };
 
   const handleSubmitForm = (event: React.MouseEvent<HTMLButtonElement>) => {
-      event.preventDefault();
-      if (!date)
-        return toast.error("Pleas fill the date!!!", {
-          style: {
-            background: "red",
-            color: "white",
-          },
-        });
-      const { from, to } = date;
-  
-      if (from && to) {
-        const selectedDays =
-          (to.getTime() - from.getTime()) / (1000 * 3600 * 24) + 1; 
-        if (tour && selectedDays !== tour?.duration) {
-          toast.error(`The tour duration cannot be changed to ${selectedDays} days. Please select ${tour?.duration} days.`, {
+    event.preventDefault();
+    if (!date)
+      return toast.error("Pleas fill the date!!!", {
+        style: {
+          background: "red",
+          color: "white",
+        },
+      });
+    const { from, to } = date;
+
+    if (from && to) {
+      const selectedDays =
+        (to.getTime() - from.getTime()) / (1000 * 3600 * 24) + 1;
+      if (tour && selectedDays !== tour?.duration) {
+        toast.error(
+          `The tour duration cannot be changed to ${selectedDays} days. Please select ${tour?.duration} days.`,
+          {
             style: {
               background: "red",
               color: "white",
             },
-          });
-        }
+          }
+        );
       }
-    };
+    }
+  };
   return (
     <>
       <form className={cn("grid gap-2", className)}>
@@ -111,46 +114,46 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
             </Button>
           </PopoverContent>
         </Popover>
-      </form>
 
-      <Popover>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            className="justify-start text-left flex items-center gap-2 w-full py-7 font-light"
-          >
-            <User2 className="text-orange-500" size={18} />
-            <span>
-              {adults} Adults - {children}{" "}
-              {children === 1 ? "Child" : "Children"}
-            </span>
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-60 space-y-4">
-          <div className="flex justify-between items-center">
-            <Label htmlFor="adults">Adults</Label>
-            <Input
-              id="adults"
-              type="number"
-              min={1}
-              value={adults}
-              onChange={(e) => setAdults(parseInt(e.target.value) || 1)}
-              className="w-20 text-center"
-            />
-          </div>
-          <div className="flex justify-between items-center">
-            <Label htmlFor="children">Children</Label>
-            <Input
-              id="children"
-              type="number"
-              min={0}
-              value={children}
-              onChange={(e) => setChildren(parseInt(e.target.value) || 0)}
-              className="w-20 text-center"
-            />
-          </div>
-        </PopoverContent>
-      </Popover>
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button
+              variant="outline"
+              className="justify-start text-left flex items-center gap-2 w-full py-7 font-light"
+            >
+              <User2 className="text-orange-500" size={18} />
+              <span>
+                {adults} Adults - {children}{" "}
+                {children === 1 ? "Child" : "Children"}
+              </span>
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-60 space-y-4">
+            <div className="flex justify-between items-center">
+              <Label htmlFor="adults">Adults</Label>
+              <Input
+                id="adults"
+                type="number"
+                min={1}
+                value={adults}
+                onChange={(e) => setAdults(parseInt(e.target.value) || 1)}
+                className="w-20 text-center"
+              />
+            </div>
+            <div className="flex justify-between items-center">
+              <Label htmlFor="children">Children</Label>
+              <Input
+                id="children"
+                type="number"
+                min={0}
+                value={children}
+                onChange={(e) => setChildren(parseInt(e.target.value) || 0)}
+                className="w-20 text-center"
+              />
+            </div>
+          </PopoverContent>
+        </Popover>
+      </form>
 
       <div className="flex justify-between items-center my-5">
         <span className="font-medium">Total</span>

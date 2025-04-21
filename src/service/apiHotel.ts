@@ -1,12 +1,25 @@
 import { IHotel } from "@/interfaces/IHotel";
 import { instance } from ".";
 
-type Data = {
-    data: IHotel[]
-    items: string
-}
-
 export const hotelApi = {
-  getHotels: (page: number, limit: number, query?: string) =>
-    instance.get<Data>(`hotels?_page=${page}&_per_page=${limit}&${query}`),
+  getHotels: async (
+    page: number,
+    limit: number,
+    query?: string
+  ): Promise<IHotel[]> => {
+    const response = await instance.get<IHotel[]>(
+      `hotels?_page=${page}&_limit=${limit}&${query}`
+    );
+    return response.data;
+  },
+
+  getFullHotel : async () => {
+    const res = await instance.get("hotels")
+    return res.data
+  },
+
+  getDetailHotel : async (id:string) => {
+    const res = await instance.get(`hotels/${id}`)
+    return res.data
+  }
 };

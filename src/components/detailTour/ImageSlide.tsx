@@ -7,11 +7,23 @@ import "slick-carousel/slick/slick.css";
 
 import "@/style/imageSlider.css";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useLocation, useParams } from "react-router-dom";
+import { useDetailHotels } from "@/hooks/hotels";
 
 const ImageSlider = () => {
-  const { tour, isLoading } = useAppSelector((state) => state.tours);
+  const { id } = useParams<{ id: string }>();
+
+  const location = useLocation();
+  const isHotel = location.pathname.includes("hotel");
+
+
+  const { tour, isLoading } = useAppSelector(
+    (state) => state.tours
+  );
+  const { data, isFetching } = useDetailHotels(id as string);
   const sliderRef = useRef<Slider | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+
   const settings = {
     dots: true,
     fade: true,
@@ -22,10 +34,11 @@ const ImageSlider = () => {
     arrows: false,
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
     customPaging: (i: number) => {
+      const images = isHotel ? data?.description.image : tour?.image;
       return (
         <div className="custom-dot">
           <img
-            src={tour?.image[i]}
+            src={images?.[i]}
             alt={`thumbnail-${i}`}
             onClick={() => sliderRef?.current?.slickGoTo(i)}
             className={`transition-all duration-300 ${
@@ -44,11 +57,13 @@ const ImageSlider = () => {
     dotsClass: "slick-dots custom-dots",
   };
 
-  if (!tour?.image || tour?.image.length === 0) {
+  const images = isHotel ? data?.description.image : tour?.image;
+
+  if (!images || images.length === 0) {
     return <div>No images available</div>;
   }
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return (
       <>
         <Skeleton className="w-full h-[400px]" />
@@ -64,7 +79,7 @@ const ImageSlider = () => {
   return (
     <div className="mx-auto mb-30">
       <Slider ref={sliderRef} {...settings}>
-        {tour.image?.map((image, index) => (
+        {images?.map((image, index) => (
           <div key={index} className="mb-5">
             <img
               src={image}

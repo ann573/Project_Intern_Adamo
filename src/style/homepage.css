@@ -25,6 +25,14 @@
   max-height: 900px;
 }
 
+.banner_contact {
+  background-image: url("../assets/images/banner_contact.png");
+  height: 80vh;
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+}
+
 @media screen and (max-width: 768px) {
   .banner {
     background-image: url("../assets/images/banner.png");

@@ -40,7 +40,8 @@ const handleErrorMessage = (status: number, message: string) => {
 
 instance.interceptors.response.use(
   (response) => {
-    return response.data;
+
+    return response;
   },
   async (error) => {
     const originalRequest = error.config;
@@ -103,4 +104,3 @@ instance.interceptors.response.use(
     }
   }
 );
-

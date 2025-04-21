@@ -1,4 +1,4 @@
-import Card from "@/components/Card";
+import Card from "@/components/listTour/Card";
 import ITour from "@/interfaces/ITour";
 // import TTour from "@/types/TSlider";
 import Recommended from "@components/Recommended";

@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction, SerializedError } from "@reduxjs/toolkit";
-import { getDetailTour, getTours, getFilterTour, addCommentTour } from "./tourAction";
 import ITour from "@/interfaces/ITour";
-import { TResponse } from "@/types/TResponse";
+import { createSlice, PayloadAction, SerializedError } from "@reduxjs/toolkit";
+import { AxiosResponse } from "axios";
+import { addCommentTour, getDetailTour, getFilterTour, getTours } from "./tourAction";
 
 type TInitialState = {
   tours: ITour[];
@@ -57,10 +57,10 @@ const tourSlice = createSlice({
       .addCase(getTours.pending, setLoading)
       .addCase(
         getTours.fulfilled,
-        (state: TInitialState, action: PayloadAction<TResponse>) => {
+        (state: TInitialState, action: PayloadAction<AxiosResponse>) => {
           state.isLoading = false;
           state.tours = action.payload?.data;
-          state.total = action.payload.items;
+          state.total = action.payload.headers['x-total-count'];
           state.isError = false;
         }
       )

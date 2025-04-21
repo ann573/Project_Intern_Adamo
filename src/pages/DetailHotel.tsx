@@ -1,8 +1,121 @@
+import ImageSlider from "@/components/detailTour/ImageSlide";
+import AdditionalInfoHotel from "@/components/hotel/AdditionalInfoHotel";
+import DescriptionHotel from "@/components/hotel/DescriptionHotel";
+import FormPriceHotel from "@/components/hotel/FormPriceHotel";
+import Reviews from "@/components/hotel/Reviews";
+import { useDetailHotels } from "@/hooks/hotels";
+import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const HotelDetail = () => {
-  return (
-    <div>HotelDetail</div>
-  )
-}
+  const { id } = useParams<{ id: string }>();
 
-export default HotelDetail
+  const { data, isLoading } = useDetailHotels(id as string);
+  const [choose, setChoose] = useState(1);
+
+  const totalRating =
+    data &&
+    (
+      data.description.reviews.reduce((acc, cur) => acc + cur.rating, 0) /
+      data.description.reviews.length
+    ).toFixed(2);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  const heading = ["Select room", "Additional Info", "Reviews"];
+
+  return (
+    <main className="max-w-[1200px] mx-auto xl:px-0 px-5 mb-20">
+      <section className="my-10 text-content xl:px-0 md:px-10">
+        <p className="flex justify-start gap-5">
+          <Link to={"/"} className="hover:underline">
+            Home
+          </Link>
+          <span className="text-[#C4C4C4] text-lg">•</span>
+          <Link to={"/hotels"} className="hover:underline">
+            Hotels
+          </Link>
+          <span className="text-[#C4C4C4] text-lg">•</span>
+          <span className="select-none">Hotel Details</span>
+        </p>
+      </section>
+
+      <section>
+        <h1 className="md:text-4xl text-3xl font-semibold md:w-2/3">
+          {data?.name}
+        </h1>
+
+        {/* ====================================== */}
+        <p className="flex gap-4 items-center text-sub-color-primary my-5">
+          <i className="ri-map-pin-line text-orange"></i>
+          {data?.location}
+        </p>
+
+        <div className="flex gap-5 text-sub-color-primary mb-10 ">
+          <div className="flex gap-2 items-center">
+            <p className="bg-[#FF7B42] text-white center py-1 px-2 font-semibold">
+              <span className="text-sm mr-1 font-light">Rating:</span>{" "}
+              {totalRating}
+            </p>
+            <span className="text-sub-color-primary">
+              ({data?.description?.reviews.length || 0} reviews)
+            </span>
+          </div>
+
+          <p className=" text-[#FFAD32] w-fit center py-1 px-3 gap-3 text-sm">
+            {Array.from({ length: data?.typeroom || 0 }).map((_, index) => {
+              return <i key={index} className="ri-star-fill"></i>;
+            })}
+          </p>
+        </div>
+      </section>
+
+      {/* ================================================== */}
+      <section className="grid lg:grid-cols-3 grid-cols-2 xl:gap-15 gap-5">
+        <div className="col-span-2 order-2 lg:order-1">
+          <ImageSlider />
+
+          {/* ===================================================== */}
+          <section>
+            <div className="flex justify-between mt-5">
+              {heading.map((item, index) => (
+                <h2
+                  key={index}
+                  className={`md:text-xl font-semibold py-5 cursor-pointer ${
+                    choose === index + 1 ? "text-orange" : "text-[#888888]"
+                  }`}
+                  onClick={() => setChoose(index + 1)}
+                >
+                  {item}
+                </h2>
+              ))}
+            </div>
+            <hr />
+            {choose === 1 && <DescriptionHotel id={id as string} />}
+            {choose === 2 && <AdditionalInfoHotel />}
+            {choose === 3 && <Reviews />}
+          </section>
+        </div>
+
+        <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
+          <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
+            <form className="bg-[#F4F4F4] sticky top-5">
+              <h2 className="p-5 font-medium text-xl">
+                <span className="text-sm font-light">from</span> $
+                {data?.cost.toFixed(2)}
+              </h2>
+              <hr />
+              <div className="p-5">
+                <FormPriceHotel id={id as string}/>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default HotelDetail;

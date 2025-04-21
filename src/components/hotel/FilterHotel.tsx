@@ -6,31 +6,76 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+import { useFullHotels } from "@/hooks/hotels";
+import React from "react";
+import { PriceRangeSlider } from "../PriceSlideRange";
+import { Checkbox } from "../ui/checkbox";
+import { Label } from "../ui/label";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { useLocation, useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
-import React, { useState } from "react";
-import { PriceRangeSlider } from "./PriceSlideRange";
-import { Checkbox } from "./ui/checkbox";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
-import { Label } from "./ui/label";
 
 const FilterHotel = () => {
+  const nav = useNavigate();
+  const { pathname, search } = useLocation();
+
   const [open, setOpen] = React.useState(false);
 
-  const [rangeFilter, setRangeFilter] = useState<number[]>([100, 1000]);
-
   // State for filters
-  const [budget, setBudget] = React.useState([150, 1000]); // [min, max] price range
+  const [budget, setBudget] = React.useState<number[]>([150, 1000]); // [min, max] price range
   const [stars, setStars] = React.useState<number[]>([]); // Array of selected star ratings (e.g., [1, 3, 5])
   const [reviewScore, setReviewScore] = React.useState<string>(); // Array of selected review score ranges (e.g., ["8.5+", "8+"])
+  const [price, setPrice] = React.useState<number[]>();
+  const { data } = useFullHotels();
 
-  // Reset all filters
+  React.useEffect(() => {
+    if (data) {
+      const prices = data.map((product) => product.cost);
+
+      setPrice([...prices]);
+    }
+  }, [data]);
+  React.useEffect(() => {
+    if (!search) {
+      setBudget((prev) => {
+        prev[0] = 0;
+        prev[1] = Math.max(...(price ?? []));
+
+        return prev;
+      });
+    } else {
+      const params = new URLSearchParams(search);
+      const minPrice = parseInt(params.get("minPrice") || "0", 10);
+      const maxPrice = parseInt(params.get("maxPrice") || "1000", 10);
+      setBudget([minPrice, maxPrice]);
+
+      const starsParam = params.get("stars")?.split(",").map(Number) || [];
+      const reviewScoreParam = params.get("reviewScore") || "";
+
+      setStars(starsParam);
+      setReviewScore(reviewScoreParam);
+    }
+  }, [search, price]);
+
   const handleClear = () => {
-    setBudget([150, 1000]);
+    setBudget((prev) => {
+      prev[0] = 0;
+      prev[1] = Math.max(...(price ?? []));
+
+      return prev;
+    });
     setStars([]);
     setReviewScore("");
+    const params = new URLSearchParams(search);
+    params.delete("minPrice");
+    params.delete("maxPrice");
+    params.delete("stars");
+    params.delete("reviewScore");
+
+    nav(`${pathname}?${params.toString()}`);
   };
 
-  // Toggle star rating selection
   const toggleStar = (star: number) => {
     if (stars.includes(star)) {
       setStars(stars.filter((s) => s !== star));
@@ -41,10 +86,25 @@ const FilterHotel = () => {
 
   // Apply filters (placeholder for your filtering logic)
   const handleApply = () => {
-    console.log("Applying filters:", { budget, stars, reviewScore });
+    const params = new URLSearchParams(search);
+
+    params.set("minPrice", budget[0].toString());
+    params.set("maxPrice", budget[1].toString());
+    if (stars.length > 0) {
+      params.set("stars", stars.join(","));
+    } else {
+      params.delete("stars");
+    }
+    if (reviewScore) {
+      params.set("reviewScore", reviewScore);
+    } else {
+      params.delete("reviewScore");
+    }
+
+    nav(`${pathname}?${params.toString()}`);
 
     setOpen(false);
-  }; // Add missing closing brace for handleApply
+  };
 
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
@@ -56,38 +116,37 @@ const FilterHotel = () => {
           }`}
         >
           Filter
-          <X className={`w-5 h-5 ${open ? "block" : "hidden"}`} />
+          <X className={`${!open && "hidden"}`} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-64 p-4">
-        {/* Filter Header */}
         <div className="flex justify-between items-center mb-4">
           <DropdownMenuLabel className="text-lg font-semibold text-[#03387D]">
             Filter By
           </DropdownMenuLabel>
           <Button
             variant="link"
-            className="text-blue-600 p-0 h-auto"
+            className="text-blue-600 p-0 h-auto cursor-pointer"
             onClick={handleClear}
           >
             Clear
           </Button>
         </div>
+
         {/* Budget Section */}
         <div className="mb-6">
           <h3 className="text-sm font-medium mb-2">Budget:</h3>
           <PriceRangeSlider
-            value={rangeFilter}
-            onValueChange={setRangeFilter}
+            value={budget}
+            onValueChange={setBudget}
             min={0}
-            max={2000}
-            step={50}
+            max={Math.max(...(price ?? []))}
+            step={10}
           />
         </div>
 
         {/* Hotel Star Section */}
         <DropdownMenuSeparator />
-
         <div className="my-5">
           <h3 className="text-sm font-medium mb-2">Hotel Star:</h3>
           {[5, 4, 3, 2, 1].map((star) => (
@@ -97,28 +156,15 @@ const FilterHotel = () => {
                 checked={stars.includes(star)}
                 onCheckedChange={() => toggleStar(star)}
               />
-              <label
-                htmlFor={`star-${star}`}
-                className="flex items-center space-x-1"
-              >
-                {[...Array(star)].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="size-5 text-yellow-400 cursor-pointer"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </label>
+              <Label htmlFor={`star-${star}`} className="text-sm">
+                {star} Star{star > 1 ? "s" : ""}
+              </Label>
             </div>
           ))}
         </div>
 
         {/* Review Score Section */}
         <DropdownMenuSeparator />
-
         <div className="my-6">
           <h3 className="text-sm font-medium mb-2">Review Score:</h3>
           <RadioGroup
@@ -127,17 +173,21 @@ const FilterHotel = () => {
             className="space-y-1"
           >
             {[
-              { label: "Wonderful: 9.5+", value: "9.5+" },
-              { label: "Very Good: 9+", value: "9+" },
-              { label: "Good: 8+", value: "8+" },
-              { label: "Pleasant: 7+", value: "7+" },
+              { label: "Wonderful: 9.5+", value: "9.5" },
+              { label: "Very Good: 9+", value: "9" },
+              { label: "Good: 8+", value: "8" },
+              { label: "Pleasant: 7+", value: "7" },
+              { label: "Normal: 5+", value: "5" },
             ].map((score) => (
               <div key={score.value} className="flex items-center space-x-2">
                 <RadioGroupItem
                   id={`score-${score.value}`}
                   value={score.value}
                 />
-                <Label htmlFor={`score-${score.value}`} className="text-sm cursor-pointer">
+                <Label
+                  htmlFor={`score-${score.value}`}
+                  className="text-sm cursor-pointer"
+                >
                   {score.label}
                 </Label>
               </div>

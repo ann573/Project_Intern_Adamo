@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import FormPrice from "@/components/details/FormPrice";
-import ImageSlider from "@/components/details/ImageSlide";
+import FormPrice from "@/components/detailTour/FormPrice";
+import ImageSlider from "@/components/detailTour/ImageSlide";
 import { getDetailTour, getTours } from "@/features/tour/tourAction";
 import { useAppDispatch, useAppSelector } from "@/hooks/app";
-import Description from "@/components/details/Description";
-import AdditionalInfo from "@/components/details/AdditionalInfo";
-import Reviews from "@/components/details/Reviews";
-import Card from "@/components/Card";
+import Description from "@/components/detailTour/Description";
+import AdditionalInfo from "@/components/detailTour/AdditionalInfo";
+import Reviews from "@/components/detailTour/Reviews";
+import Card from "@/components/listTour/Card";
 
 const DetailTour = () => {
   const id = useParams().id;
 
-  const [choose, setChoose] = useState(3);
+  const [choose, setChoose] = useState(1);
   const { tour, tours, isLoading } = useAppSelector((state) => state.tours);
   const dispatch = useAppDispatch();
 
@@ -38,14 +38,14 @@ const DetailTour = () => {
   useEffect(() => {
     window.scroll({ top: 0, behavior: "smooth" });
   }, []);
-  
+
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
 
   return (
-    <section className="max-w-[1200px] mx-auto xl:px-0 px-5 mb-20">
-      <div className="my-10 text-content xl:px-0 md:px-10">
+    <main className="max-w-[1200px] mx-auto xl:px-0 px-5 mb-20">
+      <section className="my-10 text-content xl:px-0 md:px-10">
         <p className="flex justify-start gap-5">
           <Link to={"/"} className="hover:underline">
             Home
@@ -57,7 +57,7 @@ const DetailTour = () => {
           <span className="text-[#C4C4C4] text-lg">•</span>
           <span className="select-none">Detail tour</span>
         </p>
-      </div>
+      </section>
 
       <h1 className="md:text-4xl text-3xl font-semibold md:w-2/3">
         {tour?.title}
@@ -82,7 +82,7 @@ const DetailTour = () => {
       </div>
 
       {/* ========================thumbnail========================= */}
-      <div className="grid lg:grid-cols-3 grid-cols-2 xl:gap-15 gap-5">
+      <section className="grid lg:grid-cols-3 grid-cols-2 xl:gap-15 gap-5">
         <div className="col-span-2 order-2 lg:order-1">
           <ImageSlider />
 
@@ -146,8 +146,8 @@ const DetailTour = () => {
             </div>
           </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 };
 

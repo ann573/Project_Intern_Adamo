@@ -1,16 +1,72 @@
-import FilterHotel from "@/components/FilterHotel";
+import FilterHotel from "@/components/hotel/FilterHotel";
 import FormSearchBanner from "@/components/FormSearchBanner";
 import { useHotels } from "@/hooks/hotels";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import  Pagination  from '@/components/Pagination';
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Pagination from "@/components/Pagination";
+import CardHotel from "@/components/hotel/CardHotel";
+import CardSkeleton from "@/components/CardSkeleton";
+import { IHotel } from "@/interfaces/IHotel";
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 const HotelPage = () => {
   const [date, setDate] = useState<Date | undefined>();
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1);
+  const [dataFilter, setDataFilter] = useState<IHotel[] | undefined>(undefined);
+  const [desc, setDesc] = useState<string>();
+  const { search } = useLocation();
 
-  const {data} = useHotels()
-  const toltalItems = data?.items || 0
+  const params = new URLSearchParams(search);
+  const minPrice = parseInt(params.get("minPrice") || "0", 10);
+  const maxPrice = parseInt(params.get("maxPrice") || "9999", 10);
+  const stars = params.get("stars") || "";
+  const typeRoomParams = stars && stars
+    .split(",")
+    .map((star) => `typeroom=${star}`)
+    .join("&");
+  const reviewScore = params.get("reviewScore") || "";
+  const order = desc === "0" ? "asc" : desc === "1" ? "desc" : "";
+
+  const queryString = `cost_gte=${minPrice}&cost_lte=${maxPrice}${typeRoomParams && `&${typeRoomParams}`}${order ? `&_sort=cost&_order=${order}` : ""}`;
+
+  const { data, isLoading } = useHotels(page, 9, queryString);
+  const [filteredCount, setFilteredCount] = useState<number>(0);
+  
+  console.log(data);
+  useEffect(() => {
+    if (search) {
+      const dataFilter =
+        data &&
+        data.filter((item) => {
+          let isReviewScoreValid = true;
+
+          if (reviewScore) {
+            const averageRating =
+              item.description.reviews.reduce(
+                (sum, review) => sum + review.rating,
+                0
+              ) / item.description.reviews.length;
+
+            isReviewScoreValid = averageRating > parseFloat(reviewScore);
+          }
+
+          return isReviewScoreValid;
+        });
+
+      setDataFilter(dataFilter);
+      setFilteredCount(dataFilter?.length || 0); 
+    } else {
+      setDataFilter(data && data);
+      setFilteredCount(Number(20)); 
+    }
+  }, [data, reviewScore, search, stars]);
+
   return (
     <>
       <section className="text-center grid sm:grid-cols-12 grid-col-2 xl:gap-0 gap-5 banner_hotel max-w-[2000px] mx-auto xl:px-0 px-10">
@@ -29,7 +85,7 @@ const HotelPage = () => {
         </div>
 
         {/* ================= second col ================= */}
-        <div className="sm:col-span-5 self-end justify-self-start w-full">
+        <div className="lg:col-span-5 sm:col-span-7 self-end lg:justify-self-start w-full">
           <FormSearchBanner date={date} setDate={setDate} />
         </div>
       </section>
@@ -47,16 +103,68 @@ const HotelPage = () => {
       </div>
 
       <section className="max-w-[1200px] mx-auto my-5">
-        <div className="flex justify-between items-center relative xl:px-0 px-10">
-          <h2 className="text-heading md:text-[40px] text-2xl font-medium">
+        <div className="justify-between flex flex-wrap gap-y-3 items-center relative xl:px-0 px-10">
+          <h2 className="text-heading md:text-[40px] text-2xl font-medium w-fit">
             Hotels
           </h2>
-          <FilterHotel />
+          <div className="flex items-center xl:gap-20 gap-10 justify-between w-full sm:w-fit">
+            <div className="center sm:gap-5 gap-1">
+              <span>SORT BY:</span>
+              <Select
+                value={desc}
+                onValueChange={(value) => {
+                  setDesc(value);
+                }}
+              >
+                <SelectTrigger className="w-[130px] border-none shadow-none focus-visible:border-none py-0">
+                  <SelectValue placeholder="Price" />
+                </SelectTrigger>
+                <SelectContent>
+                <SelectItem value="2" className="cursor-pointer">
+                    Default
+                  </SelectItem>
+                  <SelectItem value="0" className="cursor-pointer">
+                    Low To High
+                  </SelectItem>
+                  <SelectItem value="1" className="cursor-pointer">
+                    High To Low
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <FilterHotel />
+          </div>
         </div>
       </section>
 
-      <Pagination page={page} setPage={setPage} total={data?.items} />
-      {/* {data} */}
+      <section className="max-w-[1200px] mx-auto xl:px-0 sm:px-5 px-7">
+        {isLoading ? (
+          <CardSkeleton />
+        ) : dataFilter && dataFilter.length > 0 ? (
+          <div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+            {dataFilter.map((item) => (
+              <CardHotel data={item} key={item.id} />
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col gap-3">
+            <p className="text-center mt-5 text-3xl font-bold text-red-500">
+              Không có kết quả tương ứng
+            </p>
+            <Link
+              className=" text-center text-sub-color-primary underline hover:text-[#3e3e3e] cursor-pointer mb-20"
+              onClick={() => {}}
+              to={"/hotels"}
+            >
+              Quay lại mặc định
+            </Link>
+          </div>
+        )}
+
+        {dataFilter && dataFilter.length > 0 && (
+          <Pagination page={page} setPage={setPage} total={filteredCount} />
+        )}
+      </section>
     </>
   );
 };

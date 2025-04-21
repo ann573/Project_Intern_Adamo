@@ -10,8 +10,8 @@ import { Button } from "@components/ui/button";
 import { X } from "lucide-react";
 import { toast } from "sonner";
 
-import Card from "@/components/Card";
-import Filter from "@/components/Filter";
+import Card from "@/components/listTour/Card";
+import Filter from "@/components/listTour/Filter";
 import FormSearchBanner from "@/components/FormSearchBanner";
 import Pagination from "@/components/Pagination";
 
@@ -109,7 +109,7 @@ const ListTour = () => {
       </section>
 
       {/* navigation */}
-      <div className="max-w-[1200px] mx-auto my-5 text-content xl:px-0 px-10">
+      <section className="max-w-[1200px] mx-auto my-5 text-content xl:px-0 px-10">
         <p className="flex justify-start gap-5">
           <Link to={"/"} className="hover:underline">
             Home
@@ -119,7 +119,7 @@ const ListTour = () => {
             Tours
           </Link>
         </p>
-      </div>
+      </section>
 
       {/* ================== List ====================== */}
       <section className="max-w-[1200px] mx-auto my-5" ref={listRef}>
