@@ -95,7 +95,6 @@ const FormPriceHotel = ({ id }: { id: string }) => {
     const { from, to } = date;
 
     if (adults > getMaxNumber()) {
-      console.log("first");
       toast.error("Please select the correct number of rooms", {
         description:
           "The number of guests is greater than the maximum number of people in the room.",
@@ -105,7 +104,6 @@ const FormPriceHotel = ({ id }: { id: string }) => {
         },
       });
     }
-    console.log("------------", getMaxNumber());
     if (from && to) {
       const selectedDays =
         (to.getTime() - from.getTime()) / (1000 * 3600 * 24) + 1;
@@ -244,7 +242,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
                 +
               </button>
             </div>
-            <span className="font-bold text-[#04316A]">
+            <span className="font-bold text-[#04316A] justify-self-end">
               ${room.price_discount.toFixed(2)}
             </span>
           </div>

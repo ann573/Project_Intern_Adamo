@@ -47,6 +47,10 @@ const LoginForm = () => {
 
       toast.success("Đăng nhập thành công", {
         duration: 1000,
+        style: {
+          background: "green",
+          color: "#fff", 
+        }
       });
       setIsLoading(false);
       nav("/");
@@ -82,6 +86,10 @@ const LoginForm = () => {
       setIsLoading(false);
       toast.success("Đặt lại mật khẩu thành công", {
         duration: 1000,
+        style: {
+          background: "green",
+          color: "#fff", 
+        }
       });
 
       resetPasswordForm.reset();

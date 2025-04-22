@@ -26,5 +26,10 @@ export const hotelApi = {
   getRelatedHotel : async (star:number) => {
     const res = await instance.get(`hotels?_page=1&_limit=3&typeroom=${star}`)
     return res.data
+  },
+
+  updateData : async (data:IHotel) => {
+    const res = await instance.patch(`hotels/${data.id}`, data)
+    return res.data 
   }
 };

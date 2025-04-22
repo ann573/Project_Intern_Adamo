@@ -193,7 +193,6 @@ const Filter = ({
         </h3>
         <ul className="flex flex-col gap-5">
           {uniqueTypes.map((item, index) => {
-            console.log(item);
             return (
               <li className="flex gap-3" key={index}>
                 <Checkbox

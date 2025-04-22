@@ -8,28 +8,25 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button } from "@components/ui/button";
-import ImageSlider from "../detailTour/ImageSlide";
-import { useEffect } from "react";
 import { useRoomStore } from "@/zusTand/roomStore";
+import { Button } from "@components/ui/button";
+import { useEffect } from "react";
+import ImageSlider from "../detailTour/ImageSlide";
 const DescriptionHotel = ({ id }: { id: string }) => {
-
   const { data } = useDetailHotels(id);
 
-     // Zustand room state
-     const { rooms, setRooms, setRoomCount } = useRoomStore();
+  const { rooms, setRooms, setRoomCount } = useRoomStore();
 
-     useEffect(() => {
-      if (data && data.description?.room && rooms.length === 0) {
-        setRooms( 
-          data.description.room.map((room) => ({
-            count: 0,
-            ...room
-          }))
-        );
-      }
-    }, [data, setRooms, rooms.length]);
-  console.log(data);
+  useEffect(() => {
+    if (data && data.description?.room && rooms.length === 0) {
+      setRooms(
+        data.description.room.map((room) => ({
+          count: 0,
+          ...room,
+        }))
+      );
+    }
+  }, [data, setRooms, rooms.length]);
   return (
     <>
       <h3 className="font-bold my-5 text-xl">Rooms</h3>
@@ -37,12 +34,16 @@ const DescriptionHotel = ({ id }: { id: string }) => {
       {rooms.map((item, index) => {
         return (
           <>
-            <div className="my-5 flex gap-5 bg-[#F8F8F8]" key={index}>
+            <div
+              className="my-5 flex sm:flex-row flex-col gap-5 bg-[#F8F8F8]"
+              key={index}
+            >
               <div>
                 <img
                   src={`https://picsum.photos/seed/${index}/200`}
                   alt="image_room"
                   className="max-h-[200px] w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <Dialog>
@@ -53,7 +54,7 @@ const DescriptionHotel = ({ id }: { id: string }) => {
                     </h3>
                   </DialogTrigger>
 
-                  <div className="flex justify-between text-[#4F4F4F]">
+                  <div className="flex justify-between flex-wrap text-[#4F4F4F]">
                     {/* =========== */}
                     <div className="flex gap-2 items-center">
                       <i className="ri-shape-line text-xl"></i>
@@ -100,20 +101,28 @@ const DescriptionHotel = ({ id }: { id: string }) => {
                     <button
                       className={`px-8 py-2 ${
                         item.isAvailable
-                          ?  item.count > 0 ? "bg-primary text-white px-10" : `border border-primary bg-transparent text-primary cursor-pointer hover:bg-primary hover:text-white transition-colors`
+                          ? item.count > 0
+                            ? "bg-primary text-white px-10"
+                            : `border border-primary bg-transparent text-primary cursor-pointer hover:bg-primary hover:text-white transition-colors`
                           : `bg-[#223143] text-white`
                       }`}
-                      onClick={() => (item.count === 0 && setRoomCount(item.name, 1))}
+                      onClick={() =>
+                        item.count === 0 && setRoomCount(item.name, 1)
+                      }
                     >
-                      {item.isAvailable ? item.count > 0 ?"Selected" : "Select Room" : "Out of room"}
+                      {item.isAvailable
+                        ? item.count > 0
+                          ? "Selected"
+                          : "Select Room"
+                        : "Out of room"}
                     </button>
                   </div>
                 </div>
-                <DialogContent className="min-w-[1000px]">
+                <DialogContent className="sm:w-[90%] sm:max-w-[2000px] max-h-[90vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle>{item.name}</DialogTitle>
                   </DialogHeader>
-                  <DialogDescription className="grid grid-cols-2 gap-10 text-black">
+                  <DialogDescription className="grid md:grid-cols-2 grid-cols-1 gap-10 text-black">
                     <div>
                       <div className="flex justify-between items-center mb-5">
                         <div className="text-xs text-[#5E6D77]">
@@ -124,13 +133,28 @@ const DescriptionHotel = ({ id }: { id: string }) => {
                           </span>{" "}
                           /night
                         </div>
-                        <Button className="rounded-none ">{item.isAvailable ? item.count > 0 ?"Selected" : "Select Room" : "Out of room"} </Button>
+                        <Button
+                          className={`px-8 py-2 ${
+                            item.isAvailable
+                              ? item.count > 0
+                                ? "bg-primary text-white px-10"
+                                : `border border-primary bg-transparent text-primary cursor-pointer hover:bg-primary hover:text-white transition-colors`
+                              : `bg-[#223143] text-white`
+                          }`}
+                          onClick={() => item.count === 0 && setRoomCount(item.name, 1)}
+                        >
+                          {item.isAvailable
+                            ? item.count > 0
+                              ? "Selected"
+                              : "Select Room"
+                            : "Out of room"}
+                        </Button>
                       </div>
                       <ImageSlider />
                     </div>
                     {/* ============================= */}
                     <div>
-                      <div className="flex justify-between text-[#4F4F4F]">
+                      <div className="flex justify-between text-[#4F4F4F] gap-4">
                         {/* =========== */}
                         <div className="flex gap-2 items-center">
                           <i className="ri-shape-line text-xl"></i>
@@ -158,19 +182,23 @@ const DescriptionHotel = ({ id }: { id: string }) => {
 
                       <hr className="my-3" />
 
-                      <h3 className="font-bold text-lg mb-5">Room Facilities: </h3>
-                      <div className="max-h-80 overflow-auto columns-2 flex-wrap">
-                        {item.facilities.map(item => {
+                      <h3 className="font-bold text-lg mb-5">
+                        Room Facilities:{" "}
+                      </h3>
+                      <div className="max-h-80 overflow-y-auto columns-2">
+                        {item.facilities.map((item) => {
                           return (
-                            <div key={item} className="flex gap-2 items-center break-inside-avoid mb-2">
-                              <i className="ri-checkbox-circle-line text-[#0069E4]"></i>
+                            <div
+                              key={item}
+                              className="flex gap-2 items-center  mb-2 "
+                            >
+                              <i className="ri-check-line text-green-500"></i>
                               <p>{item}</p>
                             </div>
                           );
                         })}
                       </div>
                     </div>
-                      
                   </DialogDescription>
                 </DialogContent>
               </Dialog>

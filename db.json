@@ -2043,7 +2043,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -2162,6 +2162,22 @@
         },
         "reviews": [
           {
+            "heading": "Chuyến đi đang nhớ",
+            "rating": 8,
+            "comments": "Nếu bạn chưa đi thì bạn đi đi",
+            "name": "Nguyễn  An",
+            "time": 1745305280,
+            "avatar": "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg"
+          },
+          {
+            "heading": "aaaaaaaaaaaaaaaaaaa",
+            "rating": 8,
+            "comments": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "name": "Nguyễn  An",
+            "time": 1745304983,
+            "avatar": "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg"
+          },
+          {
             "avatar": "https://randomuser.me/api/portraits/men/2.jpg",
             "rating": 3,
             "heading": "The best experience ever!",
@@ -2231,7 +2247,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -2419,7 +2435,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -2607,7 +2623,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -2795,7 +2811,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -2914,6 +2930,14 @@
         },
         "reviews": [
           {
+            "heading": "Wonderful Tour ",
+            "rating": 8,
+            "comments": "The best hotel everrrrrr!!",
+            "name": "Nguyễn  An",
+            "time": 1745310209,
+            "avatar": "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg"
+          },
+          {
             "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
             "rating": 8.2,
             "heading": "The best experience ever!",
@@ -2983,7 +3007,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -3171,7 +3195,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -3359,7 +3383,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -3547,7 +3571,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -3735,7 +3759,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -3923,7 +3947,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -4111,7 +4135,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -4299,7 +4323,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -4487,7 +4511,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -4675,7 +4699,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -4863,7 +4887,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -5051,7 +5075,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -5239,7 +5263,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -5427,7 +5451,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -5615,7 +5639,7 @@
             "guest": 4,
             "description": "This air-conditioned room features large windows and a balcony with views of the city and sea. It contains a sitting area, flat-screen TV, a fridge and tea-and-coffee-making facilities. The bathroom has a shower and toilet.\n Maximum occupancy is 2 adults and 1 child under the age of 2 years old in a crib. Please note that extra beds cannot be accommodated in this room type.",
             "price": 600,
-            "price_discount": 30, 
+            "price_discount": 30,
             "isAvailable": false,
             "facilities": [
               "Air conditioning",
@@ -5683,6 +5707,22 @@
           "https://picsum.photos/id/21/600/404"
         ]
       }
+    }
+  ],
+  "contact": [
+    {
+      "name": "Nguyễn Thành An",
+      "email": "tonggiamdoc@gmail.com",
+      "telephone": "0332014757",
+      "message": "loremsadsadasds",
+      "id": 1
+    },
+    {
+      "name": "Sản phẩm C",
+      "email": "nhanvien1@gmail.com",
+      "telephone": "0123456789",
+      "message": "dsadasdasdsadasdasdasd",
+      "id": 2
     }
   ]
 }

@@ -48,7 +48,12 @@ const RegisterForm = () => {
       });
 
       setIsLoading(false);
-      toast.success("Đăng ký thành công:");
+      toast.success("Đăng ký thành công", {
+        style: {
+          background: "green",
+          color: "#fff", 
+        }
+      });
 
       nav("/auth/login");
 

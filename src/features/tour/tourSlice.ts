@@ -49,7 +49,6 @@ const tourSlice = createSlice({
     },
     addComment: (state, action) => {
       state.tour?.rating.push(action.payload)
-      console.log(state.tour?.rating)
     }
   },
   extraReducers: (builder) => {

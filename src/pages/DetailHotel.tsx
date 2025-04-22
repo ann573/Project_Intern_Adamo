@@ -13,7 +13,7 @@ const HotelDetail = () => {
 
   const { data, isLoading } = useDetailHotels(id as string);
   const { data: dataRelated } = useRelatedHotels(data?.typeroom as number);
-  const [choose, setChoose] = useState(3);
+  const [choose, setChoose] = useState(1);
 
   const totalRating =
     data &&
@@ -119,8 +119,8 @@ const HotelDetail = () => {
 
       {/* ===================================================== */}
       <section className="my-20">
-        <h3 className="text-[#2A2A2A] mt-5 mb-3 text-3xl font-bold mb-5">Recommended for you</h3>
-        <div className="grid grid-cols-3 gap-7">
+        <h3 className="text-[#2A2A2A] mt-5 text-3xl font-bold mb-5">Recommended for you</h3>
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-7">
           {dataRelated?.map((item) => (
             <CardHotel data={item} />
           ))}

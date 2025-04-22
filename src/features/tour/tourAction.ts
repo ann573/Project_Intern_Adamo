@@ -34,7 +34,6 @@ export const getTours = createAsyncThunk<
       const res = await instance.get(
         `tours?_page=${page}&_limit=${limit}&${request}`
       );
-      console.log(res.headers["x-total-count"]);
       return res;
     } catch (error) {
       return handleError(error as ErrorResponse, rejectWithValue);

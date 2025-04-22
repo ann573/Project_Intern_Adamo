@@ -71,7 +71,7 @@ function App() {
           <Route path="/policy" element={<PolicyPage />} />
         </Route>
 
-        <Route path="/checkout" element={<CheckOutPage />} />
+        <Route path="/checkout/:type" element={<CheckOutPage />} />
         <Route path="/thanks" element={<ThankPage />} />
 
         {/* ------------Screen Auth------------------ */}

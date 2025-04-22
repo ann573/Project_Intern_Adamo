@@ -38,7 +38,6 @@ const HotelPage = () => {
   const { data, isLoading } = useHotels(page, 9, queryString);
   const [filteredCount, setFilteredCount] = useState<number>(0);
   
-  console.log(data);
   useEffect(() => {
     if (search) {
       const dataFilter =

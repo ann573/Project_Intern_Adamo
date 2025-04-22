@@ -16,10 +16,17 @@ import { useAppSelector } from "@/hooks/app";
 import { cn } from "@/lib/utils";
 import { User2 } from "lucide-react";
 import { toast } from "sonner";
+import { useOrderStore } from "@/zusTand/orderStore";
+import { useNavigate } from "react-router-dom";
 
 const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
+  // redux toolkit
   const { tour } = useAppSelector((state) => state.tours);
 
+  // zustand
+  const {setOrderTour} = useOrderStore()
+
+  const nav = useNavigate()
   const [date, setDate] = useState<DateRange | undefined>({
     from: addDays(new Date(), 1),
     to: addDays(new Date(), tour?.duration || 0),
@@ -40,6 +47,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
 
   const handleSubmitForm = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
+
     if (!date)
       return toast.error("Pleas fill the date!!!", {
         style: {
@@ -47,8 +55,8 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
           color: "white",
         },
       });
-    const { from, to } = date;
 
+    const { from, to } = date;
     if (from && to) {
       const selectedDays =
         (to.getTime() - from.getTime()) / (1000 * 3600 * 24) + 1;
@@ -62,8 +70,20 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
             },
           }
         );
+        return
+      } else {
+        setOrderTour({
+          id: tour?.id || "",
+          adults: adults,
+          children: children,
+          from,
+          to
+        })
+        nav("/checkout/tour")
       }
     }
+
+    
   };
   return (
     <>

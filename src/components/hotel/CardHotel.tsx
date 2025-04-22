@@ -26,7 +26,7 @@ const CardHotel = ({ data }: { data: IHotel }) => {
 
       <div className="flex gap-1 my-3">
         <i className="ri-map-pin-line text-orange"></i>
-        <p className="text-sub-color-primary">{data.location}</p>
+        <p className="text-sub-color-primary line-clamp-1 ">{data.location}</p>
       </div>
 
       <h3 className="text-heading text-lg font-medium hover:text-orange transition-colors cursor-pointer min-h-[56px] line-clamp-2">

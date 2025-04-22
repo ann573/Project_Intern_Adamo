@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { ContactFormData, contactSchema } from "@/schema/contactSchema";
+import { instance } from "@/service";
 import hero from "@assets/images/hero_1.png";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const contactItems = [
   {
@@ -21,6 +26,37 @@ const contactItems = [
 ];
 
 const ContactPage = () => {
+  const nav = useNavigate()
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const handleSubmitForm = async (data:ContactFormData) => {
+    try {
+      await instance.post("/contact", data);
+      toast.success("Send message successfully",{
+        style: {
+          background: "green",
+          color: "white",
+        }, 
+        description: "We will contact you as soon as possible",
+      })
+      reset()
+      nav("/")
+    } catch (error) {
+      toast.error((error as Error).message,{
+        style: {
+          background: "red",
+          color: "white",
+        },
+      });
+    }
+  };
   return (
     <>
       <section className="banner_contact ">
@@ -40,35 +76,61 @@ const ContactPage = () => {
       </section>
 
       <section className="max-w-[1200px] mx-auto grid grid-cols-2 gap-20 mt-10 my-20">
-        <form className="">
+        <form onSubmit={handleSubmit(handleSubmitForm)}>
           <h2 className="font-bold text-4xl">We'd love to hear from you</h2>
           <p className="mt-5 mb-10">
             Send us a message and we'll respond as soon as possible
           </p>
 
           <div className="flex flex-col gap-5">
-            <input
-              type="name"
-              className="bg-[#F5F5F5] p-3 focus:outline-none"
-              placeholder="Your Name"
-            />
-            <input
-              type="email"
-              className="bg-[#F5F5F5] p-3 focus:outline-none"
-              placeholder="Your Email"
-            />
-            <input
-              type="tel"
-              className="bg-[#F5F5F5] p-3 focus:outline-none"
-              placeholder="Your Phone"
-            />
-            <textarea
-              name=""
-              id=""
-              placeholder="Message"
-              className="resize-none bg-[#F5F5F5] p-3 focus:outline-none"
-              rows={5}
-            ></textarea>
+            <div>
+              <input
+                type="name"
+                className="bg-[#F5F5F5] p-3 focus:outline-none w-full"
+                placeholder="Your Name"
+                {...register("name")}
+              />
+              {errors.name && (
+                <p className="text-red-500 italic">{errors.name.message}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="email"
+                className="bg-[#F5F5F5] p-3 focus:outline-none w-full"
+                placeholder="Your Email"
+                {...register("email")}
+              />
+              {errors.email && (
+                <p className="text-red-500 italic">{errors.email.message}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="tel"
+                className="bg-[#F5F5F5] p-3 focus:outline-none w-full"
+                placeholder="Your Phone"
+                {...register("telephone")}
+              />
+              {errors.telephone && (
+                <p className="text-red-500 italic">{errors.telephone.message}</p>
+              )}
+            </div>
+
+            <div>
+              <textarea
+                id=""
+                placeholder="Message"
+                className="resize-none bg-[#F5F5F5] p-3 focus:outline-none w-full"
+                rows={5}
+                {...register("message")}
+              ></textarea>
+              {errors.message && (
+                <p className="text-red-500 italic">{errors.message.message}</p>
+              )}
+            </div>
 
             <Button className="w-fit rounded-none py-5 px-10 ml-auto cursor-pointer">
               Send Message

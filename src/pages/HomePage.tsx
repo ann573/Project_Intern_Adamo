@@ -45,6 +45,10 @@ const HomePage = () => {
       await instance.post("/emails", { email });
       toast.success("Đăng ký thành công", {
         description: "Chúng tôi sẽ gửi thông tin đến email của bạn",
+        style: {
+          background: "green",
+          color: "#fff", 
+        }
       });
 
       reset();
@@ -126,7 +130,7 @@ const HomePage = () => {
       {/* =============================== experience tour =========================== */}
       <section className="relative my-30" data-aos="fade-up">
         <div className="flex justify-between items-center flex-wrap gap-5 max-w-[1200px] mx-auto mb-5 px-5 xl:px-0">
-          <h2 className="md:text-[40px] text-3xl xl:w-1/3 md:w-1/2 text-heading font-medium">
+          <h2 className="md:text-[40px] text-3xl  md:w-1/2 text-heading font-medium">
             Attractive tour and interesting <br className="lg:block hidden" />{" "}
             experiences
           </h2>
@@ -146,7 +150,7 @@ const HomePage = () => {
         data-aos="fade-up"
       >
         <div className="flex justify-between items-center flex-wrap gap-5 max-w-[1200px] mx-auto mb-5 px-5 xl:px-0">
-          <h2 className="md:text-[40px] text-3xl xl:w-1/3 md:w-1/2 text-heading font-medium">
+          <h2 className="md:text-[40px] text-3xl  md:w-1/2 text-heading font-medium">
             Experience the traditional cultural beauties of Vietnam
           </h2>
           <Button variant={"ghost"}>

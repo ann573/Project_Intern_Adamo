@@ -30,6 +30,10 @@ const EmailForgotForm = () => {
 
       toast.success("Vui lòng kiểm tra email của bạn để đặt lại mật khẩu", {
         duration: 1500,
+        style: {
+          background: "green",
+          color: "#fff", 
+        }
       });
     } catch (error) {
       setIsLoading(false);
