@@ -23,3 +23,10 @@ export const useDetailHotels = (id:string) => {
     queryFn: () => hotelApi.getDetailHotel(id),
   });
 };
+
+export const useRelatedHotels = (star:number) => {
+  return useQuery<IHotel[]>({
+    queryKey: ["hotelStar", star],
+    queryFn: () => hotelApi.getRelatedHotel(star),
+  });
+};

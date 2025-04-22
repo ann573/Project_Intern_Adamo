@@ -21,5 +21,10 @@ export const hotelApi = {
   getDetailHotel : async (id:string) => {
     const res = await instance.get(`hotels/${id}`)
     return res.data
+  },
+
+  getRelatedHotel : async (star:number) => {
+    const res = await instance.get(`hotels?_page=1&_limit=3&typeroom=${star}`)
+    return res.data
   }
 };

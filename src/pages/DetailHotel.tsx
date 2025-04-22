@@ -3,15 +3,17 @@ import AdditionalInfoHotel from "@/components/hotel/AdditionalInfoHotel";
 import DescriptionHotel from "@/components/hotel/DescriptionHotel";
 import FormPriceHotel from "@/components/hotel/FormPriceHotel";
 import Reviews from "@/components/hotel/Reviews";
-import { useDetailHotels } from "@/hooks/hotels";
+import { useDetailHotels, useRelatedHotels } from "@/hooks/hotels";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import CardHotel from "./../components/hotel/CardHotel";
 
 const HotelDetail = () => {
   const { id } = useParams<{ id: string }>();
 
   const { data, isLoading } = useDetailHotels(id as string);
-  const [choose, setChoose] = useState(1);
+  const { data: dataRelated } = useRelatedHotels(data?.typeroom as number);
+  const [choose, setChoose] = useState(3);
 
   const totalRating =
     data &&
@@ -24,7 +26,7 @@ const HotelDetail = () => {
     return <h1>Loading...</h1>;
   }
 
-  const heading = ["Select room", "Additional Info", "Reviews"];
+  const heading = ["Select room", "Descriptions", "Reviews"];
 
   return (
     <main className="max-w-[1200px] mx-auto xl:px-0 px-5 mb-20">
@@ -78,7 +80,7 @@ const HotelDetail = () => {
           <ImageSlider />
 
           {/* ===================================================== */}
-          <section>
+          <div>
             <div className="flex justify-between mt-5">
               {heading.map((item, index) => (
                 <h2
@@ -94,9 +96,9 @@ const HotelDetail = () => {
             </div>
             <hr />
             {choose === 1 && <DescriptionHotel id={id as string} />}
-            {choose === 2 && <AdditionalInfoHotel />}
-            {choose === 3 && <Reviews />}
-          </section>
+            {choose === 2 && <AdditionalInfoHotel id={id as string} />}
+            {choose === 3 && <Reviews id={id as string} />}
+          </div>
         </div>
 
         <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
@@ -108,10 +110,20 @@ const HotelDetail = () => {
               </h2>
               <hr />
               <div className="p-5">
-                <FormPriceHotel id={id as string}/>
+                <FormPriceHotel id={id as string} />
               </div>
             </form>
           </div>
+        </div>
+      </section>
+
+      {/* ===================================================== */}
+      <section className="my-20">
+        <h3 className="text-[#2A2A2A] mt-5 mb-3 text-3xl font-bold mb-5">Recommended for you</h3>
+        <div className="grid grid-cols-3 gap-7">
+          {dataRelated?.map((item) => (
+            <CardHotel data={item} />
+          ))}
         </div>
       </section>
     </main>

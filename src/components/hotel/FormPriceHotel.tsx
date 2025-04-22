@@ -35,7 +35,10 @@ const FormPriceHotel = ({ id }: { id: string }) => {
     { name: "Breakfast", checked: true, count: 1, price: 20 },
     { name: "Extra Bed", checked: false, count: 0, price: 5 },
   ]);
-  const totalRoom = rooms.reduce((sum, r) => sum + r.count * r.price_discount, 0);
+  const totalRoom = rooms.reduce(
+    (sum, r) => sum + r.count * r.price_discount,
+    0
+  );
   const totalAddon = addons.reduce(
     (sum, a) => sum + (a.checked ? a.count * a.price : 0),
     0
@@ -52,14 +55,6 @@ const FormPriceHotel = ({ id }: { id: string }) => {
   const handleClearDate = () => {
     setDate(undefined);
   };
-
-  // const handleRoomChange = (idx: number, delta: number) => {
-  //   setRooms((prev) =>
-  //     prev?.map((room, i) =>
-  //       i === idx ? { ...room, count: Math.max(0, room.count + delta) } : room
-  //     )
-  //   );
-  // };
 
   const handleAddonCheck = (idx: number) => {
     setAddons((prev) =>
