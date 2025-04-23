@@ -73,9 +73,14 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
         return
       } else {
         setOrderTour({
-          id: tour?.id || "",
-          adults: adults,
-          children: children,
+          cost: tour?.cost as number,
+          title: tour?.title as string,
+          location: tour?.location as string,
+          duration: tour?.duration as number,
+          type: tour?.type as string,
+          total: price,
+          adults,
+          children,
           from,
           to
         })
@@ -87,7 +92,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   };
   return (
     <>
-      <form className={cn("grid gap-2", className)}>
+      <section className={cn("grid gap-2", className)}>
         <Popover>
           <PopoverTrigger asChild>
             <Button
@@ -173,7 +178,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
             </div>
           </PopoverContent>
         </Popover>
-      </form>
+      </section>
 
       <div className="flex justify-between items-center my-5">
         <span className="font-medium">Total</span>

@@ -5724,5 +5724,13 @@
       "message": "dsadasdasdsadasdasdasd",
       "id": 2
     }
+  ],
+  "promotions": [
+    {
+      "name": "Khuyến mãi 1",
+      "code": "CODE50",
+      "discount": 50,
+      "id": 1
+    }
   ]
 }
