@@ -1,34 +1,32 @@
-import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import HomePage from "@/pages/HomePage";
+import LayoutAuth from "@/layout/LayoutAuth";
 import LayoutClient from "@/layout/LayoutClient";
-import ListTour from "@/pages/ListTour";
-import DetailTour from "@/pages/DetailTour";
 import CheckOutPage from "@/pages/CheckOutPage";
+import HotelDetail from "@/pages/DetailHotel";
+import DetailTour from "@/pages/DetailTour";
+import HomePage from "@/pages/HomePage";
+import HotelPage from "@/pages/HotelPage";
+import ListTour from "@/pages/ListTour";
 import PolicyPage from "@/pages/PolicyPage";
 import ThankPage from "@/pages/ThankPage";
-import HotelPage from "@/pages/HotelPage";
-import HotelDetail from "@/pages/DetailHotel";
-import LayoutAuth from "@/layout/LayoutAuth";
 
-import { Toaster } from "@components/ui/sonner";
+import SplashScreen from "@/components/SplashScreen";
+import EmailForgotForm from "@/components/auth/EmailForgotForm";
+import LoginForm from "@/components/auth/LoginForm";
+import RegisterForm from "@/components/auth/RegisterForm";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
-import SplashScreen from "@/components/SplashScreen";
-import RegisterForm from "@/components/auth/RegisterForm";
-import LoginForm from "@/components/auth/LoginForm";
-import EmailForgotForm from "@/components/auth/EmailForgotForm";
+import { Toaster } from "@components/ui/sonner";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import ResultPage from "@/pages/ResultPage";
-import Cookies from "js-cookie";
 import { useAppDispatch } from "@/hooks/app";
-import { setAuth } from "@/features/auth/authSlice";
+import ResultPage from "@/pages/ResultPage";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 function App() {
   const [isSplashFinished, setIsSplashFinished] = useState(false);
@@ -43,11 +41,6 @@ function App() {
       duration: 900,
       once: true,
     });
-
-    const storedName = Cookies.get('name');
-  if (storedName) {
-    dispatch(setAuth({ name: storedName }));
-  }
   }, [dispatch]);
 
   if (!isSplashFinished) {

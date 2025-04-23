@@ -12,10 +12,11 @@ import {
 } from "@/components/ui/alert-dialog";
 import { addCommentTour } from "@/features/tour/tourAction";
 import { useAppDispatch, useAppSelector } from "@/hooks/app";
+import { useAuthStore } from "@/zusTand/authStore";
 import { Button } from "@components/ui/button";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import ReviewItem from "./ReviewItem";
 import StarRating from "./StarRating";
@@ -24,15 +25,14 @@ const Reviews = () => {
   const { tour } = useAppSelector((state) => state.tours);
   const [page, setPage] = useState(1);
   const [rating, setRating] = useState(0);
-  
-  const name = useAppSelector((state) => state.auth.name);
-  const dispatch = useAppDispatch()
+  const { user } = useAuthStore();
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<{comments: string}>();
+  } = useForm<{ comments: string }>();
 
   const rateCount: Record<string, number> = {};
   let totalRating = 0;
@@ -48,38 +48,38 @@ const Reviews = () => {
     }
   }
 
-  const handleSubmitReview = ({comments}: {comments:string}) => {
-    if(rating === 0 ) {
-      toast.error("Vui lòng chọn số sao",{
+  const handleSubmitReview = ({ comments }: { comments: string }) => {
+    if (rating === 0) {
+      toast.error("Vui lòng chọn số sao", {
         duration: 1000,
         style: {
           background: "red",
-          color: "white"
-        }
-      })
+          color: "white",
+        },
+      });
       return;
-    } 
-    if ( tour) {
-
-      const day = new Date()
+    }
+    if (tour) {
+      const day = new Date();
 
       const dataBody = {
-        title: name,
+        title: user?.name || '',
         rate: rating,
         heading: "The best experience ever!",
         time: Math.floor(day.getTime() / 1000),
-        avatar: "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg",
-        comments 
-      }
+        avatar:
+          "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg",
+        comments,
+      };
       const dataPatch = {
         ...tour,
-        rating: [dataBody, ...(tour?.rating || []) ]
-      };      
+        rating: [dataBody, ...(tour?.rating || [])],
+      };
 
-      dispatch(addCommentTour(dataPatch))
+      dispatch(addCommentTour(dataPatch));
 
-      reset()
-      setRating(0)
+      reset();
+      setRating(0);
     }
   };
   return (
@@ -138,7 +138,9 @@ const Reviews = () => {
                   ></div>
                 </div>
                 <p className="flex gap-1">
-                  <span className="md:min-w-5 min-w-3">{rateCount[index + 1] || 0}</span>{" "}
+                  <span className="md:min-w-5 min-w-3">
+                    {rateCount[index + 1] || 0}
+                  </span>{" "}
                   reviews
                 </p>
               </div>
@@ -149,8 +151,8 @@ const Reviews = () => {
 
       <hr />
 
-      <div className="my-10 px-5 "> 
-        <StarRating rating={rating} setRating={setRating}/>
+      <div className="my-10 px-5 ">
+        <StarRating rating={rating} setRating={setRating} />
         <form onSubmit={handleSubmit(handleSubmitReview)}>
           <div className="flex md:gap-7 gap-3">
             <img
@@ -159,18 +161,27 @@ const Reviews = () => {
             />
             <div className="w-full">
               <textarea
-              className={`resize-none w-full border md:p-5 p-3 focus:outline-none  ${errors.comments ? 'border-red-400 focus-visible:ring-red-500/50 focus-visible:ring-2 ':'focus-visible:ring-ring/50 focus-visible:ring-[3px]'}` }
-              rows={5}
-              {...register("comments", { required: { value: true, message: "Comments is required" } })}
-            ></textarea>
-            {errors.comments && typeof errors.comments.message === 'string' && (
-              <p className="text-red-500 italic pl-3">{errors.comments.message}</p>
-            )}
+                className={`resize-none w-full border md:p-5 p-3 focus:outline-none  ${
+                  errors.comments
+                    ? "border-red-400 focus-visible:ring-red-500/50 focus-visible:ring-2 "
+                    : "focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+                }`}
+                rows={5}
+                {...register("comments", {
+                  required: { value: true, message: "Comments is required" },
+                })}
+              ></textarea>
+              {errors.comments &&
+                typeof errors.comments.message === "string" && (
+                  <p className="text-red-500 italic pl-3">
+                    {errors.comments.message}
+                  </p>
+                )}
             </div>
           </div>
 
           <div className="flex">
-            {name ? (
+            {user?.name ? (
               <Button className="md:px-10 py-5 rounded-none ml-auto mt-5 cursor-pointer">
                 Comment
               </Button>
@@ -188,7 +199,9 @@ const Reviews = () => {
                   </AlertDialogHeader>
                   <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction><Link to="/auth/login">Login</Link></AlertDialogAction>
+                    <AlertDialogAction>
+                      <Link to="/auth/login">Login</Link>
+                    </AlertDialogAction>
                   </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>

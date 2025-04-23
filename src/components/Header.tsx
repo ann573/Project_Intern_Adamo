@@ -19,21 +19,19 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
-import { useAppDispatch, useAppSelector } from "@/hooks/app";
-import { removeAuth } from "@/features/auth/authSlice";
+import { useAuthStore } from "@/zusTand/authStore";
 
 type TProp = { scrolling: boolean; isFixed: boolean };
 const Header = ({ scrolling, isFixed }: TProp) => {
   const [isOpen, setIsOpen] = useState(false);
+  const {user} = useAuthStore()
 
-  const {name} = useAppSelector(state => state.auth)
-  const dispatch = useAppDispatch()
   const handleLogout = () => {
     Cookies.remove("access_token");
     Cookies.remove("refresh_token");
-    Cookies.remove("name");
 
-    dispatch(removeAuth({}));
+    useAuthStore.persist.clearStorage();
+
     window.location.reload();
   };
 
@@ -63,7 +61,7 @@ const Header = ({ scrolling, isFixed }: TProp) => {
               <NavLink to="/contact">Contact</NavLink>
             </li>
             <>
-              {name ? (
+              {user?.name ? (
                 <>
                   <li
                     className="bg-orange text-white px-4 py-2 rounded-full cursor-pointer relative select-none "
@@ -75,7 +73,7 @@ const Header = ({ scrolling, isFixed }: TProp) => {
                       <DropdownMenuContent className="w-56 mt-5">
                         <DropdownMenuLabel>
                           Hello{" "}
-                          <span className="font-bold text-base">{name}</span>
+                          <span className="font-bold text-base">{user.name}</span>
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
@@ -161,7 +159,7 @@ const Header = ({ scrolling, isFixed }: TProp) => {
                       Contact
                     </NavLink>
                   </li>
-                  {name ? (
+                  {user?.name ? (
                     <Link to={"/auth/login"}>
                       <span>Log out</span>
                     </Link>

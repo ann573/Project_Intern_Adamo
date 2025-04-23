@@ -1,7 +1,28 @@
-
+import banner from "@assets/images/banner.png"
+import { useNavigate } from "react-router-dom"
 const ThankPage = () => {
+  const nav = useNavigate();
   return (
-    <div>ThankPage</div>
+    <>
+      <section className="relative min-h-screen flex items-center justify-center">
+        <img src={banner} className="absolute inset-0 w-full h-full object-cover" alt="" />
+        <div className="relative z-10 flex items-center justify-center w-full h-full px-10">
+          <div className="bg-white bg-opacity-95 rounded-lg shadow-lg px-4 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 max-w-full sm:max-w-md md:max-w-lg w-full flex flex-col items-center">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FF7B42] mb-6 text-center">Thank You!</h1>
+            <p className="text-gray-700 text-center mb-2 text-sm sm:text-base md:text-lg">
+              Your order has been successfully ordered.<br />
+              Order information has been emailed to you. Thank you!
+            </p>
+            <button
+              className="mt-8 px-6 py-2 sm:px-8 sm:py-3 bg-[#FF7B42] text-white font-semibold rounded transition hover:bg-orange-600 text-sm sm:text-base cursor-pointer"
+              onClick={() => nav("/")}
+            >
+              Back to our home
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
 

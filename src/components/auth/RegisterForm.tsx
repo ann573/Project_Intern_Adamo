@@ -44,7 +44,7 @@ const RegisterForm = () => {
         password
       );
       await updateProfile(userCredential.user, {
-        displayName: `${f_name} ${l_name}`,
+        displayName: `${f_name}${l_name}`,
       });
 
       setIsLoading(false);

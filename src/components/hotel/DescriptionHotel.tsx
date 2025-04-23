@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { useRoomStore } from "@/zusTand/roomStore";
 import { Button } from "@components/ui/button";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import ImageSlider from "../detailTour/ImageSlide";
 const DescriptionHotel = ({ id }: { id: string }) => {
   const { data } = useDetailHotels(id);
@@ -33,10 +33,10 @@ const DescriptionHotel = ({ id }: { id: string }) => {
 
       {rooms.map((item, index) => {
         return (
-          <>
+          <React.Fragment key={index}>
             <div
               className="my-5 flex sm:flex-row flex-col gap-5 bg-[#F8F8F8]"
-              key={index}
+              
             >
               <div>
                 <img
@@ -203,7 +203,7 @@ const DescriptionHotel = ({ id }: { id: string }) => {
                 </DialogContent>
               </Dialog>
             </div>
-          </>
+          </React.Fragment>
         );
       })}
     </>

@@ -9,6 +9,7 @@ import Description from "@/components/detailTour/Description";
 import AdditionalInfo from "@/components/detailTour/AdditionalInfo";
 import Reviews from "@/components/detailTour/Reviews";
 import Card from "@/components/listTour/Card";
+import DetailSkeleton from "@/components/DetailSkeleton";
 
 const DetailTour = () => {
   const id = useParams().id;
@@ -40,7 +41,7 @@ const DetailTour = () => {
   }, []);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <DetailSkeleton/>;
   }
 
   return (

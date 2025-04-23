@@ -12,31 +12,40 @@ import card from "@assets/images/card.png";
 import paypal from "@assets/images/paypal.png";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CalendarIcon, User2 } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { toast } from "sonner";
+import { useAuthStore } from "@/zusTand/authStore";
 
 const CheckOutPage = () => {
-  const { orderTour } = useOrderStore();
-
-  console.log(orderTour);
+  const { orderTour, orderRoom } = useOrderStore();
+  const isTour = useLocation().pathname.includes("tour");
   const [discount, setDiscount] = useState<number>(0);
+  const { user } = useAuthStore();
+  console.log(user?.name)
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
+    defaultValues: {
+      firstName: user?.name.split(" ")[0] || "",
+      lastName: user?.name.split(" ")[1] || "",
+      email: user?.email, 
+    }
   });
-
   const submitForm = (data: CheckoutFormData) => {
+    console.log("first");
     console.log(data);
   };
 
   const promoCodeRef = useRef<HTMLInputElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   const submitPromotion = async (event: React.FormEvent) => {
     event.preventDefault();
-
+    btnRef.current?.setAttribute("disabled", "true");
     if (!promoCodeRef.current?.value) {
       return toast.warning("Promo code is required", {
         style: {
@@ -52,6 +61,7 @@ const CheckOutPage = () => {
     );
 
     if (data.length === 0) {
+      btnRef.current?.removeAttribute("disabled");
       return toast.warning("Promo code is invalid", {
         style: {
           background: "orange",
@@ -68,15 +78,21 @@ const CheckOutPage = () => {
       },
       duration: 3000,
     });
-
+    btnRef.current?.removeAttribute("disabled");
     setDiscount(data[0].discount);
   };
 
-  return (
-    <main className="max-w-[1200px]  mx-auto grid grid-cols-3 gap-x-15">
-      <h1 className="col-span-3 text-3xl mt-10 mb-5">Booking Submission</h1>
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
-      <section className="col-span-2 mb-10">
+  return (
+    <main className="max-w-[1200px] mx-auto grid xl:grid-cols-3 grid-cols-2 gap-x-15 xl:p-0 px-5">
+      <h1 className="xl:col-span-3 col-span-2 text-3xl mt-10 mb-5">
+        Booking Submission
+      </h1>
+
+      <section className="col-span-2 mb-10 xl:order-1 order-2">
         <hr className="mb-5" />
 
         <h2 className="text-[#2A2A2A] font-bold text-xl">Traveler Details</h2>
@@ -86,7 +102,7 @@ const CheckOutPage = () => {
           <h3 className="text-[#2A2A2A] mt-5 mb-3 font-bold text-xl">
             Lead Traveler (Adult)
           </h3>
-          <section className="grid grid-cols-2 gap-10 mb-10">
+          <section className="grid sm:grid-cols-2 gap-10 mb-10">
             {[
               {
                 name: "firstName",
@@ -141,8 +157,9 @@ const CheckOutPage = () => {
           <Input
             className="rounded-none mt-3 mb-5 p-5"
             placeholder="Your Address"
+            {...register("address")}
           />
-          <section className="grid grid-cols-2 gap-10 mb-10">
+          <section className="grid sm:grid-cols-2 gap-10 mb-10">
             {[
               {
                 name: "city",
@@ -191,6 +208,7 @@ const CheckOutPage = () => {
             className="w-full focus:outline-none p-5 resize-none border mb-5"
             rows={5}
             placeholder="Special Requirement"
+            {...register("specialRequirement")}
           ></textarea>
           <hr />
           <h3 className="text-[#2A2A2A] mt-5 mb-3 font-bold text-xl">
@@ -263,53 +281,88 @@ const CheckOutPage = () => {
         </form>
       </section>
 
-      <section className="sticky top-0">
+      <section className="xl:order-2 order-1 md:col-span-1 col-span-2 my-5 xl:my-0">
         <div className="bg-[#F4F4F4] h-fit p-5 pt-8">
-          <h2 className="text-heading text-lg font-bold">{orderTour.title}</h2>
+          <h2 className="text-heading text-lg font-bold">
+            {isTour ? orderTour.title : orderRoom.name}
+          </h2>
 
           <div className="flex items-center gap-2 my-3">
             <i className="ri-map-pin-line text-orange"></i>
             <p className="text-sub-color-primary text-sm">
-              {orderTour.location}
+              {isTour ? orderTour.location : orderRoom.location}
             </p>
           </div>
 
-          <div className="flex justify-between">
-            <div>
-              <span className="text-sub-color-primary text-xs">Duration:</span>
-              <p className="font-semibold text-sm">
-                {orderTour.duration} days -{" "}
-                {orderTour.duration && orderTour.duration - 1} nights
-              </p>
+          {isTour && (
+            <div className="flex justify-between">
+              <div>
+                <span className="text-sub-color-primary text-xs">
+                  Duration:
+                </span>
+                <p className="font-semibold text-sm">
+                  {orderTour.duration} days -{" "}
+                  {orderTour.duration && orderTour.duration - 1} nights
+                </p>
+              </div>
+              <div>
+                <span className="text-sub-color-primary text-xs">
+                  Tour type:
+                </span>
+                <p className="font-semibold text-sm">{orderTour.type}</p>
+              </div>
             </div>
-            <div>
-              <span className="text-sub-color-primary text-xs">Tour type:</span>
-              <p className="font-semibold text-sm">{orderTour.type}</p>
-            </div>
-          </div>
+          )}
 
           <section className="grid gap-2">
-            <Button
-              id="date"
-              variant={"outline"}
-              className="w-full justify-start cursor-default text-left font-normal py-7 px-3 rounded-none my-5"
-            >
-              <CalendarIcon className="text-primary" />
-              {format(orderTour.from, "dd/MM/yyyy")} -{" "}
-              {format(orderTour.to, "dd/MM/yyyy")}
-            </Button>
+            <div className="w-full justify-start text-left font-normal py-5 px-3 my-5 bg-white flex text-sm items-center gap-5 rounded-lg border">
+              <CalendarIcon className="text-primary text-xs" />
+              {format(
+                isTour ? orderTour.from : orderRoom.from,
+                "dd/MM/yyyy"
+              )} - {format(isTour ? orderTour.to : orderRoom.to, "dd/MM/yyyy")}
+            </div>
 
-            <Button
-              variant="outline"
-              className="justify-start cursor-default text-left flex items-center gap-2 w-full py-7 font-light"
-            >
+            <div className="w-full justify-start text-left font-normal py-5 px-3 bg-white flex text-sm items-center gap-5 rounded-lg border">
               <User2 className="text-orange-500" size={18} />
-              <span>
-                {orderTour.adults} Adults - {orderTour.children}{" "}
-                {orderTour.children === 1 ? "Child" : "Children"}
-              </span>
-            </Button>
+              {isTour ? (
+                <span>
+                  {orderTour.adults} Adults - {orderTour.children}{" "}
+                  {orderTour.children === 1 ? "Child" : "Children"}
+                </span>
+              ) : (
+                <span>
+                  {orderRoom.adults} Adults - {orderRoom.children}{" "}
+                  {orderRoom.children === 1 ? "Child" : "Children"}
+                </span>
+              )}
+            </div>
           </section>
+
+          {!isTour && (
+            <section className="pl-2">
+              {orderRoom.rooms.map((item, index) => (
+                <div className="flex justify-between my-3" key={index}>
+                  <div className="flex gap-5">
+                    <span className="text-primary">{item.quantity}x</span>
+                    <h4 className="font-bold">{item.name}</h4>
+                  </div>
+                  <p className="font-bold">${item.cost * item.quantity}</p>
+                </div>
+              ))}
+
+              <h5 className="text-[#888888] font-bold">Adds on</h5>
+              {orderRoom.adds.map((item, index) => (
+                <div className="flex justify-between my-3" key={index}>
+                  <div className="flex gap-5">
+                    <span className="text-primary">{item.quantity}x</span>
+                    <h4 className="font-bold">{item.name}</h4>
+                  </div>
+                  <p className="font-bold">${item.cost * item.quantity}</p>
+                </div>
+              ))}
+            </section>
+          )}
 
           <form
             className="my-5 flex gap-x-5 h-[56px]"
@@ -318,14 +371,14 @@ const CheckOutPage = () => {
             <input
               type="text"
               placeholder="Promo Code"
-              className="bg-white p-5 focus:outline-none h-full"
+              className="bg-white p-5 w-2/3 focus:outline-none h-full"
               ref={promoCodeRef}
             />
             <Button
               variant={"outline"}
               className="h-full inline-block rounded-none bg-transparent border-primary text-[#FF7B42] flex-1 hover:border-black"
               type="submit"
-              disabled={discount > 0}
+              ref={btnRef}
             >
               Apply
             </Button>
@@ -340,9 +393,10 @@ const CheckOutPage = () => {
           <p className="text-2xl">Total</p>
           <p className="font-bold text-xl">
             $
-            {discount > 0
-              ? (orderTour.total * (1 - discount / 100)).toFixed(2)
-              : orderTour.total.toFixed(2)}
+            {(
+              (isTour ? orderTour.total : orderRoom.total) *
+              (discount > 0 ? 1 - discount / 100 : 1)
+            ).toFixed(2)}
           </p>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ContactFormData, contactSchema } from "@/schema/contactSchema";
 import { instance } from "@/service";
+import { useAuthStore } from "@/zusTand/authStore";
 import hero from "@assets/images/hero_1.png";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -27,6 +28,7 @@ const contactItems = [
 
 const ContactPage = () => {
   const nav = useNavigate()
+  const {user} = useAuthStore()
   const {
     register,
     handleSubmit,
@@ -34,6 +36,11 @@ const ContactPage = () => {
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: user?.name || "",
+      email: user?.email || "",
+      telephone: "", 
+    }
   });
 
   const handleSubmitForm = async (data:ContactFormData) => {

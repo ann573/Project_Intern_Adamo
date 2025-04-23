@@ -1,26 +1,33 @@
-import React from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword, confirmPasswordReset } from "firebase/auth";
 import { auth } from "@/utils/firebase";
-import { useAppDispatch } from "@/hooks/app";
+import {
+  confirmPasswordReset,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import React from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // assets
 import fbAuth from "@assets/icons/fb_auth.svg";
 
 // zod
-import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema, resetPasswordSchema, LoginFormValues, ResetPasswordFormValues } from "@/schema/authSchema";
+import {
+  LoginFormValues,
+  loginSchema,
+  ResetPasswordFormValues,
+  resetPasswordSchema,
+} from "@/schema/authSchema";
+import { useAuthStore } from "@/zusTand/authStore";
 import Input from "@components/Input";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Cookies from "js-cookie";
-import { toast } from "sonner";
 import { ClipLoader } from "react-spinners";
-import { setAuth } from "@/features/auth/authSlice";
+import { toast } from "sonner";
 
 const LoginForm = () => {
-  const [isLoading, setIsLoading] = React.useState(false);
-  const dispatch = useAppDispatch();
   const nav = useNavigate();
+  const [isLoading, setIsLoading] = React.useState(false);
+  const { setUser } = useAuthStore();
   const { pathname, search } = useLocation();
   const isLogin = pathname.includes("login");
 
@@ -37,20 +44,27 @@ const LoginForm = () => {
     setIsLoading(true);
     try {
       const { email, password } = data;
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
       const idToken = await userCredential.user.getIdToken();
+
       Cookies.set("access_token", idToken);
-      dispatch(setAuth({ id: userCredential.user.uid, name: userCredential.user.displayName ?? " " }));
-      Cookies.set("name", userCredential.user.displayName ?? "Anonymous");
+      setUser({
+        name: userCredential.user.displayName || "",
+        email: userCredential.user.email || "",
+      });
       Cookies.set("refresh_token", userCredential.user.refreshToken);
 
       toast.success("Đăng nhập thành công", {
         duration: 1000,
         style: {
           background: "green",
-          color: "#fff", 
-        }
+          color: "#fff",
+        },
       });
       setIsLoading(false);
       nav("/");
@@ -59,25 +73,26 @@ const LoginForm = () => {
       toast.error("Đăng nhập thất bại", {
         description: "Email hoặc mật khẩu không đúng",
         actionButtonStyle: {
-          background: "red",
-          color: "white",
+          background: "white",
+          color: "red",
         },
-        descriptionClassName: "text-red-500",
         action: {
           label: "Undo",
           onClick: () => {},
         },
         duration: 3000,
         style: {
-          // background: "red",
-          color: "red",
+          background: "red",
+          color: "white",
         },
       });
       console.log(err);
     }
   };
 
-  const onSubmitForgotPassword: SubmitHandler<ResetPasswordFormValues> = async (data) => {
+  const onSubmitForgotPassword: SubmitHandler<ResetPasswordFormValues> = async (
+    data
+  ) => {
     try {
       setIsLoading(true);
       const code = search.split("=")[2].split("&")[0];
@@ -88,8 +103,8 @@ const LoginForm = () => {
         duration: 1000,
         style: {
           background: "green",
-          color: "#fff", 
-        }
+          color: "#fff",
+        },
       });
 
       resetPasswordForm.reset();

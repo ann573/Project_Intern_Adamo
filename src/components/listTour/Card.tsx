@@ -3,8 +3,16 @@ import unLike from "@assets/images/no_like.png";
 
 import BlurImage from "@/components/ImageWithPlaceholder";
 import { Link } from "react-router-dom";
-import ITour from "../interfaces/ITour";
+import ITour from "@/interfaces/ITour";
 
+type Rating = {
+  title: string;
+  rate: number;
+  heading: string;
+  time: number;
+  comments: string;
+  avatar: string;
+}
 const Card = ({
   data,
   className = "",
@@ -14,7 +22,7 @@ const Card = ({
 }) => {
   const totalRating =
     data &&
-    (data?.rating?.reduce((acc, cur) => acc + cur.rate, 0) /
+    (data?.rating?.reduce((acc : number, cur: Rating) => acc + cur.rate, 0) /
     data?.rating?.length).toFixed(1);
   return (
     <>

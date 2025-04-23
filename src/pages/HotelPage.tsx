@@ -66,6 +66,9 @@ const HotelPage = () => {
     }
   }, [data, reviewScore, search, stars]);
 
+  useEffect(() => {
+    window.scrollTo({top: 550, behavior: "smooth"});
+  },[page])
   return (
     <>
       <section className="text-center grid sm:grid-cols-12 grid-col-2 xl:gap-0 gap-5 banner_hotel max-w-[2000px] mx-auto xl:px-0 px-10">
@@ -113,6 +116,7 @@ const HotelPage = () => {
                 value={desc}
                 onValueChange={(value) => {
                   setDesc(value);
+                  setPage(1);
                 }}
               >
                 <SelectTrigger className="w-[130px] border-none shadow-none focus-visible:border-none py-0">

@@ -12,22 +12,21 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useAppSelector } from "@/hooks/app";
 import { ReviewForm, reviewSchema } from "@/schema/reviewSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import LoadingSpinner from "../LoadingSpinner";
 import Pagination from "../Pagination";
 import Review from "./Review";
-import LoadingSpinner from "../LoadingSpinner";
+import { useAuthStore } from "@/zusTand/authStore";
 
 const Reviews = ({ id }: { id: string }) => {
   const { data, isLoading } = useDetailHotels(id);
-  const { name } = useAppSelector((state) => state.auth);
   const [page, setPage] = useState(1);
   const [open, setOpen] = useState(false);
-
+  const {user} = useAuthStore();
   const { mutateAsync, isPending } = useUpdateData();
   const {
     register,
@@ -59,7 +58,7 @@ const Reviews = ({ id }: { id: string }) => {
   const watchedRating = watch("rating");
 
   const onSubmit = async (values: ReviewForm) => {
-    if (!name) {
+    if (!user) {
       toast.error("Please login to leave a review", {
         style: {
           background: "#FF4747",
@@ -71,7 +70,7 @@ const Reviews = ({ id }: { id: string }) => {
     const day = new Date();
     const newReview = {
       ...values,
-      name,
+      name : user?.name,
       time: Math.floor(day.getTime() / 1000),
       avatar:
         "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg",

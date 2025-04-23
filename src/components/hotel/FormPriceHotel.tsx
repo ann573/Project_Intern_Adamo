@@ -15,14 +15,16 @@ import {
 } from "@/components/ui/popover";
 import { useDetailHotels } from "@/hooks/hotels";
 import { cn } from "@/lib/utils";
+import { useOrderStore } from "@/zusTand/orderStore";
 import { useRoomStore } from "@/zusTand/roomStore";
 import { User2 } from "lucide-react";
 import { toast } from "sonner";
+import { Link } from 'react-router-dom';
 
 const FormPriceHotel = ({ id }: { id: string }) => {
   const { data } = useDetailHotels(id);
   const { rooms, incrementRoom, decrementRoom, getMaxNumber } = useRoomStore();
-
+  const { setOrderRoom } = useOrderStore();
   const [date, setDate] = useState<DateRange | undefined>({
     from: addDays(new Date(), 1),
     to: addDays(new Date(), 2),
@@ -105,11 +107,40 @@ const FormPriceHotel = ({ id }: { id: string }) => {
       });
     }
     if (from && to) {
-      const selectedDays =
-        (to.getTime() - from.getTime()) / (1000 * 3600 * 24) + 1;
-      console.log(selectedDays);
+      setOrderRoom({
+        name: data?.name || "",
+        cost: data?.cost || 0,
+        total: price,
+        location: data?.location || "",
+        from,
+        to,
+        adults,
+        children,
+        rooms: rooms.reduce<
+          Array<{ name: string; cost: number; quantity: number }>
+        >(
+          (arr, item) =>
+            item.count > 0
+              ? [
+                  ...arr,
+                  { name: item.name, cost: item.price, quantity: item.count },
+                ]
+              : arr,
+          []
+        ),
+        adds: addons.reduce<
+          Array<{ name: string; cost: number; quantity: number }>
+        >(
+          (acc, cur) =>
+            cur.checked && cur.count > 0
+              ? [...acc, { name: cur.name, cost: cur.price, quantity: cur.count }]
+              : acc,
+          []
+        )
+      });
     }
   };
+
   return (
     <>
       <form className={cn("grid gap-2")}>
@@ -309,7 +340,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
         className="w-full py-7 mt-7 cursor-pointer hover:opacity-80"
         onClick={handleSubmitForm}
       >
-        Book now
+        <Link to="/checkout/hotel" className="inline-block w-full">Book now</Link>
       </Button>
     </>
   );
