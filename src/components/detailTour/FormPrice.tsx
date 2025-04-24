@@ -1,10 +1,10 @@
 import { addDays, format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { DateRange } from "react-day-picker";
+import { DateRange, DayPicker } from "react-day-picker";
 
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
+// import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -18,6 +18,8 @@ import { User2 } from "lucide-react";
 import { toast } from "sonner";
 import { useOrderStore } from "@/zusTand/orderStore";
 import { useNavigate } from "react-router-dom";
+
+import "react-day-picker/style.css";
 
 const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   // redux toolkit
@@ -119,7 +121,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
-            <Calendar
+            {/* <Calendar
               initialFocus
               mode="range"
               defaultMonth={date?.from}
@@ -128,6 +130,16 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
               onSelect={setDate}
               numberOfMonths={2}
               disabled={{ before: new Date() }}
+            /> */}
+            <DayPicker
+              initialFocus
+              mode="range"
+              defaultMonth={date?.from}
+              selected={date || undefined}
+              onSelect={setDate}
+              numberOfMonths={2}
+              disabled={{ before: new Date() }}
+
             />
             {/* Nút hủy lựa chọn */}
             <Button

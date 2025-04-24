@@ -4,6 +4,8 @@
 
 @import "tw-animate-css";
 
+@import "@/style/calendar.css";
+
 @custom-variant dark (&:is(.dark *));
 
 @font-face {

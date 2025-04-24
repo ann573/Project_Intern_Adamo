@@ -2,7 +2,7 @@ import { getFilterTour } from "@features/tour/tourAction";
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { Calendar } from "@/components/ui/calendar";
+// import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
@@ -23,8 +23,8 @@ import {
 } from "@/components/ui/select";
 import { useAppDispatch, useAppSelector } from "@/hooks/app";
 import { Button } from "@components/ui/button";
+import { DayPicker, SelectSingleEventHandler } from "react-day-picker";
 import { Controller, useForm } from "react-hook-form";
-import { SelectSingleEventHandler } from "react-day-picker";
 
 type Props = {
   date: Date | undefined;
@@ -33,7 +33,7 @@ type Props = {
 
 const FormSearchBanner = ({ date, setDate }: Props) => {
   const isDefault = useLocation().pathname === "/";
-  const isHotel = useLocation().pathname.includes("hotel")
+  const isHotel = useLocation().pathname.includes("hotel");
   const { type } = useAppSelector((state) => state.tours);
 
   const button = ["Tours", "Hotels"];
@@ -53,11 +53,9 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
     dispatch(getFilterTour());
   }, [dispatch]);
 
-  useEffect(()=>{
-    if (isHotel)
-      setChoose("Hotels")
-  },[isHotel])
-
+  useEffect(() => {
+    if (isHotel) setChoose("Hotels");
+  }, [isHotel]);
 
   function onsubmitForm(data: {
     location: string;
@@ -142,12 +140,11 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0">
-              <Calendar
+              <DayPicker
                 mode="single"
                 selected={date}
                 onSelect={handleSelect}
                 disabled={{ before: new Date() }}
-                initialFocus
               />
             </PopoverContent>
           </Popover>

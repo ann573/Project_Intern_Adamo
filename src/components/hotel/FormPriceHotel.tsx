@@ -1,10 +1,10 @@
 import { addDays, format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { DateRange } from "react-day-picker";
+import { DateRange, DayPicker } from "react-day-picker";
 
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
+// import { Calendar } from "@/components/ui/calendar";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,8 +18,8 @@ import { cn } from "@/lib/utils";
 import { useOrderStore } from "@/zusTand/orderStore";
 import { useRoomStore } from "@/zusTand/roomStore";
 import { User2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import { Link } from 'react-router-dom';
 
 const FormPriceHotel = ({ id }: { id: string }) => {
   const { data } = useDetailHotels(id);
@@ -133,10 +133,13 @@ const FormPriceHotel = ({ id }: { id: string }) => {
         >(
           (acc, cur) =>
             cur.checked && cur.count > 0
-              ? [...acc, { name: cur.name, cost: cur.price, quantity: cur.count }]
+              ? [
+                  ...acc,
+                  { name: cur.name, cost: cur.price, quantity: cur.count },
+                ]
               : acc,
           []
-        )
+        ),
       });
     }
   };
@@ -170,7 +173,17 @@ const FormPriceHotel = ({ id }: { id: string }) => {
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
-            <Calendar
+            {/* <Calendar
+              initialFocus
+              mode="range"
+              defaultMonth={date?.from}
+              selected={date || undefined}
+              showOutsideDays={true}
+              onSelect={setDate}
+              numberOfMonths={2}
+              disabled={{ before: new Date() }}
+            /> */}
+            <DayPicker
               initialFocus
               mode="range"
               defaultMonth={date?.from}
@@ -340,7 +353,9 @@ const FormPriceHotel = ({ id }: { id: string }) => {
         className="w-full py-7 mt-7 cursor-pointer hover:opacity-80"
         onClick={handleSubmitForm}
       >
-        <Link to="/checkout/hotel" className="inline-block w-full">Book now</Link>
+        <Link to="/checkout/hotel" className="inline-block w-full">
+          Book now
+        </Link>
       </Button>
     </>
   );

@@ -27,6 +27,7 @@ import { useAppDispatch } from "@/hooks/app";
 import ResultPage from "@/pages/ResultPage";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import "react-day-picker/style.css";
 
 function App() {
   const [isSplashFinished, setIsSplashFinished] = useState(false);

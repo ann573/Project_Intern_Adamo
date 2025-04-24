@@ -1,0 +1,42 @@
+.rdp-chevron {
+  fill: #ff7b42;
+}
+
+.rdp-today:not(.rdp-outside) {
+  color: red;
+  font-weight: 700;
+}
+
+.rdp-months {
+  padding: 10px;
+}
+
+/* Màu nút của range start và end */
+.rdp-range_start .rdp-day_button,
+.rdp-range_end .rdp-day_button {
+  background-color: #ff7b42;
+  border: none;
+}
+
+/* Màu nền range */
+.rdp-range_start {
+  background-image: linear-gradient(90deg, transparent 49%, #ff7b4245 81%);
+}
+.rdp-range_middle {
+  background-color: #ff7b4245;
+}
+.rdp-range_end {
+  background-image: linear-gradient(-90deg, transparent 49%, #ff7b4245 81%);
+}
+
+/* Màu text của middle */
+.rdp-range_middle .rdp-day_button {
+  color: #ff7b42;
+}
+
+/* selected single */
+.rdp-selected .rdp-day_button {
+  background-color: #ff7b42;
+  border: none;
+  color: #fff;
+}
