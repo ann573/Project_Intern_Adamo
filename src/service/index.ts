@@ -40,7 +40,6 @@ const handleErrorMessage = (status: number, message: string) => {
 
 instance.interceptors.response.use(
   (response) => {
-
     return response;
   },
   async (error) => {
