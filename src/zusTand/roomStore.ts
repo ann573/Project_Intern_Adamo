@@ -21,6 +21,7 @@ type RoomStore = {
   decrementRoom: (name: string) => void;
   setRoomCount: (name: string, count: number) => void;
   getMaxNumber: () => number;
+  clearRoom: () => void;
 };
 
 export const useRoomStore = create<RoomStore>((set, get) => ({
@@ -58,4 +59,5 @@ export const useRoomStore = create<RoomStore>((set, get) => ({
     }, 0);
     return maxNumber;
   },
+  clearRoom: () => set({ rooms: [] }),
 }));

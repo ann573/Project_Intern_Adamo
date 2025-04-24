@@ -9,24 +9,26 @@ import checkoutSchema, { CheckoutFormData } from "@/schema/checkoutSchema";
 import { instance } from "@/service";
 import { useAuthStore } from "@/zusTand/authStore";
 import { useOrderStore } from "@/zusTand/orderStore";
+import { useRoomStore } from "@/zusTand/roomStore";
 import card from "@assets/images/card.png";
 import paypal from "@assets/images/paypal.png";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CalendarIcon, User2 } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const CheckOutPage = () => {
-  // useEffect(() => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const isTour = useLocation().pathname.includes("tour");
   const nav = useNavigate();
 
   const { orderTour, orderRoom, clearOrderTour, clearOrderRoom } =
     useOrderStore();
+  const { clearRoom } = useRoomStore();
   const { user } = useAuthStore();
   const [discount, setDiscount] = useState<number>(0);
   const {
@@ -89,7 +91,7 @@ const CheckOutPage = () => {
       };
 
       try {
-        await instance.post("/orderRooms", dataBody);
+        await instance.post("/orderHotels", dataBody);
         toast.success("Order successfully", {
           style: {
             background: "green",
@@ -97,6 +99,7 @@ const CheckOutPage = () => {
           },
         });
         clearOrderRoom();
+        clearRoom();
         nav("/thanks");
       } catch (error) {
         toast.error("Something went wrong", {

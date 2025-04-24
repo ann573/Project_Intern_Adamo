@@ -6,7 +6,7 @@ import { Outlet, useLocation } from "react-router-dom";
 const LayoutClient = () => {
   const [scrolling, setScrolling] = useState(false);
   const location = useLocation();
-  const isFixed = location.pathname.includes("tour/") || location.pathname.includes("hotel/");
+  const isFixed = location.pathname.includes("tour/") || location.pathname.includes("hotel/") || location.pathname.includes("policy");;
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,9 +1,9 @@
-import { IHotel } from "@/interfaces/IHotel";
 import BlurImage from "@/components/ImageWithPlaceholder";
-import { Link } from "react-router-dom";
+import { IHotel } from "@/interfaces/IHotel";
 import like from "@assets/images/like.png";
 import unLike from "@assets/images/no_like.png";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const CardHotel = ({ data }: { data: IHotel }) => {
   const [totalRating, setTotalRating] = useState<number>(0);
@@ -18,11 +18,13 @@ const CardHotel = ({ data }: { data: IHotel }) => {
   }, [totalRating, data]);
   return (
     <div className={`relative`}>
-      <BlurImage
-        src={data.description.thumbnail}
-        className="w-full h-[250px]"
-        alt="thumbnail_tours"
-      />
+      <Link to={`/hotel/${data.id}`}>
+        <BlurImage
+          src={data.description.thumbnail}
+          className="w-full h-[250px]"
+          alt="thumbnail_tours"
+        />
+      </Link>
 
       <div className="flex gap-1 my-3">
         <i className="ri-map-pin-line text-orange"></i>
@@ -47,7 +49,8 @@ const CardHotel = ({ data }: { data: IHotel }) => {
           from{" "}
           <span className="text-heading text-xl font-medium">
             ${data.cost.toFixed(2)}
-          </span> /night
+          </span>{" "}
+          /night
         </p>
       </div>
 

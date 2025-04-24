@@ -2,8 +2,8 @@ import like from "@assets/images/like.png";
 import unLike from "@assets/images/no_like.png";
 
 import BlurImage from "@/components/ImageWithPlaceholder";
-import { Link } from "react-router-dom";
 import ITour from "@/interfaces/ITour";
+import { Link } from "react-router-dom";
 
 type Rating = {
   title: string;
@@ -12,7 +12,7 @@ type Rating = {
   time: number;
   comments: string;
   avatar: string;
-}
+};
 const Card = ({
   data,
   className = "",
@@ -22,16 +22,20 @@ const Card = ({
 }) => {
   const totalRating =
     data &&
-    (data?.rating?.reduce((acc : number, cur: Rating) => acc + cur.rate, 0) /
-    data?.rating?.length).toFixed(1);
+    (
+      data?.rating?.reduce((acc: number, cur: Rating) => acc + cur.rate, 0) /
+      data?.rating?.length
+    ).toFixed(1);
   return (
     <>
       <div className={`relative  ${className || ""}`}>
-        <BlurImage
-          src={data.thumb}
-          className="w-full h-[250px]"
-          alt="thumbnail_tours"
-        />
+        <Link to={`/tour/${data.id}`}>
+          <BlurImage
+            src={data.thumb}
+            className="w-full h-[250px]"
+            alt="thumbnail_tours"
+          />
+        </Link>
 
         <div className="flex gap-1 my-3">
           <i className="ri-map-pin-line text-orange"></i>

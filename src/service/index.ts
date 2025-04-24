@@ -26,15 +26,15 @@ instance.interceptors.request.use(
 const handleErrorMessage = (status: number, message: string) => {
   switch (status) {
     case 400:
-      return message || "Yêu cầu không hợp lệ";
+      return message || "Bad Request";
     case 403:
-      return message || "Không có quyền truy cập";
+      return message || "Not Authorized";
     case 404:
-      return message || "Tài nguyên không tồn tại";
+      return message || "Not Found";
     case 500:
-      return message || "Lỗi máy chủ";
+      return message || "Internal Server Error";
     default:
-      return message || "Lỗi không xác định vui lòng thử lại sau";
+      return message || "Unknown Error, please try again later";
   }
 };
 
