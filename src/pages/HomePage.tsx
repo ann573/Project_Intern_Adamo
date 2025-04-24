@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import Slider from "@/components/SliderComponent";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 //asset
 import "@/style/homepage.css";
 
 // data
-import data from "@/data/rcm";
 import dataExperience from "@/data/experience";
 import experienceCul from "@/data/experienceCul";
+import data from "@/data/rcm";
 
 // component
-import Hero from "@/components/Hero";
 import FormSearchBanner from "@/components/FormSearchBanner";
+import Hero from "@/components/Hero";
 
 // shadCnUI
 import { Button } from "@components/ui/button";
@@ -40,20 +40,20 @@ const HomePage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const onSubmitEmail = async ({ email } : {email: string}) => {
+  const onSubmitEmail = async ({ email }: { email: string }) => {
     try {
       await instance.post("/emails", { email });
-      toast.success("Đăng ký thành công", {
-        description: "Chúng tôi sẽ gửi thông tin đến email của bạn",
+      toast.success("Register successfully", {
+        description: "We will send you an email to verify your account",
         style: {
           background: "green",
-          color: "#fff", 
-        }
+          color: "#fff",
+        },
       });
 
       reset();
     } catch (error) {
-      toast.error("Có lỗi xảy ra", {
+      toast.error("Have an error, please try again!!!", {
         description: (error as Error).message,
       });
     }

@@ -59,7 +59,7 @@ const LoginForm = () => {
       });
       Cookies.set("refresh_token", userCredential.user.refreshToken);
 
-      toast.success("Đăng nhập thành công", {
+      toast.success("Login successfully!!!", {
         duration: 1000,
         style: {
           background: "green",
@@ -70,8 +70,8 @@ const LoginForm = () => {
       nav("/");
     } catch (err) {
       setIsLoading(false);
-      toast.error("Đăng nhập thất bại", {
-        description: "Email hoặc mật khẩu không đúng",
+      toast.error("Login Failed!!!", {
+        description: "Email or your password is incorrect",
         actionButtonStyle: {
           background: "white",
           color: "red",
@@ -99,7 +99,7 @@ const LoginForm = () => {
       await confirmPasswordReset(auth, code, data.password);
 
       setIsLoading(false);
-      toast.success("Đặt lại mật khẩu thành công", {
+      toast.success("Reset your password successfully", {
         duration: 1000,
         style: {
           background: "green",
@@ -111,8 +111,8 @@ const LoginForm = () => {
       nav("/auth/login");
     } catch (err) {
       setIsLoading(false);
-      toast.error("Đặt lại mật khẩu thất bại", {
-        description: "Mã không hợp lệ hoặc đã hết hạn",
+      toast.error("Reset your password failed", {
+        description: "Your code is invalid or expired",
         duration: 3000,
       });
       console.log(err);

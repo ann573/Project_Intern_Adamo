@@ -18,10 +18,11 @@ import { cn } from "@/lib/utils";
 import { useOrderStore } from "@/zusTand/orderStore";
 import { useRoomStore } from "@/zusTand/roomStore";
 import { User2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const FormPriceHotel = ({ id }: { id: string }) => {
+  const nav = useNavigate();
   const { data } = useDetailHotels(id);
   const { rooms, incrementRoom, decrementRoom, getMaxNumber } = useRoomStore();
   const { setOrderRoom } = useOrderStore();
@@ -97,7 +98,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
     const { from, to } = date;
 
     if (adults > getMaxNumber()) {
-      toast.error("Please select the correct number of rooms", {
+      return toast.error("Please select the correct number of rooms", {
         description:
           "The number of guests is greater than the maximum number of people in the room.",
         style: {
@@ -117,13 +118,18 @@ const FormPriceHotel = ({ id }: { id: string }) => {
         adults,
         children,
         rooms: rooms.reduce<
-          Array<{ name: string; cost: number; quantity: number }>
+          Array<{ name: string; id: number; cost: number; quantity: number }>
         >(
           (arr, item) =>
             item.count > 0
               ? [
                   ...arr,
-                  { name: item.name, cost: item.price, quantity: item.count },
+                  {
+                    name: item.name,
+                    id: item.id,
+                    cost: item.price,
+                    quantity: item.count,
+                  },
                 ]
               : arr,
           []
@@ -141,6 +147,8 @@ const FormPriceHotel = ({ id }: { id: string }) => {
           []
         ),
       });
+
+      nav("/checkout/hotel");
     }
   };
 
@@ -173,16 +181,6 @@ const FormPriceHotel = ({ id }: { id: string }) => {
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
-            {/* <Calendar
-              initialFocus
-              mode="range"
-              defaultMonth={date?.from}
-              selected={date || undefined}
-              showOutsideDays={true}
-              onSelect={setDate}
-              numberOfMonths={2}
-              disabled={{ before: new Date() }}
-            /> */}
             <DayPicker
               initialFocus
               mode="range"
@@ -193,6 +191,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
               numberOfMonths={2}
               disabled={{ before: new Date() }}
             />
+            
             {/* Nút hủy lựa chọn */}
             <Button
               variant="outline"
@@ -353,9 +352,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
         className="w-full py-7 mt-7 cursor-pointer hover:opacity-80"
         onClick={handleSubmitForm}
       >
-        <Link to="/checkout/hotel" className="inline-block w-full">
-          Book now
-        </Link>
+        Book now
       </Button>
     </>
   );

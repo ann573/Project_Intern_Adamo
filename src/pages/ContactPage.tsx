@@ -4,6 +4,7 @@ import { instance } from "@/service";
 import { useAuthStore } from "@/zusTand/authStore";
 import hero from "@assets/images/hero_1.png";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -27,8 +28,8 @@ const contactItems = [
 ];
 
 const ContactPage = () => {
-  const nav = useNavigate()
-  const {user} = useAuthStore()
+  const nav = useNavigate();
+  const { user } = useAuthStore();
   const {
     register,
     handleSubmit,
@@ -39,24 +40,24 @@ const ContactPage = () => {
     defaultValues: {
       name: user?.name || "",
       email: user?.email || "",
-      telephone: "", 
-    }
+      telephone: "",
+    },
   });
 
-  const handleSubmitForm = async (data:ContactFormData) => {
+  const handleSubmitForm = async (data: ContactFormData) => {
     try {
       await instance.post("/contact", data);
-      toast.success("Send message successfully",{
+      toast.success("Send message successfully", {
         style: {
           background: "green",
           color: "white",
-        }, 
+        },
         description: "We will contact you as soon as possible",
-      })
-      reset()
-      nav("/")
+      });
+      reset();
+      nav("/");
     } catch (error) {
-      toast.error((error as Error).message,{
+      toast.error((error as Error).message, {
         style: {
           background: "red",
           color: "white",
@@ -64,6 +65,11 @@ const ContactPage = () => {
       });
     }
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <>
       <section className="banner_contact ">
@@ -122,7 +128,9 @@ const ContactPage = () => {
                 {...register("telephone")}
               />
               {errors.telephone && (
-                <p className="text-red-500 italic">{errors.telephone.message}</p>
+                <p className="text-red-500 italic">
+                  {errors.telephone.message}
+                </p>
               )}
             </div>
 

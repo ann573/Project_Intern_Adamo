@@ -75,6 +75,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
         return
       } else {
         setOrderTour({
+          id: tour?.id as number,
           cost: tour?.cost as number,
           title: tour?.title as string,
           location: tour?.location as string,

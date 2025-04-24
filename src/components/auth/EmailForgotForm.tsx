@@ -1,13 +1,13 @@
-import React from "react";
-import { emailSchema } from "@schema/authSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "@/utils/firebase";
 import Input from "@components/Input";
-import { toast } from "sonner";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { emailSchema } from "@schema/authSchema";
+import { sendPasswordResetEmail } from "firebase/auth";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
+import { toast } from "sonner";
 
 const EmailForgotForm = () => {
   const {
@@ -28,16 +28,16 @@ const EmailForgotForm = () => {
       await sendPasswordResetEmail(auth, data.email);
       setIsLoading(false);
 
-      toast.success("Vui lòng kiểm tra email của bạn để đặt lại mật khẩu", {
+      toast.success("Please check again your email!!!", {
         duration: 1500,
         style: {
           background: "green",
-          color: "#fff", 
-        }
+          color: "#fff",
+        },
       });
     } catch (error) {
       setIsLoading(false);
-      toast.error("Có lỗi xảy ra vui lòng thử lại sau");
+      toast.error("Have an error, return soon!!!!");
       console.log(error);
     }
   };

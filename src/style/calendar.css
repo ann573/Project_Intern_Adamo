@@ -20,13 +20,13 @@
 
 /* Màu nền range */
 .rdp-range_start {
-  background-image: linear-gradient(90deg, transparent 49%, #ff7b4245 81%);
+  background-image: linear-gradient(90deg, transparent 49%, #df9d8124 81%);
 }
 .rdp-range_middle {
-  background-color: #ff7b4245;
+  background-color: #df9d8124;
 }
 .rdp-range_end {
-  background-image: linear-gradient(-90deg, transparent 49%, #ff7b4245 81%);
+  background-image: linear-gradient(-90deg, transparent 49%, #df9d8124 81%);
 }
 
 /* Màu text của middle */
@@ -35,7 +35,7 @@
 }
 
 /* selected single */
-.rdp-selected .rdp-day_button {
+.rdp-selected:not(.rdp-range_middle) .rdp-day_button {
   background-color: #ff7b42;
   border: none;
   color: #fff;

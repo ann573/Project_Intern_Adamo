@@ -7,22 +7,28 @@ import { Input } from "@components/ui/input";
 import { Button } from "@/components/ui/button";
 import checkoutSchema, { CheckoutFormData } from "@/schema/checkoutSchema";
 import { instance } from "@/service";
+import { useAuthStore } from "@/zusTand/authStore";
 import { useOrderStore } from "@/zusTand/orderStore";
 import card from "@assets/images/card.png";
 import paypal from "@assets/images/paypal.png";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CalendarIcon, User2 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { useAuthStore } from "@/zusTand/authStore";
 
 const CheckOutPage = () => {
-  const { orderTour, orderRoom } = useOrderStore();
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // }, []);
+
   const isTour = useLocation().pathname.includes("tour");
-  const [discount, setDiscount] = useState<number>(0);
+  const nav = useNavigate();
+
+  const { orderTour, orderRoom, clearOrderTour, clearOrderRoom } =
+    useOrderStore();
   const { user } = useAuthStore();
-  console.log(user?.name)
+  const [discount, setDiscount] = useState<number>(0);
   const {
     register,
     handleSubmit,
@@ -32,12 +38,76 @@ const CheckOutPage = () => {
     defaultValues: {
       firstName: user?.name.split(" ")[0] || "",
       lastName: user?.name.split(" ")[1] || "",
-      email: user?.email, 
-    }
+      email: user?.email,
+    },
   });
-  const submitForm = (data: CheckoutFormData) => {
-    console.log("first");
-    console.log(data);
+  const submitForm = async (data: CheckoutFormData) => {
+    const { firstName, lastName, ...rest } = data;
+
+    const userInformation = {
+      fullname: `${firstName} ${lastName}`,
+      ...rest,
+    };
+
+    if (isTour) {
+      const dataBody = {
+        userInformation,
+        orderTour: {
+          ...orderTour,
+          discount,
+          total: orderTour.total * (1 - discount / 100),
+        },
+      };
+
+      try {
+        await instance.post("/orderTours", dataBody);
+        toast.success("Order successfully", {
+          style: {
+            background: "green",
+            color: "#fff",
+          },
+        });
+        clearOrderTour();
+        nav("/thanks");
+      } catch (error) {
+        toast.error("Something went wrong", {
+          style: {
+            background: "red",
+            color: "#fff",
+          },
+          description: (error as Error).message || "Something went wrong",
+        });
+      }
+    } else {
+      const dataBody = {
+        ...userInformation,
+        orderRoom: {
+          ...orderRoom,
+          discount,
+          total: orderRoom.total * (1 - discount / 100),
+        },
+      };
+
+      try {
+        await instance.post("/orderRooms", dataBody);
+        toast.success("Order successfully", {
+          style: {
+            background: "green",
+            color: "#fff",
+          },
+        });
+        clearOrderRoom();
+        nav("/thanks");
+      } catch (error) {
+        toast.error("Something went wrong", {
+          style: {
+            background: "red",
+            color: "#fff",
+          },
+          description: (error as Error).message || "Something went wrong",
+        });
+      }
+    }
   };
 
   const promoCodeRef = useRef<HTMLInputElement>(null);
@@ -81,10 +151,6 @@ const CheckOutPage = () => {
     btnRef.current?.removeAttribute("disabled");
     setDiscount(data[0].discount);
   };
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
 
   return (
     <main className="max-w-[1200px] mx-auto grid xl:grid-cols-3 grid-cols-2 gap-x-15 xl:p-0 px-5">
@@ -389,9 +455,23 @@ const CheckOutPage = () => {
             </p>
           )}
         </div>
-        <div className="bg-black p-5 text-white flex justify-between">
+        <div className="bg-black p-5 text-white flex justify-between items-center">
           <p className="text-2xl">Total</p>
-          <p className="font-bold text-xl">
+          <p
+            className={`font-bold text-xl ${
+              discount > 0 ? "flex flex-col items-end text-red-500" : ""
+            }`}
+          >
+            <span
+              className={`text-sm line-through text-white ${
+                discount > 0 ? "inline-block" : "hidden"
+              }`}
+            >
+              $
+              {discount > 0 && isTour
+                ? orderTour.total.toFixed(2)
+                : orderRoom.total.toFixed(2)}
+            </span>
             $
             {(
               (isTour ? orderTour.total : orderRoom.total) *

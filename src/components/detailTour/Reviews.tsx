@@ -50,7 +50,7 @@ const Reviews = () => {
 
   const handleSubmitReview = ({ comments }: { comments: string }) => {
     if (rating === 0) {
-      toast.error("Vui lòng chọn số sao", {
+      toast.error("Please fill the star", {
         duration: 1000,
         style: {
           background: "red",
@@ -63,7 +63,7 @@ const Reviews = () => {
       const day = new Date();
 
       const dataBody = {
-        title: user?.name || '',
+        title: user?.name || "",
         rate: rating,
         heading: "The best experience ever!",
         time: Math.floor(day.getTime() / 1000),

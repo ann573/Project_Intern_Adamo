@@ -22,6 +22,7 @@ export interface IHotel {
             comments: string;
         }[];
         room: {
+            id: number;
             name: string;
             acreage: string;
             beds: string;

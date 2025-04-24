@@ -7,8 +7,8 @@ import fbAuth from "@assets/icons/fb_auth.svg";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 // zod
-import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "@/schema/authSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import Input from "@components/Input";
 import { toast } from "sonner";
@@ -32,8 +32,8 @@ const RegisterForm = () => {
     password: string;
     f_name: string;
     l_name: string;
-  }
-  const onSubmit = async (data : FormData) => {
+  };
+  const onSubmit = async (data: FormData) => {
     try {
       setIsLoading(true);
 
@@ -48,15 +48,14 @@ const RegisterForm = () => {
       });
 
       setIsLoading(false);
-      toast.success("Đăng ký thành công", {
+      toast.success("Resgister successfully", {
         style: {
           background: "green",
-          color: "#fff", 
-        }
+          color: "#fff",
+        },
       });
 
       nav("/auth/login");
-
     } catch (error) {
       setIsLoading(false);
       toast.error("Error!!!!", {

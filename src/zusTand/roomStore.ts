@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 type Room = {
+  id: number;
   name: string;
   acreage: string;
   beds: string;
