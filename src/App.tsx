@@ -59,7 +59,7 @@ function App() {
           <Route path="/tour/:id" element={<DetailTour />} />
           <Route path="/hotels" element={<HotelPage />} />
           <Route path="/hotel/:id" element={<HotelDetail />} />
-          <Route path="/search/:type/:query" element={<ResultPage />} />
+          <Route path="/search/:type" element={<ResultPage />} />
 
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/policy" element={<PolicyPage />} />

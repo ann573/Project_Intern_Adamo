@@ -1,6 +1,6 @@
 import { getFilterTour } from "@features/tour/tourAction";
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // import { Calendar } from "@/components/ui/calendar";
 import {
@@ -32,6 +32,7 @@ type Props = {
 };
 
 const FormSearchBanner = ({ date, setDate }: Props) => {
+  const nav = useNavigate();
   const isDefault = useLocation().pathname === "/";
   const isHotel = useLocation().pathname.includes("hotel");
   const { type } = useAppSelector((state) => state.tours);
@@ -62,7 +63,19 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
     type: string;
     tour: string;
   }) {
-    console.log(data);
+    const queryParams = new URLSearchParams();
+
+    if (data.location)  queryParams.append("location", data.location.trim() || "");
+    if (choose === "Hotels") {
+
+      nav(`/search/hotel?${queryParams.toString()}`)
+    } else {
+      if (data.tour) queryParams.append("type", data.type);
+      if (data.type) queryParams.append("type", data.type);
+      console.log(queryParams.toString())
+      nav(`/search/tour?${queryParams.toString()}`)
+    }
+    
   }
 
   const handleSelect: SelectSingleEventHandler = (day) => {

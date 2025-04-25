@@ -74,11 +74,13 @@ const ContactPage = () => {
     <>
       <section className="banner_contact ">
         <div className="flex h-full items-center justify-start max-w-[1200px] mx-auto">
-          <h1 className="font-semibold text-white text-5xl ">Contact Us</h1>
+          <h1 className="font-semibold text-white text-5xl pl-5 xl:pl-0">
+            Contact Us
+          </h1>
         </div>
       </section>
 
-      <section className="max-w-[1200px] mx-auto my-5">
+      <section className="max-w-[1200px] mx-auto my-5 xl:px-0 px-10">
         <p className="flex justify-start gap-5">
           <Link to={"/"} className="hover:underline">
             Home
@@ -88,7 +90,7 @@ const ContactPage = () => {
         </p>
       </section>
 
-      <section className="max-w-[1200px] mx-auto grid grid-cols-2 gap-20 mt-10 my-20">
+      <section className="max-w-[1200px] mx-auto grid lg:grid-cols-2 xl:gap-20 gap-10 mt-10 my-20 xl:px-0 px-5 ">
         <form onSubmit={handleSubmit(handleSubmitForm)}>
           <h2 className="font-bold text-4xl">We'd love to hear from you</h2>
           <p className="mt-5 mb-10">
@@ -157,15 +159,17 @@ const ContactPage = () => {
         <div className="relative">
           <img src={hero} className="w-full" alt="hero" />
 
-          <div className="absolute bg-heading p-5 bottom-0 left-0">
+          <div className="absolute bg-heading p-5 bottom-0 left-0 sm:w-2/3 w-11/12">
             <h3 className="text-white text-3xl mb-5">Our Office</h3>
 
             <div>
               {contactItems.map((item, index) => (
                 <div key={index} className="flex gap-5 mb-5 last:mb-0">
-                  <i
-                    className={`${item.icon} text-white bg-primary text-2xl px-3 center rounded-full`}
-                  ></i>
+                  <div className="max-h-[50px] bg-primary rounded-full center">
+                    <i
+                      className={`${item.icon} text-white  text-2xl px-3 center  `}
+                    ></i>
+                  </div>
                   <div>
                     <h4 className="text-primary font-bold">{item.title}</h4>
                     <p className="text-white text-sm">{item.content}</p>

@@ -3,11 +3,12 @@ import { hotelApi } from "@/service/apiHotel";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
-export const useHotels = (page = 1, limit = 9, query = "") => {
+export const useHotels = (page = 1, limit = 9, query = "", enabled = true) => {
   return useQuery<IHotel[]>({
     queryKey: ["hotels", page, query],
     queryFn: () => hotelApi.getHotels(page, limit, query),
     staleTime: 5000,
+    enabled
   });
 };
 

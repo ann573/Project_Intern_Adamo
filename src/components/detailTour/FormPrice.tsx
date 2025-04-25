@@ -122,16 +122,6 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
-            {/* <Calendar
-              initialFocus
-              mode="range"
-              defaultMonth={date?.from}
-              selected={date || undefined}
-              showOutsideDays={true}
-              onSelect={setDate}
-              numberOfMonths={2}
-              disabled={{ before: new Date() }}
-            /> */}
             <DayPicker
               initialFocus
               mode="range"
