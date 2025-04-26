@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "welcome": "Welcome to NgaoduVietnam",
+    "title": "Perfect place for your stories"
+  },
+  "banner": {
+    "featured": "Featured",
+    "tours": "tours",
+    "tour_count": "200+",
+    "destination": "destination",
+    "destination_count": "100+",
+    "type_of_tour": "type of tour",
+    "type_of_tour_count": "8+"
+  },
+  "recommended": {
+    "title": "Discover fascinating destinations",
+    "view_all": "View all"
+  },
+  "experience": {
+    "title": "Attractive tour and interesting experiences",
+    "view_all": "View all"
+  },
+  "culture": {
+    "title": "Experience the traditional cultural beauties of Vietnam",
+    "view_all": "View all"
+  },
+  "email": {
+    "title": "Leave us an email, to get <span class=\"text-orange\">the latest deals</span>",
+    "placeholder": "example@gmail.com",
+    "send": "Send",
+    "success": "Register successfully",
+    "success_desc": "We will send you an email to verify your account",
+    "error": "Have an error, please try again!!!"
+  }
+}

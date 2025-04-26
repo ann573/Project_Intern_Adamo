@@ -33,5 +33,5 @@
       "@schema/*": ["src/schema/*"]
     },
   },
-  "include": ["src"]
+  "include": ["src", "src/i18n.ts"]
 }

@@ -8,6 +8,7 @@ import logo from "@assets/images/logo.png";
 import logo_black from "@assets/images/logo_black.png";
 import Cookies from "js-cookie";
 
+import { useTranslation } from "react-i18next";
 import "../style/header.css";
 
 import {
@@ -17,14 +18,16 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useAuthStore } from "@/zusTand/authStore";
 
 type TProp = { scrolling: boolean; isFixed: boolean };
 const Header = ({ scrolling, isFixed }: TProp) => {
   const [isOpen, setIsOpen] = useState(false);
-  const {user} = useAuthStore()
+  const language = localStorage.getItem("language") || "en";
+  const { i18n } = useTranslation();
+  const { user } = useAuthStore();
 
   const handleLogout = () => {
     Cookies.remove("access_token");
@@ -33,6 +36,11 @@ const Header = ({ scrolling, isFixed }: TProp) => {
     useAuthStore.persist.clearStorage();
 
     window.location.reload();
+  };
+
+  const handleLanguageChange = (lang: string) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem("language", lang);
   };
 
   return (
@@ -63,9 +71,7 @@ const Header = ({ scrolling, isFixed }: TProp) => {
             <>
               {user?.name ? (
                 <>
-                  <li
-                    className="bg-orange text-white px-4 py-2 rounded-full cursor-pointer relative select-none "
-                  >
+                  <li className="bg-orange text-white px-4 py-2 rounded-full cursor-pointer relative select-none ">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <i className="ri-user-fill"></i>
@@ -73,14 +79,17 @@ const Header = ({ scrolling, isFixed }: TProp) => {
                       <DropdownMenuContent className="w-56 mt-5">
                         <DropdownMenuLabel>
                           Hello{" "}
-                          <span className="font-bold text-base">{user.name}</span>
+                          <span className="font-bold text-base">
+                            {user.name}
+                          </span>
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
-                          <DropdownMenuItem onClick={() => handleLogout()} className="cursor-pointer">
-                            <span>
-                              Đăng xuất
-                            </span>
+                          <DropdownMenuItem
+                            onClick={() => handleLogout()}
+                            className="cursor-pointer"
+                          >
+                            <span>Đăng xuất</span>
                           </DropdownMenuItem>
                         </DropdownMenuGroup>
                       </DropdownMenuContent>
@@ -93,6 +102,32 @@ const Header = ({ scrolling, isFixed }: TProp) => {
                 </li>
               )}
             </>
+            <li>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <div className="flex items-center gap-2 cursor-pointer">
+                    <i className="ri-global-line text-xl"></i>
+                    <span className="uppercase text-sm font-semibold">
+                      {language}
+                    </span>
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-32 mt-2">
+                  <DropdownMenuItem
+                    className={`cursor-pointer ${language === "en"? "font-bold" : ""}`}
+                    onClick={() => handleLanguageChange("en")}
+                  >
+                    <span>English</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className={`cursor-pointer ${language === "vi"? "font-bold" : ""}`}
+                    onClick={() => handleLanguageChange("vi")}
+                  >
+                    <span>Tiếng Việt</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </li>
           </ul>
         </nav>
 
@@ -134,6 +169,32 @@ const Header = ({ scrolling, isFixed }: TProp) => {
               ></i>
               <nav>
                 <ul className="flex flex-col gap-5 text-lg text-black ">
+                  <li>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <div className="flex items-center gap-2 cursor-pointer">
+                          <i className="ri-global-line text-xl"></i>
+                          <span className="uppercase text-sm font-semibold">
+                            {language}
+                          </span>
+                        </div>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="w-32 mt-2">
+                        <DropdownMenuItem
+                          className={`cursor-pointer`}
+                          onClick={() => handleLanguageChange("vi")}
+                        >
+                          <span>Tiếng Việt</span>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                          className={`cursor-pointe`}
+                          onClick={() => handleLanguageChange("en")}
+                        >
+                          <span>English</span>
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </li>
                   <li>
                     <NavLink to="/" onClick={() => setIsOpen(false)}>
                       Home

@@ -1,7 +1,6 @@
 import ITour from "@/interfaces/ITour";
 import { instance } from "@/service";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { AxiosResponse } from "axios";
 
 interface ErrorResponse {
   response?: {
@@ -24,7 +23,7 @@ const handleError = (
 };
 
 export const getTours = createAsyncThunk<
-  AxiosResponse,
+  { data: ITour[]; total: number},
   { page: number; limit?: number; request: string },
   { rejectValue: string }
 >(
@@ -34,7 +33,10 @@ export const getTours = createAsyncThunk<
       const res = await instance.get(
         `tours?_page=${page}&_limit=${limit}&${request}`
       );
-      return res;
+      return {
+        data: res.data,
+        total: res.headers['x-total-count'],
+      };
     } catch (error) {
       return handleError(error as ErrorResponse, rejectWithValue);
     }

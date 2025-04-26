@@ -1,7 +1,11 @@
 import ITour from "@/interfaces/ITour";
 import { createSlice, PayloadAction, SerializedError } from "@reduxjs/toolkit";
-import { AxiosResponse } from "axios";
-import { addCommentTour, getDetailTour, getFilterTour, getTours } from "./tourAction";
+import {
+  addCommentTour,
+  getDetailTour,
+  getFilterTour,
+  getTours,
+} from "./tourAction";
 
 type TInitialState = {
   tours: ITour[];
@@ -48,18 +52,21 @@ const tourSlice = createSlice({
       state.type = action.payload;
     },
     addComment: (state, action) => {
-      state.tour?.rating.push(action.payload)
-    }
+      state.tour?.rating.push(action.payload);
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getTours.pending, setLoading)
       .addCase(
         getTours.fulfilled,
-        (state: TInitialState, action: PayloadAction<AxiosResponse>) => {
+        (
+          state: TInitialState,
+          action: PayloadAction<{ data: ITour[]; total: number }>
+        ) => {
           state.isLoading = false;
           state.tours = action.payload?.data;
-          state.total = action.payload.headers['x-total-count'];
+          state.total = action.payload.total;
           state.isError = false;
         }
       )
@@ -91,16 +98,17 @@ const tourSlice = createSlice({
       )
       .addCase(getFilterTour.rejected, setError)
 
-      .addCase(addCommentTour.fulfilled, (state: TInitialState, action: PayloadAction<ITour>)=>{
-        state.isLoading = false;
+      .addCase(
+        addCommentTour.fulfilled,
+        (state: TInitialState, action: PayloadAction<ITour>) => {
+          state.isLoading = false;
 
-        state.tour= action.payload
+          state.tour = action.payload;
 
-        state.isError = false
-      })
-      .addCase(addCommentTour.rejected, setError)
-
-      
+          state.isError = false;
+        }
+      )
+      .addCase(addCommentTour.rejected, setError);
   },
 });
 
