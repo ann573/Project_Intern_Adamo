@@ -30,7 +30,7 @@ export function PriceRangeSlider({
         <Slider.Thumb className="block w-4 h-4 bg-white border border-orange-500 rounded-full shadow-md focus:outline-none cursor-pointer" />
         <Slider.Thumb className="block w-4 h-4 bg-white border border-orange-500 rounded-full shadow-md focus:outline-none cursor-pointer" />
       </Slider.Root>
-      <div className="text-sm mt-2 text-gray-600 flex justify-between">
+      <div className="text-sm mt-2 text-gray-600 dark:text-white flex justify-between">
         <span>${value[0]}</span>
         <span>${value[1]}</span>
       </div>

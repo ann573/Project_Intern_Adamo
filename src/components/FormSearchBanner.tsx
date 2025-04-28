@@ -93,7 +93,7 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
                 className={
                   item === choose
                     ? "rounded-none"
-                    : "rounded-none bg-white/85 text-content"
+                    : "rounded-none bg-white/85 text-content dark:bg-background"
                 }
                 onClick={() => {
                   setChoose(item);
@@ -105,7 +105,7 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
           </div>
         )}
         <form
-          className="bg-white/85 pt-2 pb-6 px-5"
+          className="bg-white/85 dark:bg-background pt-2 pb-6 px-5"
           onSubmit={handleSubmit(onsubmitForm)}
         >
           <h2 className="text-2xl text-left text-heading font-medium mt-5 mb-3">
@@ -128,9 +128,9 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
                 <input
                   type="text"
                   id="location"
-                  className="bg-white focus:outline-none w-full px-10 py-4 text-sm"
+                  className="border rounded-md bg-white focus:outline-none w-full px-10 py-4 text-sm dark:bg-input/30 dark:border-input dark:hover:bg-input/50"
                   {...field}
-                />
+                /> 
               </div>
             )}
           />

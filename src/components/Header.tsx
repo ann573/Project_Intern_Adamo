@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -20,10 +20,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useTheme } from "@/context/ThemeProvider";
 import { useAuthStore } from "@/zusTand/authStore";
 
 type TProp = { scrolling: boolean; isFixed: boolean };
-const Header = ({ scrolling, isFixed }: TProp) => {
+const Header = ({ scrolling }: TProp) => {
+  const { pathname } = useLocation();
+  const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const language = sessionStorage.getItem("language") || "en";
   const { i18n, t } = useTranslation("header");
@@ -48,7 +51,17 @@ const Header = ({ scrolling, isFixed }: TProp) => {
       <div className="py-5 container_custom mx-auto flex items-center">
         <div className="mr-auto">
           <Link to="/">
-            <img src={scrolling || isFixed ? logo_black : logo} alt="logo" />
+            <img
+              src={
+                (scrolling && theme !== "dark") ||
+                ((pathname.includes("/hotel/") ||
+                  pathname.includes("/tour/")) &&
+                  theme === "light")
+                  ? logo_black
+                  : logo
+              }
+              alt="logo"
+            />
           </Link>
         </div>
         <nav className="hidden md:block">

@@ -74,7 +74,7 @@ const HomePage = () => {
             </h1>
           </div>
 
-          <div className="w-full bg-white pb-5 pt-10 relative">
+          <div className="w-full bg-white dark:bg-background pb-5 pt-10 relative">
             <div className="flex md:gap-10 gap-5 max-w-fit mx-auto">
               <div className="relative lg:px-0 px-5 ">
                 <div className="center gap-2 absolute md:-top-2/3 -top-1/2">
@@ -82,7 +82,7 @@ const HomePage = () => {
                   <span className="text-sm">{t("banner.featured")}</span>
                 </div>
                 <p className="center text-sub-color-primary gap-2 flex lg:flex-row flex-col items-center justify-center">
-                  <span className="text-[#1C1C1E] lg:text-3xl font-bold text-xl">
+                  <span className="text-heading lg:text-3xl font-bold text-xl">
                     200+
                   </span>{" "}
                   {t("banner.tours")}
@@ -90,13 +90,13 @@ const HomePage = () => {
               </div>
 
               <p className="center text-sub-color-primary gap-2 flex lg:flex-row  flex-col items-center justify-center">
-                <span className="text-[#1C1C1E] lg:text-3xl font-bold text-xl">
+                <span className="text-heading lg:text-3xl font-bold text-xl">
                   100+
                 </span>{" "}
                 {t("banner.destination")}
               </p>
               <p className="center text-sub-color-primary gap-2 flex lg:flex-row  flex-col items-center justify-center">
-                <span className="text-[#1C1C1E] lg:text-3xl font-bold text-xl">
+                <span className="text-heading lg:text-3xl font-bold text-xl">
                   8+
                 </span>{" "}
                 {t("banner.type_of_tour")}

@@ -35,7 +35,7 @@ const LayoutClient = () => {
           !isFixed ? "fixed left-0 right-0" : ""
         } z-30 transition-colors ${
           scrolling || isFixed
-            ? `text-heading bg-white border border-sub-color-second`
+            ? `text-heading bg-white dark:bg-background dark:text-white dark:border-none  border border-sub-color-second`
             : `text-white bg-transparent`
         } `}
       >
@@ -44,7 +44,7 @@ const LayoutClient = () => {
       <Suspense fallback={<SplashScreen />}>
         <Outlet />
       </Suspense>
-      <footer className="bg-heading">
+      <footer className="bg-[#1c1c1e] dark:border-t">
         <Footer />
       </footer>
     </>

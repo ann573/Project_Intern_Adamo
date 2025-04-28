@@ -103,7 +103,7 @@ const ContactPage = () => {
             <div>
               <input
                 type="name"
-                className="bg-[#F5F5F5] p-3 focus:outline-none w-full"
+                className="bg-[#F5F5F5] dark:bg-[#1C2526] p-3 focus:outline-none w-full"
                 placeholder={t("placeholder_name")}
                 {...register("name")}
               />
@@ -115,7 +115,7 @@ const ContactPage = () => {
             <div>
               <input
                 type="email"
-                className="bg-[#F5F5F5] p-3 focus:outline-none w-full"
+                className="bg-[#F5F5F5] dark:bg-[#1C2526] p-3 focus:outline-none w-full"
                 placeholder={t("placeholder_email")}
                 {...register("email")}
               />
@@ -127,7 +127,7 @@ const ContactPage = () => {
             <div>
               <input
                 type="tel"
-                className="bg-[#F5F5F5] p-3 focus:outline-none w-full"
+                className="bg-[#F5F5F5] dark:bg-[#1C2526] p-3 focus:outline-none w-full"
                 placeholder={t("placeholder_phone")}
                 {...register("telephone")}
               />
@@ -142,7 +142,7 @@ const ContactPage = () => {
               <textarea
                 id=""
                 placeholder={t("placeholder_message")}
-                className="resize-none bg-[#F5F5F5] p-3 focus:outline-none w-full"
+                className="resize-none bg-[#F5F5F5] dark:bg-[#1C2526] p-3 focus:outline-none w-full"
                 rows={5}
                 {...register("message")}
               ></textarea>
@@ -161,7 +161,7 @@ const ContactPage = () => {
         <div className="relative">
           <img src={hero} className="w-full" alt="hero" />
 
-          <div className="absolute bg-heading p-5 bottom-0 left-0 sm:w-2/3 w-11/12">
+          <div className="absolute bg-[#1c1c1e]  p-5 bottom-0 left-0 sm:w-2/3 w-11/12">
             <h3 className="text-white text-3xl mb-5">{t("office_title")}</h3>
 
             <div>

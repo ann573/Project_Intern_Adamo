@@ -95,7 +95,7 @@ const HotelPage = () => {
             </h1>
           </div>
 
-          <div className="w-full h-20 bg-white pb-5 pt-10 relative xl:block hidden"></div>
+          <div className="w-full h-20 bg-white dark:bg-background pb-5 pt-10 relative xl:block hidden"></div>
         </div>
 
         {/* ================= second col ================= */}

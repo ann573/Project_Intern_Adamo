@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import "react-day-picker/style.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import Theme from "./components/Theme";
 import i18n from "./i18n";
 
 // Lazy imports for layouts and pages
@@ -74,7 +75,7 @@ function App() {
             <Route path="forgot-password" element={<EmailForgotForm />} />
           </Route>
         </Routes>
-
+        <Theme />
         <Toaster />
       </>
     </Suspense>

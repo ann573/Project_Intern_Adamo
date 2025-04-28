@@ -116,7 +116,7 @@ const HotelDetail = () => {
 
         <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
           <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
-            <div className="bg-[#F4F4F4] sticky top-5">
+            <div className="bg-[#F4F4F4] dark:bg-secondary sticky top-5">
               <h2 className="p-5 font-medium text-xl">
                 <span className="text-sm font-light">{t("from")}</span> $
                 {data?.cost.toFixed(2)}

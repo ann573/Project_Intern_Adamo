@@ -270,7 +270,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
             <span className="font-semibold min-w-[120px]">{room.name}</span>
             <div className="flex items-center gap-2">
               <button
-                className="bg-[#E4E4E4] text-xl rounded-full px-2 font-semibold cursor-pointer select-none"
+                className="bg-[#E4E4E4] dark:bg-background text-xl rounded-full px-2 font-semibold cursor-pointer select-none"
                 onClick={() => decrementRoom(room.name)}
                 type="button"
                 disabled={room.count === 0 || !room.isAvailable}
@@ -279,7 +279,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
               </button>
               <span className="mx-2">{room.count}</span>
               <button
-                className="bg-[#E4E4E4] text-xl rounded-full px-2 font-semibold cursor-pointer select-none"
+                className="bg-[#E4E4E4] dark:bg-background text-xl rounded-full px-2 font-semibold cursor-pointer select-none"
                 onClick={() => incrementRoom(room.name)}
                 type="button"
                 disabled={!room.isAvailable}
@@ -287,7 +287,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
                 +
               </button>
             </div>
-            <span className="font-bold text-[#04316A] justify-self-end">
+            <span className="font-bold text-[#04316A] dark:text-[#FFB573] justify-self-end">
               ${room.price_discount.toFixed(2)}
             </span>
           </div>
@@ -315,7 +315,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
             </div>
             <div className="flex items-center gap-2">
               <button
-                className="bg-[#E4E4E4] text-xl rounded-full px-2 font-semibold cursor-pointer select-none"
+                className="bg-[#E4E4E4] dark:bg-background text-xl rounded-full px-2 font-semibold cursor-pointer select-none"
                 onClick={() => handleAddonCount(idx, -1)}
                 type="button"
                 disabled={!addon.checked || addon.count === 0}
@@ -324,7 +324,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
               </button>
               <span className="mx-2">{addon.count}</span>
               <button
-                className="bg-[#E4E4E4] text-xl rounded-full px-2 font-semibold cursor-pointer select-none"
+                className="bg-[#E4E4E4] dark:bg-background text-xl rounded-full px-2 font-semibold cursor-pointer select-none"
                 onClick={() => {
                   handleAddonCount(idx, 1);
                 }}
@@ -333,7 +333,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
                 +
               </button>
             </div>
-            <span className="font-bold text-[#04316A] justify-self-end">
+            <span className="font-bold text-[#04316A] dark:text-[#FFB573] justify-self-end">
               {addon.checked && addon.count > 0
                 ? `$${(addon.price * addon.count).toFixed(2)}`
                 : "0"}

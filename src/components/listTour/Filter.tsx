@@ -122,7 +122,7 @@ const Filter = ({
   return (
     <form
       onSubmit={handleSubmit}
-      className="absolute w-[250px] bg-white shadow-2xl p-3 left-full -translate-x-full top-25 z-10"
+      className="absolute w-[250px] bg-white dark:bg-secondary shadow-2xl p-3 left-full -translate-x-full top-25 z-10"
     >
       <div className="flex justify-between">
         <h3 className="text-[#03387D]">{t("filter.heading")}</h3>
