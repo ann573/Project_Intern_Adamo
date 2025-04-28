@@ -1,24 +1,26 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+import DetailSkeleton from "@/components/DetailSkeleton";
+import AdditionalInfo from "@/components/detailTour/AdditionalInfo";
+import Description from "@/components/detailTour/Description";
 import FormPrice from "@/components/detailTour/FormPrice";
 import ImageSlider from "@/components/detailTour/ImageSlide";
-import { getDetailTour, getTours } from "@/features/tour/tourAction";
-import { useAppDispatch, useAppSelector } from "@/hooks/app";
-import Description from "@/components/detailTour/Description";
-import AdditionalInfo from "@/components/detailTour/AdditionalInfo";
 import Reviews from "@/components/detailTour/Reviews";
 import Card from "@/components/listTour/Card";
-import DetailSkeleton from "@/components/DetailSkeleton";
+import { getDetailTour, getTours } from "@/features/tour/tourAction";
+import { useAppDispatch, useAppSelector } from "@/hooks/app";
+import { useTranslation } from "react-i18next";
 
 const DetailTour = () => {
+  const { t } = useTranslation("tour");
   const id = useParams().id;
 
   const [choose, setChoose] = useState(1);
   const { tour, tours, isLoading } = useAppSelector((state) => state.tours);
   const dispatch = useAppDispatch();
 
-  const heading = ["Descriptions", "Additional Info", "Reviews"];
+  const heading = [`${t("descriptions")}`, `${t("add")}`, `${t("review")}`];
 
   const totalRating =
     tour &&
@@ -41,7 +43,7 @@ const DetailTour = () => {
   }, []);
 
   if (isLoading) {
-    return <DetailSkeleton/>;
+    return <DetailSkeleton />;
   }
 
   return (
@@ -49,14 +51,14 @@ const DetailTour = () => {
       <section className="my-10 text-content xl:px-0 md:px-10">
         <p className="flex justify-start gap-5">
           <Link to={"/"} className="hover:underline">
-            Home
+            {t("bread_cum.home")}
           </Link>
           <span className="text-[#C4C4C4] text-lg">•</span>
           <Link to={"/tours"} className="hover:underline">
-            Tours
+            {t("bread_cum.tour")}
           </Link>
           <span className="text-[#C4C4C4] text-lg">•</span>
-          <span className="select-none">Detail tour</span>
+          <span className="select-none">{t("bread_cum.detail")}</span>
         </p>
       </section>
 
@@ -78,7 +80,7 @@ const DetailTour = () => {
         </p>
 
         <p>
-          {tour?.rating?.length || 0} reviews ({tour?.rating.length})
+          {tour?.rating?.length || 0} {t("reviews")} ({tour?.rating.length})
         </p>
       </div>
 
@@ -109,7 +111,7 @@ const DetailTour = () => {
 
           <section className="w-full">
             <h3 className="font-bold my-5 text-2xl text-heading">
-              Related tours
+              {t("related")}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 3xl:xl:grid-cols-3 md:gap-5 gap-y-10 ">
               {tours &&
@@ -121,24 +123,25 @@ const DetailTour = () => {
         <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
           <form className="bg-[#F4F4F4] sticky top-5">
             <h2 className="py-7 px-5 font-medium text-xl">
-              <span className="text-sm font-light">from</span> $
-              {tour?.cost.toFixed(2)}
+              <span className="text-sm font-light">{t("from_price.from")}</span>{" "}
+              ${tour?.cost.toFixed(2)}
             </h2>
             <hr />
             <div className="p-5">
               <div className="flex justify-between">
                 <div>
                   <span className="text-sub-color-primary text-xs">
-                    Duration:
+                    {t("from_price.duration")}
                   </span>
                   <p className="font-semibold text-sm">
-                    {tour?.duration} days -{" "}
-                    {tour?.duration && tour?.duration - 1} nights
+                    {tour?.duration} {t("from_price.days")} -{" "}
+                    {tour?.duration && tour?.duration - 1}{" "}
+                    {t("from_price.night")}
                   </p>
                 </div>
                 <div>
                   <span className="text-sub-color-primary text-xs">
-                    Tour type:
+                    {t("from_price.type")}
                   </span>
                   <p className="font-semibold text-sm">{tour?.type}</p>
                 </div>

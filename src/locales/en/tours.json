@@ -1,0 +1,24 @@
+{
+  "banner": {
+    "desc": "Search hundreds of tours and more",
+    "heading": "Attractive tour and <1 /> interesting <3 /> experiences"
+  },
+  "bread": {
+    "home": "Home",
+    "tours": "Tours"
+  },
+  "heading": "Attractive tour and interesting <1 /> experiences",
+  "filter": {
+    "button": "Filter",
+    "heading": "Filter by",
+    "remove": "Clear",
+    "budget": "Budget",
+    "duration": "Duration",
+    "days": "Days",
+    "week": "Over 1 week",
+    "type": "Type",
+    "apply": "Apply Filter"
+  },
+  "result": "No matching results",
+  "return": "Return to the previous page"
+}

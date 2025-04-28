@@ -1,0 +1,37 @@
+{
+  "banner": {
+    "sub_head": "Tìm kiếm hằng trăm khách sạn và hơn thế nữa",
+    "head": "Từ những nơi ấm cúng <1 /> ở vùng nông thôn  đến những căn hộ ở <3 /> thành phố  sành điệu"
+  },
+  "breadCum": {
+    "home": "Trang chủ",
+    "hotel": "Khách sạn"
+  },
+  "heading": "Khách sạn",
+  "sortBy": "Sắp xếp bởi:",
+  "price": "Giá",
+  "option": {
+    "default": "Mặc định",
+    "lowToHigh": "Thấp đến cao",
+    "highToLow": "Cao đến thấp"
+  },
+  "filter": {
+    "filter": "Lọc",
+    "filterBy": "Lọc bởi",
+    "clear": "Xóa",
+    "budget": "Khoảng tiền:",
+    "hotelStar": "Sao khách sạn: ",
+    "star": "Sao",
+    "review": "Điểm đánh giá:",
+    "score": {
+      "wonderful": "Tuyệt vời:",
+      "vGood": "Rất tốt:",
+      "good": "Tốt:",
+      "pleasant": "Êm dịu:",
+      "normal": "Bình thường:"
+    },
+    "apply": "Áp dụng bộ lọc"
+  },
+  "result": "Không có kết quả tương ứng",
+  "return": "Quay lại trang trước"
+}

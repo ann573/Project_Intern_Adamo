@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import React from "react";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,16 +10,17 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { useFullHotels } from "@/hooks/hotels";
-import React from "react";
+import { X } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
 import { PriceRangeSlider } from "../PriceSlideRange";
 import { Checkbox } from "../ui/checkbox";
 import { Label } from "../ui/label";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { useLocation, useNavigate } from "react-router-dom";
-import { X } from "lucide-react";
 
 const FilterHotel = () => {
   const nav = useNavigate();
+  const { t } = useTranslation("hotels");
   const { pathname, search } = useLocation();
 
   const [open, setOpen] = React.useState(false);
@@ -115,27 +118,27 @@ const FilterHotel = () => {
             open ? "w-24 justify-between text-black bg-white" : "w-fit"
           }`}
         >
-          Filter
+          {t("filter.filter")}
           <X className={`${!open && "hidden"}`} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-64 p-4">
         <div className="flex justify-between items-center mb-4">
           <DropdownMenuLabel className="text-lg font-semibold text-[#03387D]">
-            Filter By
+            {t("filter.filterBy")}
           </DropdownMenuLabel>
           <Button
             variant="link"
             className="text-blue-600 p-0 h-auto cursor-pointer"
             onClick={handleClear}
           >
-            Clear
+            {t("filter.clear")}
           </Button>
         </div>
 
         {/* Budget Section */}
         <div className="mb-6">
-          <h3 className="text-sm font-medium mb-2">Budget:</h3>
+          <h3 className="text-sm font-medium mb-2">{t("filter.budget")}</h3>
           <PriceRangeSlider
             value={budget}
             onValueChange={setBudget}
@@ -148,7 +151,7 @@ const FilterHotel = () => {
         {/* Hotel Star Section */}
         <DropdownMenuSeparator />
         <div className="my-5">
-          <h3 className="text-sm font-medium mb-2">Hotel Star:</h3>
+          <h3 className="text-sm font-medium mb-2">{t("filter.hotelStar")}</h3>
           {[5, 4, 3, 2, 1].map((star) => (
             <div key={star} className="flex items-center space-x-2 my-2">
               <Checkbox
@@ -157,7 +160,7 @@ const FilterHotel = () => {
                 onCheckedChange={() => toggleStar(star)}
               />
               <Label htmlFor={`star-${star}`} className="text-sm">
-                {star} Star{star > 1 ? "s" : ""}
+                {star} {t("filter.star")}
               </Label>
             </div>
           ))}
@@ -166,18 +169,18 @@ const FilterHotel = () => {
         {/* Review Score Section */}
         <DropdownMenuSeparator />
         <div className="my-6">
-          <h3 className="text-sm font-medium mb-2">Review Score:</h3>
+          <h3 className="text-sm font-medium mb-2">{t("filter.review")}</h3>
           <RadioGroup
             value={reviewScore}
             onValueChange={(value) => setReviewScore(value)}
             className="space-y-1"
           >
             {[
-              { label: "Wonderful: 9.5+", value: "9.5" },
-              { label: "Very Good: 9+", value: "9" },
-              { label: "Good: 8+", value: "8" },
-              { label: "Pleasant: 7+", value: "7" },
-              { label: "Normal: 5+", value: "5" },
+              { label: `${t("filter.score.wonderful")} 9.5+`, value: "9.5" },
+              { label: `${t("filter.score.vGood")} 9+`, value: "9" },
+              { label: `${t("filter.score.good")} 8+`, value: `8` },
+              { label: `${t("filter.score.pleasant")} 7+`, value: `7` },
+              { label: `${t("filter.score.normal")} 5+`, value: `5` },
             ].map((score) => (
               <div key={score.value} className="flex items-center space-x-2">
                 <RadioGroupItem
@@ -200,7 +203,7 @@ const FilterHotel = () => {
           className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-none cursor-pointer"
           onClick={handleApply}
         >
-          Apply Filter
+          {t("filter.apply")}
         </Button>
       </DropdownMenuContent>
     </DropdownMenu>

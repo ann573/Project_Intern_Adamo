@@ -1,44 +1,53 @@
 import * as z from "zod";
 
 export const registerSchema = z.object({
-  f_name: z.string().min(2, "Tên không được để trống"),
-  l_name: z.string().min(2, "Họ không được để trống"),
-  email: z.string().email("Phải là một email hợp lệ"),
+  f_name: z.string().min(2, "First name is required"),
+  l_name: z.string().min(2, "Last name is required"),
+  email: z.string().email("Must be a valid email address"),
   password: z
     .string()
-    .min(6, "Mật khẩu phải tối thiểu 6 ky tự")
-    .regex(/[a-z]/, "Mật khẩu phải có ít nhất một chữ thường")
-    .regex(/[0-9]/, "Mật khẩu phải có ít nhất một số")
-    .regex(/[!@#$%^&.,/*]/, "Mật khẩu phải có ít nhất một ký tự đặc biệt"),
+    .min(6, "Password must be at least 6 characters")
+    .regex(/[a-z]/, "Password must contain at least one lowercase letter")
+    .regex(/[0-9]/, "Password must contain at least one number")
+    .regex(
+      /[!@#$%^&.,/*]/,
+      "Password must contain at least one special character"
+    ),
 });
 
 export const loginSchema = z.object({
-  email: z.string().email("Phải là một email hợp lệ"),
+  email: z.string().email("Must be a valid email address"),
   password: z
     .string()
-    .min(6, "Mật khẩu phải tối thiểu 6 ky tự")
-    .regex(/[a-z]/, "Mật khẩu phải có ít nhất một chữ thường")
-    .regex(/[0-9]/, "Mật khẩu phải có ít nhất một số")
-    .regex(/[!@#$%^&.,/*]/, "Mật khẩu phải có ít nhất một ký tự đặc biệt"),
+    .min(6, "Password must be at least 6 characters")
+    .regex(/[a-z]/, "Password must contain at least one lowercase letter")
+    .regex(/[0-9]/, "Password must contain at least one number")
+    .regex(
+      /[!@#$%^&.,/*]/,
+      "Password must contain at least one special character"
+    ),
 });
 
 export const emailSchema = z.object({
-  email: z.string().email("Phải là một email hợp lệ"),
+  email: z.string().email("Must be a valid email address"),
 });
 
 export const resetPasswordSchema = z
   .object({
     password: z
       .string()
-      .min(6, "Mật khẩu phải tối thiểu 6 ký tự")
-      .regex(/[a-z]/, "Mật khẩu phải có ít nhất một chữ thường")
-      .regex(/[0-9]/, "Mật khẩu phải có ít nhất một số")
-      .regex(/[!@#$%^&.,/*]/, "Mật khẩu phải có ít nhất một ký tự đặc biệt"),
+      .min(6, "Password must be at least 6 characters")
+      .regex(/[a-z]/, "Password must contain at least one lowercase letter")
+      .regex(/[0-9]/, "Password must contain at least one number")
+      .regex(
+        /[!@#$%^&.,/*]/,
+        "Password must contain at least one special character"
+      ),
 
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Mật khẩu xác nhận không khớp",
+    message: "Passwords do not match",
     path: ["confirmPassword"],
   });
 

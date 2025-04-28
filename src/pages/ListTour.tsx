@@ -10,20 +10,21 @@ import { Button } from "@components/ui/button";
 import { X } from "lucide-react";
 import { toast } from "sonner";
 
+import FormSearchBanner from "@/components/FormSearchBanner";
 import Card from "@/components/listTour/Card";
 import Filter from "@/components/listTour/Filter";
-import FormSearchBanner from "@/components/FormSearchBanner";
 import Pagination from "@/components/Pagination";
 
 // redux
 import CardSkeleton from "@/components/CardSkeleton";
 import { getFilterTour, getTours } from "@/features/tour/tourAction";
+import { Trans, useTranslation } from "react-i18next";
 
 const ListTour = () => {
+  const { t } = useTranslation("tours");
   const [date, setDate] = useState<Date | undefined>();
   const [page, setPage] = useState(1);
 
-  // const [uniqueTypes, setUniqueTypes] = useState([]);
   const [click, setClick] = useState(false);
   const [rangeFilter, setRangeFilter] = useState([100, 1000]);
 
@@ -54,6 +55,7 @@ const ListTour = () => {
   useEffect(() => {
     setRequest(search.slice(1, search.length));
   }, [search, setRequest]);
+
   useEffect(() => {
     const fetchTour = async () => {
       try {
@@ -90,12 +92,12 @@ const ListTour = () => {
         {/* ================= first col ================= */}
         <div className="lg:col-span-7 sm:col-span-5 flex flex-col justify-end ">
           <div className="my-auto xl:pl-40 sm:block hidden">
-            <p className="text-[#FFF2CF] text-left">
-              Search hundreds of tours and more
-            </p>
+            <p className="text-[#FFF2CF] text-left">{t("banner.desc")}</p>
             <h1 className=" text-[#ffffff] font-medium xl:text-6xl text-3xl top-1/2 mt-5 text-left">
-              Attractive tour and <br className="md:block hidden" /> interesting{" "}
-              <br className="lg:block hidden" /> experiences
+              <Trans i18nKey="banner.heading" ns={"tours"}>
+                Attractive tour and <br className="md:block hidden" />
+                interesting <br className="lg:block hidden" /> experiences
+              </Trans>
             </h1>
           </div>
 
@@ -112,11 +114,11 @@ const ListTour = () => {
       <section className="max-w-[1200px] mx-auto my-5 text-content xl:px-0 px-10">
         <p className="flex justify-start gap-5">
           <Link to={"/"} className="hover:underline">
-            Home
+            {t("bread.home")}
           </Link>
           <span className="text-[#C4C4C4] text-lg">•</span>
           <Link to={"/tours"} className="hover:underline">
-            Tours
+            {t("bread.tours")}
           </Link>
         </p>
       </section>
@@ -125,7 +127,9 @@ const ListTour = () => {
       <section className="max-w-[1200px] mx-auto my-5" ref={listRef}>
         <div className="flex justify-between items-center relative xl:px-0 px-10">
           <h2 className="text-heading md:text-[40px] text-2xl font-medium">
-            Attractive tour and interesting <br /> experiences
+            <Trans i18nKey="heading" ns={"tours"}>
+              Attractive tour and interesting <br /> experiences
+            </Trans>
           </h2>
           <Button
             variant={"ghost"}
@@ -134,7 +138,7 @@ const ListTour = () => {
             }`}
             onClick={() => setClick((prev) => !prev)}
           >
-            Filter
+            {t("filter.button")}
             <X className={`w-5 h-5 ${click ? "block" : "hidden"}`} />
           </Button>
 
@@ -163,7 +167,7 @@ const ListTour = () => {
         ) : (
           <div className="flex flex-col gap-3">
             <p className="text-center mt-5 text-3xl font-bold text-red-500">
-              Không có kết quả tương ứng
+              {t("result")}
             </p>
             <Link
               className=" text-center text-sub-color-primary underline hover:text-[#3e3e3e] cursor-pointer mb-20"
@@ -172,7 +176,7 @@ const ListTour = () => {
               }}
               to={"/tours"}
             >
-              Quay lại mặc định
+              {t("return")}
             </Link>
           </div>
         )}

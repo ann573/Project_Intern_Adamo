@@ -1,7 +1,8 @@
 {
   "hero": {
     "welcome": "Welcome to NgaoduVietnam",
-    "title": "Perfect place for your stories"
+    "title1": "Perfect place ",
+    "title2": "for your stories"
   },
   "banner": {
     "featured": "Featured",
@@ -17,7 +18,8 @@
     "view_all": "View all"
   },
   "experience": {
-    "title": "Attractive tour and interesting experiences",
+    "title1": "Attractive tour and interesting ",
+    "title2": "experiences",
     "view_all": "View all"
   },
   "culture": {
@@ -25,11 +27,29 @@
     "view_all": "View all"
   },
   "email": {
-    "title": "Leave us an email, to get <span class=\"text-orange\">the latest deals</span>",
+    "title1": "Leave us an email,",
+    "title2": "to get ",
+    "title3": "the latest deals",
     "placeholder": "example@gmail.com",
     "send": "Send",
     "success": "Register successfully",
     "success_desc": "We will send you an email to verify your account",
     "error": "Have an error, please try again!!!"
-  }
+  },
+  "formsearch": {
+    "tours": {
+      "tour": "Tour",
+      "heading": "Discover beautiful Vietnam",
+      "date": "Depature time",
+      "type": "Type of tour",
+      "guest": "Number of guests"
+    },
+    "hotels": {
+      "hotel": "Hotels",
+      "heading": "Find hotels for your next trip"
+    },
+    "button": "Search",
+    "more": "More than"
+  },
+  "panigation": "Showing"
 }

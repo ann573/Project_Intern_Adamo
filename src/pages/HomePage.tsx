@@ -23,11 +23,12 @@ import { Input } from "@components/ui/input";
 // schema
 import { emailSchema } from "@/schema/homePage";
 import { instance } from "@/service";
+import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
-
 
 const HomePage = () => {
   const [date, setDate] = React.useState<Date | undefined>(undefined);
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -66,9 +67,10 @@ const HomePage = () => {
         {/* ================= first col ================= */}
         <div className="lg:col-span-7 col-span-12 flex flex-col justify-end">
           <div className="my-auto mx-auto text-left px-5 lg:px-0">
-            <p className="text-[#FFF2CF]">Welcome to NgaoduVietnam</p>
+            <p className="text-[#FFF2CF]">{t("hero.welcome")}</p>
             <h1 className=" text-[#ffffff] font-medium text-6xl top-1/2 mt-5">
-              Perfect place <br className="lg:block hidden" /> for your stories
+              {t("hero.title1")} <br className="lg:block hidden" />{" "}
+              {t("hero.title2")}
             </h1>
           </div>
 
@@ -77,13 +79,13 @@ const HomePage = () => {
               <div className="relative lg:px-0 px-5 ">
                 <div className="center gap-2 absolute md:-top-2/3 -top-1/2">
                   <i className="ri-circle-fill text-[#FF7B42] text-[10px]"></i>
-                  <span className="text-sm">Featured</span>
+                  <span className="text-sm">{t("banner.featured")}</span>
                 </div>
                 <p className="center text-sub-color-primary gap-2 flex lg:flex-row flex-col items-center justify-center">
                   <span className="text-[#1C1C1E] lg:text-3xl font-bold text-xl">
                     200+
                   </span>{" "}
-                  tours
+                  {t("banner.tours")}
                 </p>
               </div>
 
@@ -91,13 +93,13 @@ const HomePage = () => {
                 <span className="text-[#1C1C1E] lg:text-3xl font-bold text-xl">
                   100+
                 </span>{" "}
-                destination
+                {t("banner.destination")}
               </p>
               <p className="center text-sub-color-primary gap-2 flex lg:flex-row  flex-col items-center justify-center">
                 <span className="text-[#1C1C1E] lg:text-3xl font-bold text-xl">
                   8+
                 </span>{" "}
-                type of tour
+                {t("banner.type_of_tour")}
               </p>
             </div>
           </div>
@@ -116,10 +118,10 @@ const HomePage = () => {
       <section className="relative mb-30" data-aos="fade-up">
         <div className="flex justify-between items-center flex-wrap gap-5 max-w-[1200px] mx-auto mb-5 px-5 xl:px-0">
           <h2 className="md:text-[40px] text-3xl xl:w-1/3 md:w-1/2 text-heading font-medium">
-            Discover fascinating destinations
+            {t("recommended.title")}
           </h2>
           <Button variant={"ghost"}>
-            <Link to="/tours">View all</Link>
+            <Link to="/tours">{t("recommended.view_all")}</Link>
           </Button>
         </div>
 
@@ -132,11 +134,11 @@ const HomePage = () => {
       <section className="relative my-30" data-aos="fade-up">
         <div className="flex justify-between items-center flex-wrap gap-5 max-w-[1200px] mx-auto mb-5 px-5 xl:px-0">
           <h2 className="md:text-[40px] text-3xl  md:w-1/2 text-heading font-medium">
-            Attractive tour and interesting <br className="lg:block hidden" />{" "}
-            experiences
+            {t("experience.title1")}
+            <br className="lg:block hidden" /> {t("experience.title2")}
           </h2>
           <Button variant={"ghost"}>
-            <Link to="/tours">View all</Link>
+            <Link to="/tours">{t("recommended.view_all")}</Link>
           </Button>
         </div>
 
@@ -152,10 +154,10 @@ const HomePage = () => {
       >
         <div className="flex justify-between items-center flex-wrap gap-5 max-w-[1200px] mx-auto mb-5 px-5 xl:px-0">
           <h2 className="md:text-[40px] text-3xl  md:w-1/2 text-heading font-medium">
-            Experience the traditional cultural beauties of Vietnam
+            {t("culture.title")}
           </h2>
           <Button variant={"ghost"}>
-            <Link to="/tours">View all</Link>
+            <Link to="/tours">{t("recommended.view_all")}</Link>
           </Button>
         </div>
 
@@ -176,8 +178,8 @@ const HomePage = () => {
           className="xl:text-5xl md:text-3xl text-2xl md:mb-0 mb-5"
           data-aos="fade-right"
         >
-          Leave us an email, <br className="md:block hidden" /> to get{" "}
-          <span className="text-orange">the latest deals</span>
+          {t("email.title1")} <br className="md:block hidden" /> {t("email.title2")}{" "}
+          <span className="text-orange">{t("email.title3")}</span>
         </h4>
         <div className="xl:w-1/3 md:w-1/2 w-full relative" data-aos="fade-left">
           <form onSubmit={handleSubmit(onSubmitEmail)} className="flex gap-5">
@@ -186,12 +188,12 @@ const HomePage = () => {
                 errors.email &&
                 "border-red-500 focus-visible:border-red-500 focus-visible:ring-red-200"
               }`}
-              placeholder={"example@gmail.com"}
+              placeholder={t("email.placeholder")}
               {...register("email", { required: true })}
             />
 
             <Button variant={"ghost"} className={"py-5"} type="submit">
-              Send
+              {t("email.send")}
             </Button>
           </form>
           {errors.email && (

@@ -9,27 +9,30 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-const contactItems = [
-  {
-    icon: "ri-home-4-line",
-    title: "Address",
-    content: "27 Old Gloucester Street, London, WC1N 3AX",
-  },
-  {
-    icon: "ri-phone-line",
-    title: "Phone Number",
-    content: "+84 (0)20 33998400",
-  },
-  {
-    icon: "ri-mail-line",
-    title: "Email Us",
-    content: "info@ngaoduvietnam.com",
-  },
-];
+import "@/style/homepage.css";
+import { useTranslation } from "react-i18next";
 
 const ContactPage = () => {
+  const { t } = useTranslation("contact");
   const nav = useNavigate();
   const { user } = useAuthStore();
+  const contactItems = [
+    {
+      icon: "ri-home-4-line",
+      title: t("address_title"),
+      content: t("address_content"),
+    },
+    {
+      icon: "ri-phone-line",
+      title: t("phone_title"),
+      content: t("phone_content"),
+    },
+    {
+      icon: "ri-mail-line",
+      title: t("email_title"),
+      content: t("email_content"),
+    },
+  ];
   const {
     register,
     handleSubmit,
@@ -46,13 +49,14 @@ const ContactPage = () => {
 
   const handleSubmitForm = async (data: ContactFormData) => {
     try {
+      console.log("first");
       await instance.post("/contact", data);
-      toast.success("Send message successfully", {
+      toast.success(t("success_message"), {
         style: {
           background: "green",
           color: "white",
         },
-        description: "We will contact you as soon as possible",
+        description: t("success_description"),
       });
       reset();
       nav("/");
@@ -75,7 +79,7 @@ const ContactPage = () => {
       <section className="banner_contact ">
         <div className="flex h-full items-center justify-start max-w-[1200px] mx-auto">
           <h1 className="font-semibold text-white text-5xl pl-5 xl:pl-0">
-            Contact Us
+            {t("banner_title")}
           </h1>
         </div>
       </section>
@@ -83,26 +87,24 @@ const ContactPage = () => {
       <section className="max-w-[1200px] mx-auto my-5 xl:px-0 px-10">
         <p className="flex justify-start gap-5">
           <Link to={"/"} className="hover:underline">
-            Home
+            {t("breadcrumb_home")}
           </Link>
           <span className="text-[#C4C4C4] text-lg">•</span>
-          Contact Us
+          {t("breadcrumb_contact")}
         </p>
       </section>
 
       <section className="max-w-[1200px] mx-auto grid lg:grid-cols-2 xl:gap-20 gap-10 mt-10 my-20 xl:px-0 px-5 ">
         <form onSubmit={handleSubmit(handleSubmitForm)}>
-          <h2 className="font-bold text-4xl">We'd love to hear from you</h2>
-          <p className="mt-5 mb-10">
-            Send us a message and we'll respond as soon as possible
-          </p>
+          <h2 className="font-bold text-4xl">{t("form_title")}</h2>
+          <p className="mt-5 mb-10">{t("form_description")}</p>
 
           <div className="flex flex-col gap-5">
             <div>
               <input
                 type="name"
                 className="bg-[#F5F5F5] p-3 focus:outline-none w-full"
-                placeholder="Your Name"
+                placeholder={t("placeholder_name")}
                 {...register("name")}
               />
               {errors.name && (
@@ -114,7 +116,7 @@ const ContactPage = () => {
               <input
                 type="email"
                 className="bg-[#F5F5F5] p-3 focus:outline-none w-full"
-                placeholder="Your Email"
+                placeholder={t("placeholder_email")}
                 {...register("email")}
               />
               {errors.email && (
@@ -126,7 +128,7 @@ const ContactPage = () => {
               <input
                 type="tel"
                 className="bg-[#F5F5F5] p-3 focus:outline-none w-full"
-                placeholder="Your Phone"
+                placeholder={t("placeholder_phone")}
                 {...register("telephone")}
               />
               {errors.telephone && (
@@ -139,7 +141,7 @@ const ContactPage = () => {
             <div>
               <textarea
                 id=""
-                placeholder="Message"
+                placeholder={t("placeholder_message")}
                 className="resize-none bg-[#F5F5F5] p-3 focus:outline-none w-full"
                 rows={5}
                 {...register("message")}
@@ -150,7 +152,7 @@ const ContactPage = () => {
             </div>
 
             <Button className="w-fit rounded-none py-5 px-10 ml-auto cursor-pointer">
-              Send Message
+              {t("button_send")}
             </Button>
           </div>
         </form>
@@ -160,7 +162,7 @@ const ContactPage = () => {
           <img src={hero} className="w-full" alt="hero" />
 
           <div className="absolute bg-heading p-5 bottom-0 left-0 sm:w-2/3 w-11/12">
-            <h3 className="text-white text-3xl mb-5">Our Office</h3>
+            <h3 className="text-white text-3xl mb-5">{t("office_title")}</h3>
 
             <div>
               {contactItems.map((item, index) => (

@@ -1,0 +1,37 @@
+{
+  "banner": {
+    "sub_head": "Search hundreds of tours and more",
+    "head": "From cozy country <1 /> homes to funky city <3 /> apartments"
+  },
+  "breadCum": {
+    "home": "Home",
+    "hotel": "Hotel"
+  },
+  "heading": "Hotels",
+  "sortBy": "SORT BY:",
+  "price": "Price",
+  "option": {
+    "default": "Default",
+    "lowToHigh": "Low to High",
+    "highToLow": "High to Low"
+  },
+  "filter": {
+    "filter": "Filter",
+    "filterBy": "Filter By",
+    "clear": "Clear",
+    "budget": "Budget:",
+    "hotelStar": "Hotel Star: ",
+    "star": "Stars",
+    "review": "Review Score:",
+    "score": {
+      "wonderful": "Wonderful:",
+      "vGood": "Very Good:",
+      "good": "Good:",
+      "pleasant": "Pleasant:",
+      "normal": "Normal:"
+    },
+    "apply": "Apply Filter"
+  },
+  "result": "No matching results",
+  "return": "Return to the previous page"
+}

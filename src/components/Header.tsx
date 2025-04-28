@@ -25,8 +25,8 @@ import { useAuthStore } from "@/zusTand/authStore";
 type TProp = { scrolling: boolean; isFixed: boolean };
 const Header = ({ scrolling, isFixed }: TProp) => {
   const [isOpen, setIsOpen] = useState(false);
-  const language = localStorage.getItem("language") || "en";
-  const { i18n } = useTranslation();
+  const language = sessionStorage.getItem("language") || "en";
+  const { i18n, t } = useTranslation("header");
   const { user } = useAuthStore();
 
   const handleLogout = () => {
@@ -40,7 +40,7 @@ const Header = ({ scrolling, isFixed }: TProp) => {
 
   const handleLanguageChange = (lang: string) => {
     i18n.changeLanguage(lang);
-    localStorage.setItem("language", lang);
+    sessionStorage.setItem("language", lang);
   };
 
   return (
@@ -54,19 +54,19 @@ const Header = ({ scrolling, isFixed }: TProp) => {
         <nav className="hidden md:block">
           <ul className="flex lg:gap-10 md:gap-5 items-center">
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">{t("home")}</NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/about">{t("about")}</NavLink>
             </li>
             <li>
-              <NavLink to="/tours">Tours</NavLink>
+              <NavLink to="/tours">{t("tour")}</NavLink>
             </li>
             <li>
-              <NavLink to="/hotels">Hotels</NavLink>
+              <NavLink to="/hotels">{t("hotels")}</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/contact">{t("contact")}</NavLink>
             </li>
             <>
               {user?.name ? (
@@ -78,7 +78,7 @@ const Header = ({ scrolling, isFixed }: TProp) => {
                       </DropdownMenuTrigger>
                       <DropdownMenuContent className="w-56 mt-5">
                         <DropdownMenuLabel>
-                          Hello{" "}
+                          {t("hello")}{" "}
                           <span className="font-bold text-base">
                             {user.name}
                           </span>
@@ -89,7 +89,7 @@ const Header = ({ scrolling, isFixed }: TProp) => {
                             onClick={() => handleLogout()}
                             className="cursor-pointer"
                           >
-                            <span>Đăng xuất</span>
+                            <span>{t("logout")}</span>
                           </DropdownMenuItem>
                         </DropdownMenuGroup>
                       </DropdownMenuContent>
@@ -98,7 +98,7 @@ const Header = ({ scrolling, isFixed }: TProp) => {
                 </>
               ) : (
                 <li>
-                  <NavLink to="auth/login">Login</NavLink>
+                  <NavLink to="auth/login">{t("login")}</NavLink>
                 </li>
               )}
             </>
@@ -114,13 +114,17 @@ const Header = ({ scrolling, isFixed }: TProp) => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-32 mt-2">
                   <DropdownMenuItem
-                    className={`cursor-pointer ${language === "en"? "font-bold" : ""}`}
+                    className={`cursor-pointer ${
+                      language === "en" ? "font-bold" : ""
+                    }`}
                     onClick={() => handleLanguageChange("en")}
                   >
                     <span>English</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem
-                    className={`cursor-pointer ${language === "vi"? "font-bold" : ""}`}
+                    className={`cursor-pointer ${
+                      language === "vi" ? "font-bold" : ""
+                    }`}
                     onClick={() => handleLanguageChange("vi")}
                   >
                     <span>Tiếng Việt</span>

@@ -25,6 +25,7 @@ import { useAppDispatch, useAppSelector } from "@/hooks/app";
 import { Button } from "@components/ui/button";
 import { DayPicker, SelectSingleEventHandler } from "react-day-picker";
 import { Controller, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   date: Date | undefined;
@@ -33,11 +34,12 @@ type Props = {
 
 const FormSearchBanner = ({ date, setDate }: Props) => {
   const nav = useNavigate();
+  const { t } = useTranslation();
   const isDefault = useLocation().pathname === "/";
   const isHotel = useLocation().pathname.includes("hotel");
   const { type } = useAppSelector((state) => state.tours);
 
-  const button = ["Tours", "Hotels"];
+  const button = [`Tours`, `Hotels`];
 
   const [choose, setChoose] = React.useState("Tours");
   const dispatch = useAppDispatch();
@@ -65,17 +67,16 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
   }) {
     const queryParams = new URLSearchParams();
 
-    if (data.location)  queryParams.append("location", data.location.trim() || "");
+    if (data.location)
+      queryParams.append("location", data.location.trim() || "");
     if (choose === "Hotels") {
-
-      nav(`/search/hotel?${queryParams.toString()}`)
+      nav(`/search/hotel?${queryParams.toString()}`);
     } else {
       if (data.tour) queryParams.append("type", data.type);
       if (data.type) queryParams.append("type", data.type);
-      console.log(queryParams.toString())
-      nav(`/search/tour?${queryParams.toString()}`)
+      console.log(queryParams.toString());
+      nav(`/search/tour?${queryParams.toString()}`);
     }
-    
   }
 
   const handleSelect: SelectSingleEventHandler = (day) => {
@@ -109,8 +110,8 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
         >
           <h2 className="text-2xl text-left text-heading font-medium mt-5 mb-3">
             {choose === "Tours"
-              ? "Discover beautiful Vietnam"
-              : "Find hotels for your next trip"}
+              ? `${t("formsearch.tours.heading")}`
+              : `${t("formsearch.hotels.heading")}`}
           </h2>
 
           <Controller
@@ -148,7 +149,9 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
                 {date ? (
                   format(date, "PPP")
                 ) : (
-                  <span className="text-sub-color-second">Departure time</span>
+                  <span className="text-sub-color-second">
+                    {t("formsearch.tours.date")}
+                  </span>
                 )}
               </Button>
             </PopoverTrigger>
@@ -173,14 +176,14 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
                     <div className="flex items-center gap-5">
                       <i className="ri-flag-line text-orange"></i>
                       <SelectValue
-                        placeholder="Type of tour"
+                        placeholder={t("formsearch.tours.type")}
                         className="placeholder:text-sub-color-second"
                       />
                     </div>
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectLabel>--- Các loại tour ---</SelectLabel>
+                      <SelectLabel>--- Types ---</SelectLabel>
                       {type?.map((item) => (
                         <SelectItem value={item} key={item}>
                           {item}
@@ -204,18 +207,20 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
                   <div className="flex items-center gap-5">
                     <i className="ri-group-line text-orange"></i>
                     <SelectValue
-                      placeholder="Number of guests"
+                      placeholder={t("formsearch.tours.guest")}
                       className="placeholder:text-sub-color-second"
                     />
                   </div>
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>--- Số lượng khách ---</SelectLabel>
+                    <SelectLabel>--- Number of guest ---</SelectLabel>
                     <SelectItem value="2">2</SelectItem>
-                    <SelectItem value="4">More than 4</SelectItem>
-                    <SelectItem value="7">More than 7</SelectItem>
-                    <SelectItem value="10">More than 10</SelectItem>
+                    <SelectItem value="4">{t("formsearch.more")} 4</SelectItem>
+                    <SelectItem value="7">{t("formsearch.more")} 7</SelectItem>
+                    <SelectItem value="10">
+                      {t("formsearch.more")} 10
+                    </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -224,7 +229,7 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
 
           <Button className={"w-full mt-5 py-8 rounded-none"}>
             <i className="ri-search-line text-xl"></i>
-            Search
+            {t("formsearch.button")}
           </Button>
         </form>
       </div>

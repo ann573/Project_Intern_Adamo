@@ -1,0 +1,56 @@
+{
+  "breadCum": {
+    "home": "Home",
+    "hotel": "Hotels",
+    "detail": "Hotel Details"
+  },
+  "rating": "Rating:",
+  "reviews": "reviews",
+  "from": "from",
+  "bookNow": "Book Now",
+  "selectRoom": "Select Room",
+  "description": "Description",
+  "review": "Reviews",
+  "select": {
+    "room": "Rooms",
+    "selectBtn": "Select Room",
+    "selected": "Selected Room",
+    "out": "Out of room"
+  },
+  "desc": {
+    "overview": "Overview",
+    "amenities": "Hotel Amenities",
+    "rule": "Rules",
+    "map": "Maps"
+  },
+  "rv": {
+    "score": {
+      "wonderful": "Wonderful",
+      "vGood": "Very Good",
+      "good": "Good",
+      "pleasant": "Pleasant",
+      "normal": "Normal"
+    },
+    "basedOnReviews": "Based on <1>{{count}}</1> reviews",
+    "write": "Write a review",
+    "form": {
+      "heading": "Leave us your opinion",
+      "sub": "We would love to hear your experience.",
+      "label_head": "Heading",
+      "place_heading": "Enter heading",
+      "label_rating": "Rating",
+      "label_cmt": "Comment",
+      "place_cmt": "Write your comment...",
+      "btn": "Save changes"
+    }
+  },
+  "from_price": {
+    "cancel": "Cancellation",
+    "adult": "Adults",
+    "child": "Children",
+    "add": "Add-ons:",
+    "total": "Total",
+    "btn": "Book Now"
+  },
+  "related": "Recommended for you"
+}

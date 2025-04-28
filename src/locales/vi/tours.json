@@ -1,0 +1,24 @@
+{
+  "banner": {
+    "desc": "Tìm hàng nghìn tour và hơn thế nữa",
+    "heading": "Chuyến tham quan <1 /> hấp dẫn và <3 /> trải nghiệm thú vị"
+  },
+  "bread": {
+    "home": "Trang chủ",
+    "tours": "Du lịch"
+  },
+  "heading": "Chuyến tham quan hấp dẫn <1 /> và trải nghiệm thú vị",
+  "filter": {
+    "button": "Lọc",
+    "heading": "Lọc bởi",
+    "remove": "Xóa",
+    "budget": "Khoảng giá",
+    "duration": "Thời gian",
+    "days": "Ngày",
+    "week": "Hơn 1 tuần",
+    "type": "Loại tour",
+    "apply": "Áp dụng lọc"
+  },
+  "result": "Không có kết quả tương ứng",
+  "return": "Quay lại trang trước"
+}

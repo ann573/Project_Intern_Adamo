@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import "react-day-picker/style.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import i18n from "./i18n";
 
 // Lazy imports for layouts and pages
 const LayoutAuth = React.lazy(() => import("@/layout/LayoutAuth"));
@@ -37,6 +38,12 @@ function App() {
       once: true,
     });
   }, []);
+  const language = sessionStorage.getItem("language") || "en";
+
+  useEffect(() => {
+    console.log(language);
+    i18n.changeLanguage(language);
+  }, [language]);
 
   return (
     <Suspense fallback={<SplashScreen />}>

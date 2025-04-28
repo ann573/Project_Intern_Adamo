@@ -1,3 +1,46 @@
 {
-    "descriptions": "Descriptions"
+  "bread_cum": {
+    "home": "Home",
+    "tour": "Tours",
+    "detail": "Detail tour"
+  },
+  "reviews": "reviews",
+  "descriptions": "Descriptions",
+  "add": "Additional Info",
+  "review": "Reviews",
+  "desc": {
+    "overview": "Overview",
+    "include": "What's Include",
+    "departure": {
+      "title": "Departure & Return",
+      "point": "Departure Point",
+      "time": "Departure Time"
+    },
+    "itinerary": "Tour Itinerary",
+    "map": "Maps",
+    "pano": "360° Panoramic Images and Videos"
+  },
+  "rev": {
+    "base": "Based on <1>{{count}} reviews</1>",
+    "reviews": "reviews",
+    "comment": "Comment",
+    "warning": "Warning",
+    "warning_content": "Please login to comment!!!!",
+    "cancel": "Cancel",
+    "login": "Login"
+  },
+  "from_price": {
+    "from": "from",
+    "duration": "Duration",
+    "place_date": "Select the range of dates",
+    "days": "days",
+    "night": "nights",
+    "type": "Tour type:",
+    "cancel": "Hủy lựa chọn",
+    "adult": "Người lớn",
+    "child": "Trẻ con",
+    "total": "Tổng tiền",
+    "btn": "Đặt ngay"
+  },
+  "related": "Related tours"
 }

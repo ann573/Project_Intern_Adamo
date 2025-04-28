@@ -14,8 +14,10 @@ import Input from "@components/Input";
 import { toast } from "sonner";
 
 import { auth } from "@/utils/firebase";
+import { useTranslation } from "react-i18next";
 
 const RegisterForm = () => {
+  const { t } = useTranslation("auth");
   const [isLoading, setIsLoading] = React.useState(false);
   const nav = useNavigate();
 
@@ -58,11 +60,11 @@ const RegisterForm = () => {
       nav("/auth/login");
     } catch (error) {
       setIsLoading(false);
-      toast.error("Error!!!!", {
-        description: "Email already in use!!!",
+      toast.error(`${t("register.register_error")}`, {
+        description: `${t("register.register_email_in_use")}`,
         duration: 3000,
         action: {
-          label: "Undo",
+          label: `${t("register.register_undo")}`,
           onClick: () => {},
         },
       });
@@ -77,15 +79,17 @@ const RegisterForm = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="md:w-md w-full max-w-md mx-auto p-4"
         >
-          <h1 className="text-heading text-4xl font-semibold">Register</h1>
-          <p className="mb-10 mt-5">Welcome to NgaoduVietnam</p>
+          <h1 className="text-heading text-4xl font-semibold">
+            {t("register.register_title")}
+          </h1>
+          <p className="mb-10 mt-5"> {t("register.register_welcome")}</p>
 
           <div className="grid grid-cols-2 gap-5 ">
             <Input
               name="f_name"
               register={register}
               required
-              label="First Name"
+              label={t("register.register_first_name")}
               type="text"
               errors={errors}
             />
@@ -93,7 +97,7 @@ const RegisterForm = () => {
               name="l_name"
               register={register}
               required
-              label="Last Name"
+              label={t("register.register_last_name")}
               type="text"
               errors={errors}
             />
@@ -103,7 +107,7 @@ const RegisterForm = () => {
             name="email"
             register={register}
             required
-            label="Email Address"
+            label={t("register.register_email")}
             type="email"
             errors={errors}
           />
@@ -122,20 +126,24 @@ const RegisterForm = () => {
             className="w-full bg-orange text-white py-4 mt-4 font-semibold cursor-pointer transition-colors hover:bg-orange/80"
             disabled={isLoading}
           >
-            {isLoading ? <ClipLoader color="#ffffff" size={20} /> : "Sign Up"}
+            {isLoading ? (
+              <ClipLoader color="#ffffff" size={20} />
+            ) : (
+              t("register.register_sign_up")
+            )}
           </button>
           <button
             type="button"
             className="w-full bg-[#4E86DB] text-white py-5 mt-4 font-semibold center gap-3 cursor-pointer transition-colors hover:bg-[#4E86DB]/80"
           >
             <img src={fbAuth} alt="logo_facebook" />
-            Sign in with Facebook
+            {t("register.register_sign_in_facebook")}
           </button>
 
           <p className="text-sub-color-primary mt-5">
-            Member already?{" "}
+            {t("register.register_member_already")}
             <Link to="/auth/login" className="text-orange">
-              Log in
+              {t("register.register_log_in")}
             </Link>
           </p>
         </form>

@@ -1,0 +1,58 @@
+{
+  "breadCum": {
+    "home": "Trang chủ",
+    "hotel": "Khách sạn",
+    "detail": "Chi tiết khách sạn"
+  },
+  "rating": "Đánh giá:",
+  "reviews": "đánh giá",
+  "from": "từ",
+  "total": "Tổng cộng",
+  "bookNow": "Đặt ngay",
+  "selectRoom": "Chọn phòng",
+  "description": "Mô tả",
+  "review": "Đánh giá",
+  "select": {
+    "room": "Phòng",
+    "selectBtn": "Chọn phòng",
+    "selected": "Phòng đã chọn",
+    "out": "Hết phòng"
+  },
+  "desc": {
+    "overview": "Tổng quan",
+    "amenities": "Tiện nghi khách sạn",
+    "rule": "Quy định",
+    "map": "Bản đồ"
+  },
+  "rv": {
+    "score": {
+      "wonderful": "Tuyệt vời",
+      "vGood": "Rất tốt",
+      "good": "Tốt",
+      "pleasant": "Hài lòng",
+      "normal": "Bình thường"
+    },
+    "basedOnReviews": "Dựa trên <1>{{count}}</1> đánh giá",
+    "write": "Viết đánh giá",
+    "form": {
+      "heading": "Để lại ý kiến của bạn",
+      "sub": "Chúng tôi rất muốn nghe về trải nghiệm của bạn.",
+      "label_head": "Tiêu đề",
+      "place_heading": "Nhập tiêu đề",
+      "label_rating": "Đánh giá",
+      "label_cmt": "Bình luận",
+      "place_cmt": "Viết bình luận của bạn...",
+      "btn": "Lưu đánh giá"
+    }
+  },
+
+  "from_price": {
+    "cancel": "Hủy lựa chọn",
+    "adult": "Người lớn",
+    "child": "Trẻ con",
+    "add": "Tiện ích bổ sung:",
+    "total": "Tổng tiền",
+    "btn": "Đặt ngay"
+  },
+  "related": "Đề xuất cho bạn"
+}

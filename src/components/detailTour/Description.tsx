@@ -1,4 +1,5 @@
 import { useAppSelector } from "@/hooks/app";
+import { useTranslation } from "react-i18next";
 
 import {
   Accordion,
@@ -13,11 +14,12 @@ import icon360 from "@assets/images/360icon.svg";
 import videoTravel from "@assets/video/vietnam.mp4";
 const Description = () => {
   const { tour } = useAppSelector((state) => state.tours);
+  const { t } = useTranslation("tour");
 
   return (
     <>
       <div>
-        <h3 className="font-bold my-5 text-xl">Overview</h3>
+        <h3 className="font-bold my-5 text-xl">{t("desc.overview")}</h3>
         <p className="text-[#4F4F4F]">{tour?.overview.description}</p>
         <ul className="my-10 list-inside">
           {tour?.overview.highlight.map((item, index) => {
@@ -33,7 +35,7 @@ const Description = () => {
       <hr />
 
       <div>
-        <h3 className="font-bold my-5 text-xl">What's Include</h3>
+        <h3 className="font-bold my-5 text-xl">{t("desc.include")}</h3>
         {tour?.include.map((item, index) => {
           return (
             <p key={index} className="text-[#4F4F4F] my-2">
@@ -47,9 +49,9 @@ const Description = () => {
       <hr />
 
       <div>
-        <h3 className="font-bold my-5 text-xl">Departure & Return</h3>
+        <h3 className="font-bold my-5 text-xl">{t("desc.departure.title")}</h3>
         <h4 className="font-bold mb-2 text-lg text-[#1e1e1e]">
-          Departure Point
+          {t("desc.departure.point")}
         </h4>
         <ul className="list-decimal list-inside my-5">
           {tour?.departure.point.map((item, index) => {
@@ -62,14 +64,14 @@ const Description = () => {
         </ul>
 
         <h4 className="font-bold mb-2 text-lg text-[#1e1e1e]">
-          Departure Time
+          {t("desc.departure.time")}
         </h4>
         <p>{tour?.departure.time}</p>
       </div>
 
       <hr className="my-5" />
 
-      <h3 className="font-bold my-5 text-xl">Tour Itinerary</h3>
+      <h3 className="font-bold my-5 text-xl">{t("desc.itinerary")}</h3>
 
       <Accordion type="single" collapsible className="w-full">
         {tour?.itinerary.map((item, index) => {
@@ -121,7 +123,7 @@ const Description = () => {
 
       <hr />
 
-      <h3 className="font-bold my-5 text-xl">Maps</h3>
+      <h3 className="font-bold my-5 text-xl">{t("desc.map")}</h3>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.3719535378073!2d105.77852957471416!3d21.017798188156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab1167edbae7%3A0xa0790fee2a2a9c1b!2sAdamo%20Software!5e0!3m2!1svi!2s!4v1744619664297!5m2!1svi!2s"
         width="100%"
@@ -132,9 +134,7 @@ const Description = () => {
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
 
-      <h3 className="font-bold my-5 text-xl mt-10">
-        360° Panoramic Images and Videos
-      </h3>
+      <h3 className="font-bold my-5 text-xl mt-10">{t("desc.pano")}</h3>
 
       <div className="relative cursor-pointer hover:opacity-90">
         <img src={image360} alt="360_view" className="w-full " />

@@ -1,0 +1,11 @@
+{
+  "forgotPasswordTitle": "Forgot Password",
+  "forgotPasswordDescription": "Enter the e-mail address associated with the account. We'll e-mail a link to reset your password.",
+  "emailLabel": "Email Address",
+  "sendRequestButton": "Send Request",
+  "backToSignIn": "Back to sign in",
+  "noAccount": "Don't have an account",
+  "signUp": "Sign up",
+  "successMessage": "Please check again your email!!!",
+  "errorMessage": "Have an error, return soon!!!!"
+}

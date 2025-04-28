@@ -7,16 +7,17 @@ import FormPriceHotel from "@/components/hotel/FormPriceHotel";
 import Reviews from "@/components/hotel/Reviews";
 import { useDetailHotels, useRelatedHotels } from "@/hooks/hotels";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
 import CardHotel from "./../components/hotel/CardHotel";
 
 const HotelDetail = () => {
   useEffect(() => {
-    window.scrollTo({top: 0, behavior: "smooth"})
-  },[])
-  
-  const { id } = useParams<{ id: string }>();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
+  const { id } = useParams<{ id: string }>();
+  const { t } = useTranslation("hotel");
   const { data, isLoading } = useDetailHotels(id as string);
   const { data: dataRelated, isLoading: isLoadingRelated } = useRelatedHotels(
     data?.typeroom as number
@@ -34,22 +35,25 @@ const HotelDetail = () => {
     return <DetailSkeleton />;
   }
 
-  const heading = ["Select room", "Descriptions", "Reviews"];
+  const heading = [
+    `${t("selectRoom")}`,
+    `${t("description")}`,
+    `${t("review")}`,
+  ];
 
-  
   return (
     <main className="max-w-[1200px] mx-auto xl:px-0 px-5 mb-20">
       <section className="my-10 text-content xl:px-0 md:px-10">
         <p className="flex justify-start gap-5">
           <Link to={"/"} className="hover:underline">
-            Home
+            {t("breadCum.home")}
           </Link>
           <span className="text-[#C4C4C4] text-lg">•</span>
           <Link to={"/hotels"} className="hover:underline">
-            Hotels
+            {t("breadCum.hotel")}
           </Link>
           <span className="text-[#C4C4C4] text-lg">•</span>
-          <span className="select-none">Hotel Details</span>
+          <span className="select-none">{t("breadCum.detail")}</span>
         </p>
       </section>
 
@@ -67,11 +71,11 @@ const HotelDetail = () => {
         <div className="flex gap-5 text-sub-color-primary mb-10 ">
           <div className="flex gap-2 items-center">
             <p className="bg-[#FF7B42] text-white center py-1 px-2 font-semibold">
-              <span className="text-sm mr-1 font-light">Rating:</span>{" "}
+              <span className="text-sm mr-1 font-light">{t("rating")}</span>{" "}
               {totalRating}
             </p>
             <span className="text-sub-color-primary">
-              ({data?.description?.reviews.length || 0} reviews)
+              ({data?.description?.reviews.length || 0} {t("reviews")})
             </span>
           </div>
 
@@ -114,7 +118,7 @@ const HotelDetail = () => {
           <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
             <div className="bg-[#F4F4F4] sticky top-5">
               <h2 className="p-5 font-medium text-xl">
-                <span className="text-sm font-light">from</span> $
+                <span className="text-sm font-light">{t("from")}</span> $
                 {data?.cost.toFixed(2)}
               </h2>
               <hr />
@@ -129,7 +133,7 @@ const HotelDetail = () => {
       {/* ===================================================== */}
       <section className="my-20">
         <h3 className="text-[#2A2A2A] mt-5 text-3xl font-bold mb-5">
-          Recommended for you
+          {t("related")}
         </h3>
         {isLoadingRelated ? (
           <CardSkeleton />

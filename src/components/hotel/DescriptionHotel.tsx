@@ -1,4 +1,5 @@
 import { useDetailHotels } from "@/hooks/hotels";
+import { useTranslation } from "react-i18next";
 
 import {
   Dialog,
@@ -12,7 +13,9 @@ import { useRoomStore } from "@/zusTand/roomStore";
 import { Button } from "@components/ui/button";
 import React, { useEffect } from "react";
 import ImageSlider from "../detailTour/ImageSlide";
+
 const DescriptionHotel = ({ id }: { id: string }) => {
+  const { t } = useTranslation("hotel");
   const { data } = useDetailHotels(id);
 
   const { rooms, setRooms, setRoomCount } = useRoomStore();
@@ -29,15 +32,12 @@ const DescriptionHotel = ({ id }: { id: string }) => {
   }, [data, setRooms, rooms.length]);
   return (
     <>
-      <h3 className="font-bold my-5 text-xl">Rooms</h3>
+      <h3 className="font-bold my-5 text-xl">{t("select.room")}</h3>
 
       {rooms.map((item, index) => {
         return (
           <React.Fragment key={index}>
-            <div
-              className="my-5 flex sm:flex-row flex-col gap-5 bg-[#F8F8F8]"
-              
-            >
+            <div className="my-5 flex sm:flex-row flex-col gap-5 bg-[#F8F8F8]">
               <div>
                 <img
                   src={`https://picsum.photos/seed/${index}/200`}
@@ -112,9 +112,9 @@ const DescriptionHotel = ({ id }: { id: string }) => {
                     >
                       {item.isAvailable
                         ? item.count > 0
-                          ? "Selected"
-                          : "Select Room"
-                        : "Out of room"}
+                          ? t("select.selected")
+                          : t("select.selectBtn")
+                        : t("select.out")}
                     </button>
                   </div>
                 </div>
@@ -141,7 +141,9 @@ const DescriptionHotel = ({ id }: { id: string }) => {
                                 : `border border-primary bg-transparent text-primary cursor-pointer hover:bg-primary hover:text-white transition-colors`
                               : `bg-[#223143] text-white`
                           }`}
-                          onClick={() => item.count === 0 && setRoomCount(item.name, 1)}
+                          onClick={() =>
+                            item.count === 0 && setRoomCount(item.name, 1)
+                          }
                         >
                           {item.isAvailable
                             ? item.count > 0

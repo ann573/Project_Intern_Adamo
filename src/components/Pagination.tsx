@@ -3,6 +3,7 @@ import React from "react";
 // asset
 import leftArrow from "@assets/icons/arrow-left.svg";
 import rightArrow from "@assets/icons/arrow-right.svg";
+import { useTranslation } from "react-i18next";
 
 type TProps = {
   page: number;
@@ -11,12 +12,14 @@ type TProps = {
   setPage: React.Dispatch<React.SetStateAction<number>>;
 };
 const Pagination = ({ page, limit = 9, setPage, total }: TProps) => {
+  const { t } = useTranslation("home");
+
   const arr = Array.from({ length: Math.ceil(total / limit) }, (_, i) => i);
   return (
     <>
       <div className="flex sm:flex-row flex-col justify-center items-center gap-10 sm:gap-0 sm:justify-end w-full col-span-3 mt-10 mb-20">
         <p className="text-[#8E8E93] font_apercu flex items-center sm:gap-5 gap-1">
-          Showing{" "}
+          {t("panigation")}{" "}
           <span>
             {page} / {Math.ceil(total / limit)}
           </span>

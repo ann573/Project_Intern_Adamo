@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { PriceRangeSlider } from "@components/PriceSlideRange";
-import { Checkbox } from "@components/ui/checkbox";
-import { Button } from "@components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { PriceRangeSlider } from "@components/PriceSlideRange";
+import { Button } from "@components/ui/button";
+import { Checkbox } from "@components/ui/checkbox";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
 
 type TProp = {
   range: number[];
@@ -22,6 +23,7 @@ const Filter = ({
   setIsSearch,
   setPage,
 }: TProp) => {
+  const { t } = useTranslation("tours");
   const nav = useNavigate();
   const { pathname, search } = useLocation();
   const initialRange = [0, 2000];
@@ -123,7 +125,7 @@ const Filter = ({
       className="absolute w-[250px] bg-white shadow-2xl p-3 left-full -translate-x-full top-25 z-10"
     >
       <div className="flex justify-between">
-        <h3 className="text-[#03387D]">Filter By</h3>
+        <h3 className="text-[#03387D]">{t("filter.heading")}</h3>
         <p
           className={`p-[1px] select-none font-semibold ${
             isDirty
@@ -132,12 +134,14 @@ const Filter = ({
           }`}
           onClick={() => handleClear()}
         >
-          Clear
+          {t("filter.remove")}
         </p>
       </div>
 
       <div className="border-b pb-4 mb-5">
-        <h3 className="font-semibold text-heading mt-3 mb-7">Budget: </h3>
+        <h3 className="font-semibold text-heading mt-3 mb-7">
+          {t("filter.budget")}:{" "}
+        </h3>
         <PriceRangeSlider
           value={range}
           onValueChange={setRangeFilter}
@@ -149,7 +153,7 @@ const Filter = ({
 
       <div className="border-b pb-4 mb-5">
         <h3 className="text-[18px] font-semibold text-heading mt-3 mb-4">
-          Duration
+          {t("filter.duration")}
         </h3>
 
         <RadioGroup
@@ -160,13 +164,13 @@ const Filter = ({
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="3" id="option-one" />
             <Label className="font-medium cursor-pointer" htmlFor="option-one">
-              0 - 3 days
+              0 - 3 {t("filter.days")}
             </Label>
           </div>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="5" id="option-two" />
             <Label className="font-medium cursor-pointer" htmlFor="option-two">
-              3 - 5 days
+              3 - 5 {t("filter.days")}
             </Label>
           </div>
           <div className="flex items-center space-x-2">
@@ -175,13 +179,13 @@ const Filter = ({
               className="font-medium cursor-pointer"
               htmlFor="option-three"
             >
-              5 - 7 days
+              5 - 7 {t("filter.days")}
             </Label>
           </div>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="other" id="option-four" />
             <Label className="font-medium cursor-pointer" htmlFor="option-four">
-              Over 1 week
+              {t("filter.week")}
             </Label>
           </div>
         </RadioGroup>
@@ -189,7 +193,7 @@ const Filter = ({
 
       <div>
         <h3 className="text-[18px] font-semibold text-heading mt-3 mb-4">
-          Type
+          {t("filter.type")}
         </h3>
         <ul className="flex flex-col gap-5">
           {uniqueTypes.map((item, index) => {
@@ -220,11 +224,9 @@ const Filter = ({
         className="w-full mt-5 mb-3 cursor-pointer"
         disabled={!isDirty}
       >
-        Apply Filter
+        {t("filter.apply")}
       </Button>
     </form>
-
-    
   );
 };
 

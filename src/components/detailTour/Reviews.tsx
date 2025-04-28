@@ -16,12 +16,15 @@ import { useAuthStore } from "@/zusTand/authStore";
 import { Button } from "@components/ui/button";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Trans, useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import ReviewItem from "./ReviewItem";
 import StarRating from "./StarRating";
 
 const Reviews = () => {
+  const { t } = useTranslation("tour");
+
   const { tour } = useAppSelector((state) => state.tours);
   const [page, setPage] = useState(1);
   const [rating, setRating] = useState(0);
@@ -47,6 +50,8 @@ const Reviews = () => {
       rateCount[rate] = (rateCount[rate] || 0) + 1;
     }
   }
+
+  const count = tour?.rating.length;
 
   const handleSubmitReview = ({ comments }: { comments: string }) => {
     if (rating === 0) {
@@ -84,7 +89,7 @@ const Reviews = () => {
   };
   return (
     <>
-      <section className="bg-[#F4F4F4] grid sm:grid-cols-5 grid-cols-1 items-center md:gap-5 xs:gap-2 gap-y-5 my-10 rounded-2xl py-8 px-5 xs:px-0">
+      <section className="bg-[#F4F4F4] grid sm:grid-cols-5 grid-cols-1 items-center md:gap-5 xs:gap-2 gap-y-5 my-10 rounded-2xl py-8 px-2 xs:px-0">
         {/* ==================== first col ============================== */}
         <div className="center flex-col gap-5 col-span-2 px-5 sm:border-r border-none mx-auto">
           <h2 className="text-[#2A2A2A] text-5xl font-bold">
@@ -104,21 +109,21 @@ const Reviews = () => {
             ))}
           </div>
           <p className="text-center">
-            Based on{" "}
-            <span className="text-[#2d2c2c] font-bold">
-              {tour?.rating.length} reviews
-            </span>
+            <Trans i18nKey={"rev.base"} ns="tour" count={count}>
+              Based on
+              <span className="text-[#2d2c2c] font-bold">{count} reviews</span>
+            </Trans>
           </p>
         </div>
 
         {/* ==================== second col ============================== */}
-        <div className="col-span-3 md:px-5 pr-2 flex flex-col-reverse gap-y-3">
+        <div className="col-span-3 md:px-5 sm:pr-2 flex flex-col-reverse gap-y-3">
           {Array.from({ length: 5 }).map((_, index) => {
             const width =
               tour &&
               `${(rateCount[index + 1] / tour?.rating.length || 0) * 100}%`;
             return (
-              <div className="center gap-5" key={index}>
+              <div className="center sm:gap-5 gap-2" key={index}>
                 <div className="flex items-center gap-2">
                   <span className="w-4 text-right font-semibold text-lg">
                     {index + 1}
@@ -131,17 +136,17 @@ const Reviews = () => {
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.966a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.965c.3.922-.755 1.688-1.538 1.118l-3.38-2.455a1 1 0 00-1.176 0l-3.38 2.455c-.782.57-1.837-.196-1.538-1.118l1.287-3.965a1 1 0 00-.364-1.118L2.05 9.393c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.966z" />
                   </svg>
                 </div>
-                <div className="w-2/3 h-2 bg-[#E5E5E5] rounded-4xl relative">
+                <div className="sm:w-1/2 w-1/3 h-2 bg-[#E5E5E5] rounded-4xl relative">
                   <div
                     className={`h-2 bg-[#FFB13C] rounded-4xl`}
                     style={{ width: width || "0%" }}
                   ></div>
                 </div>
-                <p className="flex gap-1">
+                <p className="flex gap-2 justify-end text-right">
                   <span className="md:min-w-5 min-w-3">
                     {rateCount[index + 1] || 0}
                   </span>{" "}
-                  reviews
+                  {t("rev.reviews")}
                 </p>
               </div>
             );
@@ -188,19 +193,19 @@ const Reviews = () => {
             ) : (
               <AlertDialog>
                 <AlertDialogTrigger className="md:px-9 py-3 rounded-none ml-auto mt-5 cursor-pointer bg-primary text-white font-medium">
-                  Comment
+                  {t("rev.comment")}
                 </AlertDialogTrigger>
                 <AlertDialogContent>
                   <AlertDialogHeader>
-                    <AlertDialogTitle>Warning</AlertDialogTitle>
+                    <AlertDialogTitle>{t("rev.warning")}</AlertDialogTitle>
                     <AlertDialogDescription>
-                      Please login to comment!!!!
+                      {t("rev.warning_content")}
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogCancel>{t("rev.cancel")}</AlertDialogCancel>
                     <AlertDialogAction>
-                      <Link to="/auth/login">Login</Link>
+                      <Link to="/auth/login">{t("rev.login")}</Link>
                     </AlertDialogAction>
                   </AlertDialogFooter>
                 </AlertDialogContent>

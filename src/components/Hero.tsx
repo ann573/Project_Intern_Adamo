@@ -2,8 +2,10 @@
 // assets
 import heroImage from "@assets/images/hero_1.png";
 import heroImage2 from "@assets/images/hero_2.png";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const {t} = useTranslation(["hero"]);
   return (
     <section className="max-w-[1200px] mx-auto lg:grid lg:grid-cols-2 flex flex-col-reverse xl:my-50 sm:mt-20 md:mb-80 mt-10 mb-50 xl:px-0 px-5 xl:gap-0 gap-20">
       <div className="relative w-full lg:full h-[500px]">
@@ -23,8 +25,7 @@ const Hero = () => {
 
       <div data-aos="zoom-in">
         <h2 className="font-medium xl:text-[40px] text-2xl sm:w-[80%] mb-10">
-          With <span className="text-orange ">NgaoduVietnam</span>, immerses you
-          in majestic space and unique cultural features
+          {t("title1")} <span className="text-orange ">NgaoduVietnam</span>{t("title3")}
         </h2>
 
         <div className="flex gap-7">

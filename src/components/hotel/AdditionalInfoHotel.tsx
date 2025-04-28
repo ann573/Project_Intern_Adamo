@@ -1,16 +1,18 @@
 import { useDetailHotels } from "@/hooks/hotels";
+import { useTranslation } from "react-i18next";
 
 interface Props {
-  id: string; 
+  id: string;
 }
 const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
+  const { t } = useTranslation("hotel");
   const { data } = useDetailHotels(id);
   if (!data) {
     return <div>Loading...</div>;
   }
   return (
     <>
-      <h3 className="font-bold my-5 text-xl">Overview</h3>
+      <h3 className="font-bold my-5 text-xl">{t("desc.overview")}</h3>
       <section className="text-[#4F4F4F]">
         {data.description.overview.split("\n").map((line, idx) => (
           <p key={idx} className="my-3">
@@ -21,7 +23,7 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
 
       <hr className="my-10" />
       <h3 className="text-[#2A2A2A] mt-5 mb-3 text-xl font-bold">
-        Hotel Amenities
+        {t("desc.amenities")}
       </h3>
       <section className="text-[#2A2A2A] grid grid-cols-2 gap-y-2 gap-x-8">
         {data.description.amenities.map((item, idx) => (
@@ -34,7 +36,9 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
 
       <hr className="my-10" />
 
-      <h3 className="text-[#2A2A2A] mt-5 mb-3 text-xl font-bold">Rules</h3>
+      <h3 className="text-[#2A2A2A] mt-5 mb-3 text-xl font-bold">
+        {t("desc.rule")}
+      </h3>
 
       <section>
         <div className="grid grid-cols-2 gap-x-10 gap-y-5">
@@ -47,7 +51,7 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
 
           <div>
             <p className="text-[#FF7B42] font-bold">Check-out</p>
-            <p className="text-[#2A2A2A] font-bold text-xl w-full bg-[#F5F5F5] py-2 text-center w-full mt-3 ">
+            <p className="text-[#2A2A2A] font-bold text-xl bg-[#F5F5F5] py-2 text-center w-full mt-3 ">
               {data.description.rules.checkout}
             </p>
           </div>
@@ -57,7 +61,7 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
           {data.description.rules.other.map((item, idx) => (
             <div
               key={idx}
-              className="flex gap-2 items-center mb-2 flex item-center"
+              className="flex gap-2 items-center mb-2  item-center"
             >
               <i className="ri-checkbox-blank-circle-fill text-[7px]"></i>
               <p className="text-lg text-[#4F4F4F]">{item}</p>
@@ -68,7 +72,9 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
 
       <hr className="my-10" />
 
-      <h3 className="text-[#2A2A2A] mt-5 mb-3 text-xl font-bold">Maps</h3>
+      <h3 className="text-[#2A2A2A] mt-5 mb-3 text-xl font-bold">
+        {t("desc.map")}
+      </h3>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.3719535378073!2d105.77852957471416!3d21.017798188156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab1167edbae7%3A0xa0790fee2a2a9c1b!2sAdamo%20Software!5e0!3m2!1svi!2s!4v1744619664297!5m2!1svi!2s"
         width="100%"

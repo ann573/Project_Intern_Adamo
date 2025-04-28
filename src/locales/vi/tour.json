@@ -1,3 +1,46 @@
 {
-    "descriptions": "Mô tả"
+  "bread_cum": {
+    "home": "Trang chủ",
+    "tour": "Du lịch",
+    "detail": "Chi tiết"
+  },
+  "reviews": "Đánh giá",
+  "descriptions": "Mô tả",
+  "add": "Thông tin bổ sung",
+  "review": "Đánh giá",
+  "desc": {
+    "overview": "Tổng quan",
+    "include": "Bao gồm",
+    "departure": {
+      "title": "Khởi hành & Trở về",
+      "point": "Điểm khởi hành",
+      "time": "Thời gian khởi hành"
+    },
+    "itinerary": "Lịch trình tour",
+    "map": "Bản đồ",
+    "pano": "Hình ảnh và video toàn cảnh 360°"
+  },
+  "rev": {
+    "base": "Dựa trên <1>{{count}} đánh giá</1>",
+    "reviews": "Đánh giá",
+    "comment": "Bình luận",
+    "warning": "Oops!!!!",
+    "warning_content": "Hãy đăng nhập để bình luận",
+    "cancel": "Hủy",
+    "login": "Đăng nhập"
+  },
+  "from_price": {
+    "from": "từ",
+    "duration": "Thời gian",
+    "place_date": "Chọn khoảng ngày",
+    "days": "ngày",
+    "night": "đêm",
+    "type": "Loại tour:",
+    "cancel": "Hủy lựa chọn",
+    "adult": "Người lớn",
+    "child": "Trẻ em",
+    "total": "Tổng cộng",
+    "btn": "Đặt ngay"
+  },
+  "related": "Tour liên quan"
 }

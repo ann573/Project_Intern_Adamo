@@ -18,10 +18,12 @@ import { cn } from "@/lib/utils";
 import { useOrderStore } from "@/zusTand/orderStore";
 import { useRoomStore } from "@/zusTand/roomStore";
 import { User2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const FormPriceHotel = ({ id }: { id: string }) => {
+  const { t } = useTranslation("hotel");
   const nav = useNavigate();
   const { data } = useDetailHotels(id);
   const { rooms, incrementRoom, decrementRoom, getMaxNumber } = useRoomStore();
@@ -191,14 +193,14 @@ const FormPriceHotel = ({ id }: { id: string }) => {
               numberOfMonths={2}
               disabled={{ before: new Date() }}
             />
-            
+
             {/* Nút hủy lựa chọn */}
             <Button
               variant="outline"
               className="mt-2 w-full"
               onClick={handleClearDate}
             >
-              Hủy lựa chọn
+              {t("from_price.btn")}
             </Button>
           </PopoverContent>
         </Popover>
@@ -211,14 +213,14 @@ const FormPriceHotel = ({ id }: { id: string }) => {
             >
               <User2 className="text-orange-500" size={18} />
               <span>
-                {adults} Adults - {children}{" "}
-                {children === 1 ? "Child" : "Children"}
+                {adults} {t("from_price.adult")} - {children}{" "}
+                {t("from_price.child")}
               </span>
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-60 space-y-4">
             <div className="flex justify-between items-center">
-              <Label htmlFor="adults">Adults</Label>
+              <Label htmlFor="adults">{t("from_price.adult")}</Label>
               <Input
                 id="adults"
                 type="number"
@@ -243,7 +245,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
               />
             </div>
             <div className="flex justify-between items-center">
-              <Label htmlFor="children">Children</Label>
+              <Label htmlFor="children">{t("from_price.child")} </Label>
               <Input
                 id="children"
                 type="number"
@@ -294,7 +296,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
       <hr className="my-3" />
 
       <div>
-        <h3 className="font-semibold mb-2">Add-ons:</h3>
+        <h3 className="font-semibold mb-2">{t("from_price.add")}</h3>
         {addons.map((addon, idx) => (
           <div key={addon.name} className="grid grid-cols-[2fr_2fr_1fr] my-2">
             <div className="flex items-center">
@@ -343,7 +345,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
       <hr className="my-3" />
 
       <div className="flex justify-between items-center my-5">
-        <span className="font-medium">Total</span>
+        <span className="font-medium">{t("from_price.total")}</span>
         <span className="font-bold">${price.toFixed(2)}</span>
       </div>
 
@@ -352,7 +354,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
         className="w-full py-7 mt-7 cursor-pointer hover:opacity-80"
         onClick={handleSubmitForm}
       >
-        Book now
+        {t("from_price.btn")}
       </Button>
     </>
   );

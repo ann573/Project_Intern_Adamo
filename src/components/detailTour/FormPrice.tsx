@@ -2,6 +2,7 @@ import { addDays, format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { DateRange, DayPicker } from "react-day-picker";
+import { vi } from "react-day-picker/locale";
 
 import { Button } from "@/components/ui/button";
 // import { Calendar } from "@/components/ui/calendar";
@@ -14,21 +15,23 @@ import {
 } from "@/components/ui/popover";
 import { useAppSelector } from "@/hooks/app";
 import { cn } from "@/lib/utils";
-import { User2 } from "lucide-react";
-import { toast } from "sonner";
 import { useOrderStore } from "@/zusTand/orderStore";
+import { User2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 import "react-day-picker/style.css";
+import { useTranslation } from "react-i18next";
 
 const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   // redux toolkit
   const { tour } = useAppSelector((state) => state.tours);
-
+  const { t } = useTranslation("tour");
+  const language = sessionStorage.getItem("language");
   // zustand
-  const {setOrderTour} = useOrderStore()
+  const { setOrderTour } = useOrderStore();
 
-  const nav = useNavigate()
+  const nav = useNavigate();
   const [date, setDate] = useState<DateRange | undefined>({
     from: addDays(new Date(), 1),
     to: addDays(new Date(), tour?.duration || 0),
@@ -72,7 +75,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
             },
           }
         );
-        return
+        return;
       } else {
         setOrderTour({
           id: tour?.id as number,
@@ -85,13 +88,19 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
           adults,
           children,
           from,
-          to
-        })
-        nav("/checkout/tour")
+          to,
+        });
+        nav("/checkout/tour");
       }
     }
+  };
 
-    
+  const vietnameseLocale = {
+    ...vi,
+    formatWeekdayName: (date: Date) => {
+      const weekdays = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
+      return weekdays[date.getDay()];
+    },
   };
   return (
     <>
@@ -117,20 +126,20 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
                   format(date.from, "dd/MM.yyyy")
                 )
               ) : (
-                <span>Chọn khoảng ngày</span>
+                <span>{t("from_price.place_date")}</span>
               )}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0" align="start">
             <DayPicker
               initialFocus
+              locale={language === "vi" ? vietnameseLocale : undefined}
               mode="range"
               defaultMonth={date?.from}
               selected={date || undefined}
               onSelect={setDate}
               numberOfMonths={2}
               disabled={{ before: new Date() }}
-
             />
             {/* Nút hủy lựa chọn */}
             <Button
@@ -138,7 +147,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
               className="mt-2 w-full"
               onClick={handleClearDate}
             >
-              Hủy lựa chọn
+              {t("from_price.cancel")}
             </Button>
           </PopoverContent>
         </Popover>
@@ -151,8 +160,8 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
             >
               <User2 className="text-orange-500" size={18} />
               <span>
-                {adults} Adults - {children}{" "}
-                {children === 1 ? "Child" : "Children"}
+                {adults} {t("from_price.adult")} - {children}{" "}
+                {t("from_price.child")}
               </span>
             </Button>
           </PopoverTrigger>
@@ -184,7 +193,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
       </section>
 
       <div className="flex justify-between items-center my-5">
-        <span className="font-medium">Total</span>
+        <span className="font-medium">{t("from_price.total")}</span>
         <span className="font-bold">${price.toFixed(2)}</span>
       </div>
 
@@ -193,7 +202,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
         className="w-full py-7 mt-7 cursor-pointer hover:opacity-80"
         onClick={handleSubmitForm}
       >
-        Book now
+        {t("from_price.btn")}
       </Button>
     </>
   );

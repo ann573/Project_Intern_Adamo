@@ -1,7 +1,8 @@
 {
   "hero": {
     "welcome": "Chào mừng đến với NgaoduVietnam",
-    "title": "Nơi tuyệt vời cho những câu chuyện của bạn"
+    "title1": "Nơi tuyệt vời",
+    "title2": "cho câu chuyện của bạn"
   },
   "banner": {
     "featured": "Nổi bật",
@@ -17,7 +18,8 @@
     "view_all": "Xem tất cả"
   },
   "experience": {
-    "title": "Tour hấp dẫn và trải nghiệm thú vị",
+    "title1": "Tour hấp dẫn và trải nghiệm ",
+    "title2": "thú vị",
     "view_all": "Xem tất cả"
   },
   "culture": {
@@ -25,11 +27,29 @@
     "view_all": "Xem tất cả"
   },
   "email": {
-    "title": "Để lại email để nhận <span class=\"text-orange\">ưu đãi mới nhất</span>",
-    "placeholder": "example@gmail.com",
+    "title1": "Để lại email",
+    "title2": "để nhận ",
+    "title3": "ưu đãi mới nhất",
+    "placeholder": "emailmau@gmail.com",
     "send": "Gửi",
     "success": "Đăng ký thành công",
     "success_desc": "Chúng tôi sẽ gửi email xác thực tài khoản cho bạn",
     "error": "Có lỗi xảy ra, vui lòng thử lại!"
-  }
+  },
+  "formsearch": {
+    "tours": {
+      "tour": "Du lịch",
+      "heading": "Khám phá Việt Nam xinh đẹp",
+      "date": "Thời gian dự kiến",
+      "type": "Kiểu du lịch",
+      "guest": "Số lượng khách"
+    },
+    "hotels": {
+      "hotel": "Khách sạn",
+      "heading": "Tìm kiếm khách sạn cho chuyến đi của bạn"
+    },
+    "button": "Tìm kiếm",
+    "more": "Nhiều hơn"
+  },
+  "panigation": "Hiển thị"
 }

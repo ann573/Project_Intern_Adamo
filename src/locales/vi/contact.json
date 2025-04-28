@@ -1,0 +1,22 @@
+{
+  "banner_title": "Liên hệ với chúng tôi",
+  "breadcrumb_home": "Trang chủ",
+  "breadcrumb_contact": "Liên hệ với chúng tôi",
+  "form_title": "Chúng tôi rất muốn nghe ý kiến từ bạn",
+  "form_description": "Gửi tin nhắn cho chúng tôi và chúng tôi sẽ phản hồi sớm nhất có thể",
+  "placeholder_name": "Tên của bạn",
+  "placeholder_email": "Email của bạn",
+  "placeholder_phone": "Số điện thoại của bạn",
+  "placeholder_message": "Tin nhắn",
+  "button_send": "Gửi tin nhắn",
+  "success_message": "Gửi tin nhắn thành công",
+  "success_description": "Chúng tôi sẽ liên hệ với bạn sớm nhất có thể",
+  "error_message": "Có lỗi xảy ra. Vui lòng thử lại!",
+  "office_title": "Văn phòng của chúng tôi",
+  "address_title": "Địa chỉ",
+  "address_content": "27 Old Gloucester Street, London, WC1N 3AX",
+  "phone_title": "Số điện thoại",
+  "phone_content": "+84 (0)20 33998400",
+  "email_title": "Email liên hệ",
+  "email_content": "info@ngaoduvietnam.com"
+}

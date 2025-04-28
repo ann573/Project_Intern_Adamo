@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 
 // assets
 import logo from "@assets/images/logo.png";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation("header");
   return (
     <>
       <div className="xl:max-w-[1200px] lg:max-w-[900px] md:px-10 p-5 lg:px-0  grid md:grid-cols-12 sm:grid-cols-2 grid-cols-1 lg:gap-x-5 md:gap-x-2 gap-1 mx-auto text-[#ffffff] md:py-10 ">
@@ -27,19 +29,19 @@ const Footer = () => {
         <div className="xl:col-start-6 lg:col-start-5 lg:col-span-1 md:col-start-4 md:col-span-2 pt-10 md:order-2 order-1">
           <ul className="text-sm flex flex-col gap-5">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">{t("home")}</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about">{t("about")}</Link>
             </li>
             <li>
-              <Link to="/tours">Tours</Link>
+              <Link to="/tours">{t("tour")}</Link>
             </li>
             <li>
-              <Link to="/hotels">Hotels</Link>
+              <Link to="/hotels">{t("hotels")}</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">{t("contact")}</Link>
             </li>
           </ul>
         </div>
@@ -48,16 +50,16 @@ const Footer = () => {
         <div className="md:col-span-2 col-span-1 pt-10 md:order-3 order-2">
           <ul className="text-sm flex flex-col gap-5">
             <li>
-              <p>Partner with us</p>
+              <p>{t("partner")}</p>
             </li>
             <li>
-              <p>Terms & Conditions</p>
+              <p>{t("partner")}</p>
             </li>
             <li>
-              <p>Privacy Policy</p>
+              <Link to="/policy">{t("ppolicy")}</Link>
             </li>
             <li>
-              <p>Guest Policy</p>
+              <Link to="/policy">{t("gpolicy")}</Link>
             </li>
           </ul>
         </div>
