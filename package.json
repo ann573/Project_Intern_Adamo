@@ -91,10 +91,13 @@
     "vite": "^6.2.0"
   },
   "lint-staged": {
-    "*.ts": [
+    "*.{ts,tsx}": [
       "npm run lint",
       "npm run format",
       "git add ."
+    ],
+    "*.{json,md}": [
+      "prettier --write"
     ]
   }
 }

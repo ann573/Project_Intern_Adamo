@@ -42,7 +42,7 @@ const AboutPage = () => {
             faucibus sem non, feugiat nec consequat, montes.
           </p>
         </div>
-        <div className='lg:w-1/2 cover lg:mt-0 mt-5' data-aos='fade-left'>
+        <div className='lg:w-1/2 cover lg:mt-0 mt-5 d-block' data-aos='fade-left'>
           <img src={hero} className='xl:w-10/12 w-full ml-auto' />
         </div>
       </section>
