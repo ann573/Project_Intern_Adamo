@@ -20,8 +20,15 @@
 @theme {
   --color-orange: #ff7b42;
   --color-light-green: #bbffca;
+
+  --color-secondary: #f4f4f4;
+
   --color-heading: #1c1c1e;
+  --color-heading-second: #2a2a2a;
+
   --color-content: #3d3e3f;
+  --color-content-second: #b0b0b0;
+
   --color-sub-color-primary: #636567;
   --color-sub-color-second: #c5c7c9;
 
@@ -134,14 +141,19 @@
 
 .dark {
   --primary: #1d1d1d;
+  --color-secondary: #2a2a2a;
   --color-orange: #ff7b42;
   --color-light-green: #bbffca;
+
   --color-heading: white;
+  --color-heading-second: #D5D5D5;
+
   --color-content: #c2c1c0;
+  --color-content-second: #ebf1f5;
+
   --color-sub-color-primary: #ebf1f5;
   --color-sub-color-second: #999b9d;
 
-  --color-secondary: #2a2a2a;
   --background: #1d1d1d;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);

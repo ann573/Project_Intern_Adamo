@@ -41,7 +41,9 @@ const Pagination = ({ page, limit = 9, setPage, total }: TProps) => {
             <div
               key={index}
               className={`sm:size-9 size-7 bg-[#E8E9EA] p-2 center cursor-pointer ${
-                page === index + 1 ? "bg-black text-white" : "text-content"
+                page === index + 1
+                  ? "bg-black text-white"
+                  : "text-content dark:text-black"
               }`}
               onClick={() => setPage(index + 1)}
             >

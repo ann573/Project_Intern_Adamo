@@ -21,7 +21,7 @@ const PolicyPage = () => {
       <div ref={contentRef} className="px-5 xl:px-0 mt-10">
         <h1 className="text-4xl font-bold">Privacy Policy</h1>
 
-        <p className="text-[#5E6D77] my-5">Last Updated: Feb 03, 2020</p>
+        <p className="text-content my-5">Last Updated: Feb 03, 2020</p>
 
         <button
           className="bg-primary w-fit text-white px-15 py-2 center gap-5 cursor-pointer print-hide"
@@ -38,7 +38,7 @@ const PolicyPage = () => {
           Download
         </button>
 
-        <section className="mt-5 mb-10 text-[#1e1e1e]/80">
+        <section className="mt-5 mb-10 text-[#1e1e1e]/80 dark:text-[#b0b0b0]">
           <div className="italic">
             <p>
               Ojimah.com (hereinafter, “United GB Sarl” or “We”) values its
@@ -81,7 +81,7 @@ const PolicyPage = () => {
             <li>How does Despegar interact with your social networks?</li>
           </ul>
 
-          <h2 className="text-3xl font-bold text-[#1e1e1e]">
+          <h2 className="text-3xl font-bold text-[#1e1e1e] dark:text-[#e8e0e0]">
             1. What information do we collect?
           </h2>
 
@@ -91,7 +91,7 @@ const PolicyPage = () => {
             d) information collected by our systems, as described below.
           </p>
 
-          <h3 className="text-xl font-bold mb-3 text-[#1e1e1e]">
+          <h3 className="text-xl font-bold mb-3 text-[#1e1e1e] dark:text-[#e8e0e0]">
             Information given by You:
           </h3>
 
@@ -156,7 +156,7 @@ const PolicyPage = () => {
             </p>
           </div>
 
-          <h3 className="text-xl font-bold mt-5 mb-3 text-[#1e1e1e]">
+          <h3 className="text-xl font-bold mt-5 mb-3 text-[#1e1e1e] dark:text-[#e8e0e0]">
             Information given by third parties:
           </h3>
 
@@ -198,9 +198,8 @@ const PolicyPage = () => {
             </p>
           </div>
 
-          <h3 className="text-xl font-bold mt-5 mb-3 text-[#1e1e1e]">
-            Information collected by our systems. Cookies and web beacons
-            policy.
+          <h3 className="text-xl font-bold mt-5 mb-3 text-[#1e1e1e] dark:text-[#e8e0e0]">
+            Information collected by our systems. Cookies and web beacons policy.
           </h3>
 
           <div className="space-y-5">
@@ -218,7 +217,7 @@ const PolicyPage = () => {
             </p>
           </div>
 
-          <h3 className="text-xl font-bold mt-5 mb-3 text-[#1e1e1e]">
+          <h3 className="text-xl font-bold mt-5 mb-3 text-[#1e1e1e] dark:text-[#e8e0e0]">
             Information collected by our systems. Cookies and web beacons
             policy.
           </h3>
@@ -240,7 +239,7 @@ const PolicyPage = () => {
             </p>
           </div>
 
-          <h3 className="text-xl font-bold mt-5 mb-3 text-[#1e1e1e]">
+          <h3 className="text-xl font-bold mt-5 mb-3 text-[#1e1e1e] dark:text-[#e8e0e0]">
             How are cookies controlled?
           </h3>
           <div className="space-y-5">
@@ -260,7 +259,7 @@ const PolicyPage = () => {
             </p>
           </div>
 
-          <h3 className=" text-xl font-bold mt-5 mb-3 text-[#1e1e1e]">
+          <h3 className=" text-xl font-bold mt-5 mb-3 text-[#1e1e1e] dark:text-[#e8e0e0]">
             How do we use cookies?
           </h3>
           <p>Our Website uses different types of cookies:</p>
@@ -310,7 +309,7 @@ const PolicyPage = () => {
             Internet.
           </p>
 
-          <h2 className="text-3xl mt-10 mb-5 font-bold text-[#1e1e1e]">
+          <h2 className="text-3xl mt-10 mb-5 font-bold text-[#1e1e1e] dark:text-[#e8e0e0]">
             2. What do we use the information collected for?
           </h2>
           <p>
@@ -348,7 +347,7 @@ const PolicyPage = () => {
           </ul>
         </section>
 
-        <div className="space-y-5 my-10">
+        <div className="space-y-5 my-10 dark:text-[#b0b0b0]">
           <p>
             For the purpose of offering better services or providing its users
             with information related to your preferences, Ojimah may also
@@ -371,10 +370,10 @@ const PolicyPage = () => {
           </p>
         </div>
 
-        <h2 className="text-3xl font-bold text-[#1e1e1e]">
+        <h2 className="text-3xl font-bold text-[#1e1e1e] dark:text-[#e8e0e0]">
           3. Who we share the information collected with?
         </h2>
-        <div className="space-y-5 mt-10">
+        <div className="space-y-5 mt-10 dark:text-[#b0b0b0]">
           <p>
             You give your unequivocal consent so that Ojimah can share the
             relevant Personal Information of its users with vendors for managing
@@ -417,10 +416,10 @@ const PolicyPage = () => {
           </p>
         </div>
 
-        <h2 className="text-3xl mt-10 mb-5 font-bold text-[#1e1e1e]">
+        <h2 className="text-3xl mt-10 mb-5 font-bold text-[#1e1e1e] dark:text-[#e8e0e0]">
           4. Where do we store and how we protect the information collected?
         </h2>
-        <div>
+        <div className="dark:text-[#b0b0b0]">
           <p>
             All Personal Information is collected and stored in servers
             physically located in the United Kingdom. Ojimah may relocate these
@@ -440,17 +439,17 @@ const PolicyPage = () => {
           </p>
         </div>
 
-        <h2 className="text-3xl mt-10 mb-5 font-bold text-[#1e1e1e]">
+        <h2 className="text-3xl mt-10 mb-5 font-bold text-[#1e1e1e] dark:text-[#e8e0e0]">
           5. How can the information collected be accessed, deleted and/or
           updated?
         </h2>
 
         <div className="mb-15">
-          <h3 className="text-xl font-bold text-[#1e1e1e]">
+          <h3 className="text-xl font-bold text-[#1e1e1e] dark:text-[#e8e0e0]">
             5.1. Opt-out policy
           </h3>
 
-          <div className="space-y-5">
+          <div className="space-y-5 dark:text-[#b0b0b0]">
             <p>
               When You make transactions or register as user in Ojimah, you may
               choose to receive e-mail promotions, messages or alerts on offers,
@@ -490,13 +489,13 @@ const PolicyPage = () => {
         </div>
 
         <div>
-          <h3 className="text-xl font-bold text-[#1e1e1e]">
+          <h3 className="text-xl font-bold text-[#1e1e1e] dark:text-[#e8e0e0]">
             5.2. How to exercise the rights described above
           </h3>
-          <p className="my-7">
+          <p className="my-7 dark:text-[#b0b0b0]">
             You may exercise them by any of the options below:
           </p>
-          <ul className="list-disc list-inside space-y-5">
+          <ul className="list-disc list-inside space-y-5 dark:text-[#b0b0b0]">
             <li>
               By sending the respective request at the address specified above,
               or by sending it by e-mail to the address info@ojimah.com. In Your
@@ -522,10 +521,10 @@ const PolicyPage = () => {
           </ul>
         </div>
 
-        <h2 className="text-3xl mb-5 mt-10 font-bold text-[#1e1e1e]">
+        <h2 className="text-3xl mb-5 mt-10 font-bold text-[#1e1e1e] dark:text-[#e8e0e0]">
           6. How does Ojimah interact with your social networks?
         </h2>
-        <p>
+        <p className="dark:text-[#b0b0b0] mb-5">
           Upon registering in Ojimah, Ojimah requests to choose a user
           identification and a password (that is to say, access a personal
           account within the Website). Likewise, Ojimah allows you to access “My
@@ -536,7 +535,7 @@ const PolicyPage = () => {
           customized experience, you may link your account to Social Networks in
           two ways:
         </p>
-        <ul className="space-y-5 list-disc list-inside">
+        <ul className="space-y-5 list-disc list-insid dark:text-[#b0b0b0]">
           <li>
             By giving your Social Network account sign in information through
             the Website and/or the Application; or by enabling Ojimah to access
@@ -579,7 +578,7 @@ const PolicyPage = () => {
           </li>
         </ul>
 
-        <div className="mt-20 space-y-8">
+        <div className="mt-20 space-y-8 dark:text-[#b0b0b0]">
           <p>
             BEAR IN MIND THAT YOUR RELATIONSHIP WITH EXTERNAL VENDORS OF
             ASSOCIATED SERVICES IS EXCLUSIVELY GOVERNED BY ANY EXECUTED

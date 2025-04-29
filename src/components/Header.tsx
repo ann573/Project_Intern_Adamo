@@ -55,6 +55,7 @@ const Header = ({ scrolling }: TProp) => {
               src={
                 (scrolling && theme !== "dark") ||
                 ((pathname.includes("/hotel/") ||
+                  pathname.includes("/policy") ||
                   pathname.includes("/tour/")) &&
                   theme === "light")
                   ? logo_black

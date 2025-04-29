@@ -121,7 +121,7 @@ const DetailTour = () => {
         </div>
 
         <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
-          <form className="bg-[#F4F4F4] dark:bg-secondary  sticky top-5">
+          <form className="bg-secondary dark:bg-secondary  sticky top-5">
             <h2 className="py-7 px-5 font-medium text-xl">
               <span className="text-sm font-light">{t("from_price.from")}</span>{" "}
               ${tour?.cost.toFixed(2)}

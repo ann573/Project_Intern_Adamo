@@ -28,7 +28,7 @@ const AdditionalInfo = () => {
               value={`item-${index}`}
               className=" transition-colors"
             >
-              <AccordionTrigger className="data-[state=open]:text-[#04316A] font-semibold text-lg ">
+              <AccordionTrigger className="data-[state=open]:text-[#04316A] dark:data-[state=open]:text-[#2f7bdf] font-semibold text-lg ">
                 <div className="font-medium">
                   <i className="ri-question-line mr-5 text-xl"></i>
                   {item.question}

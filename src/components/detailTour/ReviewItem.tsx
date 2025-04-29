@@ -1,4 +1,3 @@
-
 type TProp = {
   data: {
     title: string;
@@ -24,7 +23,7 @@ const ReviewItem = ({ data }: TProp) => {
           alt="avt_review"
           className="w-20 rounded-full h-fit"
         />
-        <div >
+        <div>
           <div className="flex gap-2">
             {Array.from({ length: 5 }).map((_, index) => (
               <i
@@ -38,12 +37,12 @@ const ReviewItem = ({ data }: TProp) => {
 
           <h3 className="my-2 font-semibold">{data.heading}</h3>
 
-          <p className="text-[#4F4F4F]">
+          <p className="text-color-content-second">
             {data.title} · {monthName} {yearName}
           </p>
         </div>
       </div>
-      <p className="mt-5 text-[#4F4F4F]">{data.comments}</p>
+      <p className="mt-5 text-color-content-second">{data.comments}</p>
     </div>
   );
 };

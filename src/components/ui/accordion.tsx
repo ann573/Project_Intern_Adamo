@@ -1,6 +1,6 @@
-import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "lucide-react";
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -17,7 +17,10 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("border my-5 px-5 data-[state=open]:bg-[#F4F4F4] transition-colors", className)}
+      className={cn(
+        "border my-5 px-5 data-[state=open]:bg-secondary transition-colors",
+        className
+      )}
       {...props}
     />
   );
@@ -61,4 +64,4 @@ function AccordionContent({
   );
 }
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export { Accordion, AccordionContent, AccordionItem, AccordionTrigger };

@@ -37,24 +37,24 @@ const DescriptionHotel = ({ id }: { id: string }) => {
       {rooms.map((item, index) => {
         return (
           <React.Fragment key={index}>
-            <div className="my-5 flex sm:flex-row flex-col gap-5 bg-[#F8F8F8]">
+            <div className="my-5 flex sm:flex-row flex-col gap-5 bg-[#F8F8F8] dark:bg-[#373636]">
               <div>
                 <img
                   src={`https://picsum.photos/seed/${index}/200`}
                   alt="image_room"
-                  className="max-h-[200px] w-full h-full object-cover"
+                  className=" w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
               <Dialog>
                 <div className="w-full p-5 flex-col">
                   <DialogTrigger asChild>
-                    <h3 className="text-[#2A2A2A] text-xl font-semibold cursor-pointer hover:underline">
+                    <h3 className="text-heading-second text-xl font-semibold cursor-pointer hover:underline">
                       {item.name}
                     </h3>
                   </DialogTrigger>
 
-                  <div className="flex justify-between flex-wrap text-[#4F4F4F]">
+                  <div className="flex justify-between flex-wrap text-color-content-second">
                     {/* =========== */}
                     <div className="flex gap-2 items-center">
                       <i className="ri-shape-line text-xl"></i>
@@ -156,35 +156,35 @@ const DescriptionHotel = ({ id }: { id: string }) => {
                     </div>
                     {/* ============================= */}
                     <div>
-                      <div className="flex justify-between text-[#4F4F4F] gap-4">
+                      <div className="flex justify-between text-color-content-second gap-4">
                         {/* =========== */}
                         <div className="flex gap-2 items-center">
-                          <i className="ri-shape-line text-xl"></i>
-                          <p className="text-[#0069E4]">{item.acreage} m2</p>
+                          <i className="ri-shape-line text-xl dark:text-[#c2c1c0]"></i>
+                          <p className="text-[#0069E4] dark:text-[#60a5f5]">{item.acreage} m2</p>
                         </div>
 
                         {/* =========== */}
                         <div className="flex gap-2 items-center">
-                          <i className="ri-hotel-bed-line text-3xl"></i>
-                          <p className="text-[#0069E4]">{item.beds}</p>
+                          <i className="ri-hotel-bed-line text-3xl dark:text-[#c2c1c0]"></i>
+                          <p className="text-[#0069E4] dark:text-[#60a5f5]">{item.beds}</p>
                         </div>
 
                         {/* =========== */}
                         <div className="flex gap-2 items-center">
-                          <i className="ri-group-line text-xl"></i>
-                          <p className="text-[#0069E4]">{item.guest} Guest</p>
+                          <i className="ri-group-line text-xl dark:text-[#c2c1c0]"></i>
+                          <p className="text-[#0069E4] dark:text-[#60a5f5]">{item.guest} Guest</p>
                         </div>
                       </div>
 
                       <hr className="my-3" />
 
-                      <p className="text-[#1E1E1E] leading-8">
+                      <p className="text-heading leading-8">
                         {item.description}
                       </p>
 
                       <hr className="my-3" />
 
-                      <h3 className="font-bold text-lg mb-5">
+                      <h3 className="font-bold text-lg mb-5 text-heading">
                         Room Facilities:{" "}
                       </h3>
                       <div className="max-h-80 overflow-y-auto columns-2">
@@ -195,7 +195,7 @@ const DescriptionHotel = ({ id }: { id: string }) => {
                               className="flex gap-2 items-center  mb-2 "
                             >
                               <i className="ri-check-line text-green-500"></i>
-                              <p>{item}</p>
+                              <p className="dark:text-content-second">{item}</p>
                             </div>
                           );
                         })}

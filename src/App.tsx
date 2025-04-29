@@ -42,7 +42,6 @@ function App() {
   const language = sessionStorage.getItem("language") || "en";
 
   useEffect(() => {
-    console.log(language);
     i18n.changeLanguage(language);
   }, [language]);
 

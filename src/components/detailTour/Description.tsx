@@ -20,11 +20,16 @@ const Description = () => {
     <>
       <div>
         <h3 className="font-bold my-5 text-xl">{t("desc.overview")}</h3>
-        <p className="text-[#4F4F4F]">{tour?.overview.description}</p>
+        <p className="text-color-content-second">
+          {tour?.overview.description}
+        </p>
         <ul className="my-10 list-inside">
           {tour?.overview.highlight.map((item, index) => {
             return (
-              <li key={index} className="list-disc text-[#4F4F4F] my-2">
+              <li
+                key={index}
+                className="list-disc text-color-content-second my-2"
+              >
                 {item}
               </li>
             );
@@ -38,7 +43,7 @@ const Description = () => {
         <h3 className="font-bold my-5 text-xl">{t("desc.include")}</h3>
         {tour?.include.map((item, index) => {
           return (
-            <p key={index} className="text-[#4F4F4F] my-2">
+            <p key={index} className="text-color-content-second my-2">
               <i className="ri-check-line text-green-500 text-xl mr-3 font-bold"></i>
               {item}
             </p>
@@ -56,7 +61,7 @@ const Description = () => {
         <ul className="list-decimal list-inside my-5">
           {tour?.departure.point.map((item, index) => {
             return (
-              <li key={index} className="text-[#4F4F4F] my-2">
+              <li key={index} className="text-color-content-second my-2">
                 {item}
               </li>
             );
@@ -81,7 +86,7 @@ const Description = () => {
               value={`item-${index}`}
               className=" transition-colors"
             >
-              <AccordionTrigger className="text-[#04316A] font-semibold text-lg">
+              <AccordionTrigger className="text-[#04316A] dark:text-[#2f7bdf] font-semibold text-lg">
                 Day {index + 1}: {item.title} ({item.details.length}{" "}
                 {item.details.length > 1 ? "stops" : "stop"})
               </AccordionTrigger>
@@ -89,9 +94,9 @@ const Description = () => {
                 {item.details.map((detail, index) => {
                   return (
                     <div key={index} className="flex gap-5 mb-10 first:mt-10">
-                      <i className="ri-map-pin-line text-[#2A2A2A] text-2xl"></i>
-                      <div className="text-[#4F4F4F]">
-                        <h3 className="text-[#04316A] font-semibold">
+                      <i className="ri-map-pin-line text-heading-second dark:text-white text-2xl"></i>
+                      <div className="text-color-content-second">
+                        <h3 className="text-[#04316A] dark:text-[#2f7bdf] font-semibold">
                           {" "}
                           {detail.location}
                         </h3>

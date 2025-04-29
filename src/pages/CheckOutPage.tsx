@@ -19,18 +19,22 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const CheckOutPage = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
-
-  const isTour = useLocation().pathname.includes("tour");
   const nav = useNavigate();
 
-  const { orderTour, orderRoom, clearOrderTour, clearOrderRoom } =
+  const isTour = useLocation().pathname.includes("tour");
+
+  const { orderTour, orderRoom, clearOrderTour, clearOrderRoom, isInitial } =
     useOrderStore();
+
+  useEffect(() => {
+    if (isInitial)  nav("/")
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [nav, orderTour, orderRoom, isInitial]);
+
   const { clearRoom } = useRoomStore();
   const { user } = useAuthStore();
   const [discount, setDiscount] = useState<number>(0);
+
   const {
     register,
     handleSubmit,
@@ -43,6 +47,7 @@ const CheckOutPage = () => {
       email: user?.email,
     },
   });
+
   const submitForm = async (data: CheckoutFormData) => {
     const { firstName, lastName, ...rest } = data;
 
@@ -120,6 +125,7 @@ const CheckOutPage = () => {
     event.preventDefault();
     btnRef.current?.setAttribute("disabled", "true");
     if (!promoCodeRef.current?.value) {
+      btnRef.current?.removeAttribute("disabled");
       return toast.warning("Promo code is required", {
         style: {
           background: "orange",
@@ -164,11 +170,13 @@ const CheckOutPage = () => {
       <section className="col-span-2 mb-10 xl:order-1 order-2">
         <hr className="mb-5" />
 
-        <h2 className="text-[#2A2A2A] font-bold text-xl">Traveler Details</h2>
+        <h2 className="text-heading-second font-bold text-xl">
+          Traveler Details
+        </h2>
         <p>Information we need to confirm your tour or activity</p>
 
         <form onSubmit={handleSubmit(submitForm)}>
-          <h3 className="text-[#2A2A2A] mt-5 mb-3 font-bold text-xl">
+          <h3 className="text-heading-second mt-5 mb-3 font-bold text-xl">
             Lead Traveler (Adult)
           </h3>
           <section className="grid sm:grid-cols-2 gap-10 mb-10">
@@ -195,7 +203,7 @@ const CheckOutPage = () => {
               },
             ].map((field) => (
               <div key={field.name}>
-                <Label className="text-lg text-[#2A2A2A]">
+                <Label className="text-lg text-heading-second">
                   {field.label} <span className="text-[#EE1D00]">*</span>
                 </Label>
                 <Input
@@ -214,12 +222,12 @@ const CheckOutPage = () => {
             ))}
           </section>
 
-          <h3 className="text-[#2A2A2A] mt-5 mb-3 font-bold text-xl">
+          <h3 className="text-heading-second mt-5 mb-3 font-bold text-xl">
             Address
           </h3>
           <label
             htmlFor="address"
-            className="text-lg  text-[#2A2A2A] font-semibold"
+            className="text-lg  text-heading-second font-semibold"
           >
             Your Address
           </label>
@@ -252,7 +260,7 @@ const CheckOutPage = () => {
               },
             ].map((field) => (
               <div key={field.name}>
-                <Label className="text-lg text-[#2A2A2A]">
+                <Label className="text-lg text-heading-second">
                   {field.label} <span className="text-[#EE1D00]">*</span>
                 </Label>
                 <Input
@@ -270,7 +278,7 @@ const CheckOutPage = () => {
               </div>
             ))}
           </section>
-          <h3 className="text-[#2A2A2A] mt-5 mb-3 font-bold text-xl">
+          <h3 className="text-heading-second mt-5 mb-3 font-bold text-xl">
             Special Requirement
           </h3>
           <textarea
@@ -280,10 +288,10 @@ const CheckOutPage = () => {
             {...register("specialRequirement")}
           ></textarea>
           <hr />
-          <h3 className="text-[#2A2A2A] mt-5 mb-3 font-bold text-xl">
+          <h3 className="text-heading-second mt-5 mb-3 font-bold text-xl">
             Payment Method
           </h3>
-          <p className="text-[#4F4F4F] mb-5">
+          <p className="text-color-content-second mb-5">
             Pay securely—we use SSL encryption to keep your data safe
           </p>
           <div className="flex flex-col gap-8">
@@ -323,7 +331,7 @@ const CheckOutPage = () => {
             </span>
           )}
 
-          <ul className="list-disc pl-5 space-y-2 text-[#4F4F4F] text-base my-5">
+          <ul className="list-disc pl-5 space-y-2 text-color-content-second text-base my-5">
             <li>
               You will be charged the total amount once your order is confirmed.
             </li>
@@ -351,7 +359,7 @@ const CheckOutPage = () => {
       </section>
 
       <section className="xl:order-2 order-1 md:col-span-1 col-span-2 my-5 xl:my-0">
-        <div className="bg-[#F4F4F4] h-fit p-5 pt-8">
+        <div className="bg-secondary h-fit p-5 pt-8">
           <h2 className="text-heading text-lg font-bold">
             {isTour ? orderTour.title : orderRoom.name}
           </h2>
@@ -384,7 +392,7 @@ const CheckOutPage = () => {
           )}
 
           <section className="grid gap-2">
-            <div className="w-full justify-start text-left font-normal py-5 px-3 my-5 bg-white flex text-sm items-center gap-5 rounded-lg border">
+            <div className="w-full justify-start text-left font-normal py-5 px-3 my-5 bg-background flex text-sm items-center gap-5 rounded-lg border">
               <CalendarIcon className="text-primary text-xs" />
               {format(
                 isTour ? orderTour.from : orderRoom.from,
@@ -392,7 +400,7 @@ const CheckOutPage = () => {
               )} - {format(isTour ? orderTour.to : orderRoom.to, "dd/MM/yyyy")}
             </div>
 
-            <div className="w-full justify-start text-left font-normal py-5 px-3 bg-white flex text-sm items-center gap-5 rounded-lg border">
+            <div className="w-full justify-start text-left font-normal py-5 px-3 bg-background flex text-sm items-center gap-5 rounded-lg border">
               <User2 className="text-orange-500" size={18} />
               {isTour ? (
                 <span>
@@ -440,7 +448,7 @@ const CheckOutPage = () => {
             <input
               type="text"
               placeholder="Promo Code"
-              className="bg-white p-5 w-2/3 focus:outline-none h-full"
+              className="bg-background p-5 w-2/3 focus:outline-none h-full"
               ref={promoCodeRef}
             />
             <Button

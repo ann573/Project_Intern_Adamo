@@ -13,7 +13,7 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
   return (
     <>
       <h3 className="font-bold my-5 text-xl">{t("desc.overview")}</h3>
-      <section className="text-[#4F4F4F]">
+      <section className="text-color-content-second">
         {data.description.overview.split("\n").map((line, idx) => (
           <p key={idx} className="my-3">
             {line}
@@ -22,10 +22,10 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
       </section>
 
       <hr className="my-10" />
-      <h3 className="text-[#2A2A2A] mt-5 mb-3 text-xl font-bold">
+      <h3 className="text-heading-second mt-5 mb-3 text-xl font-bold">
         {t("desc.amenities")}
       </h3>
-      <section className="text-[#2A2A2A] grid grid-cols-2 gap-y-2 gap-x-8">
+      <section className="text-heading-second grid grid-cols-2 gap-y-2 gap-x-8">
         {data.description.amenities.map((item, idx) => (
           <div key={idx} className="flex gap-2 items-center mb-2">
             <i className="ri-check-line text-xl text-green-500"></i>
@@ -36,7 +36,7 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
 
       <hr className="my-10" />
 
-      <h3 className="text-[#2A2A2A] mt-5 mb-3 text-xl font-bold">
+      <h3 className="text-heading-second mt-5 mb-3 text-xl font-bold">
         {t("desc.rule")}
       </h3>
 
@@ -44,14 +44,14 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
         <div className="grid grid-cols-2 gap-x-10 gap-y-5">
           <div>
             <p className="text-[#FF7B42] font-bold">Check-in</p>
-            <p className="text-[#2A2A2A] font-bold text-xl w-full bg-[#F5F5F5] py-2 text-center w-full mt-3 ">
+            <p className="text-heading-second font-bold text-xl bg-[#F5F5F5] dark:bg-[#424040]  py-2 text-center w-full mt-3 ">
               {data.description.rules.checkin}
             </p>
           </div>
 
           <div>
             <p className="text-[#FF7B42] font-bold">Check-out</p>
-            <p className="text-[#2A2A2A] font-bold text-xl bg-[#F5F5F5] py-2 text-center w-full mt-3 ">
+            <p className="text-heading-second font-bold text-xl bg-[#F5F5F5] dark:bg-[#424040] py-2 text-center w-full mt-3 ">
               {data.description.rules.checkout}
             </p>
           </div>
@@ -64,7 +64,7 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
               className="flex gap-2 items-center mb-2  item-center"
             >
               <i className="ri-checkbox-blank-circle-fill text-[7px]"></i>
-              <p className="text-lg text-[#4F4F4F]">{item}</p>
+              <p className="text-lg text-color-content-second">{item}</p>
             </div>
           ))}
         </div>
@@ -72,7 +72,7 @@ const AdditionalInfoHotel: React.FC<Props> = ({ id }) => {
 
       <hr className="my-10" />
 
-      <h3 className="text-[#2A2A2A] mt-5 mb-3 text-xl font-bold">
+      <h3 className="text-heading-second mt-5 mb-3 text-xl font-bold">
         {t("desc.map")}
       </h3>
       <iframe

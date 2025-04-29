@@ -34,13 +34,13 @@ const Review = ({ data, getRatingLabel }: TProp) => {
 
           <h3 className="my-2 font-semibold">{data.heading}</h3>
 
-          <p className="text-[#4F4F4F]">
+          <p className="text-color-content-second">
             {data.name} <span className="mx-2 text-[#C4C4C4]"> • </span>{" "}
             {monthName} {yearName}
           </p>
         </div>
       </div>
-      <p className="mt-5 text-[#4F4F4F]">{data.comments}</p>
+      <p className="mt-5 text-color-content-second">{data.comments}</p>
     </div>
   );
 };

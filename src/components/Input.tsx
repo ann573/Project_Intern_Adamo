@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  UseFormRegister,
   FieldErrors,
   FieldValues,
   Path,
+  UseFormRegister,
 } from "react-hook-form";
 
 type TInputProps<T extends FieldValues> = {
@@ -66,7 +66,7 @@ const Input = <T extends FieldValues>({
           <i
             className={`${
               isShowPassword ? "ri-eye-off-line" : "ri-eye-line"
-            } absolute top-1/2 -translate-y-1/2 right-3 text-xl text-[#4F4F4F] cursor-pointer`}
+            } absolute top-1/2 -translate-y-1/2 right-3 text-xl text-color-content-second cursor-pointer`}
             onClick={() => setIsShowPassword(!isShowPassword)}
           ></i>
         )}

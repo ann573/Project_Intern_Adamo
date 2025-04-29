@@ -122,7 +122,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex items-center md:static absolute w-11/12 bg-white top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-y-0 md:translate-x-0 rounded-3xl p-3">
+    <div className="flex items-center md:static absolute w-11/12 bg-background top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-y-0 md:translate-x-0 rounded-3xl p-3">
       {isLogin ? (
         <form
           onSubmit={loginForm.handleSubmit(onSubmitLogin)}

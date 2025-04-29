@@ -89,15 +89,18 @@ const Reviews = () => {
   };
   return (
     <>
-      <section className="bg-[#F4F4F4] grid sm:grid-cols-5 grid-cols-1 items-center md:gap-5 xs:gap-2 gap-y-5 my-10 rounded-2xl py-8 px-2 xs:px-0">
+      <section className="bg-secondary grid sm:grid-cols-5 grid-cols-1 items-center md:gap-5 xs:gap-2 gap-y-5 my-10 rounded-2xl py-8 px-2 xs:px-0">
         {/* ==================== first col ============================== */}
         <div className="center flex-col gap-5 col-span-2 px-5 sm:border-r border-none mx-auto">
-          <h2 className="text-[#2A2A2A] text-5xl font-bold">
+          <h2 className="text-heading-second text-5xl font-bold">
             {totalRating.toFixed(1)}/5
           </h2>
           <div className="flex gap-1 md:gap-3">
             {Array.from({ length: 5 }).map((_, index) => (
-              <span key={index} className="text-[#2A2A2A] text-3xl font-bold">
+              <span
+                key={index}
+                className="text-heading-second text-3xl font-bold"
+              >
                 <i
                   className={`ri-star-fill ${
                     totalRating && index < totalRating
@@ -111,7 +114,9 @@ const Reviews = () => {
           <p className="text-center">
             <Trans i18nKey={"rev.base"} ns="tour" count={count}>
               Based on
-              <span className="text-[#2d2c2c] font-bold">{count} reviews</span>
+              <span className="text-[#2d2c2c] dark:text-white font-bold">
+                {count} reviews
+              </span>
             </Trans>
           </p>
         </div>

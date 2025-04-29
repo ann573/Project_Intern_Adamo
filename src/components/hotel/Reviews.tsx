@@ -102,12 +102,15 @@ const Reviews = ({ id }: { id: string }) => {
         </div>
 
         <div>
-          <h4 className="text-[#2A2A2A] font-semibold text-4xl">
+          <h4 className="text-heading-second font-semibold text-4xl">
             {getRatingLabel((totalRating as number) ?? 0)}{" "}
           </h4>
           <p className="my-5">
             <Trans i18nKey="rv.basedOnReviews" count={count} ns={"hotel"}>
-              Based on <span className="text-[#4F4F4F] font-bold">{count}</span>{" "}
+              Based on{" "}
+              <span className="text-color-content-second font-bold">
+                {count}
+              </span>{" "}
               reviews
             </Trans>
           </p>

@@ -99,7 +99,7 @@ const HotelDetail = () => {
                 <h2
                   key={index}
                   className={`md:text-xl font-semibold py-5 cursor-pointer ${
-                    choose === index + 1 ? "text-orange" : "text-[#888888]"
+                    choose === index + 1 ? "text-orange" : "text-heading-second"
                   }`}
                   onClick={() => setChoose(index + 1)}
                 >
@@ -116,7 +116,7 @@ const HotelDetail = () => {
 
         <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
           <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
-            <div className="bg-[#F4F4F4] dark:bg-secondary sticky top-5">
+            <div className="bg-secondary dark:bg-secondary sticky top-5">
               <h2 className="p-5 font-medium text-xl">
                 <span className="text-sm font-light">{t("from")}</span> $
                 {data?.cost.toFixed(2)}
@@ -132,7 +132,7 @@ const HotelDetail = () => {
 
       {/* ===================================================== */}
       <section className="my-20">
-        <h3 className="text-[#2A2A2A] mt-5 text-3xl font-bold mb-5">
+        <h3 className="text-heading-second mt-5 text-3xl font-bold mb-5">
           {t("related")}
         </h3>
         {isLoadingRelated ? (

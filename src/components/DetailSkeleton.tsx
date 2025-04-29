@@ -58,7 +58,7 @@ const DetailSkeleton = () => {
 
         {/* Right Sidebar */}
         <div className="order-1 lg:order-2 md:col-span-1 col-span-2">
-          <div className="bg-[#F4F4F4] sticky top-5 p-5 rounded-lg">
+          <div className="bg-secondary sticky top-5 p-5 rounded-lg">
             <Skeleton className="h-8 w-32 mb-4" />
             <Skeleton className="h-1 w-full mb-4" />
             <div className="mb-4">

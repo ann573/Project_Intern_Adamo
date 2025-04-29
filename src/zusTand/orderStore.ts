@@ -40,6 +40,7 @@ type Room = {
 type useOrderStore = {
   orderTour: Tour;
   orderRoom: Room;
+  isInitial: boolean;
   setOrderTour: (tour: Tour) => void;
   setOrderRoom: (room: Room) => void;
   clearOrderTour: () => void;
@@ -90,10 +91,11 @@ export const useOrderStore = create<useOrderStore>()(
     (set) => ({
       orderTour: initialOrderTourState,
       orderRoom: initialOrderRoomState,
-      setOrderTour: (tour: Tour) => set({ orderTour: tour }),
-      setOrderRoom: (room: Room) => set({ orderRoom: room }),
-      clearOrderTour: () => set({ orderTour: initialOrderTourState }),
-      clearOrderRoom: () => set({ orderRoom: initialOrderRoomState }),
+      isInitial: true,
+      setOrderTour: (tour: Tour) => set({ orderTour: tour, isInitial:false }),
+      setOrderRoom: (room: Room) => set({ orderRoom: room, isInitial:false }),
+      clearOrderTour: () => set({ orderTour: initialOrderTourState, isInitial:true }),
+      clearOrderRoom: () => set({ orderRoom: initialOrderRoomState, isInitial:true }),
     }),
     {
       name: "order-tour",
