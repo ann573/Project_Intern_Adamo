@@ -1,35 +1,29 @@
-import { IHotel } from "@/interfaces/IHotel";
-import { instance } from ".";
+import { IHotel } from '@/interfaces/IHotel'
+import { instance } from '.'
 
 export const hotelApi = {
-  getHotels: async (
-    page: number,
-    limit: number,
-    query?: string
-  ): Promise<IHotel[]> => {
-    const response = await instance.get<IHotel[]>(
-      `hotels?_page=${page}&_limit=${limit}&${query}`
-    );
-    return response.data;
+  getHotels: async (page: number, limit: number, query?: string): Promise<IHotel[]> => {
+    const response = await instance.get<IHotel[]>(`hotels?_page=${page}&_limit=${limit}&${query}`)
+    return response.data
   },
 
-  getFullHotel : async () => {
-    const res = await instance.get("hotels")
+  getFullHotel: async () => {
+    const res = await instance.get('hotels')
     return res.data
   },
 
-  getDetailHotel : async (id:string) => {
+  getDetailHotel: async (id: string) => {
     const res = await instance.get(`hotels/${id}`)
     return res.data
   },
 
-  getRelatedHotel : async (star:number) => {
+  getRelatedHotel: async (star: number) => {
     const res = await instance.get(`hotels?_page=1&_limit=3&typeroom=${star}`)
     return res.data
   },
 
-  updateData : async (data:IHotel) => {
+  updateData: async (data: IHotel) => {
     const res = await instance.patch(`hotels/${data.id}`, data)
-    return res.data 
+    return res.data
   }
-};
+}

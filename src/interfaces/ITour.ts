@@ -1,44 +1,44 @@
 interface ITour {
-  id: number;
-  title: string;
-  duration: number;
-  cost: number;
-  location: string;
-  featured: boolean;
-  type: string;
-  thumb: string;
-  image: string[];
+  id: number
+  title: string
+  duration: number
+  cost: number
+  location: string
+  featured: boolean
+  type: string
+  thumb: string
+  image: string[]
   overview: {
-    description: string;
-    highlight: string[];
-  };
-  include: string[];
+    description: string
+    highlight: string[]
+  }
+  include: string[]
   departure: {
-    point: string[];
-    time: string;
-  };
+    point: string[]
+    time: string
+  }
   itinerary: {
-    title: string;
+    title: string
     details: {
-      location: string;
-      description: string;
-      duration: string;
-      other: string;
-    }[];
-  }[];
-  additional: string[];
+      location: string
+      description: string
+      duration: string
+      other: string
+    }[]
+  }[]
+  additional: string[]
   faqs: {
-    question: string;
-    answer: string;
-  }[];
+    question: string
+    answer: string
+  }[]
   rating: {
-    title: string;
-    rate: number;
-    heading: string;
-    time: number;
-    comments: string;
-    avatar: string;
-  }[];
+    title: string
+    rate: number
+    heading: string
+    time: number
+    comments: string
+    avatar: string
+  }[]
 }
 
-export default ITour;
+export default ITour

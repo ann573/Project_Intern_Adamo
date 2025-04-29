@@ -1,19 +1,22 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 type User = {
-  email: string;
-  name: string;
-};
+  email: string
+  name: string
+}
 type TAuthStore = {
-  user: User | null;
-  setUser: (user: User | null) => void;
-};
+  user: User | null
+  setUser: (user: User | null) => void
+}
 export const useAuthStore = create<TAuthStore>()(
-  persist((set) => ({
-    user: null,
-    setUser: (user: User | null) => set({ user }),
-  }),{
-    name: "user",
-  })
-);
+  persist(
+    (set) => ({
+      user: null,
+      setUser: (user: User | null) => set({ user })
+    }),
+    {
+      name: 'user'
+    }
+  )
+)

@@ -146,11 +146,7 @@
       "featured": true,
       "type": "Cultural - Historical",
       "thumb": "https://picsum.photos/599/500",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Take a journey through the rich cultural history of Hue, exploring its famous landmarks, including the Imperial City, royal tombs, and temples.",
         "highlight": [
@@ -166,9 +162,7 @@
         "Boat ride along the Perfume River"
       ],
       "departure": {
-        "point": [
-          "Hotel in Hue City Center"
-        ],
+        "point": ["Hotel in Hue City Center"],
         "time": "7:00 AM"
       },
       "itinerary": [
@@ -244,11 +238,7 @@
       "featured": false,
       "type": "Adventure - Nature",
       "thumb": "https://picsum.photos/598/500",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Discover the mysteries of the Golden Triangle, where the borders of Thailand, Laos, and Myanmar meet. Explore the ancient temples, the Mekong River, and the famous opium museum.",
         "highlight": [
@@ -264,9 +254,7 @@
         "Entrance fees to museums and temples"
       ],
       "departure": {
-        "point": [
-          "Hotel in Chiang Rai City"
-        ],
+        "point": ["Hotel in Chiang Rai City"],
         "time": "8:30 AM"
       },
       "itinerary": [
@@ -335,11 +323,7 @@
       "featured": true,
       "type": "Nature - Adventure",
       "thumb": "https://picsum.photos/600/501",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Experience the beauty of Ba Na Hills with its famous Golden Bridge and panoramic views of Da Nang. This half-day tour takes you up to the mountains via cable car and shows you stunning scenery.",
         "highlight": [
@@ -348,16 +332,9 @@
           "Visit Linh Ung Pagoda and enjoy the sunset"
         ]
       },
-      "include": [
-        "Round-trip cable car tickets",
-        "Local guide",
-        "Transport by minibus",
-        "Snacks and drinks"
-      ],
+      "include": ["Round-trip cable car tickets", "Local guide", "Transport by minibus", "Snacks and drinks"],
       "departure": {
-        "point": [
-          "Hotel in Da Nang City"
-        ],
+        "point": ["Hotel in Da Nang City"],
         "time": "2:00 PM"
       },
       "itinerary": [
@@ -415,11 +392,7 @@
       "featured": true,
       "type": "Trekking - Nature",
       "thumb": "https://picsum.photos/602/500",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Join us for an exciting trekking adventure through the terraced rice fields and ethnic minority villages in Sapa. Explore the unique culture of the H'mong, Tay, and Dzay people.",
         "highlight": [
@@ -435,9 +408,7 @@
         "Accommodation in a homestay"
       ],
       "departure": {
-        "point": [
-          "Hotel in Sapa Town"
-        ],
+        "point": ["Hotel in Sapa Town"],
         "time": "8:00 AM"
       },
       "itinerary": [
@@ -495,11 +466,7 @@
       "featured": false,
       "type": "Cruise - Relaxation",
       "thumb": "https://picsum.photos/597/500",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Experience the serene beauty of Ha Long Bay on a luxurious cruise, visiting caves, floating villages, and kayaking in the bay's emerald waters.",
         "highlight": [
@@ -508,16 +475,9 @@
           "Kayak in the crystal-clear waters"
         ]
       },
-      "include": [
-        "Luxury cruise",
-        "Kayaking equipment",
-        "Round-trip transportation",
-        "Meals on board"
-      ],
+      "include": ["Luxury cruise", "Kayaking equipment", "Round-trip transportation", "Meals on board"],
       "departure": {
-        "point": [
-          "Hotel in Ha Long City"
-        ],
+        "point": ["Hotel in Ha Long City"],
         "time": "7:00 AM"
       },
       "itinerary": [
@@ -583,11 +543,7 @@
       "featured": true,
       "type": "Cultural - Historical",
       "thumb": "https://picsum.photos/596/500",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Take a deep dive into Hanoi’s rich history and culture with visits to museums, temples, and the famous Old Quarter.",
         "highlight": [
@@ -596,15 +552,9 @@
           "Walk around the Old Quarter"
         ]
       },
-      "include": [
-        "Local guide",
-        "Round-trip transportation",
-        "Entrance fees to museums and temples"
-      ],
+      "include": ["Local guide", "Round-trip transportation", "Entrance fees to museums and temples"],
       "departure": {
-        "point": [
-          "Hotel in Hanoi City"
-        ],
+        "point": ["Hotel in Hanoi City"],
         "time": "8:00 AM"
       },
       "itinerary": [
@@ -662,11 +612,7 @@
       "featured": false,
       "type": "Cultural - Historical",
       "thumb": "https://picsum.photos/600/510",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Experience the majestic ruins of Angkor Wat and other temples in the Angkor Archaeological Park, one of the world’s largest religious monuments.",
         "highlight": [
@@ -675,16 +621,9 @@
           "Learn about Khmer architecture and history"
         ]
       },
-      "include": [
-        "Local guide",
-        "Transport by tuk tuk",
-        "Round-trip transportation",
-        "Entrance fees to temples"
-      ],
+      "include": ["Local guide", "Transport by tuk tuk", "Round-trip transportation", "Entrance fees to temples"],
       "departure": {
-        "point": [
-          "Hotel in Siem Reap"
-        ],
+        "point": ["Hotel in Siem Reap"],
         "time": "7:00 AM"
       },
       "itinerary": [
@@ -742,11 +681,7 @@
       "featured": true,
       "type": "Nature - Adventure",
       "thumb": "https://picsum.photos/605/500",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Cycle through the scenic rice paddies of Ubud, Bali, and enjoy the tranquil beauty of rural Bali, with a chance to experience local villages and culture.",
         "highlight": [
@@ -755,16 +690,9 @@
           "Learn about local farming techniques"
         ]
       },
-      "include": [
-        "Bike rental",
-        "Local guide",
-        "Round-trip transportation",
-        "Snacks and drinks"
-      ],
+      "include": ["Bike rental", "Local guide", "Round-trip transportation", "Snacks and drinks"],
       "departure": {
-        "point": [
-          "Hotel in Ubud"
-        ],
+        "point": ["Hotel in Ubud"],
         "time": "8:00 AM"
       },
       "itinerary": [
@@ -822,11 +750,7 @@
       "featured": true,
       "type": "Adventure - Nature",
       "thumb": "https://picsum.photos/601/501",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Take a breathtaking hot air balloon ride over the surreal landscapes of Cappadocia, with its fairy chimneys and ancient rock formations.",
         "highlight": [
@@ -842,9 +766,7 @@
         "Pilot guide"
       ],
       "departure": {
-        "point": [
-          "Hotel in Cappadocia"
-        ],
+        "point": ["Hotel in Cappadocia"],
         "time": "5:00 AM"
       },
       "itinerary": [
@@ -891,11 +813,7 @@
       "featured": false,
       "type": "Adventure - Nature",
       "thumb": "https://picsum.photos/599/499",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Take a road trip through the picturesque Scottish Highlands, explore rugged landscapes, castles, and hidden lochs.",
         "highlight": [
@@ -904,15 +822,9 @@
           "Enjoy stunning views of the Scottish countryside"
         ]
       },
-      "include": [
-        "Round-trip transportation",
-        "Local guide",
-        "Meals during the trip"
-      ],
+      "include": ["Round-trip transportation", "Local guide", "Meals during the trip"],
       "departure": {
-        "point": [
-          "Edinburgh City Centre"
-        ],
+        "point": ["Edinburgh City Centre"],
         "time": "9:00 AM"
       },
       "itinerary": [
@@ -970,11 +882,7 @@
       "featured": true,
       "type": "Adventure - Nature",
       "thumb": "https://picsum.photos/610/501",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Embark on a thrilling trekking adventure through the Himalayan mountains, exploring Nepal's incredible landscapes, villages, and local culture.",
         "highlight": [
@@ -983,16 +891,9 @@
           "Enjoy stunning mountain views, including Mount Everest"
         ]
       },
-      "include": [
-        "Local guide",
-        "Trekking permits",
-        "Accommodation in local guesthouses",
-        "Meals during the trek"
-      ],
+      "include": ["Local guide", "Trekking permits", "Accommodation in local guesthouses", "Meals during the trek"],
       "departure": {
-        "point": [
-          "Kathmandu City Centre"
-        ],
+        "point": ["Kathmandu City Centre"],
         "time": "6:00 AM"
       },
       "itinerary": [
@@ -1066,11 +967,7 @@
       "featured": false,
       "type": "Nature - Wildlife",
       "thumb": "https://picsum.photos/605/501",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Explore Kruger National Park on a thrilling safari, where you’ll get up close with Africa’s Big Five: lion, leopard, elephant, buffalo, and rhino.",
         "highlight": [
@@ -1085,9 +982,7 @@
         "Meals and drinks during the safari"
       ],
       "departure": {
-        "point": [
-          "Kruger National Park Entrance"
-        ],
+        "point": ["Kruger National Park Entrance"],
         "time": "6:00 AM"
       },
       "itinerary": [
@@ -1161,11 +1056,7 @@
       "featured": true,
       "type": "Cultural - Historical",
       "thumb": "https://picsum.photos/604/501",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Explore the serene temples and meticulously designed gardens of Kyoto, Japan, a city known for its ancient cultural heritage.",
         "highlight": [
@@ -1174,15 +1065,9 @@
           "Admire the beauty of Kyoto’s traditional Japanese gardens"
         ]
       },
-      "include": [
-        "Local guide",
-        "Transport between locations",
-        "Admission fees to temples and gardens"
-      ],
+      "include": ["Local guide", "Transport between locations", "Admission fees to temples and gardens"],
       "departure": {
-        "point": [
-          "Hotel in Kyoto"
-        ],
+        "point": ["Hotel in Kyoto"],
         "time": "9:00 AM"
       },
       "itinerary": [
@@ -1248,11 +1133,7 @@
       "featured": false,
       "type": "Cultural - Historical",
       "thumb": "https://picsum.photos/603/500",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Embark on a journey to explore the ancient and mystical Angkor Wat temple complex, the largest religious monument in the world.",
         "highlight": [
@@ -1261,15 +1142,9 @@
           "Discover hidden temples and ruins throughout the complex"
         ]
       },
-      "include": [
-        "Local guide",
-        "Admission tickets to temples",
-        "Transport between temple sites"
-      ],
+      "include": ["Local guide", "Admission tickets to temples", "Transport between temple sites"],
       "departure": {
-        "point": [
-          "Hotel in Siem Reap"
-        ],
+        "point": ["Hotel in Siem Reap"],
         "time": "8:00 AM"
       },
       "itinerary": [
@@ -1343,11 +1218,7 @@
       "featured": true,
       "type": "Cruise - Nature",
       "thumb": "https://picsum.photos/603/501",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Take a relaxing cruise along the Mekong River, exploring the rural life and floating markets in the heart of the Vietnamese Delta.",
         "highlight": [
@@ -1362,9 +1233,7 @@
         "Visit to floating markets"
       ],
       "departure": {
-        "point": [
-          "Hotel in Ho Chi Minh City"
-        ],
+        "point": ["Hotel in Ho Chi Minh City"],
         "time": "7:00 AM"
       },
       "itinerary": [
@@ -1438,11 +1307,7 @@
       "featured": true,
       "type": "Cultural - Historical",
       "thumb": "https://picsum.photos/603/502",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Discover the historical gems of Rome, from the Roman Colosseum to the Roman Forum, and explore the city’s deep-rooted history and stunning architecture.",
         "highlight": [
@@ -1451,15 +1316,9 @@
           "Learn about Ancient Rome’s history and architecture"
         ]
       },
-      "include": [
-        "Local guide",
-        "Admission tickets to key historical sites",
-        "Transport between sites"
-      ],
+      "include": ["Local guide", "Admission tickets to key historical sites", "Transport between sites"],
       "departure": {
-        "point": [
-          "Hotel in Rome"
-        ],
+        "point": ["Hotel in Rome"],
         "time": "9:00 AM"
       },
       "itinerary": [
@@ -1533,11 +1392,7 @@
       "featured": true,
       "type": "Wildlife - Adventure",
       "thumb": "https://picsum.photos/603/503",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Experience the thrill of a sunset safari in one of South Africa’s most renowned wildlife reserves, Kruger National Park.",
         "highlight": [
@@ -1553,9 +1408,7 @@
         "Refreshments during the safari"
       ],
       "departure": {
-        "point": [
-          "Hotel in Hazyview, South Africa"
-        ],
+        "point": ["Hotel in Hazyview, South Africa"],
         "time": "4:00 PM"
       },
       "itinerary": [
@@ -1618,11 +1471,7 @@
       "featured": true,
       "type": "Adventure - Nature",
       "thumb": "https://picsum.photos/592/502",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Join us for an unforgettable hike to the summit of Mount Fuji, one of Japan's most iconic landmarks.",
         "highlight": [
@@ -1631,15 +1480,9 @@
           "Explore different hiking routes suitable for various levels"
         ]
       },
-      "include": [
-        "Guided hike to Mount Fuji",
-        "Transport to and from the trailhead",
-        "Lunch on the summit"
-      ],
+      "include": ["Guided hike to Mount Fuji", "Transport to and from the trailhead", "Lunch on the summit"],
       "departure": {
-        "point": [
-          "Tokyo, Japan"
-        ],
+        "point": ["Tokyo, Japan"],
         "time": "7:00 AM"
       },
       "itinerary": [
@@ -1702,11 +1545,7 @@
       "featured": true,
       "type": "Adventure - Nature",
       "thumb": "https://picsum.photos/592/503",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Embark on a thrilling trek through the Amazon Rainforest, where you’ll immerse yourself in one of the most biodiverse ecosystems on Earth.",
         "highlight": [
@@ -1715,15 +1554,9 @@
           "Learn about the flora and fauna from an expert guide"
         ]
       },
-      "include": [
-        "Local guide",
-        "All meals during the trek",
-        "Camping equipment"
-      ],
+      "include": ["Local guide", "All meals during the trek", "Camping equipment"],
       "departure": {
-        "point": [
-          "Manaus, Brazil"
-        ],
+        "point": ["Manaus, Brazil"],
         "time": "8:00 AM"
       },
       "itinerary": [
@@ -1786,11 +1619,7 @@
       "featured": true,
       "type": "Cultural - History",
       "thumb": "https://picsum.photos/600/500",
-      "image": [
-        "https://picsum.photos/600/500",
-        "https://picsum.photos/500/500",
-        "https://picsum.photos/400/300"
-      ],
+      "image": ["https://picsum.photos/600/500", "https://picsum.photos/500/500", "https://picsum.photos/400/300"],
       "overview": {
         "description": "Discover the ancient wonders of Angkor Wat and other iconic temples in Cambodia, with a knowledgeable guide who will share the fascinating history and stories behind these sacred sites.",
         "highlight": [
@@ -1806,9 +1635,7 @@
         "Lunch during the tour"
       ],
       "departure": {
-        "point": [
-          "Siem Reap, Cambodia"
-        ],
+        "point": ["Siem Reap, Cambodia"],
         "time": "7:30 AM"
       },
       "itinerary": [
@@ -5729,7 +5556,7 @@
     {
       "code": "CODE50",
       "discount": 50,
-      "id": 1 
+      "id": 1
     },
     {
       "code": "CODE20",
