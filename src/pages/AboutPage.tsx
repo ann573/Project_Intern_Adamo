@@ -18,7 +18,7 @@ const AboutPage = () => {
   })
 
   const { t } = useTranslation(['hero', 'about'])
-
+  console.log("object");
   return (
     <>
       <section className='banner_about h-[33vh] center'>
