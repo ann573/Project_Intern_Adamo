@@ -46,13 +46,16 @@ export const getDetailTour = createAsyncThunk<ITour[], { id: string }>(
   }
 )
 
-export const getFilterTour = createAsyncThunk<ITour[], void, { rejectValue: string }>(
+export const getFilterTour = createAsyncThunk<ITour[], AbortSignal, { rejectValue: string }>(
   'tour/getFilterTour',
-  async (_, { rejectWithValue }) => {
+  async (signal, { rejectWithValue }) => {
     try {
-      const { data }: { data: ITour[] } = await instance.get('tours')
+      const { data } = await instance.get('tours', { signal })
       return data
     } catch (error) {
+      if ((error as ErrorResponse)?.message === 'canceled') {
+        return rejectWithValue('Request canceled')
+      }
       return handleError(error as ErrorResponse, rejectWithValue)
     }
   }

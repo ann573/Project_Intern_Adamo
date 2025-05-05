@@ -1,6 +1,8 @@
 import { useDetailHotels, useUpdateData } from '@/hooks/hotels'
 
-import { Button } from '@/components/ui/button'
+import { ReviewForm, reviewSchema } from '@/schema/reviewSchema'
+import { useAuthStore } from '@/zusTand/authStore'
+import { Button } from '@components/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -9,11 +11,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger
-} from '@/components/ui/dialog'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { ReviewForm, reviewSchema } from '@/schema/reviewSchema'
-import { useAuthStore } from '@/zusTand/authStore'
+} from '@components/ui/dialog'
+import { Input } from '@components/ui/input'
+import { Label } from '@components/ui/label'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'

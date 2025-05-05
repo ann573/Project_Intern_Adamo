@@ -1,7 +1,7 @@
 import { useAppSelector } from '@/hooks/app'
 import { useTranslation } from 'react-i18next'
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@components/ui/accordion'
 
 import image360 from '@assets/images/360.png'
 import icon360 from '@assets/images/360icon.svg'

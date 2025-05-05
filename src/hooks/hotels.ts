@@ -1,6 +1,7 @@
 import { IHotel } from '@/interfaces/IHotel'
 import { hotelApi } from '@/service/apiHotel'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useCallback } from 'react'
 import { toast } from 'sonner'
 
 export const useHotels = (page = 1, limit = 9, query = '', enabled = true) => {
@@ -12,17 +13,22 @@ export const useHotels = (page = 1, limit = 9, query = '', enabled = true) => {
   })
 }
 
-export const useFullHotels = () => {
+export const useFullHotels = (open: boolean) => {
   return useQuery<IHotel[]>({
     queryKey: ['hotelsFull'],
-    queryFn: () => hotelApi.getFullHotel()
+    queryFn: () => hotelApi.getFullHotel(),
+    enabled: open,
+    staleTime: Infinity
   })
 }
 
 export const useDetailHotels = (id: string) => {
+  const fetchHotelDetail = useCallback(() => hotelApi.getDetailHotel(id), [id])
   return useQuery<IHotel>({
     queryKey: ['hotel', id],
-    queryFn: () => hotelApi.getDetailHotel(id)
+    queryFn: fetchHotelDetail,
+    enabled: !!id,
+    staleTime: 1000 * 60 * 10
   })
 }
 

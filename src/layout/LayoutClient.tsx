@@ -1,6 +1,6 @@
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
-import SplashScreen from '@/components/SplashScreen'
+import Footer from '@components/Footer'
+import Header from '@components/Header'
+import SplashScreen from '@components/SplashScreen'
 import { Suspense, useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 
@@ -31,7 +31,7 @@ const LayoutClient = () => {
       <header
         className={`${!isFixed ? 'fixed left-0 right-0' : ''} z-30 transition-colors ${
           scrolling || isFixed
-            ? `text-heading bg-white dark:bg-background dark:text-white dark:border-none  border border-sub-color-second`
+            ? `text-heading bg-white dark:bg-[#222222] dark:text-white dark:border-none  border border-sub-color-second`
             : `text-white bg-transparent`
         } `}
       >

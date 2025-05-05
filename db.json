@@ -2193,6 +2193,14 @@
         },
         "reviews": [
           {
+            "heading": "The best hotel ever",
+            "rating": 8,
+            "comments": "This hotel is very good",
+            "name": "Nguyễn An",
+            "time": 1746417598,
+            "avatar": "https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg"
+          },
+          {
             "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
             "rating": 8.2,
             "heading": "The best experience ever!",

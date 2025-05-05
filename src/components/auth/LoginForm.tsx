@@ -7,11 +7,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 // assets
 import fbAuth from '@assets/icons/fb_auth.svg'
 
+import Input from '@components/Input'
+import { ButtonAuth } from '@components/styled/Button'
+
 // zod
 import { LoginFormValues, loginSchema, ResetPasswordFormValues, resetPasswordSchema } from '@/schema/authSchema'
 import { useAuthStore } from '@/zusTand/authStore'
-import Input from '@components/Input'
 import { zodResolver } from '@hookform/resolvers/zod'
+
 import Cookies from 'js-cookie'
 import { useTranslation } from 'react-i18next'
 import { ClipLoader } from 'react-spinners'
@@ -135,12 +138,7 @@ const LoginForm = () => {
             </Link>
           </p>
 
-          <button
-            type='submit'
-            className='w-full bg-orange text-white py-4 mt-4 font-semibold cursor-pointer transition-colors hover:bg-orange/80'
-          >
-            {isLoading ? <ClipLoader color='white' /> : `${t('login.signInButton')}`}
-          </button>
+          <ButtonAuth>{isLoading ? <ClipLoader color='white' size={18} /> : `${t('login.signInButton')}`}</ButtonAuth>
           <button
             type='button'
             className='w-full bg-[#4E86DB] text-white py-5 mt-4 font-semibold center gap-3 cursor-pointer transition-colors hover:bg-[#4E86DB]/80'
@@ -150,7 +148,7 @@ const LoginForm = () => {
           </button>
 
           <p className='text-sub-color-primary mt-5'>
-            {t('login.noAccount')}
+            {t('login.noAccount')}?{' '}
             <Link to='/auth/register' className='text-orange'>
               {t('login.signUpLink')}
             </Link>
@@ -163,7 +161,6 @@ const LoginForm = () => {
         >
           <h1 className='text-heading text-4xl font-semibold'>New Password</h1>
           <p className='mb-10 mt-5'>Create your new password</p>
-
           <Input
             name='password'
             register={resetPasswordForm.register}
@@ -180,13 +177,7 @@ const LoginForm = () => {
             type='password'
             errors={resetPasswordForm.formState.errors}
           />
-
-          <button
-            type='submit'
-            className='w-full bg-orange text-white py-4 mt-4 font-semibold cursor-pointer transition-colors hover:bg-orange/80'
-          >
-            {isLoading ? <ClipLoader color='white' /> : 'Sign In'}
-          </button>
+          <ButtonAuth>{isLoading ? <ClipLoader color='white' /> : 'Sign in'}</ButtonAuth>
           <button
             type='button'
             className='w-full bg-[#4E86DB] text-white py-5 mt-4 font-semibold center gap-3 cursor-pointer transition-colors hover:bg-[#4E86DB]/80'
@@ -194,9 +185,8 @@ const LoginForm = () => {
             <img src={fbAuth} alt='logo_facebook' />
             Sign in with Facebook
           </button>
-
           <p className='text-sub-color-primary mt-5'>
-            Don't have an account{' '}
+            Don't have an account?{' '}
             <Link to='/auth/register' className='text-orange'>
               Sign up
             </Link>

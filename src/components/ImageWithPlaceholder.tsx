@@ -1,5 +1,5 @@
-import { Skeleton } from '@/components/ui/skeleton'
-import { useState, ImgHTMLAttributes } from 'react'
+import { Skeleton } from '@components/ui/skeleton'
+import { ImgHTMLAttributes, useState } from 'react'
 
 interface ImageWithPlaceholderProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string

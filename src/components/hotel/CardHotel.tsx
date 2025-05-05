@@ -1,7 +1,7 @@
-import BlurImage from '@/components/ImageWithPlaceholder'
 import { IHotel } from '@/interfaces/IHotel'
 import like from '@assets/images/like.png'
 import unLike from '@assets/images/no_like.png'
+import BlurImage from '@components/ImageWithPlaceholder'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 

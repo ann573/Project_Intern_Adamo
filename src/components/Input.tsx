@@ -24,14 +24,14 @@ const Input = <T extends FieldValues>({
   const [isShowPassword, setIsShowPassword] = React.useState(false)
 
   return (
-    <div className='flex flex-col mb-5'>
+    <div className='flex flex-col mb-8'>
       <div className='relative'>
         <label
           htmlFor={name}
-          className={`absolute text-gray-500 transition-all duration-250 cursor-text bg-transparent select-none
+          className={`absolute text-gray-500 transition-all duration-250 z-50 cursor-text bg-transparent select-none
             ${
               isFocused || hasValue
-                ? 'text-xs -top-2  bg-white text-sub-color-primary font-semibold'
+                ? 'text-xs -top-5  bg-background text-sub-color-primary font-semibold'
                 : 'text-base top-3'
             }`}
         >
@@ -46,7 +46,7 @@ const Input = <T extends FieldValues>({
             setIsFocused(false)
             setHasValue(e.target.value !== '')
           }}
-          className='w-full py-2 border-b border-sub-color-second focus:outline-none focus:border-b'
+          className='w-full py-2 border-b border-sub-color-second focus:outline-none focus:border-b autofill:shadow-none autofill:text-black autofill:bg-transparent'
           id={name}
           {...rest}
         />

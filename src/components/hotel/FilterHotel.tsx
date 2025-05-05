@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@components/ui/button'
 import React from 'react'
 
 import {
@@ -7,7 +7,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
+} from '@components/ui/dropdown-menu'
 
 import { useFullHotels } from '@/hooks/hotels'
 import { X } from 'lucide-react'
@@ -30,7 +30,7 @@ const FilterHotel = () => {
   const [stars, setStars] = React.useState<number[]>([]) // Array of selected star ratings (e.g., [1, 3, 5])
   const [reviewScore, setReviewScore] = React.useState<string>() // Array of selected review score ranges (e.g., ["8.5+", "8+"])
   const [price, setPrice] = React.useState<number[]>()
-  const { data } = useFullHotels()
+  const { data } = useFullHotels(open)
 
   React.useEffect(() => {
     if (data) {

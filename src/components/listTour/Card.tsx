@@ -1,8 +1,8 @@
 import like from '@assets/images/like.png'
 import unLike from '@assets/images/no_like.png'
 
-import BlurImage from '@/components/ImageWithPlaceholder'
 import ITour from '@/interfaces/ITour'
+import BlurImage from '@components/ImageWithPlaceholder'
 import { Link } from 'react-router-dom'
 
 type Rating = {

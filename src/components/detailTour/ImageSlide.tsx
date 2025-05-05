@@ -1,16 +1,16 @@
 import { useAppSelector } from '@/hooks/app'
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Slider from 'react-slick'
 
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 
-import { Skeleton } from '@/components/ui/skeleton'
 import { useDetailHotels } from '@/hooks/hotels'
 import '@/style/imageSlider.css'
+import { Skeleton } from '@components/ui/skeleton'
 import { useLocation, useParams } from 'react-router-dom'
 
-const ImageSlider = () => {
+const ImageSlider = React.memo(() => {
   const { id } = useParams<{ id: string }>()
 
   const location = useLocation()
@@ -90,6 +90,6 @@ const ImageSlider = () => {
       </Slider>
     </div>
   )
-}
+})
 
 export default ImageSlider

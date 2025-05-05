@@ -15,6 +15,7 @@ import { toast } from 'sonner'
 
 import { auth } from '@/utils/firebase'
 import { useTranslation } from 'react-i18next'
+import { ButtonAuth } from '../styled/Button'
 
 const RegisterForm = () => {
   const { t } = useTranslation('auth')
@@ -104,13 +105,9 @@ const RegisterForm = () => {
 
           <Input name='password' register={register} required label='Password' type='password' errors={errors} />
 
-          <button
-            type='submit'
-            className='w-full bg-orange text-white py-4 mt-4 font-semibold cursor-pointer transition-colors hover:bg-orange/80'
-            disabled={isLoading}
-          >
+          <ButtonAuth disabled={isLoading}>
             {isLoading ? <ClipLoader color='#ffffff' size={20} /> : t('register.register_sign_up')}
-          </button>
+          </ButtonAuth>
           <button
             type='button'
             className='w-full bg-[#4E86DB] text-white py-5 mt-4 font-semibold center gap-3 cursor-pointer transition-colors hover:bg-[#4E86DB]/80'
@@ -120,7 +117,7 @@ const RegisterForm = () => {
           </button>
 
           <p className='text-sub-color-primary mt-5'>
-            {t('register.register_member_already')}
+            {t('register.register_member_already')}{' '}
             <Link to='/auth/login' className='text-orange'>
               {t('register.register_log_in')}
             </Link>

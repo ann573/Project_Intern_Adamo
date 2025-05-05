@@ -1,4 +1,4 @@
-import Slider from '@/components/SliderComponent'
+import Slider from '@components/SliderComponent'
 import { zodResolver } from '@hookform/resolvers/zod'
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
@@ -13,8 +13,8 @@ import experienceCul from '@/data/experienceCul'
 import data from '@/data/rcm'
 
 // component
-import FormSearchBanner from '@/components/FormSearchBanner'
-import Hero from '@/components/Hero'
+import FormSearchBanner from '@components/FormSearchBanner'
+import Hero from '@components/Hero'
 
 // shadCnUI
 import { Button } from '@components/ui/button'
@@ -103,7 +103,6 @@ const HomePage = () => {
 
       {/* =============================== */}
       <Hero />
-
       {/* =============================== recomended ===============================*/}
       <section className='relative mb-30' data-aos='fade-up'>
         <div className='flex justify-between items-center flex-wrap gap-5 max-w-[1200px] mx-auto mb-5 px-5 xl:px-0'>

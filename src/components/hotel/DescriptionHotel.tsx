@@ -1,6 +1,8 @@
 import { useDetailHotels } from '@/hooks/hotels'
 import { useTranslation } from 'react-i18next'
 
+import { useRoomStore } from '@/zusTand/roomStore'
+import { Button } from '@components/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -8,9 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger
-} from '@/components/ui/dialog'
-import { useRoomStore } from '@/zusTand/roomStore'
-import { Button } from '@components/ui/button'
+} from '@components/ui/dialog'
 import React, { useEffect } from 'react'
 import ImageSlider from '../detailTour/ImageSlide'
 

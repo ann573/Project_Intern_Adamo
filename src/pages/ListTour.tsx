@@ -10,14 +10,14 @@ import { Button } from '@components/ui/button'
 import { X } from 'lucide-react'
 import { toast } from 'sonner'
 
-import FormSearchBanner from '@/components/FormSearchBanner'
-import Card from '@/components/listTour/Card'
-import Filter from '@/components/listTour/Filter'
-import Pagination from '@/components/Pagination'
+import FormSearchBanner from '@components/FormSearchBanner'
+import Card from '@components/listTour/Card'
+import Filter from '@components/listTour/Filter'
+import Pagination from '@components/Pagination'
 
 // redux
-import CardSkeleton from '@/components/CardSkeleton'
-import { getFilterTour, getTours } from '@/features/tour/tourAction'
+import { getTours } from '@/features/tour/tourAction'
+import CardSkeleton from '@components/CardSkeleton'
 import { Trans, useTranslation } from 'react-i18next'
 
 const ListTour = () => {
@@ -58,8 +58,6 @@ const ListTour = () => {
     const fetchTour = async () => {
       try {
         dispatch(getTours({ page, request }))
-        dispatch(getFilterTour())
-
         if (!isSearch) {
           setRangeFilter(() => [0, range[1]])
         } else {

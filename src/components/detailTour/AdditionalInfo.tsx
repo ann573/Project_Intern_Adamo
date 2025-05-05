@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/hooks/app'
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@components/ui/accordion'
 
 const AdditionalInfo = () => {
   const { tour } = useAppSelector((state) => state.tours)

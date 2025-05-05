@@ -1,16 +1,16 @@
 import { format } from 'date-fns'
 import { useForm } from 'react-hook-form'
 
-import { Label } from '@/components/ui/label'
 import { Input } from '@components/ui/input'
+import { Label } from '@components/ui/label'
 
-import { Button } from '@/components/ui/button'
 import checkoutSchema, { CheckoutFormData } from '@/schema/checkoutSchema'
 import { instance } from '@/service'
 import { useAuthStore } from '@/zusTand/authStore'
 import { useOrderStore } from '@/zusTand/orderStore'
 import card from '@assets/images/card.png'
 import paypal from '@assets/images/paypal.png'
+import { Button } from '@components/ui/button'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CalendarIcon, User2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'

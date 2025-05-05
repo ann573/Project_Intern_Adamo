@@ -11,6 +11,8 @@ import Cookies from 'js-cookie'
 import { useTranslation } from 'react-i18next'
 import '../style/header.css'
 
+import { useTheme } from '@/context/ThemeProvider'
+import { useAuthStore } from '@/zusTand/authStore'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,9 +21,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { useTheme } from '@/context/ThemeProvider'
-import { useAuthStore } from '@/zusTand/authStore'
+} from '@components/ui/dropdown-menu'
 
 type TProp = { scrolling: boolean; isFixed: boolean }
 const Header = ({ scrolling }: TProp) => {

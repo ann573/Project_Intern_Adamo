@@ -1,8 +1,8 @@
-import { Button } from '@/components/ui/button'
 import { ContactFormData, contactSchema } from '@/schema/contactSchema'
 import { instance } from '@/service'
 import { useAuthStore } from '@/zusTand/authStore'
 import hero from '@assets/images/hero_1.png'
+import { Button } from '@components/ui/button'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
@@ -92,7 +92,7 @@ const ContactPage = () => {
       </section>
 
       <section className='max-w-[1200px] mx-auto grid lg:grid-cols-2 xl:gap-20 gap-10 mt-10 my-20 xl:px-0 px-5 '>
-        <form onSubmit={handleSubmit(handleSubmitForm)}>
+        <form onSubmit={handleSubmit(handleSubmitForm)} data-aos='fade-right'>
           <h2 className='font-bold text-4xl'>{t('form_title')}</h2>
           <p className='mt-5 mb-10'>{t('form_description')}</p>
 
@@ -143,7 +143,7 @@ const ContactPage = () => {
         </form>
 
         {/* ================================ Second Col========================================= */}
-        <div className='relative'>
+        <div className='relative' data-aos='fade-left'>
           <img src={hero} className='w-full' alt='hero' />
 
           <div className='absolute bg-[#1c1c1e]  p-5 bottom-0 left-0 sm:w-2/3 w-11/12'>

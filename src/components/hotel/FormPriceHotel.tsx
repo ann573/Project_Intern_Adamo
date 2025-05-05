@@ -1,18 +1,18 @@
 import { addDays, format } from 'date-fns'
 import { CalendarIcon } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DateRange, DayPicker } from 'react-day-picker'
 
-import { Button } from '@/components/ui/button'
-// import { Calendar } from "@/components/ui/calendar";
-import { Checkbox } from '@/components/ui/checkbox'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import { Button } from '@components/ui/button'
+// import { Calendar } from "@components/ui/calendar";
 import { useDetailHotels } from '@/hooks/hotels'
 import { cn } from '@/lib/utils'
 import { useOrderStore } from '@/zusTand/orderStore'
 import { useRoomStore } from '@/zusTand/roomStore'
+import { Checkbox } from '@components/ui/checkbox'
+import { Input } from '@components/ui/input'
+import { Label } from '@components/ui/label'
+import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
 import { User2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
@@ -320,4 +320,4 @@ const FormPriceHotel = ({ id }: { id: string }) => {
   )
 }
 
-export default FormPriceHotel
+export default React.memo(FormPriceHotel)

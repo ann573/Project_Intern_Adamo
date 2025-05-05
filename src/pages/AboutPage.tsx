@@ -2,7 +2,7 @@
 import '@/style/about.css'
 
 // components
-import Hero from '@/components/Hero'
+import Hero from '@components/Hero'
 
 // assets
 import com_img from '@assets/images/com_banner.png'

@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-import DetailSkeleton from '@/components/DetailSkeleton'
-import AdditionalInfo from '@/components/detailTour/AdditionalInfo'
-import Description from '@/components/detailTour/Description'
-import FormPrice from '@/components/detailTour/FormPrice'
-import ImageSlider from '@/components/detailTour/ImageSlide'
-import Reviews from '@/components/detailTour/Reviews'
-import Card from '@/components/listTour/Card'
 import { getDetailTour, getTours } from '@/features/tour/tourAction'
 import { useAppDispatch, useAppSelector } from '@/hooks/app'
+import DetailSkeleton from '@components/DetailSkeleton'
+import AdditionalInfo from '@components/detailTour/AdditionalInfo'
+import Description from '@components/detailTour/Description'
+import FormPrice from '@components/detailTour/FormPrice'
+import ImageSlider from '@components/detailTour/ImageSlide'
+import Reviews from '@components/detailTour/Reviews'
+import Card from '@components/listTour/Card'
 import { useTranslation } from 'react-i18next'
 
 const DetailTour = () => {

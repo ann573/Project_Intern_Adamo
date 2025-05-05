@@ -1,15 +1,15 @@
-import CardSkeleton from '@/components/CardSkeleton'
-import FormSearchBanner from '@/components/FormSearchBanner'
-import Pagination from '@/components/Pagination'
-import CardHotel from '@/components/hotel/CardHotel'
-import FilterHotel from '@/components/hotel/FilterHotel'
 import { useHotels } from '@/hooks/hotels'
 import { IHotel } from '@/interfaces/IHotel'
+import CardSkeleton from '@components/CardSkeleton'
+import FormSearchBanner from '@components/FormSearchBanner'
+import Pagination from '@components/Pagination'
+import CardHotel from '@components/hotel/CardHotel'
+import FilterHotel from '@components/hotel/FilterHotel'
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import bannerHotel from '@assets/images/banner_hotel.png' // Đường dẫn tương đối từ file hiện tại
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@components/ui/select'
 import { Trans, useTranslation } from 'react-i18next'
 
 import '@/style/homepage.css'
@@ -69,6 +69,7 @@ const HotelPage = () => {
   useEffect(() => {
     window.scrollTo({ top: 550, behavior: 'smooth' })
   }, [page])
+
   return (
     <>
       <section

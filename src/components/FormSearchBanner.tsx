@@ -2,12 +2,14 @@ import { getFilterTour } from '@features/tour/tourAction'
 import React, { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
-// import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+// import { Calendar } from "@components/ui/calendar";
 import { cn } from '@/lib/utils'
+import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
 import { format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
 
+import { useAppDispatch, useAppSelector } from '@/hooks/app'
+import { Button } from '@components/ui/button'
 import {
   Select,
   SelectContent,
@@ -16,13 +18,12 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue
-} from '@/components/ui/select'
-import { useAppDispatch, useAppSelector } from '@/hooks/app'
-import { Button } from '@components/ui/button'
+} from '@components/ui/select'
 import { DayPicker, SelectSingleEventHandler } from 'react-day-picker'
 import { Controller, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
+import SearchIcon from '@assets/icons/searchIcon.tsx'
 type Props = {
   date: Date | undefined
   setDate: React.Dispatch<React.SetStateAction<Date | undefined>>
@@ -49,8 +50,17 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
   })
 
   useEffect(() => {
-    dispatch(getFilterTour())
-  }, [dispatch])
+    if (isHotel) {
+      return
+    }
+    const controller = new AbortController()
+    const signal = controller.signal
+    dispatch(getFilterTour(signal))
+
+    return () => {
+      controller.abort()
+    }
+  }, [dispatch, isHotel])
 
   useEffect(() => {
     if (isHotel) setChoose('Hotels')
@@ -199,7 +209,8 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
           ></Controller>
 
           <Button className={'w-full mt-5 py-8 rounded-none'}>
-            <i className='ri-search-line text-xl'></i>
+            <SearchIcon className='text-xl font-bold' />
+            {/* <i className='ri-search-line text-xl'></i> */}
             {t('formsearch.button')}
           </Button>
         </form>

@@ -1,5 +1,5 @@
-import Card from '@/components/listTour/Card'
 import ITour from '@/interfaces/ITour'
+import Card from '@components/listTour/Card'
 // import TTour from "@/types/TSlider";
 import Recommended from '@components/Recommended'
 import { useRef } from 'react'
@@ -29,7 +29,7 @@ function SliderComponent(props: TProps) {
     infinite: true,
     slidesToShow: props.show,
     slidesToScroll: 1,
-    arrows: false, // Tắt arrow mặc định
+    arrows: false,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
       // { breakpoint: 785, settings: { slidesToShow: 1 } },
@@ -42,25 +42,13 @@ function SliderComponent(props: TProps) {
       {/* === Mũi tên trái === */}
       <button
         onClick={() => sliderRef.current?.slickPrev()}
-        className='text-2xl cursor-pointer hover:text-black text-black absolute -left-8 sm:block hidden'
+        className='text-2xl cursor-pointer hover:text-black text-black absolute dark:text-white -left-8 sm:block hidden'
       >
         <i className='ri-arrow-left-line' />
       </button>
 
       {/* === Slider content === */}
       <div className='w-full'>
-        {/* <Slider {...settings} ref={sliderRef}>
-          {props.data.map((item) => (
-            <div key={item.id} className="px-3 py-5 md:py-0">
-              {props.isCard ? (
-                <Card data={item} />
-              ) : (
-                <Recommended data={item} />
-              )}
-            </div>
-          ))}
-        </Slider> */}
-
         <Slider {...settings} ref={sliderRef}>
           {props.isCard
             ? (props.data as ITour[]).map((item) => (
@@ -86,7 +74,7 @@ function SliderComponent(props: TProps) {
       {/* === Mũi tên phải === */}
       <button
         onClick={() => sliderRef.current?.slickNext()}
-        className='text-2xl cursor-pointer hover:text-black text-black sm:block hidden'
+        className='text-2xl cursor-pointer hover:text-black text-black dark:text-white sm:block hidden'
       >
         <i className='ri-arrow-right-line' />
       </button>

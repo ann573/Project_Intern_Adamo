@@ -1,4 +1,7 @@
-import Pagination from '@/components/Pagination'
+import { addCommentTour } from '@/features/tour/tourAction'
+import { useAppDispatch, useAppSelector } from '@/hooks/app'
+import { useAuthStore } from '@/zusTand/authStore'
+import Pagination from '@components/Pagination'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,10 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger
-} from '@/components/ui/alert-dialog'
-import { addCommentTour } from '@/features/tour/tourAction'
-import { useAppDispatch, useAppSelector } from '@/hooks/app'
-import { useAuthStore } from '@/zusTand/authStore'
+} from '@components/ui/alert-dialog'
 import { Button } from '@components/ui/button'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
