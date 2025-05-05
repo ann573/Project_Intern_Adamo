@@ -12,24 +12,24 @@ import Theme from './components/Theme'
 import i18n from './i18n'
 
 // Lazy imports for layouts and pages
-const LayoutAuth = React.lazy(() => import('@/layout/LayoutAuth'))
-const LayoutClient = React.lazy(() => import('@/layout/LayoutClient'))
-const CheckOutPage = React.lazy(() => import('@/pages/CheckOutPage'))
-const HotelDetail = React.lazy(() => import('@/pages/DetailHotel'))
-const DetailTour = React.lazy(() => import('@/pages/DetailTour'))
-const HomePage = React.lazy(() => import('@/pages/HomePage'))
-const HotelPage = React.lazy(() => import('@/pages/HotelPage'))
-const ListTour = React.lazy(() => import('@/pages/ListTour'))
-const PolicyPage = React.lazy(() => import('@/pages/PolicyPage'))
-const ThankPage = React.lazy(() => import('@/pages/ThankPage'))
+const LayoutAuth = React.lazy(() => import('@layout/LayoutAuth'))
+const LayoutClient = React.lazy(() => import('@layout/LayoutClient'))
+const CheckOutPage = React.lazy(() => import('@pages/CheckOutPage'))
+const HotelDetail = React.lazy(() => import('@pages/DetailHotel'))
+const DetailTour = React.lazy(() => import('@pages/DetailTour'))
+const HomePage = React.lazy(() => import('@pages/HomePage'))
+const HotelPage = React.lazy(() => import('@pages/HotelPage'))
+const ListTour = React.lazy(() => import('@pages/ListTour'))
+const PolicyPage = React.lazy(() => import('@pages/PolicyPage'))
+const ThankPage = React.lazy(() => import('@pages/ThankPage'))
 const SplashScreen = React.lazy(() => import('@components/SplashScreen'))
 const EmailForgotForm = React.lazy(() => import('@components/auth/EmailForgotForm'))
 const LoginForm = React.lazy(() => import('@components/auth/LoginForm'))
 const RegisterForm = React.lazy(() => import('@components/auth/RegisterForm'))
-const AboutPage = React.lazy(() => import('@/pages/AboutPage'))
-const ContactPage = React.lazy(() => import('@/pages/ContactPage'))
-const ResultPage = React.lazy(() => import('@/pages/ResultPage'))
-
+const AboutPage = React.lazy(() => import('@pages/AboutPage'))
+const ContactPage = React.lazy(() => import('@pages/ContactPage'))
+const ResultPage = React.lazy(() => import('@pages/ResultPage'))
+const NotFoundPage = React.lazy(() => import('@pages/NotFoundPage'))
 function App() {
   useEffect(() => {
     Aos.init({
@@ -71,6 +71,9 @@ function App() {
             <Route path='reset-password' element={<LoginForm />} />
             <Route path='forgot-password' element={<EmailForgotForm />} />
           </Route>
+
+          {/* ------------NOT FOUND------------------ */}
+          <Route path='*' element={<NotFoundPage />} />
         </Routes>
         <Theme />
         <Toaster />

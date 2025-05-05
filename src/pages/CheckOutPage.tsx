@@ -14,10 +14,12 @@ import { Button } from '@components/ui/button'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CalendarIcon, User2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 
 const CheckOutPage = () => {
+  const { t } = useTranslation('checkout')
   const nav = useNavigate()
 
   const isTour = useLocation().pathname.includes('tour')
@@ -156,27 +158,27 @@ const CheckOutPage = () => {
 
   return (
     <main className='max-w-[1200px] mx-auto grid xl:grid-cols-3 grid-cols-2 gap-x-15 xl:p-0 px-5'>
-      <h1 className='xl:col-span-3 col-span-2 text-3xl mt-10 mb-5'>Booking Submission</h1>
+      <h1 className='xl:col-span-3 col-span-2 text-3xl mt-10 mb-5'>{t('booking_submission')}</h1>
 
       <section className='col-span-2 mb-10 xl:order-1 order-2'>
         <hr className='mb-5' />
 
-        <h2 className='text-heading-second font-bold text-xl'>Traveler Details</h2>
-        <p>Information we need to confirm your tour or activity</p>
+        <h2 className='text-heading-second font-bold text-xl'>{t('traveler_details')}</h2>
+        <p>{t('information_needed')}</p>
 
         <form onSubmit={handleSubmit(submitForm)}>
-          <h3 className='text-heading-second mt-5 mb-3 font-bold text-xl'>Lead Traveler (Adult)</h3>
+          <h3 className='text-heading-second mt-5 mb-3 font-bold text-xl'>{t('lead_traveler')}</h3>
           <section className='grid sm:grid-cols-2 gap-10 mb-10'>
             {[
               {
                 name: 'firstName',
-                label: 'First Name',
-                placeholder: 'First Name'
+                label: `${t('first_name')}`,
+                placeholder: `${t('first_name')}`
               },
               {
                 name: 'lastName',
-                label: 'Last Name',
-                placeholder: 'Last Name'
+                label: `${t('last_name')}`,
+                placeholder: `${t('last_name')}`
               },
               {
                 name: 'email',
@@ -185,8 +187,8 @@ const CheckOutPage = () => {
               },
               {
                 name: 'phone',
-                label: 'Phone Number',
-                placeholder: 'Your Phone'
+                label: `${t('phone_number')}`,
+                placeholder: `${t('your_phone_number')}`
               }
             ].map((field) => (
               <div key={field.name}>
@@ -205,32 +207,32 @@ const CheckOutPage = () => {
             ))}
           </section>
 
-          <h3 className='text-heading-second mt-5 mb-3 font-bold text-xl'>Address</h3>
+          <h3 className='text-heading-second mt-5 mb-3 font-bold text-xl'>{t('address')}</h3>
           <label htmlFor='address' className='text-lg  text-heading-second font-semibold'>
-            Your Address
+            {t('your_address')}
           </label>
-          <Input className='rounded-none mt-3 mb-5 p-5' placeholder='Your Address' {...register('address')} />
+          <Input className='rounded-none mt-3 mb-5 p-5' placeholder={t('address')} {...register('address')} />
           <section className='grid sm:grid-cols-2 gap-10 mb-10'>
             {[
               {
                 name: 'city',
-                label: 'City',
-                placeholder: 'Your City'
+                label: t('city'),
+                placeholder: t('your_city')
               },
               {
                 name: 'state',
-                label: 'State/Province/Region',
-                placeholder: 'Your State/Province/Region'
+                label: t('state_province_region'),
+                placeholder: t('your_state_province_region')
               },
               {
                 name: 'zip',
-                label: 'Zip Code/ Postal Code',
-                placeholder: 'Your Zip Code/ Postal Code'
+                label: t('zip_code'),
+                placeholder: t('your_zip_code')
               },
               {
                 name: 'country',
-                label: 'Country',
-                placeholder: 'Your Country'
+                label: t('country'),
+                placeholder: t('your_country')
               }
             ].map((field) => (
               <div key={field.name}>
@@ -248,19 +250,19 @@ const CheckOutPage = () => {
               </div>
             ))}
           </section>
-          <h3 className='text-heading-second mt-5 mb-3 font-bold text-xl'>Special Requirement</h3>
+          <h3 className='text-heading-second mt-5 mb-3 font-bold text-xl'>{t('special_requirement')}</h3>
           <textarea
             className='w-full focus:outline-none p-5 resize-none border mb-5'
             rows={5}
-            placeholder='Special Requirement'
+            placeholder={t('special_requirement')}
             {...register('specialRequirement')}
           ></textarea>
           <hr />
-          <h3 className='text-heading-second mt-5 mb-3 font-bold text-xl'>Payment Method</h3>
-          <p className='text-color-content-second mb-5'>Pay securely—we use SSL encryption to keep your data safe</p>
+          <h3 className='text-heading-second mt-5 mb-3 font-bold text-xl'>{t('payment_method')}</h3>
+          <p className='text-color-content-second mb-5'>{t('secure_payment')}</p>
           <div className='flex flex-col gap-8'>
             {[
-              { value: 'card', img: card, label: 'Card' },
+              { value: 'card', img: card, label: t('card') },
               { value: 'paypal', img: paypal, label: 'PayPal' }
             ].map((option) => (
               <label key={option.value} className='flex items-center cursor-pointer space-x-3'>
@@ -291,24 +293,19 @@ const CheckOutPage = () => {
           )}
 
           <ul className='list-disc pl-5 space-y-2 text-color-content-second text-base my-5'>
-            <li>You will be charged the total amount once your order is confirmed.</li>
+            <li>{t('charge_notice')}</li>
+            <li>{t('authorization_notice')}</li>
             <li>
-              If confirmation isn't received instantly, an authorization for the total amount will be held until your
-              booking is confirmed.
-            </li>
-            <li>
-              You can cancel for free up to 24 hours before the day of the experience, local time.
+              {t('cancel_notice')}
               <br />
-              By clicking &lsquo;Pay with PayPal&rsquo;, you are acknowledging that you have read and are bound by
-              Ojimah’s
+              {t('terms_notice')}
+              {/* By clicking &lsquo;Pay with PayPal&rsquo;, you are acknowledging that you have read and are bound by
+              Ojimah’s */}
             </li>
-            <li>
-              Customer Terms of Use, Privacy Policy, plus the tour operator’s rules &amp; regulations (see the listing
-              for more details).
-            </li>
+            <li>{t('customer_terms')}</li>
           </ul>
 
-          <Button className='w-full rounded-none py-8 center text-lg font-bold'>Complete Booking</Button>
+          <Button className='w-full rounded-none py-8 center text-lg font-bold'>{t('complete_booking')}</Button>
         </form>
       </section>
 
@@ -324,13 +321,13 @@ const CheckOutPage = () => {
           {isTour && (
             <div className='flex justify-between'>
               <div>
-                <span className='text-sub-color-primary text-xs'>Duration:</span>
+                <span className='text-sub-color-primary text-xs'>{t('duration')}</span>
                 <p className='font-semibold text-sm'>
                   {orderTour.duration} days - {orderTour.duration && orderTour.duration - 1} nights
                 </p>
               </div>
               <div>
-                <span className='text-sub-color-primary text-xs'>Tour type:</span>
+                <span className='text-sub-color-primary text-xs'>{t('tour_type')}</span>
                 <p className='font-semibold text-sm'>{orderTour.type}</p>
               </div>
             </div>
@@ -345,15 +342,10 @@ const CheckOutPage = () => {
 
             <div className='w-full justify-start text-left font-normal py-5 px-3 bg-background flex text-sm items-center gap-5 rounded-lg border'>
               <User2 className='text-orange-500' size={18} />
-              {isTour ? (
-                <span>
-                  {orderTour.adults} Adults - {orderTour.children} {orderTour.children === 1 ? 'Child' : 'Children'}
-                </span>
-              ) : (
-                <span>
-                  {orderRoom.adults} Adults - {orderRoom.children} {orderRoom.children === 1 ? 'Child' : 'Children'}
-                </span>
-              )}
+              <span>
+                {orderTour.adults} {t('adults')} - {orderTour.children}{' '}
+                {orderTour.children === 1 ? t('child') : t('children')}
+              </span>
             </div>
           </section>
 
@@ -369,7 +361,7 @@ const CheckOutPage = () => {
                 </div>
               ))}
 
-              <h5 className='text-[#888888] font-bold'>Adds on</h5>
+              <h5 className='text-[#888888] font-bold'>{t('adds_on')}</h5>
               {orderRoom.adds.map((item, index) => (
                 <div className='flex justify-between my-3' key={index}>
                   <div className='flex gap-5'>
@@ -385,7 +377,7 @@ const CheckOutPage = () => {
           <form className='my-5 flex gap-x-5 h-[56px]' onSubmit={submitPromotion}>
             <input
               type='text'
-              placeholder='Promo Code'
+              placeholder={t('promo_code')}
               className='bg-background p-5 w-2/3 focus:outline-none h-full'
               ref={promoCodeRef}
             />
@@ -395,13 +387,17 @@ const CheckOutPage = () => {
               type='submit'
               ref={btnRef}
             >
-              Apply
+              {t('apply')}
             </Button>
           </form>
-          {discount > 0 && <p className='text-[#FF7B42] pl-1'>This code discount {discount}%</p>}
+          {discount > 0 && (
+            <p className='text-[#FF7B42] pl-1'>
+              <Trans i18nKey='discount_applied' ns='checkout' values={{ discount }} />
+            </p>
+          )}
         </div>
         <div className='bg-black p-5 text-white flex justify-between items-center'>
-          <p className='text-2xl'>Total</p>
+          <p className='text-2xl'>{t('total')}</p>
           <p className={`font-bold text-xl ${discount > 0 ? 'flex flex-col items-end text-red-500' : ''}`}>
             <span className={`text-sm line-through text-white ${discount > 0 ? 'inline-block' : 'hidden'}`}>
               ${discount > 0 && isTour ? orderTour.total.toFixed(2) : orderRoom.total.toFixed(2)}

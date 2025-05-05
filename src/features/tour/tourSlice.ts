@@ -6,6 +6,7 @@ type TInitialState = {
   tours: ITour[]
   tour: ITour | null
   isLoading: boolean
+  isLoadingComment: boolean
   isError: boolean
   error: string
   total: number
@@ -17,6 +18,7 @@ const initialState: TInitialState = {
   tours: [],
   tour: null,
   isLoading: false,
+  isLoadingComment: false,
   isError: false,
   error: '',
   total: 0,
@@ -77,8 +79,11 @@ const tourSlice = createSlice({
       })
       .addCase(getFilterTour.rejected, setError)
 
+      .addCase(addCommentTour.pending, (state: TInitialState) => {
+        state.isLoadingComment = true
+      })
       .addCase(addCommentTour.fulfilled, (state: TInitialState, action: PayloadAction<ITour>) => {
-        state.isLoading = false
+        state.isLoadingComment = false
 
         state.tour = action.payload
 

@@ -14,7 +14,7 @@ import {
   AlertDialogTrigger
 } from '@components/ui/alert-dialog'
 import { Button } from '@components/ui/button'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
@@ -24,7 +24,7 @@ import StarRating from './StarRating'
 
 const Reviews = () => {
   const { t } = useTranslation('tour')
-  const { tour } = useAppSelector((state) => state.tours)
+  const { tour, isLoadingComment } = useAppSelector((state) => state.tours)
   const [page, setPage] = useState(1)
   const [rating, setRating] = useState(0)
   const { user } = useAuthStore()
@@ -37,11 +37,16 @@ const Reviews = () => {
   } = useForm<{ comments: string }>()
 
   const rateCount: Record<string, number> = {}
-  let totalRating = 0
+
+  const totalRating = useMemo(() => {
+    if (tour) {
+      const total = tour.rating.reduce((acc, review) => acc + review.rate, 0)
+      return total / tour.rating.length
+    }
+    return 0
+  }, [tour])
 
   if (tour) {
-    totalRating = tour?.rating.reduce((acc, cur) => acc + cur.rate, 0) / tour?.rating.length
-
     for (const review of tour?.rating || []) {
       const rate = review.rate.toString()
       rateCount[rate] = (rateCount[rate] || 0) + 1
@@ -52,7 +57,7 @@ const Reviews = () => {
 
   const handleSubmitReview = ({ comments }: { comments: string }) => {
     if (rating === 0) {
-      toast.error('Please fill the star', {
+      toast.error('Please fill the star!!!', {
         duration: 1000,
         style: {
           background: 'red',
@@ -160,7 +165,9 @@ const Reviews = () => {
 
           <div className='flex'>
             {user?.name ? (
-              <Button className='md:px-10 py-5 rounded-none ml-auto mt-5 cursor-pointer'>Comment</Button>
+              <Button className='md:px-10 py-5 rounded-none ml-auto mt-5 cursor-pointer' disabled={isLoadingComment}>
+                {t('rev.comment')}
+              </Button>
             ) : (
               <AlertDialog>
                 <AlertDialogTrigger className='md:px-9 py-3 rounded-none ml-auto mt-5 cursor-pointer bg-primary text-white font-medium'>
