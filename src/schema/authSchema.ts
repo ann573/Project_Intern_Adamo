@@ -1,44 +1,29 @@
 import * as z from 'zod'
 
-export const registerSchema = z.object({
-  f_name: z.string().min(2, 'First name is required'),
-  l_name: z.string().min(2, 'Last name is required'),
-  email: z.string().email('Must be a valid email address'),
-  password: z
-    .string()
-    .min(6, 'Password must be at least 6 characters')
-    .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
-    .regex(/[0-9]/, 'Password must contain at least one number')
-    .regex(/[!@#$%^&.,/*]/, 'Password must contain at least one special character')
-})
-
 export const loginSchema = z.object({
-  email: z.string().email('Must be a valid email address'),
+  email: z.string().email('register.email'),
   password: z
     .string()
-    .min(6, 'Password must be at least 6 characters')
-    .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
-    .regex(/[0-9]/, 'Password must contain at least one number')
-    .regex(/[!@#$%^&.,/*]/, 'Password must contain at least one special character')
+    .min(6, 'register.password.min')
+    .regex(/[a-z]/, 'register.password.pattern1')
+    .regex(/[0-9]/, 'register.password.pattern2')
+    .regex(/[!@#$%^&.,/*]/, 'register.password.pattern3')
 })
 
-export const emailSchema = z.object({
-  email: z.string().email('Must be a valid email address')
+export const registerSchema = loginSchema.extend({
+  f_name: z.string().min(2, 'register.f_name'),
+  l_name: z.string().min(2, 'register.l_name')
 })
 
-export const resetPasswordSchema = z
-  .object({
-    password: z
-      .string()
-      .min(6, 'Password must be at least 6 characters')
-      .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
-      .regex(/[0-9]/, 'Password must contain at least one number')
-      .regex(/[!@#$%^&.,/*]/, 'Password must contain at least one special character'),
+export const emailSchema = loginSchema.pick({ email: true })
 
+export const resetPasswordSchema = loginSchema
+  .pick({ password: true })
+  .extend({
     confirmPassword: z.string()
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: 'Passwords do not match',
+    message: 'register.re_password',
     path: ['confirmPassword']
   })
 

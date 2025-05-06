@@ -1,20 +1,18 @@
 import { z } from 'zod'
-// ... existing code ...
+import { registerSchema } from './authSchema'
 
-const checkoutSchema = z.object({
-  firstName: z.string().min(1, 'First Name is required'),
-  lastName: z.string().min(1, 'Last Name is required'),
-  email: z.string().email('Invalid email address'),
+const checkoutSchema = registerSchema.extend({
+  email: z.string().email('register.email'),
   phone: z
     .string()
-    .min(1, 'Phone Number is required')
-    .regex(/^(0\d{9}|\+\d{10})$/, 'Phone Number must be 10 digits starting with 0 and contain no letters'),
+    .min(1, 'checkout.phone.required')
+    .regex(/^(0\d{9}|\+\d{10})$/, 'checkout.phone.pattern'),
   address: z.string().optional(),
-  city: z.string().min(1, 'City is required'),
-  state: z.string().min(1, 'State/Province/Region is required'),
-  zip: z.string().min(1, 'Zip Code/ Postal Code is required'),
-  country: z.string().min(1, 'Country is required'),
-  paymentMethod: z.string().min(1, 'Payment Method is required'),
+  city: z.string().min(1, 'checkout.city'),
+  state: z.string().min(1, 'checkout.state'),
+  zip: z.string().min(1, 'checkout.zip'),
+  country: z.string().min(1, 'checkout.country'),
+  paymentMethod: z.string().min(1, 'checkout.payment_method'),
   specialRequirement: z.string().optional()
 })
 

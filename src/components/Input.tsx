@@ -1,6 +1,6 @@
 import React from 'react'
 import { FieldErrors, FieldValues, Path, UseFormRegister } from 'react-hook-form'
-
+import { useTranslation } from 'react-i18next'
 type TInputProps<T extends FieldValues> = {
   label: string
   name: Path<T>
@@ -23,6 +23,7 @@ const Input = <T extends FieldValues>({
   const [hasValue, setHasValue] = React.useState(false)
   const [isShowPassword, setIsShowPassword] = React.useState(false)
 
+  const { t } = useTranslation('schema_auth')
   return (
     <div className='flex flex-col mb-8'>
       <div className='relative'>
@@ -61,7 +62,7 @@ const Input = <T extends FieldValues>({
         )}
       </div>
       {errors[name] && typeof errors[name]?.message === 'string' && (
-        <p className='text-red-500 md:text-sm text-xs mt-1'>{errors[name]?.message}</p>
+        <p className='text-red-500 md:text-sm text-xs mt-1'>{t((errors[name]?.message as string) || '')}</p>
       )}
     </div>
   )

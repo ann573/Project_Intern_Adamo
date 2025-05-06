@@ -19,7 +19,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 
 const CheckOutPage = () => {
-  const { t } = useTranslation('checkout')
+  const { t } = useTranslation(['checkout', 'schema_auth'])
   const nav = useNavigate()
 
   const isTour = useLocation().pathname.includes('tour')
@@ -41,17 +41,17 @@ const CheckOutPage = () => {
   } = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
     defaultValues: {
-      firstName: user?.name.split(' ')[0] || '',
-      lastName: user?.name.split(' ')[1] || '',
+      f_name: user?.name.split(' ')[0] || '',
+      l_name: user?.name.split(' ')[1] || '',
       email: user?.email
     }
   })
 
   const submitForm = async (data: CheckoutFormData) => {
-    const { firstName, lastName, ...rest } = data
+    const { f_name, l_name, ...rest } = data
 
     const userInformation = {
-      fullname: `${firstName} ${lastName}`,
+      fullname: `${f_name} ${l_name}`,
       ...rest
     }
 
@@ -171,12 +171,12 @@ const CheckOutPage = () => {
           <section className='grid sm:grid-cols-2 gap-10 mb-10'>
             {[
               {
-                name: 'firstName',
+                name: 'f_name',
                 label: `${t('first_name')}`,
                 placeholder: `${t('first_name')}`
               },
               {
-                name: 'lastName',
+                name: 'l_name',
                 label: `${t('last_name')}`,
                 placeholder: `${t('last_name')}`
               },
@@ -198,10 +198,12 @@ const CheckOutPage = () => {
                 <Input
                   className='rounded-none p-5 mt-2'
                   placeholder={field.placeholder}
-                  {...register(field.name as 'firstName' | 'lastName' | 'email' | 'phone')}
+                  {...register(field.name as 'f_name' | 'l_name' | 'email' | 'phone')}
                 />
                 {errors[field.name as keyof CheckoutFormData] && (
-                  <span className='text-red-500 text-sm'>{errors[field.name as keyof CheckoutFormData]?.message}</span>
+                  <span className='text-red-500 text-sm'>
+                    {t(`schema_auth:${errors[field.name as keyof CheckoutFormData]?.message}`)}
+                  </span>
                 )}
               </div>
             ))}
