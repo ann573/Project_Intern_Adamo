@@ -1,6 +1,6 @@
-import { IHotel } from '@/interfaces/IHotel'
+import { IHotel, IHotelApi } from '@/interfaces/IHotel'
 import { hotelApi } from '@/service/apiHotel'
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useCallback } from 'react'
 import { toast } from 'sonner'
 
@@ -10,6 +10,22 @@ export const useHotels = (page = 1, limit = 9, query = '', enabled = true) => {
     queryFn: () => hotelApi.getHotels(page, limit, query),
     staleTime: 5000,
     enabled
+  })
+}
+
+export const useInfiniteHotels = (query = '') => {
+  return useInfiniteQuery<IHotelApi>({
+    queryKey: ['hotelsInfinity'],
+    queryFn: ({ pageParam }) => hotelApi.getInfinityHotels(Number(pageParam), 6, query),
+    initialPageParam: 1,
+    getNextPageParam: (lastPage, allPages) => {
+      // Kiểm tra nếu lastPage không có dữ liệu (trống)
+      if (!lastPage || lastPage.hotels.length === 0) {
+        return undefined // Không có trang tiếp theo
+      }
+      return allPages.length + 1 // Trang tiếp theo
+    },
+    staleTime: 5000
   })
 }
 

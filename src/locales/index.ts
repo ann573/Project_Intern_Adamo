@@ -9,6 +9,7 @@ import Hotel_en from './en/hotel.json'
 import Hotels_en from './en/hotels.json'
 import Tour_en from './en/tour.json'
 import Tours_en from './en/tours.json'
+import Results_en from './en/result.json'
 
 import About_vi from './vi/about.json'
 import Auth_vi from './vi/auth.json'
@@ -21,6 +22,7 @@ import Hotel_vi from './vi/hotel.json'
 import Hotels_vi from './vi/hotels.json'
 import Tour_vi from './vi/tour.json'
 import Tours_vi from './vi/tours.json'
+import Results_vi from './vi/result.json'
 
 export const resources = {
   en: {
@@ -34,7 +36,8 @@ export const resources = {
     hotel: Hotel_en,
     contact: Contact_en,
     auth: Auth_en,
-    checkout: Checkout_en
+    checkout: Checkout_en,
+    result: Results_en
   },
   vi: {
     home: Home_vi,
@@ -47,6 +50,7 @@ export const resources = {
     hotel: Hotel_vi,
     contact: Contact_vi,
     auth: Auth_vi,
-    checkout: Checkout_vi
+    checkout: Checkout_vi,
+    result: Results_vi
   }
 }

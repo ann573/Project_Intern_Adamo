@@ -69,7 +69,7 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
   function onsubmitForm(data: { location: string; type: string; tour: string }) {
     const queryParams = new URLSearchParams()
 
-    if (data.location) queryParams.append('location', data.location.trim() || '')
+    if (data.location) queryParams.append('location_like', data.location.trim() || '')
     if (choose === 'Hotels') {
       nav(`/search/hotel?${queryParams.toString()}`)
     } else {

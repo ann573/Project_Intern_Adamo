@@ -6,7 +6,7 @@ const Theme = () => {
   return (
     <div className='flex justify-center items-center gap-4 p-4 fixed bottom-0 left-0'>
       <button
-        className={`p-2 rounded dark:hover:bg-[#2f3030] cursor-pointer ${theme === 'light' && 'bg-slate-400 text-white'}`}
+        className={`p-2 rounded dark:hover:bg-[#2f3030] cursor-pointer ${theme === 'light' && 'bg-primary text-white'}`}
         onClick={() => setTheme('light')}
       >
         <Sun className='w-6 h-6' />

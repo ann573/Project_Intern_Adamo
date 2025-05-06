@@ -12,7 +12,7 @@ const ThankPage = () => {
     clearOrderRoom()
     clearRoom()
     clearOrderTour()
-  }, [])
+  }, [clearRoom, clearOrderRoom, clearOrderTour])
   return (
     <>
       <section className='relative min-h-screen flex items-center justify-center'>

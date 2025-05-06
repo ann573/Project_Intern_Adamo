@@ -37,3 +37,8 @@ export interface IHotel {
     image: string[]
   }
 }
+
+export interface IHotelApi {
+  totalCount: number
+  hotels: IHotel[]
+}
