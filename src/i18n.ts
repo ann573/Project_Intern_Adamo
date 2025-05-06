@@ -4,7 +4,21 @@ import { resources } from './locales'
 
 i18n.use(initReactI18next).init({
   resources,
-  ns: ['home', 'tour', 'hero', 'about', 'header', 'tours', 'hotels', 'hotel', 'contact', 'auth', 'checkout', 'result'],
+  ns: [
+    'home',
+    'tour',
+    'hero',
+    'about',
+    'header',
+    'tours',
+    'hotels',
+    'hotel',
+    'contact',
+    'auth',
+    'checkout',
+    'result',
+    'schema_auth'
+  ],
   lng: 'en',
   fallbackLng: 'en',
   interpolation: {

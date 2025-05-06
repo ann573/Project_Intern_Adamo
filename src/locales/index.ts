@@ -24,6 +24,10 @@ import Tour_vi from './vi/tour.json'
 import Tours_vi from './vi/tours.json'
 import Results_vi from './vi/result.json'
 
+// Schema
+import SchemaAuth_en from './en/schema/auth.json'
+import SchemaAuth_vi from './vi/schema/auth.json'
+
 export const resources = {
   en: {
     home: Home_en,
@@ -37,7 +41,8 @@ export const resources = {
     contact: Contact_en,
     auth: Auth_en,
     checkout: Checkout_en,
-    result: Results_en
+    result: Results_en,
+    schema_auth: SchemaAuth_en
   },
   vi: {
     home: Home_vi,
@@ -51,6 +56,7 @@ export const resources = {
     contact: Contact_vi,
     auth: Auth_vi,
     checkout: Checkout_vi,
-    result: Results_vi
+    result: Results_vi,
+    schema_auth: SchemaAuth_vi
   }
 }

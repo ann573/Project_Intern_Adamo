@@ -19,11 +19,10 @@ export const useInfiniteHotels = (query = '') => {
     queryFn: ({ pageParam }) => hotelApi.getInfinityHotels(Number(pageParam), 6, query),
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
-      // Kiểm tra nếu lastPage không có dữ liệu (trống)
       if (!lastPage || lastPage.hotels.length === 0) {
-        return undefined // Không có trang tiếp theo
+        return undefined
       }
-      return allPages.length + 1 // Trang tiếp theo
+      return allPages.length + 1
     },
     staleTime: 5000
   })

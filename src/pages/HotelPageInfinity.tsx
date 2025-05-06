@@ -18,7 +18,7 @@ const HotelPageInfinity = () => {
 
   const { data, fetchNextPage, hasNextPage, isLoading } = useInfiniteHotels()
 
-  const hotel = data?.pages.flatMap((page) => page.hotels) || [] // Flatten the array of pages to get all hotels
+  const hotel = data?.pages.flatMap((page) => page.hotels) || []
   const { ref, inView } = useInView()
 
   useEffect(() => {
