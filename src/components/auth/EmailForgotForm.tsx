@@ -49,7 +49,7 @@ const EmailForgotForm = () => {
         <h1 className='text-heading sm:text-4xl text-3xl font-semibold'>{t('email.forgotPasswordTitle')}</h1>
         <p className='mb-10 mt-5'>{t('email.forgotPasswordDescription')}</p>
 
-        <Input name='email' register={register} required label={t('email.emailLabel')} type='email' errors={errors} />
+        <Input name='email' register={register} required label={t('email.emailLabel')} type='text' errors={errors} />
 
         <button
           type='submit'

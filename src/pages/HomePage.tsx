@@ -45,8 +45,8 @@ const HomePage = () => {
   const onSubmitEmail = async ({ email }: { email: string }) => {
     try {
       await instance.post('/emails', { email })
-      toast.success('Register successfully', {
-        description: 'We will send you an email to verify your account',
+      toast.success(t('email.success'), {
+        description: t('email.success_desc'),
         style: {
           background: 'green',
           color: '#fff'
@@ -55,7 +55,7 @@ const HomePage = () => {
 
       reset()
     } catch (error) {
-      toast.error('Have an error, please try again!!!', {
+      toast.error(t('email.error'), {
         description: (error as Error).message
       })
     }
