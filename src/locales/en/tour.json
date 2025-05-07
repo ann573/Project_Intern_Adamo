@@ -40,7 +40,8 @@
     "adult": "Người lớn",
     "child": "Trẻ con",
     "total": "Tổng tiền",
-    "btn": "Đặt ngay"
+    "btn": "Đặt ngay",
+    "tour_duration_error": "The tour duration cannot be changed to {{selectedDays}} days. Please select {{requiredDays}} days."
   },
   "related": "Related tours"
 }

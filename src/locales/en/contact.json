@@ -18,5 +18,17 @@
   "phone_title": "Phone Number",
   "phone_content": "+84 (0)20 33998400",
   "email_title": "Email Us",
-  "email_content": "info@ngaoduvietnam.com"
+  "email_content": "info@ngaoduvietnam.com",
+  "schema": {
+    "name": {
+      "min": "Name must be at least 2 characters",
+      "max": "Name must not exceed 50 characters"
+    },
+    "email": "Email is not valid",
+    "telephone": "Invalid Vietnamese phone number format",
+    "message": {
+      "min": "Message must be at least 10 characters",
+      "max": "Message must not exceed 1000 characters"
+    }
+  }
 }

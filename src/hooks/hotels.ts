@@ -28,11 +28,10 @@ export const useInfiniteHotels = (query = '') => {
   })
 }
 
-export const useFullHotels = (open: boolean) => {
+export const useFullHotels = () => {
   return useQuery<IHotel[]>({
     queryKey: ['hotelsFull'],
     queryFn: () => hotelApi.getFullHotel(),
-    enabled: open,
     staleTime: Infinity
   })
 }

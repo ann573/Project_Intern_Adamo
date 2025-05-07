@@ -18,5 +18,17 @@
   "phone_title": "Số điện thoại",
   "phone_content": "+84 (0)20 33998400",
   "email_title": "Email liên hệ",
-  "email_content": "info@ngaoduvietnam.com"
+  "email_content": "info@ngaoduvietnam.com",
+  "schema": {
+    "name": {
+      "min": "Tên tối thiểu 2 ký tự",
+      "max": "Tên không được vượt quá 50 ký tự"
+    },
+    "email": "Email không hợp lệ",
+    "telephone": "Không đúng định dạng số điện thoại Việt Nam",
+    "message": {
+      "min": "Tin nhắn tối thiểu 10 ký tự",
+      "max": "Tin nhắn không được vượt quá 1000 ký tự"
+    }
+  }
 }

@@ -40,7 +40,8 @@
     "adult": "Người lớn",
     "child": "Trẻ em",
     "total": "Tổng cộng",
-    "btn": "Đặt ngay"
+    "btn": "Đặt ngay",
+    "tour_duration_error": "Khoảng thời gian của tour không thể thay đổi sang {{selectedDays}} ngày. Xin hãy chọn khoảng thời gian là {{requiredDays}} ngày."
   },
   "related": "Tour liên quan"
 }

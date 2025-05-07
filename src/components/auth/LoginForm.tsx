@@ -52,25 +52,18 @@ const LoginForm = () => {
       })
       Cookies.set('refresh_token', userCredential.user.refreshToken)
 
-      toast.success('Login successfully!!!', {
-        duration: 1000,
-        style: {
-          background: 'green',
-          color: '#fff'
-        }
-      })
       setIsLoading(false)
       nav('/')
-    } catch (err) {
+    } catch {
       setIsLoading(false)
-      toast.error((err as Error).message, {
-        description: 'Email or your password is incorrect',
+      toast.error(t('login.loginFailed'), {
+        description: t('login.loginFailedDesc'),
         actionButtonStyle: {
           background: 'white',
           color: 'red'
         },
         action: {
-          label: 'Undo',
+          label: t('login.undo'),
           onClick: () => {}
         },
         duration: 3000,
@@ -89,7 +82,7 @@ const LoginForm = () => {
       await confirmPasswordReset(auth, code, data.password)
 
       setIsLoading(false)
-      toast.success('Reset your password successfully', {
+      toast.success(t('login.resetPasswordSuccess'), {
         duration: 1000,
         style: {
           background: 'green',
@@ -99,17 +92,17 @@ const LoginForm = () => {
 
       resetPasswordForm.reset()
       nav('/auth/login')
-    } catch (err) {
+    } catch {
       setIsLoading(false)
-      toast.error((err as Error).message, {
-        description: 'Your code is invalid or expired',
+      toast.error(t('login.resetPasswordFailed'), {
+        description: t('login.resetPasswordFailedDesc'),
         duration: 3000
       })
     }
   }
 
   return (
-    <div className='flex items-center md:static absolute w-11/12 bg-background top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-y-0 md:translate-x-0 rounded-3xl p-3'>
+    <div className='form_auth'>
       {isLogin ? (
         <form onSubmit={loginForm.handleSubmit(onSubmitLogin)} className='md:w-md w-full max-w-md mx-auto p-4'>
           <h1 className='text-heading text-4xl font-semibold'>{t('login.signInTitle')}</h1>
@@ -120,15 +113,15 @@ const LoginForm = () => {
             register={loginForm.register}
             required
             label={t('login.emailLabel')}
-            type='email'
+            type='text'
             errors={loginForm.formState.errors}
           />
           <Input
             name='password'
             register={loginForm.register}
             required
-            label='Password'
-            type={t('login.passwordLabel')}
+            label={t('login.passwordLabel')}
+            type='password'
             errors={loginForm.formState.errors}
           />
 
@@ -159,13 +152,13 @@ const LoginForm = () => {
           onSubmit={resetPasswordForm.handleSubmit(onSubmitForgotPassword)}
           className='md:w-md w-full max-w-md mx-auto p-4'
         >
-          <h1 className='text-heading text-4xl font-semibold'>New Password</h1>
-          <p className='mb-10 mt-5'>Create your new password</p>
+          <h1 className='text-heading text-4xl font-semibold'>{t('login.newPasswordTitle')}</h1>
+          <p className='mb-10 mt-5'>{t('login.createNewPassword')}</p>
           <Input
             name='password'
             register={resetPasswordForm.register}
             required
-            label='Password'
+            label={t('login.passwordLabel')}
             type='password'
             errors={resetPasswordForm.formState.errors}
           />
@@ -173,22 +166,22 @@ const LoginForm = () => {
             name='confirmPassword'
             register={resetPasswordForm.register}
             required
-            label='Confirm Password'
+            label={t('login.confirmPasswordLabel')}
             type='password'
             errors={resetPasswordForm.formState.errors}
           />
-          <ButtonAuth>{isLoading ? <ClipLoader color='white' /> : 'Sign in'}</ButtonAuth>
+          <ButtonAuth>{isLoading ? <ClipLoader color='white' /> : t('login.signInButton')}</ButtonAuth>
           <button
             type='button'
             className='w-full bg-[#4E86DB] text-white py-5 mt-4 font-semibold center gap-3 cursor-pointer transition-colors hover:bg-[#4E86DB]/80'
           >
             <img src={fbAuth} alt='logo_facebook' />
-            Sign in with Facebook
+            {t('register.register_sign_in_facebook')}
           </button>
           <p className='text-sub-color-primary mt-5'>
-            Don't have an account?{' '}
+            {t('login.noAccount')}?{' '}
             <Link to='/auth/register' className='text-orange'>
-              Sign up
+              {t('login.signUpLink')}
             </Link>
           </p>
         </form>

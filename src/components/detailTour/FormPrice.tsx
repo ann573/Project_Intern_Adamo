@@ -62,7 +62,10 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
       const selectedDays = (to.getTime() - from.getTime()) / (1000 * 3600 * 24) + 1
       if (tour && Math.ceil(selectedDays) !== tour?.duration) {
         toast.error(
-          `The tour duration cannot be changed to ${Math.ceil(selectedDays)} days. Please select ${tour?.duration} days.`,
+          t('from_price.tour_duration_error', {
+            selectedDays: Math.ceil(selectedDays),
+            requiredDays: tour?.duration
+          }),
           {
             style: {
               background: 'red',

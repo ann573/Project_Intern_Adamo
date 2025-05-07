@@ -157,12 +157,15 @@ const HomePage = () => {
       </section>
 
       {/* =============================== email ============================================= */}
-      <section className='container_custom mx-auto xl:my-40 md:my-20 my-10 flex md:flex-row flex-col md:items-center items-start justify-between relative'>
-        <h4 className='xl:text-5xl md:text-3xl text-2xl md:mb-0 mb-5' data-aos='fade-right'>
+      <section
+        className='container_custom mx-auto xl:my-40 md:my-20 my-10 flex md:flex-row flex-col md:items-center items-start justify-between relative'
+        data-aos='fade-up'
+      >
+        <h4 className='xl:text-5xl md:text-3xl text-2xl md:mb-0 mb-5'>
           {t('email.title1')} <br className='md:block hidden' /> {t('email.title2')}{' '}
           <span className='text-orange'>{t('email.title3')}</span>
         </h4>
-        <div className='xl:w-1/3 md:w-1/2 w-full relative' data-aos='fade-left'>
+        <div className='xl:w-1/3 md:w-1/2 w-full relative'>
           <form onSubmit={handleSubmit(onSubmitEmail)} className='flex gap-5'>
             <Input
               className={`rounded-none w-full py-5 px-10 ${

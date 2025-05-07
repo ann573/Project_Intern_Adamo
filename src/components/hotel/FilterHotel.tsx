@@ -30,7 +30,7 @@ const FilterHotel = () => {
   const [stars, setStars] = React.useState<number[]>([]) // Array of selected star ratings (e.g., [1, 3, 5])
   const [reviewScore, setReviewScore] = React.useState<string>() // Array of selected review score ranges (e.g., ["8.5+", "8+"])
   const [price, setPrice] = React.useState<number[]>()
-  const { data } = useFullHotels(open)
+  const { data } = useFullHotels()
 
   React.useEffect(() => {
     if (data) {

@@ -52,7 +52,14 @@
     "child": "Trẻ con",
     "add": "Tiện ích bổ sung:",
     "total": "Tổng tiền",
-    "btn": "Đặt ngay"
+    "btn": "Đặt ngay",
+    "breakfast": "Bữa sáng",
+    "bed": "Giường",
+    "errorDate": "Hãy chọn ngày",
+    "errorRoom": {
+      "heading": "Hãy chọn đúng số phòng tương ứng với số người",
+      "desc": "Số lượng khách lớn hơn số người tối đa của phòng."
+    }
   },
   "related": "Đề xuất cho bạn"
 }

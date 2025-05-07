@@ -50,7 +50,14 @@
     "child": "Children",
     "add": "Add-ons:",
     "total": "Total",
-    "btn": "Book Now"
+    "btn": "Book Now",
+    "breakfast": "Breakfast",
+    "bed": "Extra Bed",
+    "errorDate": "Please select a date",
+    "errorRoom": {
+      "heading": "Please select the correct number of rooms",
+      "desc": "The number of guests is greater than the maximum number of people in the room."
+    }
   },
   "related": "Recommended for you"
 }

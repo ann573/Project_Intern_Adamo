@@ -31,7 +31,7 @@
   "complete_booking": "Complete Booking",
   "promo_code": "Promo Code",
   "apply": "Apply",
-  "discount_applied": "Mã giảm giá này giảm {{discount}}%",
+  "discount_applied": "This coupon code is {{discount}}% off",
   "total": "Total",
   "order_success": "Order successfully",
   "order_error": "Something went wrong",

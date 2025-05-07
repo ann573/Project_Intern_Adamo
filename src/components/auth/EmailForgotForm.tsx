@@ -44,7 +44,7 @@ const EmailForgotForm = () => {
   }
 
   return (
-    <div className='flex items-center md:static absolute w-11/12 bg-background top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-y-0 md:translate-x-0 rounded-3xl p-3'>
+    <div className='form_auth'>
       <form onSubmit={handleSubmit(onSubmit)} className='md:w-md w-full max-w-md mx-auto p-4'>
         <h1 className='text-heading sm:text-4xl text-3xl font-semibold'>{t('email.forgotPasswordTitle')}</h1>
         <p className='mb-10 mt-5'>{t('email.forgotPasswordDescription')}</p>

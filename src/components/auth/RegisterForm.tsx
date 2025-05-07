@@ -47,7 +47,7 @@ const RegisterForm = () => {
       })
 
       setIsLoading(false)
-      toast.success('Resgister successfully', {
+      toast.success(t('register.register_success'), {
         style: {
           background: 'green',
           color: '#fff'
@@ -55,9 +55,9 @@ const RegisterForm = () => {
       })
 
       nav('/auth/login')
-    } catch (error) {
+    } catch {
       setIsLoading(false)
-      toast.error((error as Error).message, {
+      toast.error(t('register.register_error'), {
         description: `${t('register.register_email_in_use')}`,
         duration: 3000,
         action: {
@@ -70,40 +70,25 @@ const RegisterForm = () => {
 
   return (
     <>
-      <div className='flex items-center md:static absolute w-11/12 bg-background top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-y-0 md:translate-x-0 rounded-3xl p-3'>
+      <div className='form_auth'>
         <form onSubmit={handleSubmit(onSubmit)} className='md:w-md w-full max-w-md mx-auto p-4'>
           <h1 className='text-heading text-4xl font-semibold'>{t('register.register_title')}</h1>
           <p className='mb-10 mt-5'> {t('register.register_welcome')}</p>
 
           <div className='grid grid-cols-2 gap-5 '>
-            <Input
-              name='f_name'
-              register={register}
-              required
-              label={t('register.register_first_name')}
-              type='text'
-              errors={errors}
-            />
-            <Input
-              name='l_name'
-              register={register}
-              required
-              label={t('register.register_last_name')}
-              type='text'
-              errors={errors}
-            />
+            <Input name='f_name' register={register} label={t('register.register_first_name')} errors={errors} />
+            <Input name='l_name' register={register} label={t('register.register_last_name')} errors={errors} />
           </div>
 
+          <Input name='email' register={register} label={t('register.register_email')} errors={errors} />
+
           <Input
-            name='email'
+            name='password'
             register={register}
-            required
-            label={t('register.register_email')}
-            type='email'
+            label={t('register.register_password')}
+            type='password'
             errors={errors}
           />
-
-          <Input name='password' register={register} required label='Password' type='password' errors={errors} />
 
           <ButtonAuth disabled={isLoading}>
             {isLoading ? <ClipLoader color='#ffffff' size={20} /> : t('register.register_sign_up')}

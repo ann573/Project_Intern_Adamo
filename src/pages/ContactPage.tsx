@@ -1,16 +1,18 @@
+import { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
+import { Link, useNavigate } from 'react-router-dom'
+
 import { ContactFormData, contactSchema } from '@/schema/contactSchema'
 import { instance } from '@/service'
 import { useAuthStore } from '@/zusTand/authStore'
 import hero from '@assets/images/hero_1.png'
 import { Button } from '@components/ui/button'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 
 import '@/style/homepage.css'
-import { useTranslation } from 'react-i18next'
+import { StyledInput, StyledTextArea } from '@components/styled/StyledInput'
 
 const ContactPage = () => {
   const { t } = useTranslation('contact')
@@ -98,44 +100,34 @@ const ContactPage = () => {
 
           <div className='flex flex-col gap-5'>
             <div>
-              <input
-                type='name'
-                className='bg-[#F5F5F5] dark:bg-[#1C2526] p-3 focus:outline-none w-full'
-                placeholder={t('placeholder_name')}
-                {...register('name')}
-              />
-              {errors.name && <p className='text-red-500 italic'>{errors.name.message}</p>}
+              <StyledInput type='name' placeholder={t('placeholder_name')} {...register('name')} />
+              {errors.name && <p className='text-red-500 italic'>{t(errors.name.message as keyof ContactFormData)}</p>}
             </div>
 
             <div>
-              <input
-                type='email'
-                className='bg-[#F5F5F5] dark:bg-[#1C2526] p-3 focus:outline-none w-full'
-                placeholder={t('placeholder_email')}
-                {...register('email')}
-              />
-              {errors.email && <p className='text-red-500 italic'>{errors.email.message}</p>}
+              <StyledInput placeholder={t('placeholder_email')} {...register('email')} />
+              {errors.email && (
+                <p className='text-red-500 italic'>{t(errors.email.message as keyof ContactFormData)}</p>
+              )}
             </div>
 
             <div>
-              <input
-                type='tel'
-                className='bg-[#F5F5F5] dark:bg-[#1C2526] p-3 focus:outline-none w-full'
-                placeholder={t('placeholder_phone')}
-                {...register('telephone')}
-              />
-              {errors.telephone && <p className='text-red-500 italic'>{errors.telephone.message}</p>}
+              <StyledInput placeholder={t('placeholder_phone')} {...register('telephone')} />
+              {errors.telephone && (
+                <p className='text-red-500 italic'>{t(errors.telephone.message as keyof ContactFormData)}</p>
+              )}
             </div>
 
             <div>
-              <textarea
-                id=''
+              <StyledTextArea
                 placeholder={t('placeholder_message')}
                 className='resize-none bg-[#F5F5F5] dark:bg-[#1C2526] p-3 focus:outline-none w-full'
                 rows={5}
                 {...register('message')}
-              ></textarea>
-              {errors.message && <p className='text-red-500 italic'>{errors.message.message}</p>}
+              ></StyledTextArea>
+              {errors.message && (
+                <p className='text-red-500 italic'>{t(errors.message.message as keyof ContactFormData)}</p>
+              )}
             </div>
 
             <Button className='w-fit rounded-none py-5 px-10 ml-auto cursor-pointer'>{t('button_send')}</Button>

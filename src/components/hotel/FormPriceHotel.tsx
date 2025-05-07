@@ -33,8 +33,8 @@ const FormPriceHotel = ({ id }: { id: string }) => {
   const [children, setChildren] = useState(0)
 
   const [addons, setAddons] = useState([
-    { name: 'Breakfast', checked: true, count: 1, price: 20 },
-    { name: 'Extra Bed', checked: false, count: 0, price: 5 }
+    { name: t('from_price.breakfast'), checked: true, count: 1, price: 20 },
+    { name: t('from_price.bed'), checked: false, count: 0, price: 5 }
   ])
   const totalRoom = rooms.reduce((sum, r) => sum + r.count * r.price_discount, 0)
   const totalAddon = addons.reduce((sum, a) => sum + (a.checked ? a.count * a.price : 0), 0)
@@ -72,7 +72,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
   const handleSubmitForm = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
     if (!date)
-      return toast.error('Pleas fill the date!!!', {
+      return toast.error(t('from_price.errorDate'), {
         style: {
           background: 'red',
           color: 'white'
@@ -81,8 +81,8 @@ const FormPriceHotel = ({ id }: { id: string }) => {
     const { from, to } = date
 
     if (adults > getMaxNumber()) {
-      return toast.error('Please select the correct number of rooms', {
-        description: 'The number of guests is greater than the maximum number of people in the room.',
+      return toast.error(t('from_price.errorRoom.heading'), {
+        description: t('from_price.errorRoom.desc'),
         style: {
           background: 'red',
           color: 'white'

@@ -14,10 +14,10 @@ const ResultPage = () => {
   const { t } = useTranslation('result')
   const isTour = useLocation().pathname.includes('tour')
   const { data: hotels, isLoading: isLoadingHotel } = useHotels(
-    1, // page
-    9, // limit
+    1,
+    9,
     location.search.split('?')[1] || '', // query
-    !isTour // enabled
+    !isTour
   )
 
   const { tours, isLoading, total } = useAppSelector((state) => state.tours)
@@ -56,9 +56,7 @@ const ResultPage = () => {
                 <CardSkeleton />
               ) : tours?.length > 0 ? (
                 <>
-                  <h2 className='text-red-500 text-center text-4xl font-bold my-5'>{t('heading_success')}</h2>
-
-                  <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
+                  <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 my-5'>
                     {tours.map((item) => (
                       <Card data={item} key={item.id} />
                     ))}
@@ -86,7 +84,6 @@ const ResultPage = () => {
             <CardSkeleton />
           ) : hotels && hotels?.length > 0 ? (
             <>
-              <h2 className='text-red-500 text-center text-4xl font-bold my-5'>{t('heading_success')}</h2>
               <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 my-10'>
                 {hotels.map((hotel) => (
                   <CardHotel data={hotel} key={hotel.id} />

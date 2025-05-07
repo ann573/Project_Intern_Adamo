@@ -123,7 +123,7 @@ const CheckOutPage = () => {
     btnRef.current?.setAttribute('disabled', 'true')
     if (!promoCodeRef.current?.value) {
       btnRef.current?.removeAttribute('disabled')
-      return toast.warning('Promo code is required', {
+      return toast.warning(t('promo_required'), {
         style: {
           background: 'orange',
           color: '#fff'
@@ -136,7 +136,7 @@ const CheckOutPage = () => {
 
     if (data.length === 0) {
       btnRef.current?.removeAttribute('disabled')
-      return toast.warning('Promo code is invalid', {
+      return toast.warning(t('promo_invalid'), {
         style: {
           background: 'orange',
           color: '#fff'
@@ -145,7 +145,7 @@ const CheckOutPage = () => {
       })
     }
 
-    toast.success('Promo code is applied successfully', {
+    toast.success(t('promo_success'), {
       style: {
         background: 'green',
         color: '#fff'
@@ -247,7 +247,9 @@ const CheckOutPage = () => {
                   {...register(field.name as 'city' | 'state' | 'zip' | 'country')}
                 />
                 {errors[field.name as keyof CheckoutFormData] && (
-                  <span className='text-red-500 text-sm'>{errors[field.name as keyof CheckoutFormData]?.message}</span>
+                  <span className='text-red-500 text-sm'>
+                    {t(`schema_auth:${errors[field.name as keyof CheckoutFormData]?.message}`)}
+                  </span>
                 )}
               </div>
             ))}
@@ -291,7 +293,7 @@ const CheckOutPage = () => {
           </div>
 
           {errors.paymentMethod && (
-            <span className='text-red-500 text-sm block mt-2'>Please select a payment method</span>
+            <span className='text-red-500 text-sm block mt-2'>{t(`schema_auth:checkout.paymentMethod`)}</span>
           )}
 
           <ul className='list-disc pl-5 space-y-2 text-color-content-second text-base my-5'>

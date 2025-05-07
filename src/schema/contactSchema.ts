@@ -1,16 +1,13 @@
 import { z } from 'zod'
 
 export const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters').max(50, 'Name must not exceed 50 characters'),
+  name: z.string().min(2, 'schema.name.min').max(50, 'schema.name.max'),
 
-  email: z.string().email('Invalid email format'),
+  email: z.string().email('schema.email'),
 
-  telephone: z.string().regex(/^(\+84|84|0)?[1-9]\d{8}$/, 'Invalid Vietnamese phone number format'),
+  telephone: z.string().regex(/^(\+84|84|0)?[1-9]\d{8}$/, 'schema.telephone'),
 
-  message: z
-    .string()
-    .min(10, 'Message must be at least 10 characters')
-    .max(1000, 'Message must not exceed 1000 characters')
+  message: z.string().min(10, 'schema.message.min').max(1000, 'schema.message.max')
 })
 
 export type ContactFormData = z.infer<typeof contactSchema>
