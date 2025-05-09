@@ -24,6 +24,7 @@ import { Controller, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 
 import SearchIcon from '@assets/icons/searchIcon.tsx'
+import { vi } from 'react-day-picker/locale'
 type Props = {
   date: Date | undefined
   setDate: React.Dispatch<React.SetStateAction<Date | undefined>>
@@ -40,7 +41,7 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
 
   const [choose, setChoose] = React.useState('Tours')
   const dispatch = useAppDispatch()
-
+  const language = sessionStorage.getItem('language')
   const { control, handleSubmit } = useForm({
     defaultValues: {
       location: 'Sapa, Laocai',
@@ -137,14 +138,20 @@ const FormSearchBanner = ({ date, setDate }: Props) => {
               >
                 <CalendarIcon className='mr-2 h-4 w-4 text-orange' />
                 {date ? (
-                  format(date, 'PPP')
+                  format(date, 'PPP', { locale: language === 'vi' ? vi : undefined })
                 ) : (
                   <span className='text-sub-color-second'>{t('formsearch.tours.date')}</span>
                 )}
               </Button>
             </PopoverTrigger>
             <PopoverContent className='w-auto p-0'>
-              <DayPicker mode='single' selected={date} onSelect={handleSelect} disabled={{ before: new Date() }} />
+              <DayPicker
+                mode='single'
+                selected={date}
+                onSelect={handleSelect}
+                disabled={{ before: new Date() }}
+                locale={language === 'vi' ? vi : undefined}
+              />
             </PopoverContent>
           </Popover>
 

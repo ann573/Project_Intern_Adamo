@@ -2,8 +2,6 @@ import { Toaster } from '@components/ui/sonner'
 import React, { Suspense, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import HotelPageInfinity from './pages/HotelPageInfinity'
-
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
@@ -61,8 +59,6 @@ function App() {
 
             <Route path='/contact' element={<ContactPage />} />
             <Route path='/policy' element={<PolicyPage />} />
-
-            <Route path='/infinity' element={<HotelPageInfinity />} />
           </Route>
 
           <Route path='/checkout/:type' element={<CheckOutPage />} />

@@ -14,24 +14,30 @@ import { Input } from '@components/ui/input'
 import { Label } from '@components/ui/label'
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
 import { User2 } from 'lucide-react'
+import { vi } from 'react-day-picker/locale'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 
 const FormPriceHotel = ({ id }: { id: string }) => {
+  const language = sessionStorage.getItem('language')
   const { t } = useTranslation('hotel')
   const nav = useNavigate()
   const { data } = useDetailHotels(id)
   const { rooms, incrementRoom, decrementRoom, getMaxNumber } = useRoomStore()
   const { setOrderRoom } = useOrderStore()
-  const [date, setDate] = useState<DateRange | undefined>({
-    from: addDays(new Date(), 1),
-    to: addDays(new Date(), 2)
+  const [date, setDate] = useState<DateRange | undefined>(() => {
+    const from = addDays(new Date(), 1)
+    from.setHours(0, 0, 0, 0)
+
+    const to = addDays(new Date(), 2)
+    to.setHours(0, 0, 0, 0)
+
+    return { from, to }
   })
   const [price, setPrice] = useState(0)
   const [adults, setAdults] = useState(2)
   const [children, setChildren] = useState(0)
-
   const [addons, setAddons] = useState([
     { name: t('from_price.breakfast'), checked: true, count: 1, price: 20 },
     { name: t('from_price.bed'), checked: false, count: 0, price: 5 }
@@ -41,9 +47,10 @@ const FormPriceHotel = ({ id }: { id: string }) => {
 
   useEffect(() => {
     if (data) {
-      setPrice(data?.cost + children * (data?.cost / 2) + totalRoom + totalAddon)
+      const night = date?.to && date?.from ? (date.to.getTime() - date.from.getTime()) / (1000 * 60 * 60 * 24) : 1
+      setPrice(data?.cost * night + children * (data?.cost / 2) + totalRoom + totalAddon)
     }
-  }, [adults, children, data, totalRoom, totalAddon])
+  }, [adults, children, data, totalRoom, totalAddon, date])
 
   const handleClearDate = () => {
     setDate(undefined)
@@ -90,6 +97,17 @@ const FormPriceHotel = ({ id }: { id: string }) => {
       })
     }
     if (from && to) {
+      const timeCheckin = (to.getTime() - from.getTime()) / (1000 * 60 * 60 * 24)
+
+      if (timeCheckin < 1) {
+        return toast.error(t('from_price.errorDate2'), {
+          style: {
+            background: 'red',
+            color: 'white'
+          }
+        })
+      }
+
       setOrderRoom({
         name: data?.name || '',
         cost: data?.cost || 0,
@@ -148,7 +166,7 @@ const FormPriceHotel = ({ id }: { id: string }) => {
                   format(date.from, 'dd/MM.yyyy')
                 )
               ) : (
-                <span>Chọn khoảng ngày</span>
+                <span>{t('from_price.placeholder')}</span>
               )}
             </Button>
           </PopoverTrigger>
@@ -162,11 +180,12 @@ const FormPriceHotel = ({ id }: { id: string }) => {
               onSelect={setDate}
               numberOfMonths={2}
               disabled={{ before: new Date() }}
+              locale={language === 'vi' ? vi : undefined}
             />
 
             {/* Nút hủy lựa chọn */}
             <Button variant='outline' className='mt-2 w-full' onClick={handleClearDate}>
-              {t('from_price.btn')}
+              {t('from_price.cancel')}
             </Button>
           </PopoverContent>
         </Popover>

@@ -47,6 +47,7 @@
   },
 
   "from_price": {
+    "placeholder": "Nhận phòng - Trả phòng",
     "cancel": "Hủy lựa chọn",
     "adult": "Người lớn",
     "child": "Trẻ con",
@@ -56,6 +57,7 @@
     "breakfast": "Bữa sáng",
     "bed": "Giường",
     "errorDate": "Hãy chọn ngày",
+    "errorDate2": "Hãy chọn tối thiểu 2 ngày",
     "errorRoom": {
       "heading": "Hãy chọn đúng số phòng tương ứng với số người",
       "desc": "Số lượng khách lớn hơn số người tối đa của phòng."

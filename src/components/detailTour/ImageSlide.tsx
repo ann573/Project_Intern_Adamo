@@ -4,7 +4,6 @@ import React, { useRef, useState } from 'react'
 import Slider from 'react-slick'
 
 import { useDetailHotels } from '@/hooks/hotels'
-import '@/style/imageSlider.css'
 import { Skeleton } from '@components/ui/skeleton'
 import { useLocation, useParams } from 'react-router-dom'
 
@@ -12,6 +11,7 @@ import Lightbox from 'yet-another-react-lightbox'
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
 import Zoom from 'yet-another-react-lightbox/plugins/zoom'
 
+import '@/style/imageSlider.css'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import 'yet-another-react-lightbox/plugins/thumbnails.css'

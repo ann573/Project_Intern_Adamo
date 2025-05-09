@@ -166,7 +166,7 @@ const ListTour = () => {
               onClick={() => {
                 setIsSearch(false)
               }}
-              to={'/tours'}
+              to={'/'}
             >
               {t('return')}
             </Link>

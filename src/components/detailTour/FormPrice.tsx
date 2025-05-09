@@ -93,13 +93,6 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
     }
   }
 
-  const vietnameseLocale = {
-    ...vi,
-    formatWeekdayName: (date: Date) => {
-      const weekdays = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7']
-      return weekdays[date.getDay()]
-    }
-  }
   return (
     <>
       <section className={cn('grid gap-2', className)}>
@@ -130,7 +123,7 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
           <PopoverContent className='w-auto p-0' align='start'>
             <DayPicker
               initialFocus
-              locale={language === 'vi' ? vietnameseLocale : undefined}
+              locale={language === 'vi' ? vi : undefined}
               mode='range'
               defaultMonth={date?.from}
               selected={date || undefined}
