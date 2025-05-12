@@ -1,4 +1,4 @@
-# Adamo Travel Website
+# Project Intern Travel Website
 
 ## 📝 Introduction
 
