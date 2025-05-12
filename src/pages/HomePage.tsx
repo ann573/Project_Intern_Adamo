@@ -21,10 +21,10 @@ import { Button } from '@components/ui/button'
 import { Input } from '@components/ui/input'
 
 // schema
+import { toastConfig } from '@/lib/toast'
 import { emailSchema } from '@/schema/homePage'
 import { instance } from '@/service'
 import { useTranslation } from 'react-i18next'
-import { toast } from 'sonner'
 
 const HomePage = () => {
   const [date, setDate] = React.useState<Date | undefined>(undefined)
@@ -45,19 +45,11 @@ const HomePage = () => {
   const onSubmitEmail = async ({ email }: { email: string }) => {
     try {
       await instance.post('/emails', { email })
-      toast.success(t('email.success'), {
-        description: t('email.success_desc'),
-        style: {
-          background: 'green',
-          color: '#fff'
-        }
-      })
+      toastConfig.success(t('email.success'), t('email.success_desc'))
 
       reset()
     } catch (error) {
-      toast.error(t('email.error'), {
-        description: (error as Error).message
-      })
+      toastConfig.error(t('email.error'), (error as Error).message)
     }
   }
   return (

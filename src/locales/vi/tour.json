@@ -27,7 +27,8 @@
     "warning": "Oops!!!!",
     "warning_content": "Hãy đăng nhập để bình luận",
     "cancel": "Hủy",
-    "login": "Đăng nhập"
+    "login": "Đăng nhập",
+    "star_error": "Vui lòng chọn đánh giá sao"
   },
   "from_price": {
     "from": "từ",
@@ -41,7 +42,8 @@
     "child": "Trẻ em",
     "total": "Tổng cộng",
     "btn": "Đặt ngay",
-    "tour_duration_error": "Khoảng thời gian của tour không thể thay đổi sang {{selectedDays}} ngày. Xin hãy chọn khoảng thời gian là {{requiredDays}} ngày."
+    "tour_duration_error": "Khoảng thời gian của tour không thể thay đổi sang {{selectedDays}} ngày. Xin hãy chọn khoảng thời gian là {{requiredDays}} ngày.",
+    "tour_duration_error_2": "Vui lòng chọn ngày di chuyển"
   },
   "related": "Tour liên quan"
 }

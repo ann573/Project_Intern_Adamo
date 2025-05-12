@@ -1,6 +1,8 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
+const language = sessionStorage.getItem('language') || 'en'
+
 export const instance = axios.create({
   baseURL: import.meta.env.VITE_API,
   headers: {
@@ -26,15 +28,17 @@ instance.interceptors.request.use(
 const handleErrorMessage = (status: number, message: string) => {
   switch (status) {
     case 400:
-      return message || 'Bad Request'
+      return message || language === 'en' ? 'Bad Request' : 'Yêu cầu không hợp lệ'
     case 403:
-      return message || 'Not Authorized'
+      return message || language === 'en' ? 'Not Authorized' : 'Không có quyền truy cập'
     case 404:
-      return message || 'Not Found'
+      return message || language === 'en' ? 'Not Found' : 'Không tìm thấy'
     case 500:
-      return message || 'Internal Server Error'
+      return message || language === 'en' ? 'Network Error' : 'Lỗi mạng'
     default:
-      return message || 'Unknown Error, please try again later'
+      return message || language === 'en'
+        ? 'Unknown Error, please try again later'
+        : 'Lỗi không xác định, vui lòng thử lại sau'
   }
 }
 
@@ -83,7 +87,7 @@ instance.interceptors.response.use(
     } else if (error.request) {
       return Promise.reject({
         status: null,
-        message: 'Không thể kết nối đến server'
+        message: error.message || language === 'en' ? 'Can not connect to server' : 'Không thể kết nối đến máy chủ'
       })
     } else {
       return Promise.reject({

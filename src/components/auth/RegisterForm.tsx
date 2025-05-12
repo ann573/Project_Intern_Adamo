@@ -11,8 +11,8 @@ import { registerSchema } from '@/schema/authSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import Input from '@components/Input'
-import { toast } from 'sonner'
 
+import { toastConfig } from '@/lib/toast'
 import { auth } from '@/utils/firebase'
 import { useTranslation } from 'react-i18next'
 import { ButtonAuth } from '../styled/Button'
@@ -47,24 +47,12 @@ const RegisterForm = () => {
       })
 
       setIsLoading(false)
-      toast.success(t('register.register_success'), {
-        style: {
-          background: 'green',
-          color: '#fff'
-        }
-      })
 
+      toastConfig.success(t('register.register_success'), undefined, 1000)
       nav('/auth/login')
     } catch {
       setIsLoading(false)
-      toast.error(t('register.register_error'), {
-        description: `${t('register.register_email_in_use')}`,
-        duration: 3000,
-        action: {
-          label: `${t('register.register_undo')}`,
-          onClick: () => {}
-        }
-      })
+      toastConfig.error(t('register.register_error'), t('register.register_email_in_use'), 1000)
     }
   }
 

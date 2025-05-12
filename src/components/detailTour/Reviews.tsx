@@ -1,5 +1,6 @@
 import { addCommentTour } from '@/features/tour/tourAction'
 import { useAppDispatch, useAppSelector } from '@/hooks/app'
+import { toastConfig } from '@/lib/toast'
 import { useAuthStore } from '@/zusTand/authStore'
 import Pagination from '@components/Pagination'
 import {
@@ -18,7 +19,6 @@ import { useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { toast } from 'sonner'
 import ReviewItem from './ReviewItem'
 import StarRating from './StarRating'
 
@@ -56,16 +56,8 @@ const Reviews = () => {
   const count = tour?.rating.length
 
   const handleSubmitReview = ({ comments }: { comments: string }) => {
-    if (rating === 0) {
-      toast.error('Please fill the star!!!', {
-        duration: 1000,
-        style: {
-          background: 'red',
-          color: 'white'
-        }
-      })
-      return
-    }
+    if (rating === 0) return toastConfig.error(t('rev.fill_star'), undefined, 1000)
+
     if (tour) {
       const day = new Date()
 

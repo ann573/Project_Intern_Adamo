@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { Input } from '@components/ui/input'
 import { Label } from '@components/ui/label'
 
+import { toastConfig } from '@/lib/toast'
 import checkoutSchema, { CheckoutFormData } from '@/schema/checkoutSchema'
 import { instance } from '@/service'
 import { useAuthStore } from '@/zusTand/authStore'
@@ -16,7 +17,7 @@ import { CalendarIcon, User2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { toast } from 'sonner'
+import { SyncLoader } from 'react-spinners'
 
 const CheckOutPage = () => {
   const { t } = useTranslation(['checkout', 'schema_auth'])
@@ -33,7 +34,7 @@ const CheckOutPage = () => {
 
   const { user } = useAuthStore()
   const [discount, setDiscount] = useState<number>(0)
-
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const {
     register,
     handleSubmit,
@@ -67,21 +68,10 @@ const CheckOutPage = () => {
 
       try {
         await instance.post('/orderTours', dataBody)
-        toast.success('Order successfully', {
-          style: {
-            background: 'green',
-            color: '#fff'
-          }
-        })
+        toastConfig.success(t('order_success'), undefined, 1000)
         nav('/thanks')
       } catch (error) {
-        toast.error('Something went wrong', {
-          style: {
-            background: 'red',
-            color: '#fff'
-          },
-          description: (error as Error).message || 'Something went wrong'
-        })
+        return toastConfig.error(t('order_error'), (error as Error).message || 'Something went wrong', 1000)
       }
     } else {
       const dataBody = {
@@ -95,65 +85,35 @@ const CheckOutPage = () => {
 
       try {
         await instance.post('/orderHotels', dataBody)
-        toast.success('Order successfully', {
-          style: {
-            background: 'green',
-            color: '#fff'
-          }
-        })
+        toastConfig.success(t('order_success'), undefined, 1000)
 
         nav('/thanks')
       } catch (error) {
-        toast.error('Something went wrong', {
-          style: {
-            background: 'red',
-            color: '#fff'
-          },
-          description: (error as Error).message || 'Something went wrong'
-        })
+        return toastConfig.error(t('order_error'), (error as Error).message || 'Something went wrong', 1000)
       }
     }
   }
 
   const promoCodeRef = useRef<HTMLInputElement>(null)
-  const btnRef = useRef<HTMLButtonElement>(null)
 
   const submitPromotion = async (event: React.FormEvent) => {
     event.preventDefault()
-    btnRef.current?.setAttribute('disabled', 'true')
-    if (!promoCodeRef.current?.value) {
-      btnRef.current?.removeAttribute('disabled')
-      return toast.warning(t('promo_required'), {
-        style: {
-          background: 'orange',
-          color: '#fff'
-        },
-        duration: 1000
-      })
-    }
+    setIsLoading(true)
 
+    if (!promoCodeRef.current?.value) {
+      setIsLoading(false)
+      return toastConfig.warning(t('promo_required'), undefined, 1000)
+    }
     const { data } = await instance.get(`/promotions?code=${promoCodeRef.current?.value}`)
 
     if (data.length === 0) {
-      btnRef.current?.removeAttribute('disabled')
-      return toast.warning(t('promo_invalid'), {
-        style: {
-          background: 'orange',
-          color: '#fff'
-        },
-        duration: 1000
-      })
+      setIsLoading(false)
+      return toastConfig.error(t('promo_invalid'), undefined, 1000)
     }
 
-    toast.success(t('promo_success'), {
-      style: {
-        background: 'green',
-        color: '#fff'
-      },
-      duration: 3000
-    })
-    btnRef.current?.removeAttribute('disabled')
+    setIsLoading(false)
     setDiscount(data[0].discount)
+    return toastConfig.success(t('promo_success'), undefined, 3000)
   }
 
   return (
@@ -387,11 +347,11 @@ const CheckOutPage = () => {
             />
             <Button
               variant={'outline'}
-              className='h-full inline-block rounded-none bg-transparent border-primary text-[#FF7B42] flex-1 hover:border-black'
+              className='h-full inline-block rounded-none bg-transparent border-primary text-[#FF7B42] flex-1 hover:border-black text-center'
               type='submit'
-              ref={btnRef}
+              disabled={isLoading}
             >
-              {t('apply')}
+              {isLoading ? <SyncLoader color='#FF7B42' size={10} speedMultiplier={0.5} /> : t('apply')}
             </Button>
           </form>
           {discount > 0 && (

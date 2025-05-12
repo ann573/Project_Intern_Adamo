@@ -20,5 +20,6 @@
     "apply": "Áp dụng lọc"
   },
   "result": "Không có kết quả tương ứng",
-  "return": "Quay lại trang trước"
+  "return": "Quay lại trang trước",
+  "failed": "Không thể tải tour"
 }

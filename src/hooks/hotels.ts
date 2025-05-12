@@ -2,7 +2,6 @@ import { IHotel, IHotelApi } from '@/interfaces/IHotel'
 import { hotelApi } from '@/service/apiHotel'
 import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useCallback } from 'react'
-import { toast } from 'sonner'
 
 export const useHotels = (page = 1, limit = 9, query = '', enabled = true) => {
   return useQuery<IHotel[]>({
@@ -59,21 +58,6 @@ export function useUpdateData() {
     mutationFn: (data: IHotel) => hotelApi.updateData(data),
     onSuccess: (updatedData: IHotel) => {
       queryClient.invalidateQueries({ queryKey: ['hotel', updatedData.id] })
-
-      return toast.success('Review submitted successfully', {
-        style: {
-          background: '#008000',
-          color: 'white'
-        }
-      })
-    },
-    onError: (error) => {
-      return toast.error((error as Error).message, {
-        style: {
-          background: 'red',
-          color: 'white'
-        }
-      })
     }
   })
 }

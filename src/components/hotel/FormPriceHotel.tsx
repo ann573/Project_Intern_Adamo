@@ -3,12 +3,12 @@ import { CalendarIcon } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { DateRange, DayPicker } from 'react-day-picker'
 
-import { Button } from '@components/ui/button'
-// import { Calendar } from "@components/ui/calendar";
 import { useDetailHotels } from '@/hooks/hotels'
+import { toastConfig } from '@/lib/toast'
 import { cn } from '@/lib/utils'
 import { useOrderStore } from '@/zusTand/orderStore'
 import { useRoomStore } from '@/zusTand/roomStore'
+import { Button } from '@components/ui/button'
 import { Checkbox } from '@components/ui/checkbox'
 import { Input } from '@components/ui/input'
 import { Label } from '@components/ui/label'
@@ -17,7 +17,6 @@ import { User2 } from 'lucide-react'
 import { vi } from 'react-day-picker/locale'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'sonner'
 
 const FormPriceHotel = ({ id }: { id: string }) => {
   const language = sessionStorage.getItem('language')
@@ -78,35 +77,17 @@ const FormPriceHotel = ({ id }: { id: string }) => {
 
   const handleSubmitForm = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
-    if (!date)
-      return toast.error(t('from_price.errorDate'), {
-        style: {
-          background: 'red',
-          color: 'white'
-        }
-      })
+    if (!date) return toastConfig.error(t('from_price.errorDate'))
+
     const { from, to } = date
 
-    if (adults > getMaxNumber()) {
-      return toast.error(t('from_price.errorRoom.heading'), {
-        description: t('from_price.errorRoom.desc'),
-        style: {
-          background: 'red',
-          color: 'white'
-        }
-      })
-    }
+    if (adults > getMaxNumber())
+      return toastConfig.error(t('from_price.errorRoom.heading'), t('from_price.errorRoom.desc'))
+
     if (from && to) {
       const timeCheckin = (to.getTime() - from.getTime()) / (1000 * 60 * 60 * 24)
 
-      if (timeCheckin < 1) {
-        return toast.error(t('from_price.errorDate2'), {
-          style: {
-            background: 'red',
-            color: 'white'
-          }
-        })
-      }
+      if (timeCheckin < 1) return toastConfig.error(t('from_price.errorDate2'))
 
       setOrderRoom({
         name: data?.name || '',

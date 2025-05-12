@@ -8,7 +8,6 @@ import '@/style/homepage.css'
 // shadCnUI
 import { Button } from '@components/ui/button'
 import { X } from 'lucide-react'
-import { toast } from 'sonner'
 
 import FormSearchBanner from '@components/FormSearchBanner'
 import Card from '@components/listTour/Card'
@@ -56,30 +55,17 @@ const ListTour = () => {
 
   useEffect(() => {
     const fetchTour = async () => {
-      try {
-        dispatch(getTours({ page, request }))
-        if (!isSearch) {
-          setRangeFilter(() => [0, range[1]])
-        } else {
-          setClick(false)
-        }
-      } catch (error) {
-        toast.error('Failed to fetch tours:', {
-          duration: 3000,
-          description: (error as Error).message,
-          action: {
-            label: 'Undo',
-            onClick: () => {
-              return
-            }
-          }
-        })
-        return
+      dispatch(getTours({ page, request }))
+
+      if (!isSearch) {
+        setRangeFilter(() => [0, range[1]])
+      } else {
+        setClick(false)
       }
     }
 
     fetchTour()
-  }, [page, isSearch, request, dispatch, range])
+  }, [page, isSearch, request, dispatch, range, t])
 
   return (
     <>
@@ -124,7 +110,7 @@ const ListTour = () => {
         <div className='flex justify-between items-center relative xl:px-0 px-10'>
           <h2 className='text-heading md:text-[40px] text-2xl font-medium'>
             <Trans i18nKey='heading' ns={'tours'}>
-              Attractive tour and interesting <br /> experiences
+              Attractive tour and interesting <br className='hidden sm:block' /> experiences
             </Trans>
           </h2>
           <Button

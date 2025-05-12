@@ -41,7 +41,9 @@
       "label_rating": "Rating",
       "label_cmt": "Comment",
       "place_cmt": "Write your comment...",
-      "btn": "Save changes"
+      "btn": "Save changes",
+      "login": "You need to log in to write a review",
+      "success": "Your review has been submitted successfully"
     }
   },
   "from_price": {

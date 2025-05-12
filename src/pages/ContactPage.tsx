@@ -9,8 +9,8 @@ import { useAuthStore } from '@/zusTand/authStore'
 import hero from '@assets/images/hero_1.png'
 import { Button } from '@components/ui/button'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { toast } from 'sonner'
 
+import { toastConfig } from '@/lib/toast'
 import '@/style/homepage.css'
 import { StyledInput, StyledTextArea } from '@components/styled/StyledInput'
 
@@ -52,22 +52,12 @@ const ContactPage = () => {
   const handleSubmitForm = async (data: ContactFormData) => {
     try {
       await instance.post('/contact', data)
-      toast.success(t('success_message'), {
-        style: {
-          background: 'green',
-          color: 'white'
-        },
-        description: t('success_description')
-      })
+      toastConfig.success(t('success_message'), t('success_description'))
+
       reset()
       nav('/')
     } catch (error) {
-      toast.error((error as Error).message, {
-        style: {
-          background: 'red',
-          color: 'white'
-        }
-      })
+      return toastConfig.error((error as Error).message)
     }
   }
 
@@ -129,7 +119,6 @@ const ContactPage = () => {
                 <p className='text-red-500 italic'>{t(errors.message.message as keyof ContactFormData)}</p>
               )}
             </div>
-
             <Button className='w-fit rounded-none py-5 px-10 ml-auto cursor-pointer'>{t('button_send')}</Button>
           </div>
         </form>

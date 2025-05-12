@@ -27,7 +27,8 @@
     "warning": "Warning",
     "warning_content": "Please login to comment!!!!",
     "cancel": "Cancel",
-    "login": "Login"
+    "login": "Login",
+    "star_error": "Please select a star rating"
   },
   "from_price": {
     "from": "from",
@@ -36,12 +37,13 @@
     "days": "days",
     "night": "nights",
     "type": "Tour type:",
-    "cancel": "Hủy lựa chọn",
-    "adult": "Người lớn",
-    "child": "Trẻ con",
+    "cancel": "Cancel",
+    "adult": "Adults",
+    "child": "Children",
     "total": "Tổng tiền",
     "btn": "Đặt ngay",
-    "tour_duration_error": "The tour duration cannot be changed to {{selectedDays}} days. Please select {{requiredDays}} days."
+    "tour_duration_error": "The tour duration cannot be changed to {{selectedDays}} days. Please select {{requiredDays}} days.",
+    "tour_duration_error_2": "Please select a travel date"
   },
   "related": "Related tours"
 }

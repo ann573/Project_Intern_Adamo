@@ -42,7 +42,9 @@
       "label_rating": "Đánh giá",
       "label_cmt": "Bình luận",
       "place_cmt": "Viết bình luận của bạn...",
-      "btn": "Lưu đánh giá"
+      "btn": "Lưu đánh giá",
+      "login": "Bạn cần đăng nhập để viết đánh giá",
+      "success": "Đánh giá của bạn đã được gửi thành công"
     }
   },
 

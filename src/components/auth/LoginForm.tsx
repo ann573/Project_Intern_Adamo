@@ -15,10 +15,10 @@ import { LoginFormValues, loginSchema, ResetPasswordFormValues, resetPasswordSch
 import { useAuthStore } from '@/zusTand/authStore'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+import { toastConfig } from '@/lib/toast'
 import Cookies from 'js-cookie'
 import { useTranslation } from 'react-i18next'
 import { ClipLoader } from 'react-spinners'
-import { toast } from 'sonner'
 
 const LoginForm = () => {
   const { t } = useTranslation('auth')
@@ -56,22 +56,7 @@ const LoginForm = () => {
       nav('/')
     } catch {
       setIsLoading(false)
-      toast.error(t('login.loginFailed'), {
-        description: t('login.loginFailedDesc'),
-        actionButtonStyle: {
-          background: 'white',
-          color: 'red'
-        },
-        action: {
-          label: t('login.undo'),
-          onClick: () => {}
-        },
-        duration: 3000,
-        style: {
-          background: 'red',
-          color: 'white'
-        }
-      })
+      return toastConfig.error(t('login.loginFailed'), t('login.loginFailedDesc'), 2000)
     }
   }
 
@@ -82,22 +67,10 @@ const LoginForm = () => {
       await confirmPasswordReset(auth, code, data.password)
 
       setIsLoading(false)
-      toast.success(t('login.resetPasswordSuccess'), {
-        duration: 1000,
-        style: {
-          background: 'green',
-          color: '#fff'
-        }
-      })
-
-      resetPasswordForm.reset()
-      nav('/auth/login')
+      return toastConfig.success(t('login.resetPasswordSuccess'), undefined, 2000)
     } catch {
       setIsLoading(false)
-      toast.error(t('login.resetPasswordFailed'), {
-        description: t('login.resetPasswordFailedDesc'),
-        duration: 3000
-      })
+      return toastConfig.error(t('login.resetPasswordFailed'), t('login.resetPasswordFailedDesc'), 2000)
     }
   }
 

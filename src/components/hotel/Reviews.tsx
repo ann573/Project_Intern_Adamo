@@ -1,5 +1,6 @@
 import { useDetailHotels, useUpdateData } from '@/hooks/hotels'
 
+import { toastConfig } from '@/lib/toast'
 import { ReviewForm, reviewSchema } from '@/schema/reviewSchema'
 import { useAuthStore } from '@/zusTand/authStore'
 import { Button } from '@components/ui/button'
@@ -18,7 +19,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Trans, useTranslation } from 'react-i18next'
-import { toast } from 'sonner'
 import LoadingSpinner from '../LoadingSpinner'
 import Pagination from '../Pagination'
 import Review from './Review'
@@ -59,15 +59,8 @@ const Reviews = ({ id }: { id: string }) => {
   const watchedRating = watch('rating')
 
   const onSubmit = async (values: ReviewForm) => {
-    if (!user) {
-      toast.error('Please login to leave a review', {
-        style: {
-          background: '#FF4747',
-          color: 'white'
-        }
-      })
-      return
-    }
+    if (!user) return toastConfig.error(t('rv.form.login'))
+
     const day = new Date()
     const newReview = {
       ...values,
@@ -76,11 +69,18 @@ const Reviews = ({ id }: { id: string }) => {
       avatar: 'https://kenh14cdn.com/cPLqMkXoPs3Tkua5x0JnElZd2udVtV/Image/2015/03/updates/150330dep03-7ef68.jpg'
     }
     data?.description.reviews.unshift(newReview)
-    if (!data) return
-    await mutateAsync(data)
-    setOpen(false)
 
-    reset()
+    if (!data) return
+
+    try {
+      await mutateAsync(data)
+      toastConfig.success(t('rv.form.success'))
+    } catch (error) {
+      toastConfig.error((error as Error).message)
+    } finally {
+      setOpen(false)
+      reset()
+    }
   }
 
   if (isLoading) {

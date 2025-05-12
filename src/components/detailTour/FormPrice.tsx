@@ -4,18 +4,17 @@ import React, { useEffect, useState } from 'react'
 import { DateRange, DayPicker } from 'react-day-picker'
 import { vi } from 'react-day-picker/locale'
 
-import { Button } from '@components/ui/button'
-// import { Calendar } from "@components/ui/calendar";
 import { useAppSelector } from '@/hooks/app'
 import { cn } from '@/lib/utils'
 import { useOrderStore } from '@/zusTand/orderStore'
+import { Button } from '@components/ui/button'
 import { Input } from '@components/ui/input'
 import { Label } from '@components/ui/label'
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover'
 import { User2 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'sonner'
 
+import { toastConfig } from '@/lib/toast'
 import 'react-day-picker/style.css'
 import { useTranslation } from 'react-i18next'
 
@@ -49,31 +48,18 @@ const FormPrice = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   const handleSubmitForm = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
 
-    if (!date)
-      return toast.error('Pleas fill the date!!!', {
-        style: {
-          background: 'red',
-          color: 'white'
-        }
-      })
+    if (!date) return toastConfig.error(t('from_price.tour_date_error_2'), undefined, 2000)
 
     const { from, to } = date
     if (from && to) {
       const selectedDays = (to.getTime() - from.getTime()) / (1000 * 3600 * 24) + 1
       if (tour && Math.ceil(selectedDays) !== tour?.duration) {
-        toast.error(
+        return toastConfig.error(
           t('from_price.tour_duration_error', {
             selectedDays: Math.ceil(selectedDays),
             requiredDays: tour?.duration
-          }),
-          {
-            style: {
-              background: 'red',
-              color: 'white'
-            }
-          }
+          })
         )
-        return
       } else {
         setOrderTour({
           id: tour?.id as number,

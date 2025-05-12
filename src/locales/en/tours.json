@@ -20,5 +20,6 @@
     "apply": "Apply Filter"
   },
   "result": "No matching results",
-  "return": "Return to the previous page"
+  "return": "Return to the previous page",
+  "failed": "Fail to load tours"
 }

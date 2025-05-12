@@ -1,3 +1,4 @@
+import { toastConfig } from '@/lib/toast'
 import { auth } from '@/utils/firebase'
 import Input from '@components/Input'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -8,7 +9,6 @@ import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { ClipLoader } from 'react-spinners'
-import { toast } from 'sonner'
 
 const EmailForgotForm = () => {
   const { t } = useTranslation('auth')
@@ -30,16 +30,10 @@ const EmailForgotForm = () => {
       await sendPasswordResetEmail(auth, data.email)
       setIsLoading(false)
 
-      toast.success(t('email.successMessage'), {
-        duration: 1500,
-        style: {
-          background: 'green',
-          color: '#fff'
-        }
-      })
+      return toastConfig.success(t('email.successMessage'), undefined, 1000)
     } catch (error) {
       setIsLoading(false)
-      toast.error((error as Error).message)
+      toastConfig.error((error as Error).message)
     }
   }
 

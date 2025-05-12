@@ -69,7 +69,6 @@ const HotelPage = () => {
   useEffect(() => {
     window.scrollTo({ top: 550, behavior: 'smooth' })
   }, [page])
-
   return (
     <>
       <section
